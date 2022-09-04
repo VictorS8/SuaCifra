@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Your Cifra</string>
+    <string name="no_cifras_message">Welcome to your app to save your Cifras</string>
+</resources>

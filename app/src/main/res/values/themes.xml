@@ -1,0 +1,31 @@
+<resources>
+    <!-- Base application theme. -->
+    <!--    Light Mode-->
+    <style name="themeSuaCifra" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/dark_blue</item>
+        <item name="colorPrimaryVariant">@color/blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/dark_grey</item>
+        <item name="colorSecondaryVariant">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorOnPrimary</item>
+        <!-- Customize your theme here. -->
+        <item name="backgroundColor">?attr/colorOnPrimary</item>
+        <item name="android:background">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="appTitleStyle">
+        <item name="android:textSize">@dimen/app_title</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="noCifraMessageStyle">
+        <item name="android:textSize">@dimen/no_cifras_message</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:padding">@dimen/no_cifras_message_padding</item>
+    </style>
+</resources>

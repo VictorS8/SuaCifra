@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_title">28sp</dimen>
+    <dimen name="no_cifras_message">22sp</dimen>
+    <dimen name="no_cifras_message_padding">76dp</dimen>
+</resources>
