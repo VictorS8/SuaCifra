@@ -59,8 +59,8 @@
         <item name="android:background">?attr/colorPrimary</item>
         <item name="itemIconSize">@dimen/bottom_navigation_icon_size</item>
         <item name="itemRippleColor">?attr/colorPrimaryInverse</item>
-        <item name="itemTextColor">?attr/colorOnPrimary</item>
-        <item name="itemIconTint">?attr/colorOnPrimary</item>
+        <item name="itemTextColor">@drawable/bottom_navigation_icon_color_selector</item>
+        <item name="itemIconTint">@drawable/bottom_navigation_icon_color_selector</item>
         <item name="itemTextAppearanceActive">?attr/colorPrimaryInverse</item>
     </style>
 </resources>
