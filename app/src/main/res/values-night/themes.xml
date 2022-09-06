@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/light_blue</item>
         <item name="colorPrimaryVariant">@color/blue</item>
         <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimarySurface">@color/light_blue_with_transparency</item>
+        <item name="colorPrimaryInverse">@color/dark_blue</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/light_grey</item>
         <item name="colorSecondaryVariant">@color/white</item>
@@ -13,19 +15,52 @@
         <item name="android:statusBarColor">?attr/colorOnPrimary</item>
         <!-- Customize your theme here. -->
         <item name="backgroundColor">?attr/colorOnPrimary</item>
+        <item name="colorOnBackground">@color/light_blue_with_more_transparency</item>
+
+        <item name="colorControlNormal">?attr/colorPrimarySurface</item>
+        <item name="colorControlActivated">?attr/colorPrimarySurface</item>
+        <item name="colorControlHighlight">?attr/colorPrimary</item>
+    </style>
+
+    <style name="baseAppStyle">
         <item name="android:background">?attr/colorOnPrimary</item>
     </style>
 
     <style name="appTitleStyle">
-        <item name="android:textSize">@dimen/app_title</item>
+        <item name="android:textSize">@dimen/app_title_text_size</item>
         <item name="android:textColor">?attr/colorPrimary</item>
         <item name="android:textAlignment">center</item>
     </style>
 
     <style name="noCifraMessageStyle">
-        <item name="android:textSize">@dimen/no_cifras_message</item>
+        <item name="android:textSize">@dimen/no_cifras_message_text_size</item>
         <item name="android:textColor">?attr/colorPrimary</item>
         <item name="android:textAlignment">center</item>
         <item name="android:padding">@dimen/no_cifras_message_padding</item>
+    </style>
+
+    <style name="helperTextStyle">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textSize">@dimen/helper_text_size</item>
+    </style>
+
+    <style name="editTextStyle">
+        <item name="android:minHeight">48dp</item>
+        <item name="android:minWidth">240dp</item>
+        <item name="android:textColorHint">?attr/colorPrimarySurface</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textCursorDrawable">?attr/colorPrimarySurface</item>
+        <item name="android:textColorHighlight">?attr/colorPrimarySurface</item>
+        <item name="android:background">@drawable/custom_input</item>
+    </style>
+
+    <style name="bottomNavigationStyle">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="itemIconSize">@dimen/bottom_navigation_icon_size</item>
+        <item name="itemRippleColor">?attr/colorPrimaryInverse</item>
+        <item name="itemTextColor">?attr/colorOnPrimary</item>
+        <item name="itemIconTint">?attr/colorOnPrimary</item>
+        <item name="itemTextAppearanceActive">?attr/colorPrimaryInverse</item>
     </style>
 </resources>

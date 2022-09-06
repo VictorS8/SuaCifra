@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--    Light Grey-->
     <color name="light_grey">#CDCDCD</color>
+    <color name="light_grey_with_transparency">#99CDCDCD</color>
+    <!--    Dark Grey-->
     <color name="dark_grey">#383838</color>
+    <color name="dark_grey_with_transparency">#99383838</color>
+    <!--    Dark Blue-->
     <color name="dark_blue">#0D47A1</color>
+    <color name="dark_blue_with_transparency">#990D47A1</color>
+    <color name="dark_blue_with_more_transparency">#4D0D47A1</color>
+    <!--    Blue-->
     <color name="blue">#2962FF</color>
+    <!--    Light Blue-->
     <color name="light_blue">#64B5F6</color>
+    <color name="light_blue_with_transparency">#9964B5F6</color>
+    <color name="light_blue_with_more_transparency">#4D64B5F6</color>
+
+    <!--  Black-->
     <color name="black">#FF000000</color>
+    <color name="black_with_transparency">#99000000</color>
     <color name="white">#FFFFFFFF</color>
 </resources>

@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Your Cifra</string>
     <string name="no_cifras_message">Welcome to your app to save your Cifras</string>
+    <string name="settings_bottom_navigation_string">Settings</string>
+    <string name="add_bottom_navigation_string">Add</string>
+    <string name="home_bottom_navigation_string">Home</string>
+    <string name="cifra_name_hint_string">Insert the name of your cifra</string>
+    <string name="singer_name_hint_string">Insert the singer of your cifra</string>
+    <string name="tone_spinner_helper_string">Select a initial tone above</string>
+    <string name="home_content_description">Show lists and home screen</string>
+    <string name="settings_content_description">Show features and settings</string>
+    <string name="add_content_description">Show screen to add your cifra</string>
 </resources>
