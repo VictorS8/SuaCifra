@@ -2,9 +2,12 @@ package br.com.suacifra
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import br.com.suacifra.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import br.com.suacifra.screens.add.AddFragment
+import br.com.suacifra.screens.home.HomeFragment
+import br.com.suacifra.screens.settings.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,17 +15,20 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        replaceFragment(Home())
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        replaceFragment(HomeFragment())
 
         binding.mainBottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.homeBottomNavigation -> {
-                    replaceFragment(Home())
+                    replaceFragment(HomeFragment())
                 }
-                R.id.addBottomNavigation -> replaceFragment(Add())
-                R.id.settingsBottomNavigation -> replaceFragment(Settings())
+                R.id.addBottomNavigation -> {
+                    replaceFragment(AddFragment())
+                }
+                R.id.settingsBottomNavigation -> {
+                    replaceFragment(SettingsFragment())
+                }
                 else -> {}
             }
             true
@@ -32,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.mainFrameLayout, fragment)
+        fragmentTransaction.replace(binding.mainFrameLayout.id, fragment)
         fragmentTransaction.commit()
     }
 
