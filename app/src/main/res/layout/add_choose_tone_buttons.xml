@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/aToneTextView"
+        style="@style/chooseToneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/a_tone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bbToneTextView"
+        style="@style/chooseToneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bb_tone"
+        app:layout_constraintStart_toEndOf="@+id/aToneTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bToneTextView"
+        style="@style/chooseToneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/b_tone"
+        app:layout_constraintStart_toEndOf="@+id/bbToneTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cToneTextView"
+        style="@style/chooseToneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/c_tone"
+        app:layout_constraintStart_toEndOf="@+id/bToneTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dbToneTextView"
+        style="@style/chooseToneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/db_tone"
+        app:layout_constraintStart_toEndOf="@+id/cToneTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dToneTextView"
+        style="@style/chooseToneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/d_tone"
+        app:layout_constraintStart_toEndOf="@+id/dbToneTextView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ebToneTextView"
+        style="@style/chooseToneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/eb_tone"
+        app:layout_constraintEnd_toStartOf="@id/eToneTextView"
+        app:layout_constraintTop_toBottomOf="@id/aToneTextView" />
+
+    <TextView
+        android:id="@+id/eToneTextView"
+        style="@style/chooseToneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/e_tone"
+        app:layout_constraintEnd_toStartOf="@id/fToneTextView"
+        app:layout_constraintTop_toBottomOf="@id/aToneTextView" />
+
+    <TextView
+        android:id="@+id/fToneTextView"
+        style="@style/chooseToneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/f_tone"
+        app:layout_constraintEnd_toStartOf="@id/gbToneTextView"
+        app:layout_constraintTop_toBottomOf="@id/aToneTextView" />
+
+    <TextView
+        android:id="@+id/gbToneTextView"
+        style="@style/chooseToneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gb_tone"
+        app:layout_constraintEnd_toStartOf="@id/gToneTextView"
+        app:layout_constraintTop_toBottomOf="@id/aToneTextView" />
+
+    <TextView
+        android:id="@+id/gToneTextView"
+        style="@style/chooseToneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/g_tone"
+        app:layout_constraintEnd_toStartOf="@id/abToneTextView"
+        app:layout_constraintTop_toBottomOf="@id/aToneTextView" />
+
+    <TextView
+        android:id="@+id/abToneTextView"
+        style="@style/chooseToneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ab_tone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aToneTextView" />
+
+    <TextView
+        android:id="@+id/toneTitleCardViewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/medium_space"
+        android:text="@string/tones_card_view_text"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="@dimen/choose_tone_text_size"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/ebToneTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
