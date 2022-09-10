@@ -5,4 +5,9 @@
     <dimen name="no_cifras_message_padding">76dp</dimen>
     <dimen name="bottom_navigation_icon_size">26dp</dimen>
     <dimen name="helper_text_size">14sp</dimen>
+    <dimen name="minimal_space">8dp</dimen>
+    <dimen name="low_space">12dp</dimen>
+    <dimen name="medium_space">16dp</dimen>
+    <dimen name="large_space">32dp</dimen>
+    <dimen name="choose_tone_text_size">24sp</dimen>
 </resources>

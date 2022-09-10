@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Sua Cifra</string>
-    <string name="no_cifras_message">Bem vindo ao seu aplicativo para guardar suas Cifras</string>
+    <string name="no_cifras_message">Bem-vindo ao seu aplicativo para guardar suas Cifras</string>
     <string name="settings_bottom_navigation_string">Configurações</string>
     <string name="add_bottom_navigation_string">Adicionar</string>
     <string name="home_bottom_navigation_string">Ínicio</string>
@@ -11,4 +11,6 @@
     <string name="home_content_description">Mostra listas e a tela ínicial</string>
     <string name="settings_content_description">Mostra funções e configurações</string>
     <string name="add_content_description">Mostra tela para adicionar sua cifra</string>
+    <string name="choose_tone_button_text">Escolha o Tom</string>
+    <string name="tones_card_view_text">Tons</string>
 </resources>
