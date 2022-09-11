@@ -1,4 +1,4 @@
-![Sua Cifra Logo](/.github/play_store_feature_graphic.png)
+![Sua Cifra Logo](/.github/suaCifraLogo1920.png)
 
 # Sua Cifra
 
