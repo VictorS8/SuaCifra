@@ -13,4 +13,5 @@
     <string name="add_content_description">Mostra tela para adicionar sua cifra</string>
     <string name="choose_tone_button_text">Escolha o Tom</string>
     <string name="tones_card_view_text">Tons</string>
+    <string name="tone_chosen_text">Tom %1$s foi escolhido!</string>
 </resources>

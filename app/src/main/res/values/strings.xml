@@ -24,4 +24,5 @@
     <string name="g_tone" translatable="false">G</string>
     <string name="ab_tone" translatable="false">Ab</string>
     <string name="tones_card_view_text">Tones</string>
+    <string name="tone_chosen_text">Tone %1$s was chosen!</string>
 </resources>
