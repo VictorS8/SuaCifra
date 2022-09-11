@@ -4,18 +4,18 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import br.com.suacifra.databinding.ActivityMainBinding
+import br.com.suacifra.databinding.MainActivityBinding
 import br.com.suacifra.screens.add.AddFragment
 import br.com.suacifra.screens.home.HomeFragment
 import br.com.suacifra.screens.settings.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: MainActivityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.main_activity)
         replaceFragment(HomeFragment())
 
         binding.mainBottomNavigationView.setOnItemSelectedListener {
