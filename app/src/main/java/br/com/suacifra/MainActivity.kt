@@ -2,6 +2,7 @@ package br.com.suacifra
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import br.com.suacifra.databinding.MainActivityBinding
@@ -12,9 +13,15 @@ import br.com.suacifra.screens.settings.SettingsFragment
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: MainActivityBinding
+    private val viewModel = MainActivityViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen().apply {
+            setKeepOnScreenCondition {
+                viewModel.isLoading.value
+            }
+        }
         binding = DataBindingUtil.setContentView(this, R.layout.main_activity)
         replaceFragment(HomeFragment())
 
@@ -38,6 +45,10 @@ class MainActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.setCustomAnimations(
+            R.anim.slide_in,
+            R.anim.slide_out
+        )
         fragmentTransaction.replace(binding.mainFrameLayout.id, fragment)
         fragmentTransaction.commit()
     }
