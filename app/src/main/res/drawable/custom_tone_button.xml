@@ -3,7 +3,7 @@
     <item>
         <shape android:shape="rectangle">
             <corners android:radius="@dimen/large_space" />
-            <size android:width="48dp" android:height="48dp" />
+            <size android:width="@dimen/min_height_touch_size" android:height="@dimen/min_height_touch_size" />
             <solid android:color="?attr/colorOnPrimary" />
         </shape>
     </item>
