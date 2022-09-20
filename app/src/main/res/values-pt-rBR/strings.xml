@@ -14,4 +14,13 @@
     <string name="choose_tone_button_text">Escolha o Tom</string>
     <string name="tones_card_view_text">Tons</string>
     <string name="tone_chosen_text">Tom %1$s foi escolhido!</string>
+    <string name="profile_picture_content_description">Foto de perfil na tela de Configurações, mostra sua imagem de perfil</string>
+    <string name="profile_username_text">Seu nome</string>
+    <string name="tuner_button_text">Afinador</string>
+    <string name="login_button_text">Acessar</string>
+    <string name="about_button_text">Sobre</string>
+    <string name="pro_subscription_in_production_text">Inscrição SuaCifraPRO está em produção</string>
+    <string name="profile_username_text_attempt">Insira seu nome</string>
+    <string name="profile_username_text_edit">Toque no %1$s</string>
+    <string name="change_username_dialog_text">Atualize seu nome</string>
 </resources>

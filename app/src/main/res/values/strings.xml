@@ -25,4 +25,13 @@
     <string name="ab_tone" translatable="false">Ab</string>
     <string name="tones_card_view_text">Tones</string>
     <string name="tone_chosen_text">Tone %1$s was chosen!</string>
+    <string name="profile_picture_content_description">Profile picture on Settings Screen, shows your profile image</string>
+    <string name="profile_username_text">Your name</string>
+    <string name="profile_username_text_attempt">Enter your name</string>
+    <string name="profile_username_text_edit">Touch on %1$s</string>
+    <string name="tuner_button_text">Tuner</string>
+    <string name="login_button_text">Login</string>
+    <string name="about_button_text">About</string>
+    <string name="pro_subscription_in_production_text">Subscription YourCifraPRO is in production</string>
+    <string name="change_username_dialog_text">Update your name</string>
 </resources>
