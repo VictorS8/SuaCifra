@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Sua Cifra</string>
     <string name="no_cifras_message">Bem-vindo ao seu aplicativo para guardar suas Cifras</string>
-    <string name="settings_bottom_navigation_string">Configurações</string>
+    <string name="settings_bottom_navigation_string">Opções</string>
     <string name="add_bottom_navigation_string">Adicionar</string>
     <string name="home_bottom_navigation_string">Ínicio</string>
     <string name="cifra_name_hint_string">Insira o nome da sua cifra</string>
@@ -17,10 +16,14 @@
     <string name="profile_picture_content_description">Foto de perfil na tela de Configurações, mostra sua imagem de perfil</string>
     <string name="profile_username_text">Seu nome</string>
     <string name="tuner_button_text">Afinador</string>
-    <string name="login_button_text">Acessar</string>
+    <string name="login_button_text">Acessar Perfil</string>
     <string name="about_button_text">Sobre</string>
     <string name="pro_subscription_in_production_text">Inscrição SuaCifraPRO está em produção</string>
     <string name="profile_username_text_attempt">Insira seu nome</string>
     <string name="profile_username_text_edit">Toque no %1$s</string>
     <string name="change_username_dialog_text">Atualize seu nome</string>
+    <string name="user_not_logged_in_text">O acesso com google é necessário, caso você queira salvar suas cifras do aplicativo na nuvem, para ficar salva em qualquer acesso</string>
+    <string name="profile_title_text">Perfil</string>
+    <string name="hint_for_user_not_logged_in_text">Vale lembrar que não é obrigatório</string>
+    <string name="google_sign_in_feature_text">Função de entrar no Google</string>
 </resources>
