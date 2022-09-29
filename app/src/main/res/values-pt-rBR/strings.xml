@@ -27,4 +27,7 @@
     <string name="hint_for_user_not_logged_in_text">Vale lembrar que não é obrigatório</string>
     <string name="google_sign_in_feature_text">Função de entrar no Google</string>
     <string name="sign_in_with_google_button_text">Entrar com Google</string>
+    <string name="about_title_text">Sobre</string>
+    <string name="about_abstract_text">Um aplicativo para suas cifras customizadas, com fácil acesso para ver, editar e excluir, da sua própria forma e como desejar\nFeita tanto para aqueles que não são bons em memorizar as sequências de acordes até aqueles que tocam em muitas bandas ou tem muitos cantores que cantam a mesma música no seu grupo</string>
+    <string name="go_back_button_text">Voltar</string>
 </resources>

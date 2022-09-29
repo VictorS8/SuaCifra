@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import br.com.suacifra.R
 import br.com.suacifra.databinding.MainActivityBinding
 import br.com.suacifra.databinding.SettingsFragmentBinding
+import br.com.suacifra.screens.about.AboutFragment
 import br.com.suacifra.screens.login.LoginFragment
 
 
@@ -52,17 +53,17 @@ class SettingsFragment : Fragment() {
         }
 
         binding.loginButton.setOnClickListener {
-            replaceFragment(LoginFragment())
+            replaceFragmentOnSettings(LoginFragment())
         }
 
         binding.aboutButton.setOnClickListener {
-            // TODO - Implement it
+            replaceFragmentOnSettings(AboutFragment())
         }
 
         return binding.root
     }
 
-    private fun replaceFragment(fragment: Fragment) {
+    private fun replaceFragmentOnSettings(fragment: Fragment) {
         val fragmentManager = parentFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setCustomAnimations(
@@ -70,6 +71,7 @@ class SettingsFragment : Fragment() {
             R.anim.slide_out
         )
         fragmentTransaction.replace(mainActivityBinding.mainFrameLayout.id, fragment)
+        fragmentTransaction.addToBackStack("Options Screen")
         fragmentTransaction.commit()
     }
 

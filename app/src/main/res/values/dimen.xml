@@ -16,4 +16,5 @@
     <dimen name="min_height_settings_button_size">56dp</dimen>
     <dimen name="min_width_settings_button_size">160dp</dimen>
     <dimen name="min_height_touch_size">48dp</dimen>
+    <dimen name="about_text_padding">32dp</dimen>
 </resources>

@@ -57,6 +57,14 @@
         <item name="android:textColor">?attr/colorPrimary</item>
     </style>
 
+    <style name="aboutTextViewStyle">
+        <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:paddingRight">@dimen/about_text_padding</item>
+        <item name="android:paddingLeft">@dimen/about_text_padding</item>
+    </style>
+
     <style name="settingsTextViewStyle">
         <item name="android:textSize">@dimen/big_text_size</item>
         <item name="android:textColor">?attr/colorPrimary</item>
