@@ -13,6 +13,11 @@ import br.com.suacifra.screens.settings.SettingsFragment
 
 class LoginFragment : Fragment() {
 
+//    private lateinit var googleSignInClient: GoogleSignInClient
+
+//    val Req_Code: Int = 123
+//    val firebaseAuth = FirebaseAuth.getInstance()
+
     private lateinit var binding: LoginFragmentBinding
     private lateinit var mainActivityBinding: MainActivityBinding
 
@@ -28,6 +33,15 @@ class LoginFragment : Fragment() {
         binding.signInWithGoogleButton.setOnClickListener {
 //            signInGoogle()
         }
+
+//        R.string.default_web_client_id.toString()
+//        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//            .requestIdToken(getPrivateKey())
+//            .requestEmail()
+//            .requestProfile()
+//            .build()
+//
+//        googleSignInClient = GoogleSignIn.getClient(MainActivity(), gso)
 
         binding.loginGoBackButton.setOnClickListener {
             goBackToSettings()
@@ -46,5 +60,27 @@ class LoginFragment : Fragment() {
         fragmentTransaction.replace(mainActivityBinding.mainFrameLayout.id, SettingsFragment())
         fragmentTransaction.commit()
     }
+
+//    private fun getPrivateKey(): String {
+//        val jsonObject = JSONTokener("google-services.json").nextValue() as JSONObject
+//
+//        val jsonArray = jsonObject.getJSONArray("client")
+//
+//        var key = ""
+//
+//        for (i in 0 until jsonArray.length()) {
+//            val jsonKey = jsonArray.getJSONObject(i).getJSONObject("oauth_client")
+//
+//            key = jsonKey.getJSONArray("oauth_client").getJSONObject(i).getJSONObject("client_id")
+//                .toString()
+//        }
+//
+//        return key
+//    }
+//
+//    private fun signInGoogle() {
+//        val signInIntent : Intent = googleSignInClient.signInIntent
+//
+//    }
 
 }
