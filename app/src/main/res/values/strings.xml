@@ -42,4 +42,5 @@
     <string name="about_title_text">About</string>
     <string name="about_abstract_text">A app for your custom cifras, with easy access to see, edit and delete, in your own way and how you with\nMade for both, those who are not good at memorize chord sequences and those who play in many bands or have many singers who sing same song in your crew</string>
     <string name="go_back_button_text">Go Back</string>
+    <string name="about_third_party_software_text">Third Party Software</string>
 </resources>

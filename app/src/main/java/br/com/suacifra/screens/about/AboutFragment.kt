@@ -1,5 +1,6 @@
 package br.com.suacifra.screens.about
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import br.com.suacifra.R
 import br.com.suacifra.databinding.AboutFragmentBinding
 import br.com.suacifra.databinding.MainActivityBinding
 import br.com.suacifra.screens.settings.SettingsFragment
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 
 class AboutFragment : Fragment() {
 
@@ -33,6 +35,12 @@ class AboutFragment : Fragment() {
 
         binding.aboutGoBackButton.setOnClickListener {
             goBackToSettings()
+        }
+
+        OssLicensesMenuActivity.setActivityTitle(getString(R.string.about_third_party_software_text))
+
+        binding.aboutThirdPartyTextView.setOnClickListener {
+            startActivity(Intent(context, OssLicensesMenuActivity::class.java))
         }
 
         return binding.root

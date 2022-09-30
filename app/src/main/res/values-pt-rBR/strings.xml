@@ -30,4 +30,5 @@
     <string name="about_title_text">Sobre</string>
     <string name="about_abstract_text">Um aplicativo para suas cifras customizadas, com fácil acesso para ver, editar e excluir, da sua própria forma e como desejar\nFeita tanto para aqueles que não são bons em memorizar as sequências de acordes até aqueles que tocam em muitas bandas ou tem muitos cantores que cantam a mesma música no seu grupo</string>
     <string name="go_back_button_text">Voltar</string>
+    <string name="about_third_party_software_text">Software de terceiros</string>
 </resources>

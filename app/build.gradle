@@ -1,8 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.android.gms.oss-licenses-plugin'
 }
 
+apply plugin: 'com.google.android.gms.oss-licenses-plugin'
 android {
     compileSdk 33
 
@@ -41,6 +43,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.google.android.gms:play-services-oss-licenses:17.0.0'
     implementation 'androidx.core:core-splashscreen:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation 'androidx.cardview:cardview:1.0.0'
