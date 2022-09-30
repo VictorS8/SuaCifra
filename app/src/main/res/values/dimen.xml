@@ -11,6 +11,7 @@
     <dimen name="low_space">12dp</dimen>
     <dimen name="medium_space">16dp</dimen>
     <dimen name="large_space">32dp</dimen>
+    <dimen name="very_large_space">64dp</dimen>
     <dimen name="choose_tone_text_size">24sp</dimen>
     <dimen name="profile_picture_size">135dp</dimen>
     <dimen name="min_height_settings_button_size">56dp</dimen>

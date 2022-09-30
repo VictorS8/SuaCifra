@@ -72,10 +72,8 @@
 
     <style name="signInWithGoogleWarningTextViewStyle">
         <item name="android:textSize">@dimen/normal_text_size</item>
-        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:paddingRight">@dimen/warning_message_padding</item>
-        <item name="android:paddingLeft">@dimen/warning_message_padding</item>
     </style>
 
     <style name="editTextStyle">
@@ -102,6 +100,7 @@
     </style>
 
     <style name="bottomNavigationStyle">
+        <item name="android:elevation">@dimen/large_space</item>
         <item name="android:background">?attr/colorPrimary</item>
         <item name="itemIconSize">@dimen/bottom_navigation_icon_size</item>
         <item name="itemRippleColor">?attr/colorPrimaryInverse</item>
@@ -111,6 +110,7 @@
     </style>
 
     <style name="chooseToneButton">
+        <item name="android:elevation">@dimen/large_space</item>
         <item name="android:layout_margin">@dimen/minimal_space</item>
         <item name="android:padding">@dimen/minimal_space</item>
         <item name="android:background">@drawable/custom_tone_button</item>
@@ -120,6 +120,10 @@
         <item name="android:textSize">@dimen/choose_tone_text_size</item>
     </style>
 
+    <style name="defaultButton">
+        <item name="android:elevation">@dimen/large_space</item>
+    </style>
+
     <style name="profilePictureStyle">
         <item name="android:minWidth">@dimen/profile_picture_size</item>
         <item name="android:minHeight">@dimen/profile_picture_size</item>
@@ -127,6 +131,7 @@
     </style>
 
     <style name="buttonOnSettingsStyle">
+        <item name="android:elevation">@dimen/large_space</item>
         <item name="android:minHeight">@dimen/min_height_settings_button_size</item>
         <item name="android:minWidth">@dimen/min_width_settings_button_size</item>
     </style>

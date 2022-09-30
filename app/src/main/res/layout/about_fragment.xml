@@ -33,6 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/minimal_space"
+            style="@style/defaultButton"
             android:text="@string/go_back_button_text"
             app:layout_constraintBottom_toTopOf="@id/aboutVersionApp"
             app:layout_constraintEnd_toEndOf="parent"
