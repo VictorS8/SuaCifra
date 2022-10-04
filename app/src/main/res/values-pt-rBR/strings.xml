@@ -31,4 +31,9 @@
     <string name="about_abstract_text">Um aplicativo para suas cifras customizadas, com fácil acesso para ver, editar e excluir, da sua própria forma e como desejar\nFeita tanto para aqueles que não são bons em memorizar as sequências de acordes até aqueles que tocam em muitas bandas ou tem muitos cantores que cantam a mesma música no seu grupo</string>
     <string name="go_back_button_text">Voltar</string>
     <string name="about_third_party_software_text">Software de terceiros</string>
+    <string name="open_activity_error_message">Algo deu errado! Tente entrar em contato conosco e envie %1$s</string>
+    <string name="open_activity_error_message_on_result">Algo deu errado! Tente novamente depois</string>
+    <string name="sign_in_with_google_message_success">Funcionou! Aproveite</string>
+    <string name="sign_in_with_google_message_fail">Não funcionou ;-;\nTalvez tente novamente depois</string>
+    <string name="sign_out_with_google">Sair da sua conta</string>
 </resources>
