@@ -16,6 +16,7 @@ import br.com.suacifra.screens.settings.SettingsFragment
 class ProfileFragment : Fragment() {
 
     private lateinit var binding: ProfileFragmentBinding
+    private lateinit var mainActivityContext: MainActivity
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,24 +26,27 @@ class ProfileFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.profile_fragment, container, false)
 
         val googleAccount = (activity as MainActivity).getLastSignedInAccountOnActivity()
+        mainActivityContext = (activity as MainActivity)
 
-        binding.profilePictureImageView.setImageURI(googleAccount!!.photoUrl)
 
-        binding.profileEmailTextView.text = googleAccount.email
+        if (googleAccount != null) {
+            binding.profilePictureImageView.setImageURI(googleAccount.photoUrl)
+            binding.profileEmailTextView.text = googleAccount.email
+        }
 
         binding.profileSignOutButton.setOnClickListener {
-            (activity as MainActivity).signOutOnActivity()
+            mainActivityContext.signOutOnActivity()
             Toast.makeText(
-                activity as MainActivity,
+                mainActivityContext,
                 getString(R.string.sign_out_with_google),
                 Toast.LENGTH_LONG
             ).show()
-            (activity as MainActivity).replaceFragment(LoginFragment())
+            mainActivityContext.replaceFragment(LoginFragment())
 
         }
 
         binding.profileGoBackButton.setOnClickListener {
-            (activity as MainActivity).replaceFragment(SettingsFragment())
+            mainActivityContext.replaceFragment(SettingsFragment())
         }
 
         return binding.root

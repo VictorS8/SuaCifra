@@ -1,8 +1,7 @@
 package br.com.suacifra.screens.login
 
-import android.app.Activity.*
+import android.app.Activity.RESULT_OK
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +17,6 @@ import br.com.suacifra.screens.profile.ProfileFragment
 import br.com.suacifra.screens.settings.SettingsFragment
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
@@ -32,6 +30,7 @@ class LoginFragment : Fragment() {
     private lateinit var binding: LoginFragmentBinding
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var mainActivityContext: MainActivity
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,16 +39,21 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.login_fragment, container, false)
 
+        mainActivityContext = (activity as MainActivity)
+
         firebaseAuth = Firebase.auth
 
-        googleSignInClient = GoogleSignIn.getClient(activity as MainActivity, (activity as MainActivity).getGoogleSignInOptionsOnActivity())
+        googleSignInClient = GoogleSignIn.getClient(
+            mainActivityContext,
+            mainActivityContext.getGoogleSignInOptionsOnActivity()
+        )
 
         binding.signInWithGoogleButton.setOnClickListener {
             signInWithGoogleButton()
         }
 
         binding.loginGoBackButton.setOnClickListener {
-            (activity as MainActivity).replaceFragment(SettingsFragment())
+            mainActivityContext.replaceFragment(SettingsFragment())
         }
 
         return binding.root
@@ -71,14 +75,14 @@ class LoginFragment : Fragment() {
                 signInWithGoogle(account.idToken!!)
             } catch (exception: ApiException) {
                 Toast.makeText(
-                    (activity as MainActivity),
+                    mainActivityContext,
                     getString(R.string.open_activity_error_message, exception),
                     Toast.LENGTH_LONG
                 ).show()
             }
         } else {
             Toast.makeText(
-                (activity as MainActivity),
+                mainActivityContext,
                 getString(R.string.open_activity_error_message_on_result),
                 Toast.LENGTH_LONG
             ).show()
@@ -88,18 +92,18 @@ class LoginFragment : Fragment() {
     private fun signInWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         firebaseAuth.signInWithCredential(credential)
-            .addOnCompleteListener(activity as MainActivity) { task: Task<AuthResult> ->
+            .addOnCompleteListener(mainActivityContext) { task: Task<AuthResult> ->
                 if (task.isSuccessful) {
                     Toast.makeText(
-                        (activity as MainActivity),
+                        mainActivityContext,
                         getString(R.string.sign_in_with_google_message_success),
                         Toast.LENGTH_SHORT
                     )
                         .show()
-                    (activity as MainActivity).replaceFragment(ProfileFragment())
+                    mainActivityContext.replaceFragment(ProfileFragment())
                 } else {
                     Toast.makeText(
-                        (activity as MainActivity),
+                        mainActivityContext,
                         getString(R.string.sign_in_with_google_message_fail),
                         Toast.LENGTH_SHORT
                     )
@@ -107,27 +111,5 @@ class LoginFragment : Fragment() {
                 }
             }
     }
-
-//    private fun getPrivateKey(): String {
-//        val jsonObject = JSONTokener("google-services.json").nextValue() as JSONObject
-//
-//        val jsonArray = jsonObject.getJSONArray("client")
-//
-//        var key = ""
-//
-//        for (i in 0 until jsonArray.length()) {
-//            val jsonKey = jsonArray.getJSONObject(i).getJSONObject("oauth_client")
-//
-//            key = jsonKey.getJSONArray("oauth_client").getJSONObject(i).getJSONObject("client_id")
-//                .toString()
-//        }
-//
-//        return key
-//    }
-//
-//    private fun signInGoogle() {
-//        val signInIntent : Intent = googleSignInClient.signInIntent
-//
-//    }
 
 }

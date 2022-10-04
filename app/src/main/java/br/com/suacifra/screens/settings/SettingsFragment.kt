@@ -18,6 +18,7 @@ import br.com.suacifra.screens.profile.ProfileFragment
 class SettingsFragment : Fragment() {
 
     private lateinit var binding: SettingsFragmentBinding
+    private lateinit var mainActivityContext: MainActivity
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,40 +27,32 @@ class SettingsFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.settings_fragment, container, false)
 
+        mainActivityContext = (activity as MainActivity)
+
         binding.tunerButton.setOnClickListener {
             // TODO - Implement it
         }
 
         binding.loginButton.setOnClickListener {
-            val oldAccount = (activity as MainActivity).getLastSignedInAccountOnActivity()
+            val oldAccount = mainActivityContext.getLastSignedInAccountOnActivity()
             if (oldAccount != null) {
                 Toast.makeText(
-                    (activity as MainActivity),
+                    mainActivityContext,
                     getString(R.string.sign_in_with_google_message_success),
                     Toast.LENGTH_SHORT
                 )
                     .show()
-                (activity as MainActivity).replaceFragmentOnSettings(ProfileFragment())
+                mainActivityContext.replaceFragmentOnSettings(ProfileFragment())
             } else {
-                (activity as MainActivity).replaceFragmentOnSettings(LoginFragment())
+                mainActivityContext.replaceFragmentOnSettings(LoginFragment())
             }
         }
 
         binding.aboutButton.setOnClickListener {
-            (activity as MainActivity).replaceFragmentOnSettings(AboutFragment())
+            mainActivityContext.replaceFragmentOnSettings(AboutFragment())
         }
 
         return binding.root
     }
-
-//    private fun openLogin(nextActivity: Activity) {
-//        val intent = Intent(activity, nextActivity::class.java)
-//        activity?.startActivity(intent)
-//    }
-
-//    private fun View.hideKeyboard() {
-//        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-//        imm.hideSoftInputFromWindow(windowToken, 0)
-//    }
 
 }
