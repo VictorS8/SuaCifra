@@ -36,4 +36,5 @@
     <string name="sign_in_with_google_message_success">Você conectou! Aproveite</string>
     <string name="sign_in_with_google_message_fail">Não funcionou ;-;\nTalvez tente novamente depois</string>
     <string name="sign_out_with_google">Saiu da sua conta</string>
+    <string name="user_not_logged_in_warning_text">Caso você queira mudar sua conta google, por enquanto eu recomendaria desinstalar e instalar o aplicativo ou limpar os dados do aplicativo e tentar novamente</string>
 </resources>

@@ -32,33 +32,50 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/loginTitleTextView">
 
-            <TextView
-                android:id="@+id/userNotLoggedInTextView"
-                style="@style/signInWithGoogleWarningTextViewStyle"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/medium_space"
-                android:text="@string/user_not_logged_in_text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/userNotLoggedInTextView"
+                    style="@style/signInWithGoogleWarningTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/medium_space"
+                    android:text="@string/user_not_logged_in_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/userNotLoggedInWarningTextView"
+                    style="@style/signInWithGoogleWarningTextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/medium_space"
+                    android:text="@string/user_not_logged_in_warning_text"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/userNotLoggedInTextView" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/signInWithGoogleButton"
+            style="@style/defaultButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/google_sign_in_custom_button"
             android:clickable="true"
             android:minWidth="@dimen/min_width_settings_button_size"
             android:minHeight="@dimen/min_height_touch_size"
-            style="@style/defaultButton"
+            app:layout_constraintBottom_toTopOf="@id/userNotLoggedInHintTextView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/userNotLoggedInTextCardView"
-            app:layout_constraintBottom_toTopOf="@id/userNotLoggedInHintTextView">
+            app:layout_constraintTop_toBottomOf="@id/userNotLoggedInTextCardView">
 
             <ImageView
                 android:id="@+id/signInWithGoogleLogo"
@@ -93,16 +110,16 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/hint_for_user_not_logged_in_text"
-            app:layout_constraintTop_toBottomOf="@id/signInWithGoogleButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signInWithGoogleButton" />
 
         <Button
             android:id="@+id/loginGoBackButton"
+            style="@style/defaultButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/minimal_space"
-            style="@style/defaultButton"
             android:elevation="@dimen/very_large_space"
             android:text="@string/go_back_button_text"
             app:layout_constraintBottom_toBottomOf="parent"
