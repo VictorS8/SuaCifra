@@ -8,8 +8,9 @@ import androidx.fragment.app.Fragment
 import br.com.suacifra.databinding.MainActivityBinding
 import br.com.suacifra.screens.add.AddFragment
 import br.com.suacifra.screens.home.HomeFragment
-import br.com.suacifra.screens.profile.ProfileFragment
 import br.com.suacifra.screens.settings.SettingsFragment
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
@@ -18,10 +19,12 @@ class MainActivity : AppCompatActivity() {
     private val viewModel = MainActivityViewModel()
 
     private lateinit var auth: FirebaseAuth
+    private var googleAccount: GoogleSignInAccount? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         auth = FirebaseAuth.getInstance()
+        googleAccount = GoogleSignIn.getLastSignedInAccount(this)
 
         installSplashScreen().apply {
             setKeepOnScreenCondition {
@@ -46,6 +49,18 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+    }
+
+    fun getLastSignedInAccountOnActivity(): GoogleSignInAccount? {
+        return if (googleAccount != null) {
+            googleAccount
+        } else {
+            null
+        }
+    }
+
+    fun signOutOnActivity() {
+        auth.signOut()
     }
 
     fun replaceFragment(fragment: Fragment) {
