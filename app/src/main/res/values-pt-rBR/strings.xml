@@ -33,7 +33,7 @@
     <string name="about_third_party_software_text">Software de terceiros</string>
     <string name="open_activity_error_message">Algo deu errado! Tente entrar em contato conosco e envie %1$s</string>
     <string name="open_activity_error_message_on_result">Algo deu errado! Tente novamente depois</string>
-    <string name="sign_in_with_google_message_success">Funcionou! Aproveite</string>
+    <string name="sign_in_with_google_message_success">Você está na conta! Aproveite</string>
     <string name="sign_in_with_google_message_fail">Não funcionou ;-;\nTalvez tente novamente depois</string>
-    <string name="sign_out_with_google">Sair da sua conta</string>
+    <string name="sign_out_with_google">Saiu da sua conta</string>
 </resources>
