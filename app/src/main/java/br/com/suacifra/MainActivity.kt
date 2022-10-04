@@ -9,14 +9,28 @@ import br.com.suacifra.databinding.MainActivityBinding
 import br.com.suacifra.screens.add.AddFragment
 import br.com.suacifra.screens.home.HomeFragment
 import br.com.suacifra.screens.settings.SettingsFragment
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: MainActivityBinding
     private val viewModel = MainActivityViewModel()
 
+    private lateinit var auth: FirebaseAuth
+    private var googleAccount: GoogleSignInAccount? = null
+    private lateinit var googleSignInOptions: GoogleSignInOptions
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        auth = FirebaseAuth.getInstance()
+        googleAccount = GoogleSignIn.getLastSignedInAccount(this)
+        googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail().requestProfile().build()
+
         installSplashScreen().apply {
             setKeepOnScreenCondition {
                 viewModel.isLoading.value
@@ -42,7 +56,28 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun replaceFragment(fragment: Fragment) {
+    fun getGoogleSignInOptionsOnActivity(): GoogleSignInOptions {
+        return googleSignInOptions
+    }
+
+    fun getLastSignedInAccountOnActivity(): GoogleSignInAccount? {
+        return if (googleAccount != null) {
+            googleAccount
+        } else {
+            null
+        }
+    }
+
+    fun signInOnActivity() {
+        googleAccount = GoogleSignIn.getLastSignedInAccount(this)
+    }
+
+    fun signOutOnActivity() {
+        auth.signOut()
+        googleAccount = null
+    }
+
+    fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setCustomAnimations(
@@ -50,6 +85,18 @@ class MainActivity : AppCompatActivity() {
             R.anim.slide_out
         )
         fragmentTransaction.replace(binding.mainFrameLayout.id, fragment)
+        fragmentTransaction.commit()
+    }
+
+    fun replaceFragmentOnSettings(fragment: Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.setCustomAnimations(
+            R.anim.slide_in,
+            R.anim.slide_out
+        )
+        fragmentTransaction.replace(binding.mainFrameLayout.id, fragment)
+        fragmentTransaction.addToBackStack("Options Screen")
         fragmentTransaction.commit()
     }
 

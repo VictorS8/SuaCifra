@@ -4,19 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import br.com.suacifra.MainActivity
 import br.com.suacifra.R
-import br.com.suacifra.databinding.MainActivityBinding
 import br.com.suacifra.databinding.SettingsFragmentBinding
 import br.com.suacifra.screens.about.AboutFragment
 import br.com.suacifra.screens.login.LoginFragment
+import br.com.suacifra.screens.profile.ProfileFragment
 
 
 class SettingsFragment : Fragment() {
 
     private lateinit var binding: SettingsFragmentBinding
-    private lateinit var mainActivityBinding: MainActivityBinding
+    private lateinit var mainActivityContext: MainActivity
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,60 +26,33 @@ class SettingsFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.settings_fragment, container, false)
-        mainActivityBinding =
-            DataBindingUtil.inflate(inflater, R.layout.main_activity, container, false)
 
-//        binding.profilePictureImageView.setOnClickListener {
-//            // TODO - Implement it
-//        }
-//
-//        val profileUsernameEditText = binding.profileUsernameEditText
-//        val profileUsernameTextView = binding.profileUsernameTextView
-//
-//        profileUsernameEditText.setOnEditorActionListener { _, i, _ ->
-//            if (i == EditorInfo.IME_ACTION_DONE) {
-//                profileUsernameEditText.visibility = View.INVISIBLE
-//                profileUsernameTextView.text = profileUsernameEditText.text
-//                profileUsernameEditText.hideKeyboard()
-//                return@setOnEditorActionListener true
-//            }
-//            return@setOnEditorActionListener false
-//        }
-//
-//        profileUsernameTextView.setOnClickListener {
-//
-//        }
+        mainActivityContext = (activity as MainActivity)
 
         binding.tunerButton.setOnClickListener {
             // TODO - Implement it
         }
 
         binding.loginButton.setOnClickListener {
-            replaceFragmentOnSettings(LoginFragment())
+            val oldAccount = mainActivityContext.getLastSignedInAccountOnActivity()
+            if (oldAccount != null) {
+                Toast.makeText(
+                    mainActivityContext,
+                    getString(R.string.sign_in_with_google_message_success),
+                    Toast.LENGTH_SHORT
+                )
+                    .show()
+                mainActivityContext.replaceFragmentOnSettings(ProfileFragment())
+            } else {
+                mainActivityContext.replaceFragmentOnSettings(LoginFragment())
+            }
         }
 
         binding.aboutButton.setOnClickListener {
-            replaceFragmentOnSettings(AboutFragment())
+            mainActivityContext.replaceFragmentOnSettings(AboutFragment())
         }
 
         return binding.root
     }
-
-    private fun replaceFragmentOnSettings(fragment: Fragment) {
-        val fragmentManager = parentFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.setCustomAnimations(
-            R.anim.slide_in,
-            R.anim.slide_out
-        )
-        fragmentTransaction.replace(mainActivityBinding.mainFrameLayout.id, fragment)
-        fragmentTransaction.addToBackStack("Options Screen")
-        fragmentTransaction.commit()
-    }
-
-//    private fun View.hideKeyboard() {
-//        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-//        imm.hideSoftInputFromWindow(windowToken, 0)
-//    }
 
 }
