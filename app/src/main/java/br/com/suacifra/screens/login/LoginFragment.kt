@@ -42,12 +42,7 @@ class LoginFragment : Fragment() {
 
         firebaseAuth = Firebase.auth
 
-        val googleSignInOptions =
-            GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("160413729430-44vfsstlnbqjhoi30kervdnbk1vtpm4i.apps.googleusercontent.com")
-                .requestEmail().requestProfile().build()
-
-        googleSignInClient = GoogleSignIn.getClient(activity as MainActivity, googleSignInOptions)
+        googleSignInClient = GoogleSignIn.getClient(activity as MainActivity, (activity as MainActivity).getGoogleSignInOptionsOnActivity())
 
         binding.signInWithGoogleButton.setOnClickListener {
             signInWithGoogleButton()
