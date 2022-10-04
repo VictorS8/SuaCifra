@@ -45,7 +45,7 @@
     <string name="about_third_party_software_text">Third Party Software</string>
     <string name="open_activity_error_message">Something went wrong! Try to contact us and send %1$s</string>
     <string name="open_activity_error_message_on_result">Something went wrong! Try again later</string>
-    <string name="sign_in_with_google_message_success">You are logged! Enjoy it</string>
+    <string name="sign_in_with_google_message_success">You connected! Enjoy it</string>
     <string name="sign_in_with_google_message_fail">It not worked ;-;\nMaybe try again later</string>
     <string name="sign_out_with_google">Sign out from your account</string>
 </resources>
