@@ -8,15 +8,21 @@ import androidx.fragment.app.Fragment
 import br.com.suacifra.databinding.MainActivityBinding
 import br.com.suacifra.screens.add.AddFragment
 import br.com.suacifra.screens.home.HomeFragment
+import br.com.suacifra.screens.profile.ProfileFragment
 import br.com.suacifra.screens.settings.SettingsFragment
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: MainActivityBinding
     private val viewModel = MainActivityViewModel()
 
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        auth = FirebaseAuth.getInstance()
+
         installSplashScreen().apply {
             setKeepOnScreenCondition {
                 viewModel.isLoading.value
@@ -42,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun replaceFragment(fragment: Fragment) {
+    fun replaceFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setCustomAnimations(
@@ -50,6 +56,18 @@ class MainActivity : AppCompatActivity() {
             R.anim.slide_out
         )
         fragmentTransaction.replace(binding.mainFrameLayout.id, fragment)
+        fragmentTransaction.commit()
+    }
+
+    fun replaceFragmentOnSettings(fragment: Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.setCustomAnimations(
+            R.anim.slide_in,
+            R.anim.slide_out
+        )
+        fragmentTransaction.replace(binding.mainFrameLayout.id, fragment)
+        fragmentTransaction.addToBackStack("Options Screen")
         fragmentTransaction.commit()
     }
 
