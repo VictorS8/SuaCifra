@@ -100,6 +100,7 @@ class LoginFragment : Fragment() {
                         Toast.LENGTH_SHORT
                     )
                         .show()
+                    mainActivityContext.signInOnActivity()
                     mainActivityContext.replaceFragment(ProfileFragment())
                 } else {
                     Toast.makeText(

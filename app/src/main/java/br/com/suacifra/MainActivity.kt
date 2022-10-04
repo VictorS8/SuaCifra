@@ -68,8 +68,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun signInOnActivity() {
+        googleAccount = GoogleSignIn.getLastSignedInAccount(this)
+    }
+
     fun signOutOnActivity() {
         auth.signOut()
+        googleAccount = null
     }
 
     fun replaceFragment(fragment: Fragment) {

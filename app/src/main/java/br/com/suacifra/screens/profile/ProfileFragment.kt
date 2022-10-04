@@ -12,7 +12,6 @@ import br.com.suacifra.R
 import br.com.suacifra.databinding.ProfileFragmentBinding
 import br.com.suacifra.screens.login.LoginFragment
 import br.com.suacifra.screens.settings.SettingsFragment
-import com.google.android.gms.auth.api.signin.GoogleSignIn
 
 class ProfileFragment : Fragment() {
 
@@ -28,7 +27,7 @@ class ProfileFragment : Fragment() {
 
         mainActivityContext = (activity as MainActivity)
 
-        val googleAccount = GoogleSignIn.getLastSignedInAccount(mainActivityContext)
+        val googleAccount = mainActivityContext.getLastSignedInAccountOnActivity()
 
         if (googleAccount != null) {
             binding.profilePictureImageView.setImageURI(googleAccount.photoUrl)
