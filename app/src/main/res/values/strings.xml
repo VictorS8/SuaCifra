@@ -49,4 +49,6 @@
     <string name="sign_in_with_google_message_fail">It not worked ;-;\nMaybe try again later</string>
     <string name="sign_out_with_google">Sign out from your account</string>
     <string name="user_not_logged_in_warning_text">In case you want to change your google account, for now I would recommend uninstalling and install the app or wipe data from app and try again</string>
+    <string name="shared_preference_file_key" translatable="false">br.com.suacifra.PREFERENCE_FILE_KEY</string>
+    <string name="shared_preference_sign_in_boolean_key" translatable="false">br.com.suacifra.PREFERENCE_SIGN_IN_BOOLEAN_KEY</string>
 </resources>

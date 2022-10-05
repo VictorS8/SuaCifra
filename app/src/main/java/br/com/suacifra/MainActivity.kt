@@ -1,5 +1,7 @@
 package br.com.suacifra
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -20,13 +22,27 @@ class MainActivity : AppCompatActivity() {
     private val viewModel = MainActivityViewModel()
 
     private lateinit var auth: FirebaseAuth
+    private var isGoogleSignInStatusOk: Boolean = false
     private var googleAccount: GoogleSignInAccount? = null
     private lateinit var googleSignInOptions: GoogleSignInOptions
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val sharedPref = getSharedPreferences(
+            getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+        )
+        isGoogleSignInStatusOk = sharedPref.getBoolean(
+            getString(R.string.shared_preference_sign_in_boolean_key),
+            isGoogleSignInStatusOk
+        )
+
         auth = FirebaseAuth.getInstance()
-        googleAccount = GoogleSignIn.getLastSignedInAccount(this)
+        googleAccount = if (isGoogleSignInStatusOk) {
+            GoogleSignIn.getLastSignedInAccount(this)
+        } else {
+            null
+        }
         googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail().requestProfile().build()

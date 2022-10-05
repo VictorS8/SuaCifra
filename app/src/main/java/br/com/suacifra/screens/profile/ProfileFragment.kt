@@ -1,5 +1,6 @@
 package br.com.suacifra.screens.profile
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,14 +28,31 @@ class ProfileFragment : Fragment() {
 
         mainActivityContext = (activity as MainActivity)
 
+        val sharedPref = mainActivityContext.getSharedPreferences(
+            getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+        )
+
         val googleAccount = mainActivityContext.getLastSignedInAccountOnActivity()
 
         if (googleAccount != null) {
             binding.profilePictureImageView.setImageURI(googleAccount.photoUrl)
             binding.profileEmailTextView.text = googleAccount.email
+            val sharedPrefEditor = sharedPref.edit()
+            sharedPrefEditor.putBoolean(
+                getString(R.string.shared_preference_sign_in_boolean_key),
+                true
+            )
+            sharedPrefEditor.apply()
         }
 
         binding.profileSignOutButton.setOnClickListener {
+            val sharedPrefEditor = sharedPref.edit()
+            sharedPrefEditor.putBoolean(
+                getString(R.string.shared_preference_sign_in_boolean_key),
+                false
+            )
+            sharedPrefEditor.apply()
+
             mainActivityContext.signOutOnActivity()
             Toast.makeText(
                 mainActivityContext,
