@@ -10,7 +10,7 @@ Feita tanto para aqueles que não são bons em memorizar as sequências de acord
 
 Integração com google através do Sign In With Google
 
-Na Sprint 3 (Milestone) está o processo usado no botão e telas complementares
+Na [Sprint 3 (Milestone)](https://github.com/VictorS8/SuaCifra/milestone/4) está o processo usado no botão e telas complementares
 
 ![Sign In With Google Dark](/.github/signInWithGoogleDark_br.com.suacifra.jpg)
 
