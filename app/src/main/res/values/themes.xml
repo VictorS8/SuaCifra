@@ -126,6 +126,7 @@
 
     <style name="profilePictureStyle">
         <item name="android:minWidth">@dimen/profile_picture_size</item>
+        <item name="android:elevation">@dimen/large_space</item>
         <item name="android:minHeight">@dimen/profile_picture_size</item>
         <item name="android:background">@drawable/custom_profile_picture</item>
     </style>
