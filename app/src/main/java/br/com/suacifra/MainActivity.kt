@@ -1,7 +1,6 @@
 package br.com.suacifra
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -11,6 +10,7 @@ import br.com.suacifra.databinding.MainActivityBinding
 import br.com.suacifra.screens.add.AddFragment
 import br.com.suacifra.screens.home.HomeFragment
 import br.com.suacifra.screens.settings.SettingsFragment
+import br.com.suacifra.viewModels.MainActivityViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions

@@ -1,4 +1,4 @@
-package br.com.suacifra
+package br.com.suacifra.viewModels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
