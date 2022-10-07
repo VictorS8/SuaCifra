@@ -39,7 +39,7 @@ class ProfileFragment : Fragment() {
 
         if (googleAccount != null) {
             binding.profilePictureImageView.load(
-                googleAccount.photoUrl.toString().replace("s96-c", "s384-c")
+                googleAccount.photoUrl.toString().replace("s96-c", "s768-c")
             ) {
                 transformations(
                     RoundedCornersTransformation(
