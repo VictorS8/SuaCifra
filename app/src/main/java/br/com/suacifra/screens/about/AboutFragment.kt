@@ -28,8 +28,7 @@ class AboutFragment : Fragment() {
         mainActivityBinding =
             DataBindingUtil.inflate(inflater, R.layout.main_activity, container, false)
 
-        val appVersion = BuildConfig.VERSION_NAME
-        val stringAppVersion = "v$appVersion"
+        val stringAppVersion = "v${BuildConfig.VERSION_NAME}"
 
         binding.aboutVersionApp.text = stringAppVersion
 
