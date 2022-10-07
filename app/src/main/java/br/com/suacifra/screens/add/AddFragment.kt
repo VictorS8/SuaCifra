@@ -15,8 +15,6 @@ import br.com.suacifra.databinding.AddFragmentBinding
 
 class AddFragment : Fragment() {
 
-    private lateinit var viewModel: AddViewModel
-
     private lateinit var binding: AddFragmentBinding
 
     override fun onCreateView(
@@ -25,8 +23,6 @@ class AddFragment : Fragment() {
     ): View {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.add_fragment, container, false)
-
-        viewModel = ViewModelProvider(this)[AddViewModel::class.java]
 
         binding.chooseToneButton.setOnClickListener {
             checkCardViewVisibility()
