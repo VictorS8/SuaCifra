@@ -13,6 +13,9 @@ import br.com.suacifra.R
 import br.com.suacifra.databinding.ProfileFragmentBinding
 import br.com.suacifra.screens.login.LoginFragment
 import br.com.suacifra.screens.settings.SettingsFragment
+import coil.api.load
+import coil.transform.RoundedCornersTransformation
+
 
 class ProfileFragment : Fragment() {
 
@@ -35,7 +38,18 @@ class ProfileFragment : Fragment() {
         val googleAccount = mainActivityContext.getLastSignedInAccountOnActivity()
 
         if (googleAccount != null) {
-            binding.profilePictureImageView.setImageURI(googleAccount.photoUrl)
+            binding.profilePictureImageView.load(
+                googleAccount.photoUrl.toString().replace("s96-c", "s384-c")
+            ) {
+                transformations(
+                    RoundedCornersTransformation(
+                        topLeft = 12.0f,
+                        topRight = 12.0f,
+                        bottomLeft = 12.0f,
+                        bottomRight = 12.0f
+                    )
+                )
+            }
             binding.profileEmailTextView.text = googleAccount.email
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putBoolean(
