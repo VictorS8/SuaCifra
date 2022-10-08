@@ -8,16 +8,16 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import br.com.suacifra.BuildConfig
+import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.databinding.AboutFragmentBinding
-import br.com.suacifra.databinding.MainActivityBinding
 import br.com.suacifra.screens.settings.SettingsFragment
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 
 class AboutFragment : Fragment() {
 
     private lateinit var binding: AboutFragmentBinding
-    private lateinit var mainActivityBinding: MainActivityBinding
+    private lateinit var mainActivityContext: MainActivity
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,35 +25,27 @@ class AboutFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.about_fragment, container, false)
-        mainActivityBinding =
-            DataBindingUtil.inflate(inflater, R.layout.main_activity, container, false)
+
+        mainActivityContext = (activity as MainActivity)
 
         val stringAppVersion = "v${BuildConfig.VERSION_NAME}"
 
         binding.aboutVersionApp.text = stringAppVersion
 
         binding.aboutGoBackButton.setOnClickListener {
-            goBackToSettings()
+            mainActivityContext.addToBackStackFragment(SettingsFragment())
         }
 
-        OssLicensesMenuActivity.setActivityTitle(getString(R.string.about_third_party_software_text))
-
         binding.aboutThirdPartyTextView.setOnClickListener {
-            startActivity(Intent(context, OssLicensesMenuActivity::class.java))
+            startActivity(
+                Intent(
+                    context,
+                    OssLicensesMenuActivity::class.java
+                )
+            )
         }
 
         return binding.root
-    }
-
-    private fun goBackToSettings() {
-        val fragmentManager = parentFragmentManager
-        val fragmentTransaction = fragmentManager.beginTransaction()
-        fragmentTransaction.setCustomAnimations(
-            R.anim.slide_in,
-            R.anim.slide_out
-        )
-        fragmentTransaction.replace(mainActivityBinding.mainFrameLayout.id, SettingsFragment())
-        fragmentTransaction.commit()
     }
 
 }

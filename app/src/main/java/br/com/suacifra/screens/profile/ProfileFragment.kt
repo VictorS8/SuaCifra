@@ -78,7 +78,7 @@ class ProfileFragment : Fragment() {
         }
 
         binding.profileGoBackButton.setOnClickListener {
-            mainActivityContext.replaceFragment(SettingsFragment())
+            mainActivityContext.addToBackStackFragment(SettingsFragment())
         }
 
         return binding.root

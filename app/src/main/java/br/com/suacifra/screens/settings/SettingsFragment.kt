@@ -42,14 +42,14 @@ class SettingsFragment : Fragment() {
                     Toast.LENGTH_SHORT
                 )
                     .show()
-                mainActivityContext.replaceFragmentOnSettings(ProfileFragment())
+                mainActivityContext.addToBackStackFragment(ProfileFragment())
             } else {
-                mainActivityContext.replaceFragmentOnSettings(LoginFragment())
+                mainActivityContext.addToBackStackFragment(LoginFragment())
             }
         }
 
         binding.aboutButton.setOnClickListener {
-            mainActivityContext.replaceFragmentOnSettings(AboutFragment())
+            mainActivityContext.addToBackStackFragment(AboutFragment())
         }
 
         return binding.root

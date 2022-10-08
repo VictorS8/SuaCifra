@@ -43,7 +43,8 @@ class LoginFragment : Fragment() {
         mainActivityContext = (activity as MainActivity)
 
         val sharedPref = mainActivityContext.getSharedPreferences(
-            getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE)
+            getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+        )
 
         firebaseAuth = Firebase.auth
 
@@ -57,7 +58,7 @@ class LoginFragment : Fragment() {
         }
 
         binding.loginGoBackButton.setOnClickListener {
-            mainActivityContext.replaceFragment(SettingsFragment())
+            mainActivityContext.addToBackStackFragment(SettingsFragment())
         }
 
         return binding.root
