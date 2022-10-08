@@ -27,6 +27,7 @@ If applicable, add screenshots to help explain your problem.
 
 **Android Information (please complete the following information):**
  - Device: [e.g. Xiaomi Redmi Note 11S]
+ - UI Version: [e.g. MIUI 13.0.6]
  - OS: [e.g. Android 12]
  - App version: [e.g. v0.1.2]
 
