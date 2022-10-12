@@ -58,13 +58,13 @@ class MainActivity : AppCompatActivity() {
         binding.mainBottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.homeBottomNavigation -> {
-                    replaceFragment(HomeFragment())
+                    addToBackStackFragmentOnBottomNavigation(HomeFragment(), HOME_FRAGMENT)
                 }
                 R.id.addBottomNavigation -> {
-                    replaceFragment(AddFragment())
+                    addToBackStackFragmentOnBottomNavigation(AddFragment(), ADD_FRAGMENT)
                 }
                 R.id.settingsBottomNavigation -> {
-                    replaceFragment(SettingsFragment())
+                    addToBackStackFragmentOnBottomNavigation(SettingsFragment(), SETTINGS_FRAGMENT)
                 }
                 else -> {}
             }
@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
     }
 
-    fun replaceFragmentOnSettings(fragment: Fragment) {
+    fun addToBackStackFragment(fragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setCustomAnimations(
@@ -112,8 +112,26 @@ class MainActivity : AppCompatActivity() {
             R.anim.slide_out
         )
         fragmentTransaction.replace(binding.mainFrameLayout.id, fragment)
-        fragmentTransaction.addToBackStack("Options Screen")
+        fragmentTransaction.addToBackStack("Add to back stack")
         fragmentTransaction.commit()
+    }
+
+    private fun addToBackStackFragmentOnBottomNavigation(fragment: Fragment, fragmentName: String) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.setCustomAnimations(
+            R.anim.slide_in,
+            R.anim.slide_out
+        )
+        fragmentTransaction.replace(binding.mainFrameLayout.id, fragment)
+        fragmentTransaction.addToBackStack(fragmentName)
+        fragmentTransaction.commit()
+    }
+
+    companion object {
+        const val HOME_FRAGMENT = "Home"
+        const val ADD_FRAGMENT = "Add"
+        const val SETTINGS_FRAGMENT = "Settings"
     }
 
 }
