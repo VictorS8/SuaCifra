@@ -12,6 +12,7 @@ import br.com.suacifra.R
 import br.com.suacifra.databinding.SettingsFragmentBinding
 import br.com.suacifra.screens.about.AboutFragment
 import br.com.suacifra.screens.login.LoginFragment
+import br.com.suacifra.screens.notes.NotesFragment
 import br.com.suacifra.screens.profile.ProfileFragment
 
 
@@ -28,6 +29,10 @@ class SettingsFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.settings_fragment, container, false)
 
         mainActivityContext = (activity as MainActivity)
+
+        binding.notesButton.setOnClickListener {
+            mainActivityContext.addToBackStackFragment(NotesFragment())
+        }
 
         binding.tunerButton.setOnClickListener {
             // TODO - Implement it
