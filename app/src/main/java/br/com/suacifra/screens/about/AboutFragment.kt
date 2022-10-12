@@ -28,14 +28,6 @@ class AboutFragment : Fragment() {
 
         mainActivityContext = (activity as MainActivity)
 
-        val stringAppVersion = "v${BuildConfig.VERSION_NAME}"
-
-        binding.aboutVersionApp.text = stringAppVersion
-
-        binding.aboutGoBackButton.setOnClickListener {
-            mainActivityContext.addToBackStackFragment(SettingsFragment())
-        }
-
         binding.aboutThirdPartyTextView.setOnClickListener {
             startActivity(
                 Intent(
@@ -44,6 +36,14 @@ class AboutFragment : Fragment() {
                 )
             )
         }
+
+        binding.aboutGoBackButton.setOnClickListener {
+            mainActivityContext.addToBackStackFragment(SettingsFragment())
+        }
+
+        val stringAppVersion = "v${BuildConfig.VERSION_NAME}"
+
+        binding.aboutVersionApp.text = stringAppVersion
 
         return binding.root
     }
