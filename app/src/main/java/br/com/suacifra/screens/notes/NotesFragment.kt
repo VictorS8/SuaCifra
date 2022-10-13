@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,9 +14,7 @@ import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.databinding.NotesFragmentBinding
 import br.com.suacifra.models.Notes
-import br.com.suacifra.screens.add.AddNotesFragment
 import br.com.suacifra.screens.settings.SettingsFragment
-import br.com.suacifra.viewModels.NotesRecycleViewAdapter
 
 class NotesFragment : Fragment() {
 
