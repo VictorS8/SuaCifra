@@ -1,4 +1,4 @@
-package br.com.suacifra.viewModels
+package br.com.suacifra.screens.notes
 
 import android.content.Context
 import android.view.LayoutInflater

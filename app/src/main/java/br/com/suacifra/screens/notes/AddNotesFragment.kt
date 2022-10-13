@@ -1,4 +1,4 @@
-package br.com.suacifra.screens.add
+package br.com.suacifra.screens.notes
 
 import android.os.Bundle
 import android.view.LayoutInflater
