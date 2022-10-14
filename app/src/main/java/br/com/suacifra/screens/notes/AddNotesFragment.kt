@@ -10,7 +10,6 @@ import androidx.fragment.app.Fragment
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.databinding.AddNotesFragmentBinding
-import br.com.suacifra.screens.notes.NotesFragment
 
 class AddNotesFragment : Fragment() {
 
@@ -27,11 +26,16 @@ class AddNotesFragment : Fragment() {
         mainActivityContext = (activity as MainActivity)
 
         binding.cancelNoteImageButton.setOnClickListener {
+            Toast.makeText(
+                mainActivityContext,
+                getString(R.string.add_note_cancelled),
+                Toast.LENGTH_LONG
+            )
+                .show()
             mainActivityContext.replaceFragment(NotesFragment())
         }
 
         binding.addNoteImageButton.setOnClickListener {
-
             Toast.makeText(
                 mainActivityContext,
                 getString(R.string.add_note_successfully),
