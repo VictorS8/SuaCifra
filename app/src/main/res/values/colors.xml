@@ -20,6 +20,7 @@
 
     <!--  Black-->
     <color name="black">#FF000000</color>
-    <color name="black_with_transparency">#99000000</color>
+    <color name="black_with_transparency">#C2000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="white_with_transparency">#C2FFFFFF</color>
 </resources>
