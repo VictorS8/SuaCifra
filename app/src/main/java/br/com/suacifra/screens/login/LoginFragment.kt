@@ -42,10 +42,6 @@ class LoginFragment : Fragment() {
 
         mainActivityContext = (activity as MainActivity)
 
-        val sharedPref = mainActivityContext.getSharedPreferences(
-            getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
-        )
-
         firebaseAuth = Firebase.auth
 
         googleSignInClient = GoogleSignIn.getClient(
