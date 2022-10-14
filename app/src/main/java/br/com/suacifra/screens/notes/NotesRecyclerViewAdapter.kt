@@ -5,20 +5,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.R
 import br.com.suacifra.models.Notes
 
-class NotesRecycleViewAdapter(private val notesList: MutableList<Notes>, val context: Context) :
-    RecyclerView.Adapter<NotesRecycleViewAdapter.ViewHolder>() {
+class NotesRecyclerViewAdapter(private val notesList: MutableList<Notes>, val context: Context) :
+    RecyclerView.Adapter<NotesRecyclerViewAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var noteItemTitleTextView: TextView
         var noteItemBodyTextView: TextView
+        val noteItemCardView: CardView
 
         init {
             noteItemTitleTextView = view.findViewById(R.id.noteItemTitleTextView)
             noteItemBodyTextView = view.findViewById(R.id.noteItemBodyTextView)
+            noteItemCardView = view.findViewById(R.id.noteItemCardView)
         }
     }
 
@@ -75,6 +79,10 @@ class NotesRecycleViewAdapter(private val notesList: MutableList<Notes>, val con
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.noteItemTitleTextView.text = notesList[position].noteTitle
         holder.noteItemBodyTextView.text = notesList[position].noteBody
+
+        holder.noteItemCardView.setOnClickListener {
+            Toast.makeText(context, "Go to this #$position note", Toast.LENGTH_SHORT).show()
+        }
     }
 
     /**
@@ -85,6 +93,5 @@ class NotesRecycleViewAdapter(private val notesList: MutableList<Notes>, val con
     override fun getItemCount(): Int {
         return notesList.size
     }
-
 
 }

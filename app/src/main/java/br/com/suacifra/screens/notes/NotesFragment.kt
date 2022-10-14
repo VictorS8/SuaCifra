@@ -22,7 +22,7 @@ class NotesFragment : Fragment() {
     private lateinit var mainActivityContext: MainActivity
     private lateinit var notesList: MutableList<Notes>
     private lateinit var recyclerView: RecyclerView
-    private lateinit var notesAdapter: Adapter<NotesRecycleViewAdapter.ViewHolder>
+    private lateinit var notesAdapter: Adapter<NotesRecyclerViewAdapter.ViewHolder>
     private lateinit var notesLayoutManager: LayoutManager
 
     override fun onCreateView(
@@ -43,7 +43,7 @@ class NotesFragment : Fragment() {
         notesLayoutManager = LinearLayoutManager(mainActivityContext)
         recyclerView.layoutManager = notesLayoutManager
 
-        notesAdapter = NotesRecycleViewAdapter(notesList, mainActivityContext)
+        notesAdapter = NotesRecyclerViewAdapter(notesList, mainActivityContext)
         recyclerView.adapter = notesAdapter
 
         binding.addNotesImageButton.setOnClickListener {
