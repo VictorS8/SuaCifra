@@ -44,6 +44,12 @@ class AddFragment : Fragment() {
         // TODO - Change to update list
         sequenceChordsList = fillSequenceChordsArray()
 
+        if (sequenceChordsList.size == 0)
+            binding.noSequenceMessage.visibility = View.VISIBLE
+        else
+            binding.noSequenceMessage.visibility = View.INVISIBLE
+
+
         recyclerView = binding.sequenceRecyclerView
         recyclerView.hasFixedSize()
 

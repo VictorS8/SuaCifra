@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">Sua Cifra</string>
     <string name="no_cifras_message">Welcome to your app to save your Cifras</string>
+    <string name="no_sequences_message">Tap on button bellow to add a sequence</string>
     <string name="settings_bottom_navigation_string">Options</string>
     <string name="add_bottom_navigation_string">Add</string>
     <string name="home_bottom_navigation_string">Home</string>

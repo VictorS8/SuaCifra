@@ -58,4 +58,5 @@
     <string name="add_note_cancelled">Anotação cancelada</string>
     <string name="delete_sequence_successfully">Você deletou a sequência #%1$d</string>
     <string name="save_cifra_successfully">Você salvou a cifra %1$s</string>
+    <string name="no_sequences_message">Toque no botão abaixo para adicionar uma sequencia</string>
 </resources>
