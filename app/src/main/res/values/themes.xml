@@ -67,7 +67,12 @@
         <item name="android:textColor">?attr/colorOnPrimary</item>
     </style>
 
-    <style name="sequenceTextViewStyle">
+    <style name="sequenceTitleTextViewStyle">
+        <item name="android:textSize">@dimen/default_text_size</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="sequenceBodyTextViewStyle">
         <item name="android:textSize">@dimen/normal_text_size</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
     </style>

@@ -51,4 +51,11 @@
     <string name="add_note_successfully">Anotação adicionada com sucesso!</string>
     <string name="cifra_name_text_view">Nome da cifra</string>
     <string name="singer_name_text_view">Nome do cantor</string>
+    <string name="add_sequence_content_description_text">Adicione uma sequência de acordes</string>
+    <string name="save_cifra_button_text">Salvar Cifra</string>
+    <string name="delete_sequence_content_description">Deletar sequência</string>
+    <string name="sequence_item_title">Sequência #%1$d</string>
+    <string name="add_note_cancelled">Anotação cancelada</string>
+    <string name="delete_sequence_successfully">Você deletou a sequência #%1$d</string>
+    <string name="save_cifra_successfully">Você salvou a cifra %1$s</string>
 </resources>
