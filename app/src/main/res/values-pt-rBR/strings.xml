@@ -43,10 +43,10 @@
     <string name="add_note_title_text">Adicionar uma anotação</string>
     <string name="note_title_hint_string">Insira o título da sua anotação</string>
     <string name="note_body_hint_string">Insira o corpo da sua anotação</string>
-    <string name="add_note_content_description_text">Adicione uma anotação</string>
+    <string name="add_note_image_button_content_description_text">Adicione uma anotação</string>
     <string name="note_title_text_view">Título da anotação</string>
     <string name="note_body_text_view">Corpo da anotação</string>
-    <string name="cancel_add_note_content_description_text">Cancela a adição de anotação</string>
+    <string name="cancel_add_note_image_button_content_description_text">Cancela a adição de anotação</string>
     <string name="add_cifra_title_text">Adicionar</string>
     <string name="add_note_successfully">Anotação adicionada com sucesso!</string>
     <string name="cifra_name_text_view">Nome da cifra</string>
@@ -59,4 +59,11 @@
     <string name="delete_sequence_successfully">Você deletou a sequência #%1$d</string>
     <string name="save_cifra_successfully">Você salvou a cifra %1$s</string>
     <string name="no_sequences_message">Toque no botão abaixo para adicionar uma sequencia</string>
+    <string name="sequence_title_text_view">Sequência de acordes</string>
+    <string name="sequence_title_hint_string">Insira seus acordes</string>
+    <string name="cancel_add_sequence_image_button_content_description_text">Cancela a adição de anotação</string>
+    <string name="add_sequence_image_button_content_description_text">Adiciona uma sequência</string>
+    <string name="add_sequence_title_text">Adiciona uma sequência</string>
+    <string name="add_sequence_successfully">Sequência adicionada com sucesso!</string>
+    <string name="add_sequence_cancelled">Sequência cancelada!</string>
 </resources>

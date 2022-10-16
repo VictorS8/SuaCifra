@@ -60,11 +60,7 @@ class AddFragment : Fragment() {
         recyclerView.adapter = sequenceAdapter
 
         binding.addSequencesImageButton.setOnClickListener {
-            Toast.makeText(
-                mainActivityContext,
-                "Add one sequence and change screen",
-                Toast.LENGTH_SHORT
-            ).show()
+            mainActivityContext.addToBackStackFragment(AddSequenceFragment())
         }
 
         binding.saveCifraButton.setOnClickListener {

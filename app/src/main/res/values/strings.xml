@@ -55,13 +55,13 @@
     <string name="notes_button_text">Notes</string>
     <string name="notes_title_text">Notes</string>
     <string name="add_notes_content_description_text">Add notes</string>
-    <string name="add_note_content_description_text">Add a note</string>
+    <string name="add_note_image_button_content_description_text">Add a note</string>
     <string name="add_note_title_text">Add a note</string>
     <string name="note_body_hint_string">Insert the note body </string>
     <string name="note_title_hint_string">Insert the title of the note</string>
     <string name="note_title_text_view">Note title</string>
     <string name="note_body_text_view">Note body</string>
-    <string name="cancel_add_note_content_description_text">Cancel add note</string>
+    <string name="cancel_add_note_image_button_content_description_text">Cancel add note</string>
     <string name="add_cifra_title_text">Add</string>
     <string name="add_note_successfully">Note added successfully!</string>
     <string name="add_note_cancelled">Note cancelled</string>
@@ -73,4 +73,13 @@
     <string name="sequence_item_title">Sequence #%1$d</string>
     <string name="delete_sequence_successfully">You deleted sequence #%1$d</string>
     <string name="save_cifra_successfully">You saved cifra %1$s</string>
+    <string name="sequence_title_text_view">Sequence of chords</string>
+    <string name="sequence_title_hint_string">Insert your chords</string>
+    <string name="sequence_helper_string" translatable="false">e.g. C - G - Am - F</string>
+    <string name="cancel_add_sequence_image_button_content_description_text">Cancel add sequence</string>
+    <string name="add_sequence_image_button_content_description_text">Add a sequence</string>
+    <string name="add_sequence_title_text">Add a sequence</string>
+    <string name="add_sequence_successfully">Sequence added successfully!</string>
+    <string name="add_sequence_cancelled">Sequence cancelled</string>
+    <string name="no_notes_message">Tap on button bellow to add a note</string>
 </resources>
