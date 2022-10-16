@@ -1,29 +1,33 @@
-package br.com.suacifra.screens.add
+package br.com.suacifra.screens.home
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.R
+import br.com.suacifra.models.Cifras
 import br.com.suacifra.utils.mutableListToString
 
-class SequenceChordsRecyclerViewAdapter(
-    private val sequenceChordsList: MutableList<MutableList<String>>, val context: Context
-) : RecyclerView.Adapter<SequenceChordsRecyclerViewAdapter.ViewHolder>() {
+class CifrasRecyclerViewAdapter(private val cifrasList: MutableList<Cifras>, val context: Context) :
+    RecyclerView.Adapter<CifrasRecyclerViewAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        var sequenceItemTitleTextView: TextView
-        var sequenceItemBodyTextView: TextView
-        val deleteSequenceImageButton: ImageButton
+        var cifraNameItemTextView: TextView
+        var cifraToneItemTextView: TextView
+        var cifraSingerNameItemTextView: TextView
+        var cifraFirstSequenceItemTextView: TextView
+        var cifraItemCardView: CardView
 
         init {
-            sequenceItemTitleTextView = view.findViewById(R.id.sequenceItemTitleTextView)
-            sequenceItemBodyTextView = view.findViewById(R.id.sequenceItemBodyTextView)
-            deleteSequenceImageButton = view.findViewById(R.id.deleteSequenceImageButton)
+            cifraNameItemTextView = view.findViewById(R.id.cifraNameItemTextView)
+            cifraToneItemTextView = view.findViewById(R.id.cifraToneItemTextView)
+            cifraSingerNameItemTextView = view.findViewById(R.id.cifraSingerNameItemTextView)
+            cifraFirstSequenceItemTextView = view.findViewById(R.id.cifraFirstSequenceItemTextView)
+            cifraItemCardView = view.findViewById(R.id.cifraItemCardView)
         }
     }
 
@@ -51,8 +55,8 @@ class SequenceChordsRecyclerViewAdapter(
      * @see .onBindViewHolder
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.sequence_item, parent, false)
+        val view = LayoutInflater
+            .from(parent.context).inflate(R.layout.cifra_item, parent, false)
         return ViewHolder(view)
     }
 
@@ -78,14 +82,22 @@ class SequenceChordsRecyclerViewAdapter(
      * @param position The position of the item within the adapter's data set.
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.sequenceItemTitleTextView.text =
-            context.getString(R.string.sequence_item_title, (position + 1))
-        holder.sequenceItemBodyTextView.text = mutableListToString(sequenceChordsList[position])
+        holder.cifraNameItemTextView.text = cifrasList[position].name
+        holder.cifraToneItemTextView.text =
+            context.getString(R.string.cifra_tone_item, cifrasList[position].tone)
+        holder.cifraSingerNameItemTextView.text =
+            context.getString(R.string.cifra_singer_name_item, cifrasList[position].singerName)
+        holder.cifraFirstSequenceItemTextView.text = context.getString(
+            R.string.cifra_first_sequence_item,
+            mutableListToString(cifrasList[position].chordsSequence[0])
+        )
 
-        holder.deleteSequenceImageButton.setOnClickListener {
+        context.getString(R.string.sequence_item_title, (position + 1))
+
+        holder.cifraItemCardView.setOnClickListener {
             Toast.makeText(
                 context,
-                context.getString(R.string.delete_sequence_successfully, (position + 1)),
+                "Going to cifra ${cifrasList[position].name}",
                 Toast.LENGTH_SHORT
             ).show()
         }
@@ -97,7 +109,7 @@ class SequenceChordsRecyclerViewAdapter(
      * @return The total number of items in this adapter.
      */
     override fun getItemCount(): Int {
-        return sequenceChordsList.size
+        return cifrasList.size
     }
 
 }

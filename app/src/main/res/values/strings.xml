@@ -82,4 +82,7 @@
     <string name="add_sequence_successfully">Sequence added successfully!</string>
     <string name="add_sequence_cancelled">Sequence cancelled</string>
     <string name="no_notes_message">Tap on button bellow to add a note</string>
+    <string name="cifra_singer_name_item">Singer: %1$s</string>
+    <string name="cifra_tone_item">Tone: %1$s</string>
+    <string name="cifra_first_sequence_item">First sequence: %1$s</string>
 </resources>
