@@ -37,6 +37,11 @@ class NotesFragment : Fragment() {
         // TODO - Change to update list
         notesList = fillNotesArray()
 
+        if (notesList.size == 0)
+            binding.noNotesMessage.visibility = View.VISIBLE
+        else
+            binding.noNotesMessage.visibility = View.INVISIBLE
+
         recyclerView = binding.notesRecyclerView
         recyclerView.hasFixedSize()
 
