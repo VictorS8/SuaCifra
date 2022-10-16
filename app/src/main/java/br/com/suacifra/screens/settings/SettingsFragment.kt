@@ -41,12 +41,6 @@ class SettingsFragment : Fragment() {
         binding.loginButton.setOnClickListener {
             val oldAccount = mainActivityContext.getLastSignedInAccountOnActivity()
             if (oldAccount != null) {
-                Toast.makeText(
-                    mainActivityContext,
-                    getString(R.string.sign_in_with_google_message_success),
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
                 mainActivityContext.addToBackStackFragment(ProfileFragment())
             } else {
                 mainActivityContext.addToBackStackFragment(LoginFragment())
