@@ -48,7 +48,6 @@
     <string name="note_body_text_view">Corpo da anotação</string>
     <string name="cancel_add_note_image_button_content_description_text">Cancela a adição de anotação</string>
     <string name="add_cifra_title_text">Adicionar</string>
-    <string name="add_note_successfully">Anotação adicionada com sucesso!</string>
     <string name="cifra_name_text_view">Nome da cifra</string>
     <string name="singer_name_text_view">Nome do cantor</string>
     <string name="add_sequence_content_description_text">Adicione uma sequência de acordes</string>
@@ -70,4 +69,8 @@
     <string name="cifra_singer_name_item">Cantor: %1$s</string>
     <string name="cifra_tone_item">Tom: %1$s</string>
     <string name="cifra_first_sequence_item">Primeira sequência: %1$s</string>
+    <string name="save_cifra_missing_data">Por favo, cheque sua cifra</string>
+    <string name="save_note_successfully">Anotação %1$s salva com sucesso</string>
+    <string name="save_note_missing_data">Por favor, cheque sua anotação</string>
+    <string name="add_sequence_failed">Adicione uma sequência acima</string>
 </resources>
