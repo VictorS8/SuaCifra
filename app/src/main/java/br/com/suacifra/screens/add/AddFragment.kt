@@ -28,7 +28,7 @@ class AddFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var sequenceAdapter: Adapter<SequenceChordsRecyclerViewAdapter.ViewHolder>
     private lateinit var sequenceLayoutManager: LayoutManager
-    private var isEditModeCifraEnable = false
+    private var isEditCifraModeEnable = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,13 +47,13 @@ class AddFragment : Fragment() {
             getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
         )
 
-        isEditModeCifraEnable = sharedPref.getBoolean(
+        isEditCifraModeEnable = sharedPref.getBoolean(
             getString(R.string.shared_preference_edit_cifra_mode_boolean_key),
-            isEditModeCifraEnable
+            isEditCifraModeEnable
         )
 
         // TODO - Change to update list
-        sequenceChordsList = if (isEditModeCifraEnable) {
+        sequenceChordsList = if (isEditCifraModeEnable) {
             // if I clicked in one custom cifra
             mutableListOf()
         } else {
