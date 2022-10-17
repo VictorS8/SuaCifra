@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.R
-import br.com.suacifra.utils.mutableListToString
+import br.com.suacifra.utils.mutableCollectionToString
 
 class SequenceChordsRecyclerViewAdapter(
     private val sequenceChordsList: MutableList<MutableList<String>>, val context: Context
@@ -80,7 +80,7 @@ class SequenceChordsRecyclerViewAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.sequenceItemTitleTextView.text =
             context.getString(R.string.sequence_item_title, (position + 1))
-        holder.sequenceItemBodyTextView.text = mutableListToString(sequenceChordsList[position])
+        holder.sequenceItemBodyTextView.text = mutableCollectionToString(sequenceChordsList[position])
 
         holder.deleteSequenceImageButton.setOnClickListener {
             Toast.makeText(

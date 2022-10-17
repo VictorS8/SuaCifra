@@ -1,8 +1,8 @@
 package br.com.suacifra.utils
 
-fun mutableListToString(mutableList: MutableList<String>): String {
+fun mutableCollectionToString(mutableCollection: MutableCollection<String>): String {
     var stringList = ""
-    for (eachString in mutableList) {
+    for (eachString in mutableCollection) {
         stringList += "$eachString  "
     }
     return stringList

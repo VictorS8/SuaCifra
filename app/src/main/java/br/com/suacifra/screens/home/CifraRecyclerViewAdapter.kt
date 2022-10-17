@@ -10,7 +10,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.R
 import br.com.suacifra.models.Cifras
-import br.com.suacifra.utils.mutableListToString
+import br.com.suacifra.utils.mutableCollectionToString
 
 class CifrasRecyclerViewAdapter(private val cifrasList: MutableList<Cifras>, val context: Context) :
     RecyclerView.Adapter<CifrasRecyclerViewAdapter.ViewHolder>() {
@@ -89,7 +89,7 @@ class CifrasRecyclerViewAdapter(private val cifrasList: MutableList<Cifras>, val
             context.getString(R.string.cifra_singer_name_item, cifrasList[position].singerName)
         holder.cifraFirstSequenceItemTextView.text = context.getString(
             R.string.cifra_first_sequence_item,
-            mutableListToString(cifrasList[position].chordsSequence[0])
+            mutableCollectionToString(cifrasList[position].chordsSequence[0])
         )
 
         context.getString(R.string.sequence_item_title, (position + 1))
