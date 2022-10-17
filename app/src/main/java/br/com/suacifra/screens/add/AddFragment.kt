@@ -1,5 +1,6 @@
 package br.com.suacifra.screens.add
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +28,7 @@ class AddFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var sequenceAdapter: Adapter<SequenceChordsRecyclerViewAdapter.ViewHolder>
     private lateinit var sequenceLayoutManager: LayoutManager
+    private var isEditModeCifraEnable = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,8 +43,23 @@ class AddFragment : Fragment() {
             checkCardViewVisibility()
         }
 
+        val sharedPref = mainActivityContext.getSharedPreferences(
+            getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+        )
+
+        isEditModeCifraEnable = sharedPref.getBoolean(
+            getString(R.string.shared_preference_edit_cifra_mode_boolean_key),
+            isEditModeCifraEnable
+        )
+
         // TODO - Change to update list
-        sequenceChordsList = fillSequenceChordsArray()
+        sequenceChordsList = if (isEditModeCifraEnable) {
+            // if I clicked in one custom cifra
+            mutableListOf()
+        } else {
+            // if I clicked on add bottom navigation option
+            fillSequenceChordsArray()
+        }
 
         if (sequenceChordsList.size == 0)
             binding.noSequenceMessage.visibility = View.VISIBLE

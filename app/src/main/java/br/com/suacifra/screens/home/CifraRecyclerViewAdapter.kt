@@ -5,14 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.models.Cifras
+import br.com.suacifra.screens.add.AddFragment
 import br.com.suacifra.utils.mutableCollectionToString
 
-class CifrasRecyclerViewAdapter(private val cifrasList: MutableList<Cifras>, val context: Context) :
+class CifrasRecyclerViewAdapter(
+    private val cifrasList: MutableList<Cifras>,
+    val mainActivityContext: MainActivity
+) :
     RecyclerView.Adapter<CifrasRecyclerViewAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -84,22 +88,29 @@ class CifrasRecyclerViewAdapter(private val cifrasList: MutableList<Cifras>, val
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.cifraNameItemTextView.text = cifrasList[position].name
         holder.cifraToneItemTextView.text =
-            context.getString(R.string.cifra_tone_item, cifrasList[position].tone)
+            mainActivityContext.getString(R.string.cifra_tone_item, cifrasList[position].tone)
         holder.cifraSingerNameItemTextView.text =
-            context.getString(R.string.cifra_singer_name_item, cifrasList[position].singerName)
-        holder.cifraFirstSequenceItemTextView.text = context.getString(
+            mainActivityContext.getString(
+                R.string.cifra_singer_name_item,
+                cifrasList[position].singerName
+            )
+        holder.cifraFirstSequenceItemTextView.text = mainActivityContext.getString(
             R.string.cifra_first_sequence_item,
             mutableCollectionToString(cifrasList[position].chordsSequence[0])
         )
 
-        context.getString(R.string.sequence_item_title, (position + 1))
+        val sharedPref = mainActivityContext.getSharedPreferences(
+            mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+        )
 
         holder.cifraItemCardView.setOnClickListener {
-            Toast.makeText(
-                context,
-                "Going to cifra ${cifrasList[position].name}",
-                Toast.LENGTH_SHORT
-            ).show()
+            val sharedPrefEditor = sharedPref.edit()
+            sharedPrefEditor.putBoolean(
+                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_boolean_key),
+                true
+            )
+            sharedPrefEditor.apply()
+            mainActivityContext.addToBackStackFragment(AddFragment())
         }
     }
 
