@@ -38,7 +38,7 @@ class AddSequenceFragment : Fragment() {
         binding.addSequenceImageButton.setOnClickListener {
             Toast.makeText(
                 mainActivityContext,
-                getString(R.string.add_note_successfully),
+                getString(R.string.add_sequence_successfully),
                 Toast.LENGTH_LONG
             )
                 .show()

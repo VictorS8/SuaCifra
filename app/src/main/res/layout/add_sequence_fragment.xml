@@ -19,18 +19,18 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/sequenceTitleTextView"
+            android:id="@+id/sequenceTextView"
             style="@style/textViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/medium_space"
             android:text="@string/sequence_title_text_view"
-            app:layout_constraintBottom_toTopOf="@id/sequenceTitleEditText"
+            app:layout_constraintBottom_toTopOf="@id/sequenceEditText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/addSequenceTitleTextView" />
 
         <EditText
-            android:id="@+id/sequenceTitleEditText"
+            android:id="@+id/sequenceEditText"
             style="@style/editTextStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -41,10 +41,10 @@
             android:inputType="textPersonName|textCapWords"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sequenceTitleTextView" />
+            app:layout_constraintTop_toBottomOf="@id/sequenceTextView" />
 
         <TextView
-            android:id="@+id/sequenceBodyTextView"
+            android:id="@+id/sequenceHelperTextView"
             style="@style/helperTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
             android:text="@string/sequence_helper_string"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sequenceTitleEditText" />
+            app:layout_constraintTop_toBottomOf="@id/sequenceEditText" />
 
         <ImageButton
             android:id="@+id/cancelSequenceImageButton"
