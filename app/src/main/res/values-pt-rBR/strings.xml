@@ -70,7 +70,7 @@
     <string name="cifra_tone_item">Tom: %1$s</string>
     <string name="cifra_first_sequence_item">Primeira sequência: %1$s</string>
     <string name="save_cifra_missing_data">Por favo, cheque sua cifra</string>
-    <string name="save_note_successfully">Anotação %1$s salva com sucesso</string>
+    <string name="add_note_successfully">Anotação %1$s salva com sucesso</string>
     <string name="save_note_missing_data">Por favor, cheque sua anotação</string>
     <string name="add_sequence_failed">Adicione uma sequência acima</string>
 </resources>
