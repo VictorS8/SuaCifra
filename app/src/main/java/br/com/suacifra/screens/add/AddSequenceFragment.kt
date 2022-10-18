@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.databinding.AddSequenceFragmentBinding
-import br.com.suacifra.utils.mutableCollectionToEditTextString
+import br.com.suacifra.utils.stringOfMutableListToEditTextString
 
 class AddSequenceFragment : Fragment() {
 
@@ -46,7 +46,7 @@ class AddSequenceFragment : Fragment() {
                 getString(R.string.shared_preference_edit_sequence_string_key),
                 sequence
             )
-            binding.sequenceEditText.setText(mutableCollectionToEditTextString(sequence ?: ""))
+            binding.sequenceEditText.setText(stringOfMutableListToEditTextString(sequence ?: ""))
         } else {
             // if I clicked on add bottom navigation option
             sequence = ""

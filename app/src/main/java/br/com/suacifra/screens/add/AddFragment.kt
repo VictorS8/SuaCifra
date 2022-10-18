@@ -17,8 +17,8 @@ import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.databinding.AddFragmentBinding
-import br.com.suacifra.models.Chords
-import br.com.suacifra.models.Tones
+import br.com.suacifra.utils.mutableSetToMutableListOfString
+import br.com.suacifra.utils.stringOfMutableListToEditTextString
 
 class AddFragment : Fragment() {
 
@@ -30,6 +30,10 @@ class AddFragment : Fragment() {
     private lateinit var sequenceLayoutManager: LayoutManager
     private var isEditCifraModeEnable = false
     private var isEditSequenceModeEnable = false
+    private var cifraName: String? = ""
+    private var cifraSingerName: String? = ""
+    private var cifraTone: String? = ""
+    private var cifraSequenceSetString: MutableSet<String>? = mutableSetOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,12 +63,37 @@ class AddFragment : Fragment() {
         )
 
         // TODO - Change to update list
-        sequenceChordsList = if (isEditCifraModeEnable) {
+        if (isEditCifraModeEnable) {
             // if I clicked in one custom cifra
-            mutableListOf()
+            cifraName = sharedPref.getString(
+                getString(R.string.shared_preference_edit_cifra_mode_name_string_key),
+                cifraName
+            )
+            cifraSingerName = sharedPref.getString(
+                getString(R.string.shared_preference_edit_cifra_mode_singer_name_string_key),
+                cifraSingerName
+            )
+            cifraTone = sharedPref.getString(
+                getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
+                cifraTone
+            )
+            cifraSequenceSetString = sharedPref.getStringSet(
+                getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
+                cifraSequenceSetString
+            )
+
+            binding.cifraNameEditText.setText(stringOfMutableListToEditTextString(cifraName ?: ""))
+            binding.cifraSingerNameEditText.setText(
+                stringOfMutableListToEditTextString(
+                    cifraSingerName ?: ""
+                )
+            )
+            binding.songToneButtonHelper.text = getString(R.string.tone_chosen_text, cifraTone)
+            sequenceChordsList =
+                mutableSetToMutableListOfString(cifraSequenceSetString ?: mutableSetOf())
         } else {
             // if I clicked on add bottom navigation option
-            fillSequenceChordsArray()
+            sequenceChordsList = mutableListOf()
         }
 
         if (sequenceChordsList.size == 0)
@@ -137,27 +166,6 @@ class AddFragment : Fragment() {
             gToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
             abToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
         }
-    }
-
-    private fun fillSequenceChordsArray(): MutableList<MutableList<String>> {
-        val auxList: MutableList<MutableList<String>> = mutableListOf()
-
-        auxList.addAll(
-            mutableListOf(
-                mutableListOf(Tones.A, Tones.E),
-                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
-                mutableListOf(Tones.E, Tones.B),
-                mutableListOf(Tones.F, Tones.C, Tones.D + Chords.minor, Tones.B, Tones.ASharp),
-                mutableListOf(Tones.A, Tones.E),
-                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
-                mutableListOf(Tones.E, Tones.B),
-                mutableListOf(Tones.F, Tones.C, Tones.D + Chords.minor, Tones.B, Tones.ASharp),
-                mutableListOf(Tones.C, Tones.G),
-                mutableListOf(Tones.C, Tones.G, Tones.A + Chords.minor, Tones.F)
-            )
-        )
-
-        return auxList
     }
 
 }

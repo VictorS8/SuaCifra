@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.utils.mutableCollectionToTextViewString
-import br.com.suacifra.utils.mutableCollectionToStringSequence
+import br.com.suacifra.utils.mutableCollectionToMutableListOfString
 
 class SequenceChordsRecyclerViewAdapter(
     private val sequenceChordsList: MutableList<MutableList<String>>,
@@ -111,7 +111,7 @@ class SequenceChordsRecyclerViewAdapter(
                 true
             )
             val editSequence =
-                mutableCollectionToStringSequence(sequenceChordsList[position]).toString()
+                mutableCollectionToMutableListOfString(sequenceChordsList[position]).toString()
             sharedPrefEditor.putString(
                 mainActivityContext.getString(R.string.shared_preference_edit_sequence_string_key),
                 editSequence

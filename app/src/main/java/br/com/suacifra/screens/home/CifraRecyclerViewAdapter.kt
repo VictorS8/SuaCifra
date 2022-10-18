@@ -11,6 +11,8 @@ import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.models.Cifras
 import br.com.suacifra.screens.add.AddFragment
+import br.com.suacifra.utils.mutableCollectionToSetOfStringCifras
+import br.com.suacifra.utils.mutableCollectionToString
 import br.com.suacifra.utils.mutableCollectionToTextViewString
 
 class CifrasRecyclerViewAdapter(
@@ -105,6 +107,23 @@ class CifrasRecyclerViewAdapter(
 
         holder.cifraItemCardView.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
+            sharedPrefEditor.putString(
+                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_name_string_key),
+                cifrasList[position].name
+            )
+            sharedPrefEditor.putString(
+                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_singer_name_string_key),
+                cifrasList[position].singerName
+            )
+            sharedPrefEditor.putString(
+                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
+                cifrasList[position].tone
+            )
+            sharedPrefEditor.putStringSet(
+                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
+                mutableCollectionToSetOfStringCifras(cifrasList[position].chordsSequence)
+            )
+
             sharedPrefEditor.putBoolean(
                 mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_boolean_key),
                 true
