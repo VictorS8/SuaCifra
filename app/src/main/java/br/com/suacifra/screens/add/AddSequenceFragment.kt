@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.databinding.AddSequenceFragmentBinding
+import br.com.suacifra.utils.addStringAt
 import br.com.suacifra.utils.stringOfMutableListToEditTextString
 
 class AddSequenceFragment : Fragment() {
@@ -62,12 +63,42 @@ class AddSequenceFragment : Fragment() {
         }
 
         binding.addSequenceImageButton.setOnClickListener {
-            Toast.makeText(
-                mainActivityContext,
-                getString(R.string.add_sequence_successfully),
-                Toast.LENGTH_LONG
-            )
-                .show()
+            if (isEditSequenceModeEnable) {
+                var mutableSetOfString: MutableSet<String>? = mutableSetOf()
+                var editSequenceIndex = 0
+                mutableSetOfString = sharedPref.getStringSet(
+                    getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
+                    mutableSetOfString
+                )
+                editSequenceIndex = sharedPref.getInt(
+                    getString(R.string.shared_preference_edit_sequence_mode_sequence_index_key),
+                    editSequenceIndex
+                )
+
+                val newMutableSetOfString = mutableSetOfString?.addStringAt(
+                    editSequenceIndex,
+                    "${binding.sequenceEditText.text}"
+                )
+                val sharedPrefEditor = sharedPref.edit()
+                sharedPrefEditor.putStringSet(
+                    getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
+                    newMutableSetOfString
+                )
+                sharedPrefEditor.apply()
+                Toast.makeText(
+                    mainActivityContext,
+                    getString(R.string.edit_sequence_successfully),
+                    Toast.LENGTH_LONG
+                )
+                    .show()
+            } else {
+                Toast.makeText(
+                    mainActivityContext,
+                    getString(R.string.add_sequence_successfully),
+                    Toast.LENGTH_LONG
+                )
+                    .show()
+            }
             mainActivityContext.replaceFragment(AddFragment())
         }
 

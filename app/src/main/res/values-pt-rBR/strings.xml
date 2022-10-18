@@ -63,7 +63,7 @@
     <string name="cancel_add_sequence_image_button_content_description_text">Cancela a adição de anotação</string>
     <string name="add_sequence_image_button_content_description_text">Adiciona uma sequência</string>
     <string name="add_sequence_title_text">Adiciona uma sequência</string>
-    <string name="add_sequence_successfully">Sequência adicionada com sucesso!</string>
+    <string name="add_sequence_successfully">Sequência adicionada com sucesso</string>
     <string name="add_sequence_cancelled">Sequência cancelada!</string>
     <string name="no_notes_message">Toque no botão abaixo para adicionar uma anotação</string>
     <string name="cifra_singer_name_item">Cantor: %1$s</string>
@@ -76,4 +76,5 @@
     <string name="sequence_helper_string">Coloque os acordes entre virgula \",\" e sem espaços\ne.g. C,G,Am,F</string>
     <string name="edit_note_successfully">Anotação %1$s editada com sucesso</string>
     <string name="edit_cifra_successfully">Você editou a cifra %1$s com sucesso</string>
+    <string name="edit_sequence_successfully">Sequência editada com sucesso</string>
 </resources>
