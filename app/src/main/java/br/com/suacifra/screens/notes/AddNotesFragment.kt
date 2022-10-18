@@ -67,12 +67,23 @@ class AddNotesFragment : Fragment() {
         }
 
         binding.addNoteImageButton.setOnClickListener {
-            Toast.makeText(
-                mainActivityContext,
-                getString(R.string.add_note_successfully, binding.noteTitleEditText.text),
-                Toast.LENGTH_LONG
-            )
-                .show()
+            if (isEditNotesModeEnable) {
+                // TODO - Edit Mode - Database handle
+                Toast.makeText(
+                    mainActivityContext,
+                    getString(R.string.edit_note_successfully, binding.noteTitleEditText.text),
+                    Toast.LENGTH_LONG
+                )
+                    .show()
+            } else {
+                // TODO - Create Mode - Database handle
+                Toast.makeText(
+                    mainActivityContext,
+                    getString(R.string.add_note_successfully, binding.noteTitleEditText.text),
+                    Toast.LENGTH_LONG
+                )
+                    .show()
+            }
             mainActivityContext.replaceFragment(NotesFragment())
         }
 

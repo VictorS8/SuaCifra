@@ -56,7 +56,7 @@
     <string name="sequence_item_title">Sequência #%1$d</string>
     <string name="add_note_cancelled">Anotação cancelada</string>
     <string name="delete_sequence_successfully">Você deletou a sequência #%1$d</string>
-    <string name="save_cifra_successfully">Você salvou a cifra %1$s</string>
+    <string name="add_cifra_successfully">Você salvou a cifra %1$s</string>
     <string name="no_sequences_message">Toque no botão abaixo para adicionar uma sequencia</string>
     <string name="sequence_title_text_view">Sequência de acordes</string>
     <string name="sequence_title_hint_string">Insira seus acordes</string>
@@ -69,9 +69,11 @@
     <string name="cifra_singer_name_item">Cantor: %1$s</string>
     <string name="cifra_tone_item">Tom: %1$s</string>
     <string name="cifra_first_sequence_item">Primeira sequência: %1$s</string>
-    <string name="save_cifra_missing_data">Por favo, cheque sua cifra</string>
+    <string name="add_cifra_missing_data">Por favo, cheque sua cifra</string>
     <string name="add_note_successfully">Anotação %1$s salva com sucesso</string>
     <string name="save_note_missing_data">Por favor, cheque sua anotação</string>
     <string name="add_sequence_failed">Adicione uma sequência acima</string>
     <string name="sequence_helper_string">Coloque os acordes entre virgula \",\" e sem espaços\ne.g. C,G,Am,F</string>
+    <string name="edit_note_successfully">Anotação %1$s editada com sucesso</string>
+    <string name="edit_cifra_successfully">Você editou a cifra %1$s com sucesso</string>
 </resources>

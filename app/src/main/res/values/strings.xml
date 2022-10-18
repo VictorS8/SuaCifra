@@ -71,8 +71,8 @@
     <string name="delete_sequence_content_description">Delete sequence</string>
     <string name="sequence_item_title">Sequence #%1$d</string>
     <string name="delete_sequence_successfully">You deleted sequence #%1$d</string>
-    <string name="save_cifra_successfully">You saved cifra %1$s</string>
-    <string name="save_cifra_missing_data">Please, check your cifra</string>
+    <string name="add_cifra_successfully">You added cifra %1$s successfully</string>
+    <string name="add_cifra_missing_data">Please, check your cifra</string>
     <string name="sequence_title_text_view">Sequence of chords</string>
     <string name="sequence_title_hint_string">Insert your chords</string>
     <string name="sequence_helper_string">Put chords between comma \",\" and without spaces\ne.g. C,G,Am,F</string>
@@ -98,4 +98,6 @@
     <string name="shared_preference_edit_notes_mode_boolean_key" translatable="false">br.com.suacifra.PREFERENCE_EDIT_NOTES_MODE_BOOLEAN_KEY</string>
     <string name="shared_preference_edit_notes_mode_title_string_key" translatable="false">br.com.suacifra.PREFERENCE_EDIT_NOTES_MODE_TITLE_STRING_KEY</string>
     <string name="shared_preference_edit_notes_mode_body_string_key" translatable="false">br.com.suacifra.PREFERENCE_EDIT_NOTES_MODE_BODY_STRING_KEY</string>
+    <string name="edit_note_successfully">Note %1$s edited successfully</string>
+    <string name="edit_cifra_successfully">You edited cifra %1$s successfully</string>
 </resources>

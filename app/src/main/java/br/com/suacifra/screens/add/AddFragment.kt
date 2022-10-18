@@ -121,11 +121,21 @@ class AddFragment : Fragment() {
         }
 
         binding.saveCifraButton.setOnClickListener {
-            Toast.makeText(
-                mainActivityContext,
-                getString(R.string.save_cifra_successfully, binding.cifraNameEditText.text),
-                Toast.LENGTH_SHORT
-            ).show()
+            if (isEditCifraModeEnable) {
+                // TODO - Edit Mode - Database handle
+                Toast.makeText(
+                    mainActivityContext,
+                    getString(R.string.edit_cifra_successfully, binding.cifraNameEditText.text),
+                    Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                // TODO - Create Mode - Database handle
+                Toast.makeText(
+                    mainActivityContext,
+                    getString(R.string.add_cifra_successfully, binding.cifraNameEditText.text),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
 
         allToneClickEvent()
