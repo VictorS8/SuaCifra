@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
@@ -25,13 +26,15 @@ class CifrasRecyclerViewAdapter(
         var cifraToneItemTextView: TextView
         var cifraSingerNameItemTextView: TextView
         var cifraFirstSequenceItemTextView: TextView
-        var cifraItemCardView: CardView
+        val deleteCifraImageView: ImageView
+        val cifraItemCardView: CardView
 
         init {
             cifraNameItemTextView = view.findViewById(R.id.cifraNameItemTextView)
             cifraToneItemTextView = view.findViewById(R.id.cifraToneItemTextView)
             cifraSingerNameItemTextView = view.findViewById(R.id.cifraSingerNameItemTextView)
             cifraFirstSequenceItemTextView = view.findViewById(R.id.cifraFirstSequenceItemTextView)
+            deleteCifraImageView = view.findViewById(R.id.deleteCifraImageButton)
             cifraItemCardView = view.findViewById(R.id.cifraItemCardView)
         }
     }
@@ -109,6 +112,10 @@ class CifrasRecyclerViewAdapter(
         val sharedPref = mainActivityContext.getSharedPreferences(
             mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
         )
+
+        holder.deleteCifraImageView.setOnClickListener {
+            // TODO - Delete interact with database
+        }
 
         holder.cifraItemCardView.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()

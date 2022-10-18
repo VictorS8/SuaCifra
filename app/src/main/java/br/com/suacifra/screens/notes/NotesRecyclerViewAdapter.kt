@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
@@ -18,11 +19,13 @@ class NotesRecyclerViewAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var noteItemTitleTextView: TextView
         var noteItemBodyTextView: TextView
+        val deleteNoteImageView: ImageView
         val noteItemCardView: CardView
 
         init {
             noteItemTitleTextView = view.findViewById(R.id.noteItemTitleTextView)
             noteItemBodyTextView = view.findViewById(R.id.noteItemBodyTextView)
+            deleteNoteImageView = view.findViewById(R.id.deleteNoteImageButton)
             noteItemCardView = view.findViewById(R.id.noteItemCardView)
         }
     }
@@ -86,6 +89,10 @@ class NotesRecyclerViewAdapter(
         val sharedPref = mainActivityContext.getSharedPreferences(
             mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
         )
+
+        holder.deleteNoteImageView.setOnClickListener {
+            // TODO - Delete interact with database
+        }
 
         holder.noteItemCardView.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
