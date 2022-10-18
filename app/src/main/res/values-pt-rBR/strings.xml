@@ -57,7 +57,7 @@
     <string name="add_note_cancelled">Anotação cancelada</string>
     <string name="delete_sequence_successfully">Você deletou a sequência #%1$d</string>
     <string name="add_cifra_successfully">Você salvou a cifra %1$s</string>
-    <string name="no_sequences_message">Toque no botão abaixo para adicionar uma sequencia</string>
+    <string name="no_sequences_message">Toque no botão + abaixo à direita para adicionar uma sequencia</string>
     <string name="sequence_title_text_view">Sequência de acordes</string>
     <string name="sequence_title_hint_string">Insira seus acordes</string>
     <string name="cancel_add_sequence_image_button_content_description_text">Cancela a adição de anotação</string>
