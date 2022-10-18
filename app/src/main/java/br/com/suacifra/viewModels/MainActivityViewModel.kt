@@ -24,8 +24,7 @@ class MainActivityViewModel : ViewModel() {
             loadUserOnlineData()
         else
             loadUserOfflineData()
-        TODO(
-            "Iniciar a verificação de dados do usuário, para fazer a chamada das funções" +
+        TODO("Iniciar a verificação de dados do usuário, para fazer a chamada das funções" +
                     " 'isUserLogged', que chamará por sua vez" +
                     " 'loadUserOnlineData' ou 'loadUserOfflineData' " +
                     "que dependerá da resposta de 'isUserLogged' "

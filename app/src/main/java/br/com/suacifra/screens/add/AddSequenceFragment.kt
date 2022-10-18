@@ -39,11 +39,10 @@ class AddSequenceFragment : Fragment() {
             isEditSequenceModeEnable
         )
 
-        // TODO - Change to update list
         if (isEditSequenceModeEnable) {
             // if I clicked in one custom cifra
             sequence = sharedPref.getString(
-                getString(R.string.shared_preference_edit_sequence_string_key),
+                getString(R.string.shared_preference_edit_sequence_mode_string_key),
                 sequence
             )
             binding.sequenceEditText.setText(stringOfMutableListToEditTextString(sequence ?: ""))

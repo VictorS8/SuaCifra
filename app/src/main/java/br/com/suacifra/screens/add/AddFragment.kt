@@ -62,7 +62,6 @@ class AddFragment : Fragment() {
             isEditSequenceModeEnable
         )
 
-        // TODO - Change to update list
         if (isEditCifraModeEnable) {
             // if I clicked in one custom cifra
             cifraName = sharedPref.getString(
