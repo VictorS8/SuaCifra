@@ -77,8 +77,11 @@ class NotesRecyclerViewAdapter(
      * @param position The position of the item within the adapter's data set.
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.noteItemTitleTextView.text = notesList[position].noteTitle
-        holder.noteItemBodyTextView.text = notesList[position].noteBody
+        val noteTitleTextView = notesList[position].noteTitle
+        val noteBodyTextView = notesList[position].noteBody
+
+        holder.noteItemTitleTextView.text = noteTitleTextView
+        holder.noteItemBodyTextView.text = noteBodyTextView
 
         val sharedPref = mainActivityContext.getSharedPreferences(
             mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
@@ -88,11 +91,11 @@ class NotesRecyclerViewAdapter(
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putString(
                 mainActivityContext.getString(R.string.shared_preference_edit_notes_mode_title_string_key),
-                notesList[position].noteTitle
+                noteTitleTextView
             )
             sharedPrefEditor.putString(
                 mainActivityContext.getString(R.string.shared_preference_edit_notes_mode_body_string_key),
-                notesList[position].noteBody
+                noteBodyTextView
             )
 
             sharedPrefEditor.putBoolean(

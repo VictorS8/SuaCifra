@@ -83,22 +83,28 @@ class SequenceChordsRecyclerViewAdapter(
      * @param position The position of the item within the adapter's data set.
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.sequenceItemTitleTextView.text =
+        val sequenceTitleTextView =
             mainActivityContext.getString(R.string.sequence_item_title, (position + 1))
-        holder.sequenceItemBodyTextView.text =
-            mutableCollectionToTextViewString(sequenceChordsList[position])
+        val sequenceBodyTextView = mutableCollectionToTextViewString(sequenceChordsList[position])
+        val sequenceToEdit =
+            mutableCollectionToMutableListOfString(sequenceChordsList[position]).toString()
+        val sequenceToDelete = sequenceChordsList[position].toMutableSet().toString()
+
+        holder.sequenceItemTitleTextView.text = sequenceTitleTextView
+        holder.sequenceItemBodyTextView.text = sequenceBodyTextView
 
         val sharedPref = mainActivityContext.getSharedPreferences(
             mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
         )
+
         holder.deleteSequenceImageButton.setOnClickListener {
             var deleteSequence: MutableSet<String>? = mutableSetOf()
-            val editSequence = sequenceChordsList[position].toMutableSet().toString()
             deleteSequence = sharedPref.getStringSet(
                 mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
                 deleteSequence
             )
-            deleteSequence?.remove(editSequence)
+
+            deleteSequence?.remove(sequenceToDelete)
             notifyItemRemoved(position)
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putStringSet(
@@ -115,11 +121,13 @@ class SequenceChordsRecyclerViewAdapter(
                 mainActivityContext.getString(R.string.shared_preference_edit_sequence_mode_boolean_key),
                 true
             )
-            val editSequence =
-                mutableCollectionToMutableListOfString(sequenceChordsList[position]).toString()
             sharedPrefEditor.putString(
                 mainActivityContext.getString(R.string.shared_preference_edit_sequence_mode_sequence_string_key),
-                editSequence
+                sequenceToEdit
+            )
+            sharedPrefEditor.putInt(
+                mainActivityContext.getString(R.string.shared_preference_edit_sequence_mode_sequence_index_key),
+                position
             )
             sharedPrefEditor.apply()
             mainActivityContext.addToBackStackFragment(AddSequenceFragment())

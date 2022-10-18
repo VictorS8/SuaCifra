@@ -87,18 +87,24 @@ class CifrasRecyclerViewAdapter(
      * @param position The position of the item within the adapter's data set.
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.cifraNameItemTextView.text = cifrasList[position].name
-        holder.cifraToneItemTextView.text =
+        val cifraNameTextView = cifrasList[position].name
+        val cifraToneTextView =
             mainActivityContext.getString(R.string.cifra_tone_item, cifrasList[position].tone)
-        holder.cifraSingerNameItemTextView.text =
-            mainActivityContext.getString(
-                R.string.cifra_singer_name_item,
-                cifrasList[position].singerName
-            )
-        holder.cifraFirstSequenceItemTextView.text = mainActivityContext.getString(
-            R.string.cifra_first_sequence_item,
-            mutableCollectionToTextViewString(cifrasList[position].chordsSequence[0])
+        val cifraSingerNameTextView = mainActivityContext.getString(
+            R.string.cifra_singer_name_item,
+            cifrasList[position].singerName
         )
+        val cifraChordsSequence = cifrasList[position].chordsSequence
+        val cifraFirstChordsSequenceTextView = mainActivityContext.getString(
+            R.string.cifra_first_sequence_item,
+            mutableCollectionToTextViewString(cifraChordsSequence[0])
+        )
+
+        holder.cifraNameItemTextView.text = cifraNameTextView
+        holder.cifraToneItemTextView.text =
+            cifraToneTextView
+        holder.cifraSingerNameItemTextView.text = cifraSingerNameTextView
+        holder.cifraFirstSequenceItemTextView.text = cifraFirstChordsSequenceTextView
 
         val sharedPref = mainActivityContext.getSharedPreferences(
             mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
@@ -108,19 +114,19 @@ class CifrasRecyclerViewAdapter(
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putString(
                 mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_name_string_key),
-                cifrasList[position].name
+                cifraNameTextView
             )
             sharedPrefEditor.putString(
                 mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_singer_name_string_key),
-                cifrasList[position].singerName
+                cifraSingerNameTextView
             )
             sharedPrefEditor.putString(
                 mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
-                cifrasList[position].tone
+                cifraToneTextView
             )
             sharedPrefEditor.putStringSet(
                 mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
-                mutableCollectionToSetOfStringCifras(cifrasList[position].chordsSequence)
+                mutableCollectionToSetOfStringCifras(cifraChordsSequence)
             )
 
             sharedPrefEditor.putBoolean(
