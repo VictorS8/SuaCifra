@@ -3,9 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
         tools:context=".screens.settings.SettingsFragment">
 
         <FrameLayout
@@ -24,48 +26,37 @@
             style="@style/buttonOnSettingsStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_margin="@dimen/minimal_space"
             android:elevation="@dimen/very_large_space"
-            android:text="@string/notes_button_text"
-            app:layout_constraintBottom_toTopOf="@id/tunerButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:text="@string/notes_button_text" />
 
         <Button
             android:id="@+id/tunerButton"
             style="@style/buttonOnSettingsStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_margin="@dimen/minimal_space"
             android:elevation="@dimen/very_large_space"
-            android:text="@string/tuner_button_text"
-            app:layout_constraintBottom_toTopOf="@id/loginButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:text="@string/tuner_button_text" />
+
 
         <Button
             android:id="@+id/loginButton"
             style="@style/buttonOnSettingsStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/minimal_space"
             android:elevation="@dimen/very_large_space"
-            android:text="@string/login_button_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:text="@string/login_button_text" />
 
         <Button
             android:id="@+id/aboutButton"
             style="@style/buttonOnSettingsStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_margin="@dimen/minimal_space"
             android:elevation="@dimen/very_large_space"
-            android:text="@string/about_button_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/loginButton" />
+            android:text="@string/about_button_text" />
 
         <TextView
             android:id="@+id/warningProTextView"
@@ -78,5 +69,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>

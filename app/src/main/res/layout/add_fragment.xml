@@ -7,43 +7,77 @@
         android:layout_height="match_parent"
         tools:context=".screens.add.AddFragment">
 
-
-        <EditText
-            android:id="@+id/cifraNameEditText"
-            style="@style/editTextStyle"
+        <TextView
+            android:id="@+id/addCifraTitleTextView"
+            style="@style/settingsTextViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="@string/cifra_name_hint_string"
-            android:importantForAutofill="no"
-            android:inputType="textPersonName|textCapSentences"
+            android:layout_marginTop="@dimen/large_space"
+            android:text="@string/add_cifra_title_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/singerNameEditText"
-            style="@style/editTextStyle"
+        <TextView
+            android:id="@+id/cifraNameTextView"
+            style="@style/textViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_margin="@dimen/medium_space"
+            android:text="@string/cifra_name_text_view"
+            app:layout_constraintBottom_toTopOf="@id/cifraNameEditText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addCifraTitleTextView" />
+
+        <EditText
+            android:id="@+id/cifraNameEditText"
+            style="@style/editTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:hint="@string/cifra_name_hint_string"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName|textCapSentences"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cifraNameTextView" />
+
+        <TextView
+            android:id="@+id/singerNameTextView"
+            style="@style/textViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:text="@string/singer_name_text_view"
+            app:layout_constraintBottom_toTopOf="@id/cifraSingerNameEditText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cifraNameEditText" />
+
+        <EditText
+            android:id="@+id/cifraSingerNameEditText"
+            style="@style/editTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
             android:hint="@string/singer_name_hint_string"
+            android:imeOptions="actionDone"
             android:importantForAutofill="no"
             android:inputType="textPersonName|textCapWords"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cifraNameEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/singerNameTextView" />
 
         <Button
             android:id="@+id/chooseToneButton"
+            style="@style/defaultButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            style="@style/defaultButton"
             android:text="@string/choose_tone_button_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/singerNameEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/cifraSingerNameEditText" />
 
         <TextView
             android:id="@+id/songToneButtonHelper"
@@ -54,6 +88,57 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/chooseToneButton" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sequenceRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/big_space"
+            android:layout_marginTop="@dimen/minimal_space"
+            android:layout_marginEnd="@dimen/big_space"
+            android:layout_marginBottom="@dimen/minimal_space"
+            app:layout_constraintBottom_toTopOf="@id/saveCifraButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/songToneButtonHelper" />
+
+        <TextView
+            android:id="@+id/noSequenceMessage"
+            style="@style/noSequenceWarningMessageStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/big_space"
+            android:paddingEnd="@dimen/big_space"
+            android:text="@string/no_sequences_message"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/saveCifraButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/songToneButtonHelper" />
+
+        <ImageButton
+            android:id="@+id/addSequencesImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/minimal_space"
+            android:layout_marginBottom="@dimen/minimal_space"
+            android:background="@drawable/custom_icon_button"
+            android:contentDescription="@string/add_sequence_content_description_text"
+            android:src="@drawable/ic_baseline_add_24"
+            app:layout_constraintBottom_toTopOf="@id/saveCifraButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="?attr/colorPrimary" />
+
+        <Button
+            android:id="@+id/saveCifraButton"
+            style="@style/defaultButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/minimal_space"
+            android:text="@string/save_cifra_button_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/chooseToneCardView"
@@ -68,8 +153,7 @@
             app:cardElevation="@dimen/large_space"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:visibility="visible">
+            app:layout_constraintStart_toStartOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import br.com.suacifra.MainActivity
@@ -41,12 +40,6 @@ class SettingsFragment : Fragment() {
         binding.loginButton.setOnClickListener {
             val oldAccount = mainActivityContext.getLastSignedInAccountOnActivity()
             if (oldAccount != null) {
-                Toast.makeText(
-                    mainActivityContext,
-                    getString(R.string.sign_in_with_google_message_success),
-                    Toast.LENGTH_SHORT
-                )
-                    .show()
                 mainActivityContext.addToBackStackFragment(ProfileFragment())
             } else {
                 mainActivityContext.addToBackStackFragment(LoginFragment())

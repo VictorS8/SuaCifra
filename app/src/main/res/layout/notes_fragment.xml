@@ -7,7 +7,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/aboutTitleTextView"
+            android:id="@+id/notesTitleTextView"
             style="@style/settingsTextViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -16,6 +16,48 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/notesRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/big_space"
+            android:layout_marginTop="@dimen/minimal_space"
+            android:layout_marginEnd="@dimen/big_space"
+            android:layout_marginBottom="@dimen/minimal_space"
+            app:layout_constraintBottom_toTopOf="@id/notesGoBackButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notesTitleTextView" />
+
+        <TextView
+            android:id="@+id/noNotesMessage"
+            style="@style/warningMessageStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/big_space"
+            android:layout_marginTop="@dimen/minimal_space"
+            android:layout_marginEnd="@dimen/big_space"
+            android:layout_marginBottom="@dimen/minimal_space"
+            android:text="@string/no_notes_message"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@id/notesGoBackButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notesTitleTextView" />
+
+        <ImageButton
+            android:id="@+id/addNotesImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/minimal_space"
+            android:layout_marginBottom="@dimen/minimal_space"
+            android:background="@drawable/custom_icon_button"
+            android:contentDescription="@string/add_notes_content_description_text"
+            android:src="@drawable/ic_baseline_post_add_24"
+            app:layout_constraintBottom_toTopOf="@id/notesGoBackButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="?attr/colorPrimary" />
 
         <Button
             android:id="@+id/notesGoBackButton"

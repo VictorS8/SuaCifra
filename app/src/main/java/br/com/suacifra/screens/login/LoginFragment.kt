@@ -1,7 +1,6 @@
 package br.com.suacifra.screens.login
 
 import android.app.Activity.RESULT_OK
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -41,10 +40,6 @@ class LoginFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.login_fragment, container, false)
 
         mainActivityContext = (activity as MainActivity)
-
-        val sharedPref = mainActivityContext.getSharedPreferences(
-            getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
-        )
 
         firebaseAuth = Firebase.auth
 
