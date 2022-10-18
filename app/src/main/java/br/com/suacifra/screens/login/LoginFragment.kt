@@ -1,7 +1,6 @@
 package br.com.suacifra.screens.login
 
 import android.app.Activity.RESULT_OK
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View

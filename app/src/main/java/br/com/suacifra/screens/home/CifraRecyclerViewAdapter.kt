@@ -12,7 +12,6 @@ import br.com.suacifra.R
 import br.com.suacifra.models.Cifras
 import br.com.suacifra.screens.add.AddFragment
 import br.com.suacifra.utils.mutableCollectionToSetOfStringCifras
-import br.com.suacifra.utils.mutableCollectionToString
 import br.com.suacifra.utils.mutableCollectionToTextViewString
 
 class CifrasRecyclerViewAdapter(
