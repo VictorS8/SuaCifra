@@ -106,6 +106,7 @@ class SequenceChordsRecyclerViewAdapter(
                 deleteSequence
             )
             sharedPrefEditor.apply()
+            notifyItemChanged(position)
         }
 
         holder.sequenceItemCardView.setOnClickListener {
