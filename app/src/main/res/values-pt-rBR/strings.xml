@@ -73,4 +73,5 @@
     <string name="add_note_successfully">Anotação %1$s salva com sucesso</string>
     <string name="save_note_missing_data">Por favor, cheque sua anotação</string>
     <string name="add_sequence_failed">Adicione uma sequência acima</string>
+    <string name="sequence_helper_string">Coloque os acordes entre virgula \",\" e sem espaços\ne.g. C,G,Am,F</string>
 </resources>

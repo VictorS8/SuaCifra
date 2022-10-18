@@ -29,6 +29,7 @@ class AddFragment : Fragment() {
     private lateinit var sequenceAdapter: Adapter<SequenceChordsRecyclerViewAdapter.ViewHolder>
     private lateinit var sequenceLayoutManager: LayoutManager
     private var isEditCifraModeEnable = false
+    private var isEditSequenceModeEnable = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,6 +51,11 @@ class AddFragment : Fragment() {
         isEditCifraModeEnable = sharedPref.getBoolean(
             getString(R.string.shared_preference_edit_cifra_mode_boolean_key),
             isEditCifraModeEnable
+        )
+
+        isEditSequenceModeEnable = sharedPref.getBoolean(
+            getString(R.string.shared_preference_edit_sequence_mode_boolean_key),
+            isEditSequenceModeEnable
         )
 
         // TODO - Change to update list
@@ -77,6 +83,12 @@ class AddFragment : Fragment() {
         recyclerView.adapter = sequenceAdapter
 
         binding.addSequencesImageButton.setOnClickListener {
+            val sharedPrefEditor = sharedPref.edit()
+            sharedPrefEditor.putBoolean(
+                getString(R.string.shared_preference_edit_sequence_mode_boolean_key),
+                false
+            )
+            sharedPrefEditor.apply()
             mainActivityContext.addToBackStackFragment(AddSequenceFragment())
         }
 

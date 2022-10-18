@@ -7,23 +7,29 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import br.com.suacifra.MainActivity
 import br.com.suacifra.R
-import br.com.suacifra.utils.mutableCollectionToString
+import br.com.suacifra.utils.mutableCollectionToTextViewString
+import br.com.suacifra.utils.mutableCollectionToStringSequence
 
 class SequenceChordsRecyclerViewAdapter(
-    private val sequenceChordsList: MutableList<MutableList<String>>, val context: Context
+    private val sequenceChordsList: MutableList<MutableList<String>>,
+    val mainActivityContext: MainActivity
 ) : RecyclerView.Adapter<SequenceChordsRecyclerViewAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var sequenceItemTitleTextView: TextView
         var sequenceItemBodyTextView: TextView
-        val deleteSequenceImageButton: ImageButton
+        var deleteSequenceImageButton: ImageButton
+        var sequenceItemCardView: CardView
 
         init {
             sequenceItemTitleTextView = view.findViewById(R.id.sequenceItemTitleTextView)
             sequenceItemBodyTextView = view.findViewById(R.id.sequenceItemBodyTextView)
             deleteSequenceImageButton = view.findViewById(R.id.deleteSequenceImageButton)
+            sequenceItemCardView = view.findViewById(R.id.sequenceItemCardView)
         }
     }
 
@@ -79,15 +85,44 @@ class SequenceChordsRecyclerViewAdapter(
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.sequenceItemTitleTextView.text =
-            context.getString(R.string.sequence_item_title, (position + 1))
-        holder.sequenceItemBodyTextView.text = mutableCollectionToString(sequenceChordsList[position])
+            mainActivityContext.getString(R.string.sequence_item_title, (position + 1))
+        holder.sequenceItemBodyTextView.text =
+            mutableCollectionToTextViewString(sequenceChordsList[position])
 
         holder.deleteSequenceImageButton.setOnClickListener {
             Toast.makeText(
-                context,
-                context.getString(R.string.delete_sequence_successfully, (position + 1)),
+                mainActivityContext,
+                mainActivityContext.getString(
+                    R.string.delete_sequence_successfully,
+                    (position + 1)
+                ),
                 Toast.LENGTH_SHORT
             ).show()
+        }
+
+        val sharedPref = mainActivityContext.getSharedPreferences(
+            mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+        )
+
+        holder.sequenceItemCardView.setOnClickListener {
+            val sharedPrefEditor = sharedPref.edit()
+            sharedPrefEditor.putBoolean(
+                mainActivityContext.getString(R.string.shared_preference_edit_sequence_mode_boolean_key),
+                true
+            )
+            val editSequence =
+                mutableCollectionToStringSequence(sequenceChordsList[position]).toString()
+            sharedPrefEditor.putString(
+                mainActivityContext.getString(R.string.shared_preference_edit_sequence_string_key),
+                editSequence
+            )
+            sharedPrefEditor.apply()
+            Toast.makeText(
+                mainActivityContext,
+                "Sequence Chords List to ${sequenceChordsList[position]}",
+                Toast.LENGTH_SHORT
+            ).show()
+            mainActivityContext.addToBackStackFragment(AddSequenceFragment())
         }
     }
 

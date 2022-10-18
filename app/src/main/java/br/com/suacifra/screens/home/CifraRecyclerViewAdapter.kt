@@ -11,7 +11,7 @@ import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.models.Cifras
 import br.com.suacifra.screens.add.AddFragment
-import br.com.suacifra.utils.mutableCollectionToString
+import br.com.suacifra.utils.mutableCollectionToTextViewString
 
 class CifrasRecyclerViewAdapter(
     private val cifrasList: MutableList<Cifras>,
@@ -96,7 +96,7 @@ class CifrasRecyclerViewAdapter(
             )
         holder.cifraFirstSequenceItemTextView.text = mainActivityContext.getString(
             R.string.cifra_first_sequence_item,
-            mutableCollectionToString(cifrasList[position].chordsSequence[0])
+            mutableCollectionToTextViewString(cifrasList[position].chordsSequence[0])
         )
 
         val sharedPref = mainActivityContext.getSharedPreferences(
