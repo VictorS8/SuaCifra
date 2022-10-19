@@ -52,6 +52,7 @@
                 android:layout_margin="@dimen/minimal_space"
                 android:textAlignment="textStart"
                 app:layout_constraintBottom_toTopOf="@id/cifraFirstSequenceItemTextView"
+                app:layout_constraintEnd_toStartOf="@id/deleteCifraImageButton"
                 app:layout_constraintTop_toBottomOf="@id/cifraNameItemTextView" />
 
             <TextView
@@ -62,7 +63,7 @@
                 android:layout_margin="@dimen/minimal_space"
                 android:textAlignment="textStart"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/deleteCifraImageButton"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <ImageButton
