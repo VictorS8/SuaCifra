@@ -6,14 +6,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
+import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.models.Cifras
 import br.com.suacifra.screens.add.AddFragment
-import br.com.suacifra.utils.mutableCollectionToSetOfStringCifras
-import br.com.suacifra.utils.mutableCollectionToTextViewString
+import br.com.suacifra.utils.stringToMutableSet
+import br.com.suacifra.utils.stringToTextViewString
 
 class CifrasRecyclerViewAdapter(
     private val cifrasList: MutableList<Cifras>,
@@ -97,10 +99,11 @@ class CifrasRecyclerViewAdapter(
             R.string.cifra_singer_name_item,
             cifrasList[position].singerName
         )
-        val cifraChordsSequence = cifrasList[position].chordsSequence
+        val cifraChordsSequence = stringToMutableSet(cifrasList[position].chordsSequence)
         val cifraFirstChordsSequenceTextView = mainActivityContext.getString(
             R.string.cifra_first_sequence_item,
-            mutableCollectionToTextViewString(cifraChordsSequence[0])
+            stringToTextViewString(cifraChordsSequence.toMutableList()[0]).removePrefix("[")
+                .removeSuffix("]")
         )
 
         holder.cifraNameItemTextView.text = cifraNameTextView
@@ -114,26 +117,48 @@ class CifrasRecyclerViewAdapter(
         )
 
         holder.deleteCifraImageView.setOnClickListener {
-            // TODO - Delete interact with database
+            val databaseHelper = DatabaseHelper(mainActivityContext)
+            val deleteStatus = databaseHelper.deleteOneCifra(cifrasList[position])
+            if (deleteStatus) {
+                notifyItemChanged(position)
+                notifyItemRemoved(position)
+                notifyItemChanged(position)
+                mainActivityContext.toastMessage(
+                    R.string.delete_cifra_successfully,
+                    cifrasList[position].name,
+                    Toast.LENGTH_LONG
+                )
+                notifyItemChanged(position)
+                mainActivityContext.toastMessage(
+                    R.string.delete_cifra_successfully,
+                    cifrasList[position].name,
+                    Toast.LENGTH_LONG
+                )
+            } else {
+                mainActivityContext.toastMessage(
+                    R.string.delete_cifra_failed,
+                    Toast.LENGTH_LONG
+                )
+            }
         }
 
         holder.cifraItemCardView.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putString(
                 mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_name_string_key),
-                cifraNameTextView
+                cifrasList[position].name
             )
             sharedPrefEditor.putString(
                 mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_singer_name_string_key),
-                cifraSingerNameTextView
+                cifrasList[position].singerName
             )
             sharedPrefEditor.putString(
                 mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
-                cifraToneTextView
+                cifrasList[position].tone
             )
             sharedPrefEditor.putStringSet(
                 mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
-                mutableCollectionToSetOfStringCifras(cifraChordsSequence)
+                stringToMutableSet(cifrasList[position].chordsSequence)
             )
 
             sharedPrefEditor.putBoolean(
@@ -151,7 +176,8 @@ class CifrasRecyclerViewAdapter(
      * @return The total number of items in this adapter.
      */
     override fun getItemCount(): Int {
-        return cifrasList.size
+        val databaseHelper = DatabaseHelper(mainActivityContext)
+        return databaseHelper.getAllCifras().size
     }
 
 }

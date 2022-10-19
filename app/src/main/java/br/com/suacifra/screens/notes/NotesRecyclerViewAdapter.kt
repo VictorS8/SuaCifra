@@ -115,11 +115,11 @@ class NotesRecyclerViewAdapter(
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putString(
                 mainActivityContext.getString(R.string.shared_preference_edit_notes_mode_title_string_key),
-                noteTitleTextView
+                notesList[position].noteTitle
             )
             sharedPrefEditor.putString(
                 mainActivityContext.getString(R.string.shared_preference_edit_notes_mode_body_string_key),
-                noteBodyTextView
+                notesList[position].noteBody
             )
 
             sharedPrefEditor.putBoolean(
