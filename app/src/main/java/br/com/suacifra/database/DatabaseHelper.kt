@@ -41,4 +41,29 @@ class DatabaseHelper(
         return insert != insertErrorNumber
     }
 
+    fun getAllNotes() : MutableList<Notes> {
+        val returnMutableList = mutableListOf<Notes>()
+
+        val queryString = "SELECT * FROM $NOTES_TABLE"
+        val database: SQLiteDatabase = this.readableDatabase
+        val cursor = database.rawQuery(queryString, null)
+
+        if (cursor.moveToFirst()) {
+            do {
+                val noteId = cursor.getInt(0)
+                val noteTitle = cursor.getString(1)
+                val noteBody = cursor.getString(2)
+
+                val newNote = Notes(noteId, noteTitle, noteBody)
+                returnMutableList.add(newNote)
+            } while (cursor.moveToNext())
+        } else {
+            return mutableListOf()
+        }
+
+        cursor.close()
+        database.close()
+        return returnMutableList
+    }
+
 }

@@ -86,8 +86,8 @@ class AddNotesFragment : Fragment() {
                 if (!noteTitleEditText.isNullOrBlank() && !noteBodyEditText.isNullOrBlank()) {
                     val notesModel =
                         Notes(-1, noteTitleEditText.toString(), noteBodyEditText.toString())
-                    val dataBaseHelper = DatabaseHelper(mainActivityContext)
-                    val insertStatus = dataBaseHelper.addOneNote(notesModel)
+                    val databaseHelper = DatabaseHelper(mainActivityContext)
+                    val insertStatus = databaseHelper.addOneNote(notesModel)
                     if (insertStatus) {
                         mainActivityContext.toastMessage(
                             R.string.add_note_successfully,

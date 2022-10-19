@@ -1,6 +1,7 @@
 package br.com.suacifra.screens.notes
 
 import android.content.Context
+import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
+import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.databinding.NotesFragmentBinding
 import br.com.suacifra.models.Notes
 import br.com.suacifra.screens.settings.SettingsFragment
@@ -39,8 +41,9 @@ class NotesFragment : Fragment() {
             getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
         )
 
-        // TODO - Change to update list
-        notesList = fillNotesArray()
+        val databaseHelper = DatabaseHelper(mainActivityContext)
+
+        notesList = databaseHelper.getAllNotes()
 
         if (notesList.size == 0)
             binding.noNotesMessage.visibility = View.VISIBLE
