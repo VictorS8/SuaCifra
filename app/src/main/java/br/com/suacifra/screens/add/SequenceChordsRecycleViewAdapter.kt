@@ -10,11 +10,10 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
-import br.com.suacifra.utils.mutableCollectionToMutableListOfString
-import br.com.suacifra.utils.mutableCollectionToTextViewString
+import br.com.suacifra.utils.stringToTextViewString
 
 class SequenceChordsRecyclerViewAdapter(
-    private val sequenceChordsList: MutableList<MutableList<String>>,
+    private val sequenceChordsList: MutableSet<String>,
     val mainActivityContext: MainActivity
 ) : RecyclerView.Adapter<SequenceChordsRecyclerViewAdapter.ViewHolder>() {
 
@@ -85,10 +84,11 @@ class SequenceChordsRecyclerViewAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val sequenceTitleTextView =
             mainActivityContext.getString(R.string.sequence_item_title, (position + 1))
-        val sequenceBodyTextView = mutableCollectionToTextViewString(sequenceChordsList[position])
-        val sequenceToEdit =
-            mutableCollectionToMutableListOfString(sequenceChordsList[position]).toString()
-        val sequenceToDelete = sequenceChordsList[position].toMutableSet().toString()
+        val sequenceBodyTextView =
+            stringToTextViewString(sequenceChordsList.toMutableList()[position]).removePrefix("[")
+                .removeSuffix("]")
+        val sequenceToEdit = sequenceChordsList.toMutableList()[position]
+        val sequenceToDelete = sequenceChordsList.toMutableList()[position]
 
         holder.sequenceItemTitleTextView.text = sequenceTitleTextView
         holder.sequenceItemBodyTextView.text = sequenceBodyTextView

@@ -17,6 +17,8 @@
         <item name="backgroundColor">?attr/colorOnPrimary</item>
         <item name="colorOnBackground">@color/light_blue_with_more_transparency</item>
 
+        <item name="errorTextColor">@color/light_red</item>
+
         <item name="colorControlNormal">?attr/colorPrimarySurface</item>
         <item name="colorControlActivated">?attr/colorPrimarySurface</item>
         <item name="colorControlHighlight">?attr/colorPrimary</item>

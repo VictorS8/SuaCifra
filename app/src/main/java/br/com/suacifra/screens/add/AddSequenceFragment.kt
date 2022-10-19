@@ -92,6 +92,22 @@ class AddSequenceFragment : Fragment() {
                 )
                     .show()
             } else {
+                var mutableSetOfString: MutableSet<String>? = mutableSetOf()
+                mutableSetOfString = sharedPref.getStringSet(
+                    getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
+                    mutableSetOfString
+                )
+
+                val newMutableListOfString = mutableSetOfString?.toMutableList()
+                newMutableListOfString?.add("[${binding.sequenceEditText.text}")
+                newMutableListOfString?.toMutableSet()
+                val newMutableSetOfString = newMutableListOfString?.toMutableSet()
+                val sharedPrefEditor = sharedPref.edit()
+                sharedPrefEditor.putStringSet(
+                    getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
+                    newMutableSetOfString
+                )
+                sharedPrefEditor.apply()
                 Toast.makeText(
                     mainActivityContext,
                     getString(R.string.add_sequence_successfully),

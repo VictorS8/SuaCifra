@@ -2,6 +2,8 @@ package br.com.suacifra
 
 import android.content.Context
 import android.os.Bundle
+import android.widget.Toast
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.databinding.DataBindingUtil
@@ -65,6 +67,18 @@ class MainActivity : AppCompatActivity() {
                     sharedPrefEditor.putStringSet(
                         getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
                         mutableSetOf()
+                    )
+                    sharedPrefEditor.putString(
+                        getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
+                        null
+                    )
+                    sharedPrefEditor.putString(
+                        getString(R.string.shared_preference_add_cifra_mode_name_edit_text_key),
+                        ""
+                    )
+                    sharedPrefEditor.putString(
+                        getString(R.string.shared_preference_add_cifra_mode_singer_name_edit_text_key),
+                        ""
                     )
                     sharedPrefEditor.putBoolean(
                         getString(R.string.shared_preference_edit_cifra_mode_boolean_key),
@@ -142,6 +156,24 @@ class MainActivity : AppCompatActivity() {
         const val HOME_FRAGMENT = "Home"
         const val ADD_FRAGMENT = "Add"
         const val SETTINGS_FRAGMENT = "Settings"
+    }
+
+    fun toastMessage(@StringRes resId: Int, duration: Int) {
+        Toast.makeText(
+            this,
+            getString(resId),
+            duration
+        )
+            .show()
+    }
+
+    fun toastMessage(@StringRes resId: Int, formatArgs: Any, duration: Int) {
+        Toast.makeText(
+            this,
+            getString(resId, formatArgs),
+            duration
+        )
+            .show()
     }
 
 }
