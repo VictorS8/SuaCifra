@@ -79,4 +79,6 @@
     <string name="edit_sequence_successfully">Sequência editada com sucesso</string>
     <string name="delete_cifra_content_description">Deleta cifra</string>
     <string name="delete_note_content_description">Deleta anotação</string>
+    <string name="save_note_title_missing_data">Por favor, cheque o título da anotação</string>
+    <string name="save_note_body_missing_data">Por favor, cheque o corpo da anotação</string>
 </resources>
