@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/dark_blue</item>
         <item name="colorPrimaryVariant">@color/blue</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorPrimarySurface">@color/blue_on_dark_blue</item>
+        <item name="colorPrimarySurface">@color/dark_blue_with_transparency</item>
         <item name="colorPrimaryInverse">@color/light_blue</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/dark_grey</item>
