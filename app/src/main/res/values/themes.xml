@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/dark_blue</item>
         <item name="colorPrimaryVariant">@color/blue</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorPrimarySurface">@color/dark_blue_with_transparency</item>
+        <item name="colorPrimarySurface">@color/blue_on_dark_blue</item>
         <item name="colorPrimaryInverse">@color/light_blue</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/dark_grey</item>
@@ -16,6 +16,8 @@
         <!-- Customize your theme here. -->
         <item name="backgroundColor">?attr/colorOnPrimary</item>
         <item name="colorOnBackground">@color/dark_blue_with_more_transparency</item>
+
+        <item name="errorTextColor">@color/dark_red</item>
 
         <item name="colorControlNormal">?attr/colorPrimarySurface</item>
         <item name="colorControlActivated">?attr/colorPrimarySurface</item>

@@ -1,5 +1,10 @@
 package br.com.suacifra.utils
 
+import android.content.Context
+import android.util.TypedValue
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
+
 fun mutableCollectionToTextViewString(mutableCollection: MutableCollection<String>): String {
     var stringList = ""
     for (eachString in mutableCollection) {
@@ -64,4 +69,14 @@ fun MutableCollection<String>.stringOfListToMutableList(): MutableList<String> {
 
 fun String.removeAffixOfStringOfList(): String {
     return this.trim().removePrefix("[").removeSuffix("]").replace(" ", "")
+}
+
+@ColorInt
+fun Context.getColorFromAttr(
+    @AttrRes attrColor: Int,
+    typedValue: TypedValue = TypedValue(),
+    resolveRefs: Boolean = true
+): Int {
+    theme.resolveAttribute(attrColor, typedValue, resolveRefs)
+    return typedValue.data
 }
