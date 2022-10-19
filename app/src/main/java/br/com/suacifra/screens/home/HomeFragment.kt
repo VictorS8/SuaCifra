@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
+import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.databinding.HomeFragmentBinding
 import br.com.suacifra.models.Chords
 import br.com.suacifra.models.Cifras
@@ -33,8 +34,9 @@ class HomeFragment : Fragment() {
 
         mainActivityContext = (activity as MainActivity)
 
-        // TODO - Change to update list
-        cifrasList = fillCifrasArray()
+        val databaseHelper = DatabaseHelper(mainActivityContext)
+
+        cifrasList = databaseHelper.getAllCifras()
 
         if (cifrasList.size == 0)
             binding.noCifrasMessage.visibility = View.VISIBLE
@@ -53,95 +55,95 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
-    private fun fillCifrasArray(): MutableList<Cifras> {
-        val auxList: MutableList<Cifras> = mutableListOf()
-        val cifra0 = Cifras(
-            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
-                mutableListOf(Tones.A, Tones.E),
-                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
-                mutableListOf(Tones.E, Tones.B),
-            )
-        )
-        val cifra1 = Cifras(
-            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
-                mutableListOf(Tones.A, Tones.E),
-                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
-                mutableListOf(Tones.E, Tones.B),
-            )
-        )
-        val cifra2 = Cifras(
-            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
-                mutableListOf(Tones.A, Tones.E),
-                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
-                mutableListOf(Tones.E, Tones.B),
-            )
-        )
-        val cifra3 = Cifras(
-            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
-                mutableListOf(Tones.A, Tones.E),
-                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
-                mutableListOf(Tones.E, Tones.B),
-            )
-        )
-        val cifra4 = Cifras(
-            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
-                mutableListOf(Tones.A, Tones.E),
-                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
-                mutableListOf(Tones.E, Tones.B),
-            )
-        )
-        val cifra5 = Cifras(
-            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
-                mutableListOf(Tones.A, Tones.E),
-                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
-                mutableListOf(Tones.E, Tones.B),
-            )
-        )
-        val cifra6 = Cifras(
-            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
-                mutableListOf(Tones.A, Tones.E),
-                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
-                mutableListOf(Tones.E, Tones.B),
-            )
-        )
-        val cifra7 = Cifras(
-            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
-                mutableListOf(Tones.A, Tones.E),
-                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
-                mutableListOf(Tones.E, Tones.B),
-            )
-        )
-        val cifra8 = Cifras(
-            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
-                mutableListOf(Tones.A, Tones.E),
-                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
-                mutableListOf(Tones.E, Tones.B),
-            )
-        )
-        val cifra9 = Cifras(
-            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
-                mutableListOf(Tones.A, Tones.E),
-                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
-                mutableListOf(Tones.E, Tones.B),
-            )
-        )
-
-        auxList.addAll(
-            mutableListOf(
-                cifra0,
-                cifra1,
-                cifra2,
-                cifra3,
-                cifra4,
-                cifra5,
-                cifra6,
-                cifra7,
-                cifra8,
-                cifra9
-            )
-        )
-
-        return auxList
-    }
+//    private fun fillCifrasArray(): MutableList<Cifras> {
+//        val auxList: MutableList<Cifras> = mutableListOf()
+//        val cifra0 = Cifras(
+//            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
+//                mutableListOf(Tones.A, Tones.E),
+//                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
+//                mutableListOf(Tones.E, Tones.B),
+//            )
+//        )
+//        val cifra1 = Cifras(
+//            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
+//                mutableListOf(Tones.A, Tones.E),
+//                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
+//                mutableListOf(Tones.E, Tones.B),
+//            )
+//        )
+//        val cifra2 = Cifras(
+//            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
+//                mutableListOf(Tones.A, Tones.E),
+//                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
+//                mutableListOf(Tones.E, Tones.B),
+//            )
+//        )
+//        val cifra3 = Cifras(
+//            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
+//                mutableListOf(Tones.A, Tones.E),
+//                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
+//                mutableListOf(Tones.E, Tones.B),
+//            )
+//        )
+//        val cifra4 = Cifras(
+//            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
+//                mutableListOf(Tones.A, Tones.E),
+//                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
+//                mutableListOf(Tones.E, Tones.B),
+//            )
+//        )
+//        val cifra5 = Cifras(
+//            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
+//                mutableListOf(Tones.A, Tones.E),
+//                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
+//                mutableListOf(Tones.E, Tones.B),
+//            )
+//        )
+//        val cifra6 = Cifras(
+//            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
+//                mutableListOf(Tones.A, Tones.E),
+//                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
+//                mutableListOf(Tones.E, Tones.B),
+//            )
+//        )
+//        val cifra7 = Cifras(
+//            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
+//                mutableListOf(Tones.A, Tones.E),
+//                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
+//                mutableListOf(Tones.E, Tones.B),
+//            )
+//        )
+//        val cifra8 = Cifras(
+//            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
+//                mutableListOf(Tones.A, Tones.E),
+//                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
+//                mutableListOf(Tones.E, Tones.B),
+//            )
+//        )
+//        val cifra9 = Cifras(
+//            0, "Note 0", "Note Body 0", "Billy Jean", mutableListOf(
+//                mutableListOf(Tones.A, Tones.E),
+//                mutableListOf(Tones.G, Tones.D, Tones.E + Chords.minor, Tones.C),
+//                mutableListOf(Tones.E, Tones.B),
+//            )
+//        )
+//
+//        auxList.addAll(
+//            mutableListOf(
+//                cifra0,
+//                cifra1,
+//                cifra2,
+//                cifra3,
+//                cifra4,
+//                cifra5,
+//                cifra6,
+//                cifra7,
+//                cifra8,
+//                cifra9
+//            )
+//        )
+//
+//        return auxList
+//    }
 
 }

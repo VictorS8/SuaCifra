@@ -5,43 +5,29 @@ import android.util.TypedValue
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
 
-fun mutableCollectionToTextViewString(mutableCollection: MutableCollection<String>): String {
-    var stringList = ""
-    for (eachString in mutableCollection) {
-        stringList += "$eachString  "
-    }
-    return stringList
+fun stringToTextViewString(string: String): String {
+    return string.replace(",", " ")
 }
 
 fun stringOfMutableListToEditTextString(sequenceStringOfMutableList: String): String {
     return sequenceStringOfMutableList.removeAffixOfStringOfList()
 }
 
-fun mutableCollectionToMutableListOfString(sequenceMutableCollection: MutableCollection<String>): MutableList<String> {
-    return sequenceMutableCollection.stringOfListToMutableList()
-}
-
-fun mutableCollectionToString(sequenceMutableCollection: MutableCollection<String>): String {
-    return sequenceMutableCollection.stringOfListToMutableList().toString()
-}
-
-fun mutableCollectionToSetOfStringCifras(mutableList: MutableList<MutableList<String>>): MutableSet<String> {
-    val mutableSet: MutableSet<String> = mutableSetOf()
-    for (eachMutableListOfString in mutableList) {
-        mutableSet.add(mutableCollectionToString(eachMutableListOfString))
+fun mutableSetToString(mutableSet: MutableSet<String>): String {
+    val newMutableSet = mutableSetOf<String>()
+    for (eachSet in mutableSet) {
+        newMutableSet.add(eachSet.replace(",", ";").removeAffixOfStringOfList())
     }
-    return mutableSet
+    return newMutableSet.toString().removeAffixOfStringOfList()
 }
 
-fun mutableSetToMutableListOfString(mutableSet: MutableSet<String>): MutableList<MutableList<String>> {
-    val mutableList: MutableList<MutableList<String>> = mutableListOf()
-    for (eachString in mutableSet) {
-        mutableList.add(
-            eachString.removeAffixOfStringOfList().split(",")
-                .toMutableList()
-        )
+fun stringToMutableSet(string: String): MutableSet<String> {
+    val mutableSet: MutableSet<String> = string.split(",").toMutableSet()
+    val newMutableSet = mutableSetOf<String>()
+    for (eachSet in mutableSet) {
+        newMutableSet.add(eachSet.replace(";", ","))
     }
-    return mutableList
+    return newMutableSet
 }
 
 // Extensions
@@ -59,12 +45,6 @@ fun MutableSet<String>?.addStringAt(editSequenceIndex: Int, value: String): Muta
         }
     }
     return auxMutableList.toMutableSet()
-}
-
-fun MutableCollection<String>.stringOfListToMutableList(): MutableList<String> {
-    return this.toString().trim().removePrefix("[").removeSuffix("]")
-        .replace(" ", "").split(",")
-        .toMutableList()
 }
 
 fun String.removeAffixOfStringOfList(): String {

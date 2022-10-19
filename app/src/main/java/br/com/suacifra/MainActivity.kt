@@ -68,6 +68,18 @@ class MainActivity : AppCompatActivity() {
                         getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
                         mutableSetOf()
                     )
+                    sharedPrefEditor.putString(
+                        getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
+                        null
+                    )
+                    sharedPrefEditor.putString(
+                        getString(R.string.shared_preference_add_cifra_mode_name_edit_text_key),
+                        ""
+                    )
+                    sharedPrefEditor.putString(
+                        getString(R.string.shared_preference_add_cifra_mode_singer_name_edit_text_key),
+                        ""
+                    )
                     sharedPrefEditor.putBoolean(
                         getString(R.string.shared_preference_edit_cifra_mode_boolean_key),
                         false
