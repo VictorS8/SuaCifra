@@ -6,10 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
+import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.models.Notes
 
 class NotesRecyclerViewAdapter(
@@ -91,7 +93,22 @@ class NotesRecyclerViewAdapter(
         )
 
         holder.deleteNoteImageView.setOnClickListener {
-            // TODO - Delete interact with database
+            val databaseHelper = DatabaseHelper(mainActivityContext)
+            val deleteStatus = databaseHelper.deleteOneNote(notesList[position])
+            if (deleteStatus) {
+                notifyItemRemoved(position)
+                notifyItemChanged(position)
+                mainActivityContext.toastMessage(
+                    R.string.delete_note_successfully,
+                    notesList[position].noteTitle,
+                    Toast.LENGTH_LONG
+                )
+            } else {
+                mainActivityContext.toastMessage(
+                    R.string.delete_note_failed,
+                    Toast.LENGTH_LONG
+                )
+            }
         }
 
         holder.noteItemCardView.setOnClickListener {
@@ -120,7 +137,8 @@ class NotesRecyclerViewAdapter(
      * @return The total number of items in this adapter.
      */
     override fun getItemCount(): Int {
-        return notesList.size
+        val databaseHelper = DatabaseHelper(mainActivityContext)
+        return databaseHelper.getAllNotes().size
     }
 
 }

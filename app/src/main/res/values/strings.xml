@@ -107,4 +107,6 @@
     <string name="save_note_title_missing_data">Please, check your note title</string>
     <string name="save_note_body_missing_data">Please, check your note body</string>
     <string name="sqlite_database_name" translatable="false">suaCifraDatabase.db</string>
+    <string name="delete_note_successfully">Note %1$s was deleted</string>
+    <string name="delete_note_failed">Delete note failed</string>
 </resources>

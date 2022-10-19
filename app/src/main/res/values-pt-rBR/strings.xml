@@ -81,4 +81,6 @@
     <string name="delete_note_content_description">Deleta anotação</string>
     <string name="save_note_title_missing_data">Por favor, cheque o título da anotação</string>
     <string name="save_note_body_missing_data">Por favor, cheque o corpo da anotação</string>
+    <string name="delete_note_successfully">Anotação %1$s foi excluido</string>
+    <string name="delete_note_failed">Excluir anotação falhou</string>
 </resources>

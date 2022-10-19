@@ -41,7 +41,7 @@ class DatabaseHelper(
         return insert != insertErrorNumber
     }
 
-    fun getAllNotes() : MutableList<Notes> {
+    fun getAllNotes(): MutableList<Notes> {
         val returnMutableList = mutableListOf<Notes>()
 
         val queryString = "SELECT * FROM $NOTES_TABLE"
@@ -64,6 +64,32 @@ class DatabaseHelper(
         cursor.close()
         database.close()
         return returnMutableList
+    }
+
+    fun deleteOneNote(noteModel: Notes): Boolean {
+        val database = this.writableDatabase
+        val queryString = "DELETE FROM $NOTES_TABLE WHERE $COLUMN_ID = ${noteModel.id}"
+
+        val cursor = database.rawQuery(queryString, null)
+        return if (!cursor.moveToFirst()) {
+            cursor.close()
+            database.close()
+            true
+        } else {
+            cursor.close()
+            database.close()
+            false
+        }
+    }
+
+    fun updateOneNote(noteModel: Notes): Int {
+        val database = this.writableDatabase
+        val contentValues = ContentValues()
+
+        contentValues.put(COLUMN_NOTE_TITLE, noteModel.noteTitle)
+        contentValues.put(COLUMN_NOTE_BODY, noteModel.noteBody)
+
+        return database.update(NOTES_TABLE, contentValues, "${noteModel.id}", null)
     }
 
 }
