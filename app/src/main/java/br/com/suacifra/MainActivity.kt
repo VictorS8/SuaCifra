@@ -63,28 +63,6 @@ class MainActivity : AppCompatActivity() {
                     addToBackStackFragmentOnBottomNavigation(HomeFragment(), HOME_FRAGMENT)
                 }
                 R.id.addBottomNavigation -> {
-                    val sharedPrefEditor = sharedPref.edit()
-                    sharedPrefEditor.putStringSet(
-                        getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
-                        mutableSetOf()
-                    )
-                    sharedPrefEditor.putString(
-                        getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
-                        null
-                    )
-                    sharedPrefEditor.putString(
-                        getString(R.string.shared_preference_add_cifra_mode_name_edit_text_key),
-                        ""
-                    )
-                    sharedPrefEditor.putString(
-                        getString(R.string.shared_preference_add_cifra_mode_singer_name_edit_text_key),
-                        ""
-                    )
-                    sharedPrefEditor.putBoolean(
-                        getString(R.string.shared_preference_edit_cifra_mode_boolean_key),
-                        false
-                    )
-                    sharedPrefEditor.apply()
                     addToBackStackFragmentOnBottomNavigation(AddFragment(), ADD_FRAGMENT)
                 }
                 R.id.settingsBottomNavigation -> {
@@ -117,8 +95,9 @@ class MainActivity : AppCompatActivity() {
         googleAccount = null
     }
 
+    private val fragmentManager = supportFragmentManager
+
     fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setCustomAnimations(
             R.anim.slide_in,
@@ -129,7 +108,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun addToBackStackFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setCustomAnimations(
             R.anim.slide_in,
@@ -140,8 +118,11 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
     }
 
+    fun popBackStackFragment() {
+        fragmentManager.popBackStack()
+    }
+
     private fun addToBackStackFragmentOnBottomNavigation(fragment: Fragment, fragmentName: String) {
-        val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setCustomAnimations(
             R.anim.slide_in,
@@ -156,6 +137,10 @@ class MainActivity : AppCompatActivity() {
         const val HOME_FRAGMENT = "Home"
         const val ADD_FRAGMENT = "Add"
         const val SETTINGS_FRAGMENT = "Settings"
+    }
+
+    fun toastMessage(message: String, duration: Int) {
+        Toast.makeText(this, message, duration).show()
     }
 
     fun toastMessage(@StringRes resId: Int, duration: Int) {
