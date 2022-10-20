@@ -30,17 +30,28 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/notesTitleTextView" />
 
+        <ImageView
+            android:id="@+id/noNotesImageView"
+            android:layout_width="@dimen/profile_picture_size"
+            android:layout_height="@dimen/profile_picture_size"
+            android:contentDescription="@string/no_notes_image_text"
+            android:src="@drawable/ic_baseline_notes_24"
+            android:layout_marginBottom="@dimen/minimal_space"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/noNotesTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="?attr/colorPrimary" />
+
         <TextView
-            android:id="@+id/noNotesMessage"
+            android:id="@+id/noNotesTextView"
             style="@style/warningMessageStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/big_space"
-            android:layout_marginTop="@dimen/minimal_space"
             android:layout_marginEnd="@dimen/big_space"
-            android:layout_marginBottom="@dimen/minimal_space"
             android:text="@string/no_notes_message"
-            android:visibility="invisible"
+            android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@id/notesGoBackButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

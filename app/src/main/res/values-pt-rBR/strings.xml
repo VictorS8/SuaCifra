@@ -83,4 +83,10 @@
     <string name="save_note_body_missing_data">Por favor, cheque o corpo da anotação</string>
     <string name="delete_note_successfully">Anotação %1$s foi excluido</string>
     <string name="delete_note_failed">Excluir anotação falhou</string>
+    <string name="save_cifra_missing_data">Por favor, cheque sua cifra</string>
+    <string name="delete_cifra_successfully">Cifra %1$s foi excluida</string>
+    <string name="delete_cifra_failed">Excluir cifra falhou</string>
+    <string name="save_note_button">Salvar anotação</string>
+    <string name="delete_note_button">Excluir anotação</string>
+    <string name="no_notes_image_text">Imagem sem anotações</string>
 </resources>

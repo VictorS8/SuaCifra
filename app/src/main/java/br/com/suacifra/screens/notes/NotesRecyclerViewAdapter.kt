@@ -1,18 +1,17 @@
 package br.com.suacifra.screens.notes
 
-import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.models.Notes
+import br.com.suacifra.utils.Config
 
 class NotesRecyclerViewAdapter(
     private val notesList: MutableList<Notes>, val mainActivityContext: MainActivity
@@ -21,13 +20,11 @@ class NotesRecyclerViewAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var noteItemTitleTextView: TextView
         var noteItemBodyTextView: TextView
-        val deleteNoteImageView: ImageView
         val noteItemCardView: CardView
 
         init {
             noteItemTitleTextView = view.findViewById(R.id.noteItemTitleTextView)
             noteItemBodyTextView = view.findViewById(R.id.noteItemBodyTextView)
-            deleteNoteImageView = view.findViewById(R.id.deleteNoteImageButton)
             noteItemCardView = view.findViewById(R.id.noteItemCardView)
         }
     }
@@ -82,52 +79,26 @@ class NotesRecyclerViewAdapter(
      * @param position The position of the item within the adapter's data set.
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val noteTitleTextView = notesList[position].noteTitle
-        val noteBodyTextView = notesList[position].noteBody
-
-        holder.noteItemTitleTextView.text = noteTitleTextView
-        holder.noteItemBodyTextView.text = noteBodyTextView
-
-        val sharedPref = mainActivityContext.getSharedPreferences(
-            mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
-        )
-
-        holder.deleteNoteImageView.setOnClickListener {
-            val databaseHelper = DatabaseHelper(mainActivityContext)
-            val deleteStatus = databaseHelper.deleteOneNote(notesList[position])
-            if (deleteStatus) {
-                notifyItemRemoved(position)
-                notifyItemChanged(position)
-                mainActivityContext.toastMessage(
-                    R.string.delete_note_successfully,
-                    notesList[position].noteTitle,
-                    Toast.LENGTH_LONG
-                )
-            } else {
-                mainActivityContext.toastMessage(
-                    R.string.delete_note_failed,
-                    Toast.LENGTH_LONG
-                )
-            }
-        }
+        holder.noteItemTitleTextView.text = notesList[position].noteTitle
+        holder.noteItemBodyTextView.text = notesList[position].noteBody
 
         holder.noteItemCardView.setOnClickListener {
-            val sharedPrefEditor = sharedPref.edit()
-            sharedPrefEditor.putString(
-                mainActivityContext.getString(R.string.shared_preference_edit_notes_mode_title_string_key),
+            val bundle = Bundle()
+            bundle.putInt(
+                Config.NOTE_ID_BUNDLE_KEY,
+                notesList[position].id
+            )
+            bundle.putString(
+                Config.NOTE_TITLE_BUNDLE_KEY,
                 notesList[position].noteTitle
             )
-            sharedPrefEditor.putString(
-                mainActivityContext.getString(R.string.shared_preference_edit_notes_mode_body_string_key),
+            bundle.putString(
+                Config.NOTE_BODY_BUNDLE_KEY,
                 notesList[position].noteBody
             )
-
-            sharedPrefEditor.putBoolean(
-                mainActivityContext.getString(R.string.shared_preference_edit_notes_mode_boolean_key),
-                true
-            )
-            sharedPrefEditor.apply()
-            mainActivityContext.addToBackStackFragment(AddNotesFragment())
+            val fragment = AddNotesFragment()
+            fragment.arguments = bundle
+            mainActivityContext.addToBackStackFragment(fragment)
         }
     }
 

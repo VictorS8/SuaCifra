@@ -153,6 +153,11 @@
         <item name="android:elevation">@dimen/large_space</item>
     </style>
 
+    <style name="defaultDeleteButton">
+        <item name="android:elevation">@dimen/large_space</item>
+        <item name="android:textColor">?attr/errorTextColor</item>
+    </style>
+
     <style name="profilePictureStyle">
         <item name="android:minWidth">@dimen/profile_picture_size</item>
         <item name="android:elevation">@dimen/large_space</item>
