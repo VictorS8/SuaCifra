@@ -12,6 +12,7 @@ import br.com.suacifra.databinding.MainActivityBinding
 import br.com.suacifra.screens.add.AddFragment
 import br.com.suacifra.screens.home.HomeFragment
 import br.com.suacifra.screens.settings.SettingsFragment
+import br.com.suacifra.utils.Config
 import br.com.suacifra.viewModels.MainActivityViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -32,10 +33,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val sharedPref = getSharedPreferences(
-            getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
         isGoogleSignInStatusOk = sharedPref.getBoolean(
-            getString(R.string.shared_preference_sign_in_boolean_key),
+            Config.SHARED_PREFERENCE_SIGN_IN_BOOLEAN_KEY,
             isGoogleSignInStatusOk
         )
 

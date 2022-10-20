@@ -87,6 +87,12 @@
     <string name="delete_cifra_successfully">Cifra %1$s foi excluida</string>
     <string name="delete_cifra_failed">Excluir cifra falhou</string>
     <string name="save_note_button">Salvar anotação</string>
-    <string name="delete_note_button">Excluir anotação</string>
+    <string name="delete_note_button_text">Excluir anotação</string>
     <string name="no_notes_image_text">Imagem sem anotações</string>
+    <string name="delete_cifra_button_text">Excluir cifra</string>
+    <string name="save_cifra_missing_sequence">Por favor, cheque sua sequência</string>
+    <string name="save_cifra_missing_tone">Por favor, cheque seu tom</string>
+    <string name="delete_sequence_button_text">Excluir sequência</string>
+    <string name="save_sequence_button_text">Salvar sequência</string>
+    <string name="save_sequence_missing_data">Por favor, cheque sua sequência</string>
 </resources>
