@@ -1,32 +1,33 @@
 package br.com.suacifra.screens.add
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
+import br.com.suacifra.database.DatabaseHelper
+import br.com.suacifra.utils.Config
+import br.com.suacifra.utils.stringToMutableSet
 import br.com.suacifra.utils.stringToTextViewString
 
 class SequenceChordsRecyclerViewAdapter(
-    private val sequenceChordsList: MutableSet<String>,
+    private val sequenceChordsList: String,
     val mainActivityContext: MainActivity
 ) : RecyclerView.Adapter<SequenceChordsRecyclerViewAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var sequenceItemTitleTextView: TextView
         var sequenceItemBodyTextView: TextView
-        var deleteSequenceImageButton: ImageButton
         var sequenceItemCardView: CardView
 
         init {
             sequenceItemTitleTextView = view.findViewById(R.id.sequenceItemTitleTextView)
             sequenceItemBodyTextView = view.findViewById(R.id.sequenceItemBodyTextView)
-            deleteSequenceImageButton = view.findViewById(R.id.deleteSequenceImageButton)
             sequenceItemCardView = view.findViewById(R.id.sequenceItemCardView)
         }
     }
@@ -85,52 +86,24 @@ class SequenceChordsRecyclerViewAdapter(
         val sequenceTitleTextView =
             mainActivityContext.getString(R.string.sequence_item_title, (position + 1))
         val sequenceBodyTextView =
-            stringToTextViewString(sequenceChordsList.toMutableList()[position]).removePrefix("[")
-                .removeSuffix("]")
-        val sequenceToEdit = sequenceChordsList.toMutableList()[position]
-        val sequenceToDelete = sequenceChordsList.toMutableList()[position]
+            stringToTextViewString(stringToMutableSet(sequenceChordsList).toMutableList()[position])
 
         holder.sequenceItemTitleTextView.text = sequenceTitleTextView
         holder.sequenceItemBodyTextView.text = sequenceBodyTextView
 
-        val sharedPref = mainActivityContext.getSharedPreferences(
-            mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
-        )
-
-        holder.deleteSequenceImageButton.setOnClickListener {
-            var deleteSequence: MutableSet<String>? = mutableSetOf()
-            deleteSequence = sharedPref.getStringSet(
-                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
-                deleteSequence
-            )
-
-            deleteSequence?.remove(sequenceToDelete)
-            notifyItemRemoved(position)
-            val sharedPrefEditor = sharedPref.edit()
-            sharedPrefEditor.putStringSet(
-                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
-                deleteSequence
-            )
-            sharedPrefEditor.apply()
-            notifyItemChanged(position)
-        }
-
         holder.sequenceItemCardView.setOnClickListener {
-            val sharedPrefEditor = sharedPref.edit()
-            sharedPrefEditor.putBoolean(
-                mainActivityContext.getString(R.string.shared_preference_edit_sequence_mode_boolean_key),
-                true
+            val bundle = Bundle()
+            bundle.putString(
+                Config.CIFRA_ONE_SEQUENCE_BUNDLE_KEY,
+                stringToMutableSet(sequenceChordsList).toMutableList()[position]
             )
-            sharedPrefEditor.putString(
-                mainActivityContext.getString(R.string.shared_preference_edit_sequence_mode_sequence_string_key),
-                sequenceToEdit
-            )
-            sharedPrefEditor.putInt(
-                mainActivityContext.getString(R.string.shared_preference_edit_sequence_mode_sequence_index_key),
+            bundle.putInt(
+                Config.CIFRA_ONE_SEQUENCE_INDEX_BUNDLE_KEY,
                 position
             )
-            sharedPrefEditor.apply()
-            mainActivityContext.addToBackStackFragment(AddSequenceFragment())
+            val fragment = AddSequenceFragment()
+            fragment.arguments = bundle
+            mainActivityContext.addToBackStackFragment(fragment)
         }
     }
 
@@ -141,17 +114,18 @@ class SequenceChordsRecyclerViewAdapter(
      */
     override fun getItemCount(): Int {
         val sharedPref = mainActivityContext.getSharedPreferences(
-            mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+            Config.SHARED_PREFERENCE_FILE_KEY,
+            Context.MODE_PRIVATE
         )
-        var deleteSequence: MutableSet<String>? = mutableSetOf()
-        deleteSequence = sharedPref.getStringSet(
-            mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
-            deleteSequence
-        )
-        if (deleteSequence != null) {
-            return deleteSequence.size
-        }
-        return sequenceChordsList.size
+        val databaseHelper = DatabaseHelper(mainActivityContext)
+        return stringToMutableSet(
+            databaseHelper.getAllSequenceOfCifra(
+                sharedPref.getInt(
+                    Config.CIFRA_ID_BUNDLE_KEY,
+                    -1
+                )
+            ) ?: ""
+        ).size
     }
 
 }

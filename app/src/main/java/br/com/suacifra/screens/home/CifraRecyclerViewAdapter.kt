@@ -1,12 +1,11 @@
 package br.com.suacifra.screens.home
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.MainActivity
@@ -14,6 +13,7 @@ import br.com.suacifra.R
 import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.models.Cifras
 import br.com.suacifra.screens.add.AddFragment
+import br.com.suacifra.utils.Config
 import br.com.suacifra.utils.stringToMutableSet
 import br.com.suacifra.utils.stringToTextViewString
 
@@ -28,7 +28,6 @@ class CifrasRecyclerViewAdapter(
         var cifraToneItemTextView: TextView
         var cifraSingerNameItemTextView: TextView
         var cifraFirstSequenceItemTextView: TextView
-        val deleteCifraImageView: ImageView
         val cifraItemCardView: CardView
 
         init {
@@ -36,7 +35,6 @@ class CifrasRecyclerViewAdapter(
             cifraToneItemTextView = view.findViewById(R.id.cifraToneItemTextView)
             cifraSingerNameItemTextView = view.findViewById(R.id.cifraSingerNameItemTextView)
             cifraFirstSequenceItemTextView = view.findViewById(R.id.cifraFirstSequenceItemTextView)
-            deleteCifraImageView = view.findViewById(R.id.deleteCifraImageButton)
             cifraItemCardView = view.findViewById(R.id.cifraItemCardView)
         }
     }
@@ -112,61 +110,39 @@ class CifrasRecyclerViewAdapter(
         holder.cifraSingerNameItemTextView.text = cifraSingerNameTextView
         holder.cifraFirstSequenceItemTextView.text = cifraFirstChordsSequenceTextView
 
-        val sharedPref = mainActivityContext.getSharedPreferences(
-            mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
-        )
-
-        holder.deleteCifraImageView.setOnClickListener {
-            val databaseHelper = DatabaseHelper(mainActivityContext)
-            val deleteStatus = databaseHelper.deleteOneCifra(cifrasList[position])
-            if (deleteStatus) {
-                notifyItemChanged(position)
-                notifyItemRemoved(position)
-                notifyItemChanged(position)
-                mainActivityContext.toastMessage(
-                    R.string.delete_cifra_successfully,
-                    cifrasList[position].name,
-                    Toast.LENGTH_LONG
-                )
-                notifyItemChanged(position)
-                mainActivityContext.toastMessage(
-                    R.string.delete_cifra_successfully,
-                    cifrasList[position].name,
-                    Toast.LENGTH_LONG
-                )
-            } else {
-                mainActivityContext.toastMessage(
-                    R.string.delete_cifra_failed,
-                    Toast.LENGTH_LONG
-                )
-            }
-        }
-
         holder.cifraItemCardView.setOnClickListener {
-            val sharedPrefEditor = sharedPref.edit()
-            sharedPrefEditor.putString(
-                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_name_string_key),
+            val sharedPref = mainActivityContext.getSharedPreferences(
+                Config.SHARED_PREFERENCE_FILE_KEY,
+                Context.MODE_PRIVATE
+            )
+            val sharePrefEditor = sharedPref.edit()
+            sharePrefEditor.putInt(Config.CIFRA_ID_BUNDLE_KEY, cifrasList[position].id)
+            sharePrefEditor.apply()
+
+            val bundle = Bundle()
+            bundle.putInt(
+                Config.CIFRA_ID_BUNDLE_KEY,
+                cifrasList[position].id
+            )
+            bundle.putString(
+                Config.CIFRA_NAME_BUNDLE_KEY,
                 cifrasList[position].name
             )
-            sharedPrefEditor.putString(
-                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_singer_name_string_key),
-                cifrasList[position].singerName
-            )
-            sharedPrefEditor.putString(
-                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
+            bundle.putString(
+                Config.CIFRA_TONE_BUNDLE_KEY,
                 cifrasList[position].tone
             )
-            sharedPrefEditor.putStringSet(
-                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
-                stringToMutableSet(cifrasList[position].chordsSequence)
+            bundle.putString(
+                Config.CIFRA_SINGER_NAME_BUNDLE_KEY,
+                cifrasList[position].singerName
             )
-
-            sharedPrefEditor.putBoolean(
-                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_boolean_key),
-                true
+            bundle.putString(
+                Config.CIFRA_SEQUENCE_STRING_BUNDLE_KEY,
+                cifrasList[position].chordsSequence
             )
-            sharedPrefEditor.apply()
-            mainActivityContext.addToBackStackFragment(AddFragment())
+            val fragment = AddFragment()
+            fragment.arguments = bundle
+            mainActivityContext.addToBackStackFragment(fragment)
         }
     }
 

@@ -78,7 +78,7 @@ class AddNotesFragment : Fragment() {
                     if (updateStatus > 0) {
                         mainActivityContext.toastMessage(
                             R.string.edit_note_successfully,
-                            binding.noteTitleEditText.text,
+                            noteTitleEditText.toString().trim(),
                             Toast.LENGTH_LONG
                         )
                         mainActivityContext.replaceFragment(NotesFragment())
@@ -93,7 +93,7 @@ class AddNotesFragment : Fragment() {
                     if (insertStatus) {
                         mainActivityContext.toastMessage(
                             R.string.add_note_successfully,
-                            binding.noteTitleEditText.text,
+                            noteTitleEditText.toString().trim(),
                             Toast.LENGTH_LONG
                         )
                         mainActivityContext.replaceFragment(NotesFragment())

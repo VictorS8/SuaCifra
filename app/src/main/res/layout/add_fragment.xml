@@ -130,15 +130,28 @@
             app:tint="?attr/colorPrimary" />
 
         <Button
+            android:id="@+id/deleteCifraButton"
+            style="@style/defaultDeleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:backgroundTint="?attr/colorPrimarySurface"
+            android:text="@string/delete_cifra_button_text"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/saveCifraButton"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
             android:id="@+id/saveCifraButton"
             style="@style/defaultButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/minimal_space"
+            android:layout_margin="@dimen/medium_space"
             android:text="@string/save_cifra_button_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toEndOf="@id/deleteCifraButton" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/chooseToneCardView"
@@ -169,11 +182,11 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/bbToneTextView"
+                    android:id="@+id/aSharpToneTextView"
                     style="@style/chooseToneButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/bb_tone"
+                    android:text="@string/a_sharp_tone"
                     app:layout_constraintStart_toEndOf="@+id/aToneTextView"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -183,7 +196,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/b_tone"
-                    app:layout_constraintStart_toEndOf="@+id/bbToneTextView"
+                    app:layout_constraintStart_toEndOf="@+id/aSharpToneTextView"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -196,11 +209,11 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/dbToneTextView"
+                    android:id="@+id/cSharpToneTextView"
                     style="@style/chooseToneButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/db_tone"
+                    android:text="@string/c_sharp_tone"
                     app:layout_constraintStart_toEndOf="@+id/cToneTextView"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -210,15 +223,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/d_tone"
-                    app:layout_constraintStart_toEndOf="@+id/dbToneTextView"
+                    app:layout_constraintStart_toEndOf="@+id/cSharpToneTextView"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/ebToneTextView"
+                    android:id="@+id/dSharpToneTextView"
                     style="@style/chooseToneButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/eb_tone"
+                    android:text="@string/d_sharp_tone"
                     app:layout_constraintEnd_toStartOf="@id/eToneTextView"
                     app:layout_constraintTop_toBottomOf="@id/aToneTextView" />
 
@@ -237,15 +250,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/f_tone"
-                    app:layout_constraintEnd_toStartOf="@id/gbToneTextView"
+                    app:layout_constraintEnd_toStartOf="@id/fSharpToneTextView"
                     app:layout_constraintTop_toBottomOf="@id/aToneTextView" />
 
                 <TextView
-                    android:id="@+id/gbToneTextView"
+                    android:id="@+id/fSharpToneTextView"
                     style="@style/chooseToneButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/gb_tone"
+                    android:text="@string/f_sharp_tone"
                     app:layout_constraintEnd_toStartOf="@id/gToneTextView"
                     app:layout_constraintTop_toBottomOf="@id/aToneTextView" />
 
@@ -255,15 +268,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/g_tone"
-                    app:layout_constraintEnd_toStartOf="@id/abToneTextView"
+                    app:layout_constraintEnd_toStartOf="@id/gSharpToneTextView"
                     app:layout_constraintTop_toBottomOf="@id/aToneTextView" />
 
                 <TextView
-                    android:id="@+id/abToneTextView"
+                    android:id="@+id/gSharpToneTextView"
                     style="@style/chooseToneButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/ab_tone"
+                    android:text="@string/g_sharp_tone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/aToneTextView" />
 
@@ -279,7 +292,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/ebToneTextView" />
+                    app:layout_constraintTop_toBottomOf="@id/dSharpToneTextView" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
