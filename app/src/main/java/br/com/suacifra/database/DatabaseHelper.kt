@@ -107,14 +107,14 @@ class DatabaseHelper(context: Context) :
 
         if (cursor.moveToFirst()) {
             do {
-                val cifraId = cursor.getInt(0)
+                val id = cursor.getInt(0)
                 val cifraName = cursor.getString(1)
                 val cifraTone = cursor.getString(2)
                 val cifraSingerName = cursor.getString(3)
                 val cifraChordsSequence = cursor.getString(4)
 
                 val newCifra =
-                    Cifras(cifraId, cifraName, cifraTone, cifraSingerName, cifraChordsSequence)
+                    Cifras(id, cifraName, cifraTone, cifraSingerName, cifraChordsSequence)
                 returnMutableList.add(newCifra)
             } while (cursor.moveToNext())
         } else {
@@ -124,6 +124,47 @@ class DatabaseHelper(context: Context) :
         cursor.close()
         database.close()
         return returnMutableList
+    }
+
+    fun getOneCifra(cifraId: Int): Cifras? {
+        val queryString = "SELECT * FROM $CIFRAS_TABLE WHERE $CIFRA_ID_COLUMN = $cifraId"
+        val database: SQLiteDatabase = this.readableDatabase
+        val cursor = database.rawQuery(queryString, null)
+
+        if (cursor.count > 0) {
+            val id = cursor.getInt(0)
+            val cifraName = cursor.getString(1)
+            val cifraTone = cursor.getString(2)
+            val cifraSingerName = cursor.getString(3)
+            val cifraChordsSequence = cursor.getString(4)
+
+            val newCifra =
+                Cifras(id, cifraName, cifraTone, cifraSingerName, cifraChordsSequence)
+            cursor.close()
+            database.close()
+            return newCifra
+        }
+
+        cursor.close()
+        database.close()
+        return null
+    }
+
+    fun getAllSequenceOfCifra(cifraId: Int): String? {
+        val queryString = "SELECT * FROM $CIFRAS_TABLE WHERE $CIFRA_ID_COLUMN = $cifraId"
+        val database: SQLiteDatabase = this.readableDatabase
+        val cursor = database.rawQuery(queryString, null)
+
+        if (cursor.count > 0) {
+            val cifraChordsSequence = cursor.getString(4)
+            cursor.close()
+            database.close()
+            return cifraChordsSequence
+        }
+
+        cursor.close()
+        database.close()
+        return null
     }
 
     fun deleteOneNote(noteId: Int): Int {
@@ -163,9 +204,28 @@ class DatabaseHelper(context: Context) :
         return database.update(
             CIFRAS_TABLE,
             contentValues,
-            "$NOTE_ID_COLUMN=?",
+            "$CIFRA_ID_COLUMN=?",
             arrayOf("${cifraModel.id}")
         )
     }
+
+    fun updateSequenceStringOfCifra(cifraId: Int, sequenceString: String) : Int {
+        val database = this.writableDatabase
+        val contentValues = ContentValues()
+
+        contentValues.put(CIFRA_CHORDS_SEQUENCE_COLUMN, sequenceString)
+
+        return database.update(
+            CIFRAS_TABLE,
+            contentValues,
+            "$CIFRA_ID_COLUMN=?",
+            arrayOf("$cifraId")
+        )
+    }
+
+    // Get a chordsSequenceString from Database
+    // SELECT CustomerName,City FROM Customers WHERE CustomerID = 2;
+    // After modify chordsSequenceString update data on Database
+    // UPDATE Customers SET ContactName='JJ', City='JJJJ' WHERE CustomerID=1;
 
 }
