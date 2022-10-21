@@ -4,9 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.MainActivity
@@ -28,7 +26,6 @@ class CifrasRecyclerViewAdapter(
         var cifraToneItemTextView: TextView
         var cifraSingerNameItemTextView: TextView
         var cifraFirstSequenceItemTextView: TextView
-        val deleteCifraImageView: ImageView
         val cifraItemCardView: CardView
 
         init {
@@ -36,7 +33,6 @@ class CifrasRecyclerViewAdapter(
             cifraToneItemTextView = view.findViewById(R.id.cifraToneItemTextView)
             cifraSingerNameItemTextView = view.findViewById(R.id.cifraSingerNameItemTextView)
             cifraFirstSequenceItemTextView = view.findViewById(R.id.cifraFirstSequenceItemTextView)
-            deleteCifraImageView = view.findViewById(R.id.deleteCifraImageButton)
             cifraItemCardView = view.findViewById(R.id.cifraItemCardView)
         }
     }
@@ -116,34 +112,12 @@ class CifrasRecyclerViewAdapter(
             mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
         )
 
-        holder.deleteCifraImageView.setOnClickListener {
-            val databaseHelper = DatabaseHelper(mainActivityContext)
-            val deleteStatus = databaseHelper.deleteOneCifra(cifrasList[position])
-            if (deleteStatus) {
-                notifyItemChanged(position)
-                notifyItemRemoved(position)
-                notifyItemChanged(position)
-                mainActivityContext.toastMessage(
-                    R.string.delete_cifra_successfully,
-                    cifrasList[position].name,
-                    Toast.LENGTH_LONG
-                )
-                notifyItemChanged(position)
-                mainActivityContext.toastMessage(
-                    R.string.delete_cifra_successfully,
-                    cifrasList[position].name,
-                    Toast.LENGTH_LONG
-                )
-            } else {
-                mainActivityContext.toastMessage(
-                    R.string.delete_cifra_failed,
-                    Toast.LENGTH_LONG
-                )
-            }
-        }
-
         holder.cifraItemCardView.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
+            sharedPrefEditor.putInt(
+                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_id_int_key),
+                cifrasList[position].id
+            )
             sharedPrefEditor.putString(
                 mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_name_string_key),
                 cifrasList[position].name

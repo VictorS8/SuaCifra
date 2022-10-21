@@ -21,13 +21,11 @@ class NotesRecyclerViewAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var noteItemTitleTextView: TextView
         var noteItemBodyTextView: TextView
-        val deleteNoteImageView: ImageView
         val noteItemCardView: CardView
 
         init {
             noteItemTitleTextView = view.findViewById(R.id.noteItemTitleTextView)
             noteItemBodyTextView = view.findViewById(R.id.noteItemBodyTextView)
-            deleteNoteImageView = view.findViewById(R.id.deleteNoteImageButton)
             noteItemCardView = view.findViewById(R.id.noteItemCardView)
         }
     }
@@ -92,27 +90,12 @@ class NotesRecyclerViewAdapter(
             mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
         )
 
-        holder.deleteNoteImageView.setOnClickListener {
-            val databaseHelper = DatabaseHelper(mainActivityContext)
-            val deleteStatus = databaseHelper.deleteOneNote(notesList[position])
-            if (deleteStatus) {
-                notifyItemRemoved(position)
-                notifyItemChanged(position)
-                mainActivityContext.toastMessage(
-                    R.string.delete_note_successfully,
-                    notesList[position].noteTitle,
-                    Toast.LENGTH_LONG
-                )
-            } else {
-                mainActivityContext.toastMessage(
-                    R.string.delete_note_failed,
-                    Toast.LENGTH_LONG
-                )
-            }
-        }
-
         holder.noteItemCardView.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
+            sharedPrefEditor.putInt(
+                mainActivityContext.getString(R.string.shared_preference_edit_notes_mode_id_int_key),
+                notesList[position].id
+            )
             sharedPrefEditor.putString(
                 mainActivityContext.getString(R.string.shared_preference_edit_notes_mode_title_string_key),
                 notesList[position].noteTitle
