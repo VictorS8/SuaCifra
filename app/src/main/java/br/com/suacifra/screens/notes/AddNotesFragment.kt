@@ -13,6 +13,7 @@ import br.com.suacifra.R
 import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.databinding.AddNotesFragmentBinding
 import br.com.suacifra.models.Notes
+import br.com.suacifra.utils.Config
 import br.com.suacifra.utils.getColorFromAttr
 
 class AddNotesFragment : Fragment() {
@@ -34,26 +35,26 @@ class AddNotesFragment : Fragment() {
         mainActivityContext = (activity as MainActivity)
 
         val sharedPref = mainActivityContext.getSharedPreferences(
-            getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
 
         isEditNotesModeEnable = sharedPref.getBoolean(
-            getString(R.string.shared_preference_edit_notes_mode_boolean_key),
+            Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_BOOLEAN_KEY,
             isEditNotesModeEnable
         )
 
         if (isEditNotesModeEnable) {
             // if I clicked in one custom cifra
             noteId = sharedPref.getInt(
-                getString(R.string.shared_preference_edit_notes_mode_id_int_key),
+                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_ID_INT_KEY,
                 noteId
             )
             noteTitle = sharedPref.getString(
-                getString(R.string.shared_preference_edit_notes_mode_title_string_key),
+                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_TITLE_STRING_KEY,
                 noteTitle
             )
             noteBody = sharedPref.getString(
-                getString(R.string.shared_preference_edit_notes_mode_body_string_key),
+                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_BODY_STRING_KEY,
                 noteBody
             )
             binding.noteTitleEditText.setText(noteTitle ?: "")

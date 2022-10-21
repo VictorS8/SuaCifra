@@ -12,6 +12,7 @@ import br.com.suacifra.databinding.MainActivityBinding
 import br.com.suacifra.screens.add.AddFragment
 import br.com.suacifra.screens.home.HomeFragment
 import br.com.suacifra.screens.settings.SettingsFragment
+import br.com.suacifra.utils.Config
 import br.com.suacifra.viewModels.MainActivityViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -32,10 +33,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val sharedPref = getSharedPreferences(
-            getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
         isGoogleSignInStatusOk = sharedPref.getBoolean(
-            getString(R.string.shared_preference_sign_in_boolean_key),
+            Config.SHARED_PREFERENCE_SIGN_IN_BOOLEAN_KEY,
             isGoogleSignInStatusOk
         )
 
@@ -65,23 +66,23 @@ class MainActivity : AppCompatActivity() {
                 R.id.addBottomNavigation -> {
                     val sharedPrefEditor = sharedPref.edit()
                     sharedPrefEditor.putStringSet(
-                        getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
+                        Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
                         mutableSetOf()
                     )
                     sharedPrefEditor.putString(
-                        getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
+                        Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
                         null
                     )
                     sharedPrefEditor.putString(
-                        getString(R.string.shared_preference_add_cifra_mode_name_edit_text_key),
+                        Config.SHARED_PREFERENCE_ADD_CIFRA_MODE_NAME_EDIT_TEXT_KEY,
                         ""
                     )
                     sharedPrefEditor.putString(
-                        getString(R.string.shared_preference_add_cifra_mode_singer_name_edit_text_key),
+                        Config.SHARED_PREFERENCE_ADD_CIFRA_MODE_SINGER_NAME_EDIT_TEXT_KEY,
                         ""
                     )
                     sharedPrefEditor.putBoolean(
-                        getString(R.string.shared_preference_edit_cifra_mode_boolean_key),
+                        Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_BOOLEAN_KEY,
                         false
                     )
                     sharedPrefEditor.apply()

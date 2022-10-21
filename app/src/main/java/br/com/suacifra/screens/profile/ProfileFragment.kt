@@ -13,6 +13,7 @@ import br.com.suacifra.R
 import br.com.suacifra.databinding.ProfileFragmentBinding
 import br.com.suacifra.screens.login.LoginFragment
 import br.com.suacifra.screens.settings.SettingsFragment
+import br.com.suacifra.utils.Config
 import coil.api.load
 import coil.transform.RoundedCornersTransformation
 
@@ -32,7 +33,7 @@ class ProfileFragment : Fragment() {
         mainActivityContext = (activity as MainActivity)
 
         val sharedPref = mainActivityContext.getSharedPreferences(
-            getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
 
         val googleAccount = mainActivityContext.getLastSignedInAccountOnActivity()
@@ -53,7 +54,7 @@ class ProfileFragment : Fragment() {
             binding.profileEmailTextView.text = googleAccount.email
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putBoolean(
-                getString(R.string.shared_preference_sign_in_boolean_key),
+                Config.SHARED_PREFERENCE_SIGN_IN_BOOLEAN_KEY,
                 true
             )
             sharedPrefEditor.apply()
@@ -62,7 +63,7 @@ class ProfileFragment : Fragment() {
         binding.profileSignOutButton.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putBoolean(
-                getString(R.string.shared_preference_sign_in_boolean_key),
+                Config.SHARED_PREFERENCE_SIGN_IN_BOOLEAN_KEY,
                 false
             )
             sharedPrefEditor.apply()

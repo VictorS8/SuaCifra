@@ -4,14 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
-import br.com.suacifra.database.DatabaseHelper
-import br.com.suacifra.utils.stringToMutableSet
+import br.com.suacifra.utils.Config
 import br.com.suacifra.utils.stringToTextViewString
 
 class SequenceChordsRecyclerViewAdapter(
@@ -93,21 +91,21 @@ class SequenceChordsRecyclerViewAdapter(
         holder.sequenceItemBodyTextView.text = sequenceBodyTextView
 
         val sharedPref = mainActivityContext.getSharedPreferences(
-            mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
 
         holder.sequenceItemCardView.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putBoolean(
-                mainActivityContext.getString(R.string.shared_preference_edit_sequence_mode_boolean_key),
+                Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_BOOLEAN_KEY,
                 true
             )
             sharedPrefEditor.putString(
-                mainActivityContext.getString(R.string.shared_preference_edit_sequence_mode_sequence_string_key),
+                Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_SEQUENCE_STRING_KEY,
                 sequenceToEdit
             )
             sharedPrefEditor.putInt(
-                mainActivityContext.getString(R.string.shared_preference_edit_sequence_mode_sequence_index_key),
+                Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_SEQUENCE_INDEX_KEY,
                 position
             )
             sharedPrefEditor.apply()
@@ -122,11 +120,11 @@ class SequenceChordsRecyclerViewAdapter(
      */
     override fun getItemCount(): Int {
         val sharedPref = mainActivityContext.getSharedPreferences(
-            mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
         var deleteSequence: MutableSet<String>? = mutableSetOf()
         deleteSequence = sharedPref.getStringSet(
-            mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
+            Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
             deleteSequence
         )
         if (deleteSequence != null) {

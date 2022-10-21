@@ -7,10 +7,11 @@ import android.database.sqlite.SQLiteOpenHelper
 import br.com.suacifra.R
 import br.com.suacifra.models.Cifras
 import br.com.suacifra.models.Notes
+import br.com.suacifra.utils.Config
 
 class DatabaseHelper(
     context: Context
-) : SQLiteOpenHelper(context, context.getString(R.string.sqlite_database_name), null, 1) {
+) : SQLiteOpenHelper(context, Config.SUA_CIFRA_DATABASE, null, Config.SUA_CIFRA_DATABASE_VERSION) {
 
     companion object {
         const val NOTES_TABLE = "NOTES_TABLE"
@@ -37,7 +38,15 @@ class DatabaseHelper(
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        TODO("Not yet implemented")
+        if (oldVersion < newVersion) {
+            val dropNotesTableStatement = "DROP TABLE IF EXISTS $NOTES_TABLE"
+            val dropCifrasTableStatement = "DROP TABLE IF EXISTS $CIFRAS_TABLE"
+
+            db?.execSQL(dropNotesTableStatement)
+            db?.execSQL(dropCifrasTableStatement)
+
+            onCreate(db)
+        }
     }
 
     fun addOneNote(noteModel: Notes): Boolean {

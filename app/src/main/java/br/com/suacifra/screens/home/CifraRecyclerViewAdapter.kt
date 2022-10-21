@@ -12,6 +12,7 @@ import br.com.suacifra.R
 import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.models.Cifras
 import br.com.suacifra.screens.add.AddFragment
+import br.com.suacifra.utils.Config
 import br.com.suacifra.utils.stringToMutableSet
 import br.com.suacifra.utils.stringToTextViewString
 
@@ -109,34 +110,34 @@ class CifrasRecyclerViewAdapter(
         holder.cifraFirstSequenceItemTextView.text = cifraFirstChordsSequenceTextView
 
         val sharedPref = mainActivityContext.getSharedPreferences(
-            mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
 
         holder.cifraItemCardView.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putInt(
-                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_id_int_key),
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_ID_INT_KEY,
                 cifrasList[position].id
             )
             sharedPrefEditor.putString(
-                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_name_string_key),
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_NAME_STRING_KEY,
                 cifrasList[position].name
             )
             sharedPrefEditor.putString(
-                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_singer_name_string_key),
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY,
                 cifrasList[position].singerName
             )
             sharedPrefEditor.putString(
-                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
                 cifrasList[position].tone
             )
             sharedPrefEditor.putStringSet(
-                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
                 stringToMutableSet(cifrasList[position].chordsSequence)
             )
 
             sharedPrefEditor.putBoolean(
-                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_boolean_key),
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_BOOLEAN_KEY,
                 true
             )
             sharedPrefEditor.apply()

@@ -20,17 +20,15 @@ import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.databinding.AddFragmentBinding
 import br.com.suacifra.models.Cifras
 import br.com.suacifra.screens.home.HomeFragment
-import br.com.suacifra.screens.notes.NotesFragment
+import br.com.suacifra.utils.Config
 import br.com.suacifra.utils.getColorFromAttr
 import br.com.suacifra.utils.mutableSetToString
 import br.com.suacifra.utils.stringOfMutableListToEditTextString
-import br.com.suacifra.utils.stringToMutableSet
 
 class AddFragment : Fragment() {
 
     private lateinit var binding: AddFragmentBinding
     private lateinit var mainActivityContext: MainActivity
-    private var sequenceChordsList: MutableSet<String>? = mutableSetOf()
     private lateinit var recyclerView: RecyclerView
     private lateinit var sequenceAdapter: Adapter<SequenceChordsRecyclerViewAdapter.ViewHolder>
     private lateinit var sequenceLayoutManager: LayoutManager
@@ -53,19 +51,19 @@ class AddFragment : Fragment() {
         mainActivityContext = (activity as MainActivity)
 
         val sharedPref = mainActivityContext.getSharedPreferences(
-            getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
 
         binding.cifraNameEditText.setText(
             sharedPref.getString(
-                getString(R.string.shared_preference_add_cifra_mode_name_edit_text_key),
+                Config.SHARED_PREFERENCE_ADD_CIFRA_MODE_NAME_EDIT_TEXT_KEY,
                 ""
             )
         )
 
         binding.cifraSingerNameEditText.setText(
             sharedPref.getString(
-                getString(R.string.shared_preference_add_cifra_mode_singer_name_edit_text_key),
+                Config.SHARED_PREFERENCE_ADD_CIFRA_MODE_SINGER_NAME_EDIT_TEXT_KEY,
                 ""
             )
         )
@@ -75,7 +73,7 @@ class AddFragment : Fragment() {
         }
 
         val toneString = sharedPref.getString(
-            getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
+            Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
             getString(R.string.tone_spinner_helper_string)
         )
 
@@ -84,42 +82,42 @@ class AddFragment : Fragment() {
         else {
             binding.songToneButtonHelper.text = getString(
                 R.string.tone_chosen_text, sharedPref.getString(
-                    getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
+                    Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
                     getString(R.string.tone_spinner_helper_string)
                 )
             )
         }
 
         isEditCifraModeEnable = sharedPref.getBoolean(
-            getString(R.string.shared_preference_edit_cifra_mode_boolean_key),
+            Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_BOOLEAN_KEY,
             isEditCifraModeEnable
         )
 
         isEditSequenceModeEnable = sharedPref.getBoolean(
-            getString(R.string.shared_preference_edit_sequence_mode_boolean_key),
+            Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_BOOLEAN_KEY,
             isEditSequenceModeEnable
         )
 
         if (isEditCifraModeEnable) {
             // if I clicked in one custom cifra
             cifraId = sharedPref.getInt(
-                getString(R.string.shared_preference_edit_cifra_mode_id_int_key),
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_ID_INT_KEY,
                 cifraId
             )
             cifraName = sharedPref.getString(
-                getString(R.string.shared_preference_edit_cifra_mode_name_string_key),
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_NAME_STRING_KEY,
                 cifraName
             )
             cifraSingerName = sharedPref.getString(
-                getString(R.string.shared_preference_edit_cifra_mode_singer_name_string_key),
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY,
                 cifraSingerName
             )
             cifraTone = sharedPref.getString(
-                getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
                 cifraTone
             )
             cifraSequenceSetString = sharedPref.getStringSet(
-                getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
                 cifraSequenceSetString
             )
 
@@ -130,22 +128,18 @@ class AddFragment : Fragment() {
         } else {
             // if I clicked on add bottom navigation option
             cifraSequenceSetString = sharedPref.getStringSet(
-                getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
                 cifraSequenceSetString
             )
             cifraTone = sharedPref.getString(
-                getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
                 cifraTone
             )
             cifraSequenceString = mutableSetToString(cifraSequenceSetString ?: mutableSetOf())
-            sequenceChordsList = sharedPref.getStringSet(
-                getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
-                mutableSetOf()
-            )
             binding.deleteCifraButton.visibility = View.GONE
         }
 
-        if (sequenceChordsList?.size == 0)
+        if (cifraSequenceSetString?.size == 0)
             binding.noSequenceMessage.visibility = View.VISIBLE
         else
             binding.noSequenceMessage.visibility = View.INVISIBLE
@@ -158,7 +152,7 @@ class AddFragment : Fragment() {
         recyclerView.layoutManager = sequenceLayoutManager
 
         sequenceAdapter = SequenceChordsRecyclerViewAdapter(
-            sequenceChordsList ?: mutableSetOf(),
+            cifraSequenceSetString ?: mutableSetOf(),
             mainActivityContext
         )
         recyclerView.adapter = sequenceAdapter
@@ -166,15 +160,15 @@ class AddFragment : Fragment() {
         binding.addSequencesImageButton.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putString(
-                getString(R.string.shared_preference_add_cifra_mode_name_edit_text_key),
+                Config.SHARED_PREFERENCE_ADD_CIFRA_MODE_NAME_EDIT_TEXT_KEY,
                 binding.cifraNameEditText.text.toString()
             )
             sharedPrefEditor.putString(
-                getString(R.string.shared_preference_add_cifra_mode_singer_name_edit_text_key),
+                Config.SHARED_PREFERENCE_ADD_CIFRA_MODE_SINGER_NAME_EDIT_TEXT_KEY,
                 binding.cifraSingerNameEditText.text.toString()
             )
             sharedPrefEditor.putBoolean(
-                getString(R.string.shared_preference_edit_sequence_mode_boolean_key),
+                Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_BOOLEAN_KEY,
                 false
             )
             sharedPrefEditor.apply()
@@ -303,11 +297,11 @@ class AddFragment : Fragment() {
     private fun clickableTextAsTextViewEvent(view: View) {
         val textViewString: TextView = view as TextView
         val sharedPref = mainActivityContext.getSharedPreferences(
-            getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
         val sharedPrefEditor = sharedPref.edit()
         sharedPrefEditor.putString(
-            getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
+            Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
             textViewString.text.toString()
         )
         sharedPrefEditor.apply()

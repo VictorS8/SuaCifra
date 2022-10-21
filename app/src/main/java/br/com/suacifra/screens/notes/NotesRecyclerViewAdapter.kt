@@ -4,15 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.models.Notes
+import br.com.suacifra.utils.Config
 
 class NotesRecyclerViewAdapter(
     private val notesList: MutableList<Notes>, val mainActivityContext: MainActivity
@@ -87,27 +86,25 @@ class NotesRecyclerViewAdapter(
         holder.noteItemBodyTextView.text = noteBodyTextView
 
         val sharedPref = mainActivityContext.getSharedPreferences(
-            mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
 
         holder.noteItemCardView.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putInt(
-                mainActivityContext.getString(R.string.shared_preference_edit_notes_mode_id_int_key),
-                notesList[position].id
+                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_ID_INT_KEY, notesList[position].id
             )
             sharedPrefEditor.putString(
-                mainActivityContext.getString(R.string.shared_preference_edit_notes_mode_title_string_key),
+                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_TITLE_STRING_KEY,
                 notesList[position].noteTitle
             )
             sharedPrefEditor.putString(
-                mainActivityContext.getString(R.string.shared_preference_edit_notes_mode_body_string_key),
+                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_BODY_STRING_KEY,
                 notesList[position].noteBody
             )
 
             sharedPrefEditor.putBoolean(
-                mainActivityContext.getString(R.string.shared_preference_edit_notes_mode_boolean_key),
-                true
+                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_BOOLEAN_KEY, true
             )
             sharedPrefEditor.apply()
             mainActivityContext.addToBackStackFragment(AddNotesFragment())
