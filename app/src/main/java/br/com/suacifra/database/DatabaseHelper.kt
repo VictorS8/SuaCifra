@@ -117,37 +117,15 @@ class DatabaseHelper(
         database.close()
         return returnMutableList
     }
-
-    fun deleteOneNote(noteModel: Notes): Boolean {
+    
+    fun deleteOneNote(noteId: Int): Int {
         val database = this.writableDatabase
-        val queryString = "DELETE FROM $NOTES_TABLE WHERE $NOTE_ID_COLUMN = ${noteModel.id}"
-
-        val cursor = database.rawQuery(queryString, null)
-        return if (!cursor.moveToFirst()) {
-            cursor.close()
-            database.close()
-            true
-        } else {
-            cursor.close()
-            database.close()
-            false
-        }
+        return database.delete(NOTES_TABLE, "$NOTE_ID_COLUMN=?", arrayOf("$noteId"))
     }
 
-    fun deleteOneCifra(cifraModel: Cifras): Boolean {
+    fun deleteOneCifra(cifraId: Int): Int {
         val database = this.writableDatabase
-        val queryString = "DELETE FROM $CIFRAS_TABLE WHERE $CIFRA_ID_COLUMN = ${cifraModel.id}"
-
-        val cursor = database.rawQuery(queryString, null)
-        return if (!cursor.moveToFirst()) {
-            cursor.close()
-            database.close()
-            true
-        } else {
-            cursor.close()
-            database.close()
-            false
-        }
+        return database.delete(CIFRAS_TABLE, "$CIFRA_ID_COLUMN=?", arrayOf("$cifraId"))
     }
 
     fun updateOneNote(noteModel: Notes): Int {
@@ -157,7 +135,12 @@ class DatabaseHelper(
         contentValues.put(NOTE_TITLE_COLUMN, noteModel.noteTitle)
         contentValues.put(NOTE_BODY_COLUMN, noteModel.noteBody)
 
-        return database.update(NOTES_TABLE, contentValues, "${noteModel.id}", null)
+        return database.update(
+            NOTES_TABLE,
+            contentValues,
+            "$NOTE_ID_COLUMN=?",
+            arrayOf("${noteModel.id}")
+        )
     }
 
     fun updateOneCifra(cifraModel: Cifras): Int {
@@ -169,7 +152,12 @@ class DatabaseHelper(
         contentValues.put(CIFRA_SINGER_NAME_COLUMN, cifraModel.singerName)
         contentValues.put(CIFRA_CHORDS_SEQUENCE_COLUMN, cifraModel.chordsSequence)
 
-        return database.update(CIFRAS_TABLE, contentValues, "${cifraModel.id}", null)
+        return database.update(
+            CIFRAS_TABLE,
+            contentValues,
+            "$CIFRA_ID_COLUMN=?",
+            arrayOf("${cifraModel.id}")
+        )
     }
 
 }
