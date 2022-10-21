@@ -158,6 +158,15 @@ class MainActivity : AppCompatActivity() {
         const val SETTINGS_FRAGMENT = "Settings"
     }
 
+    fun toastMessage(message: String, duration: Int) {
+        Toast.makeText(
+            this,
+            message,
+            duration
+        )
+            .show()
+    }
+
     fun toastMessage(@StringRes resId: Int, duration: Int) {
         Toast.makeText(
             this,

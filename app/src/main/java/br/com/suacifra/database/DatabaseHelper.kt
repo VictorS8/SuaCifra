@@ -106,7 +106,8 @@ class DatabaseHelper(
                 val cifraSingerName = cursor.getString(3)
                 val cifraChordsSequence = cursor.getString(4)
 
-                val newCifra = Cifras(cifraId, cifraName, cifraTone, cifraSingerName, cifraChordsSequence)
+                val newCifra =
+                    Cifras(cifraId, cifraName, cifraTone, cifraSingerName, cifraChordsSequence)
                 returnMutableList.add(newCifra)
             } while (cursor.moveToNext())
         } else {
@@ -117,7 +118,7 @@ class DatabaseHelper(
         database.close()
         return returnMutableList
     }
-    
+
     fun deleteOneNote(noteId: Int): Int {
         val database = this.writableDatabase
         return database.delete(NOTES_TABLE, "$NOTE_ID_COLUMN=?", arrayOf("$noteId"))
