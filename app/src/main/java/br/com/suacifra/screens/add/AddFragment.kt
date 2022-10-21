@@ -24,6 +24,7 @@ import br.com.suacifra.screens.notes.NotesFragment
 import br.com.suacifra.utils.getColorFromAttr
 import br.com.suacifra.utils.mutableSetToString
 import br.com.suacifra.utils.stringOfMutableListToEditTextString
+import br.com.suacifra.utils.stringToMutableSet
 
 class AddFragment : Fragment() {
 
@@ -35,6 +36,7 @@ class AddFragment : Fragment() {
     private lateinit var sequenceLayoutManager: LayoutManager
     private var isEditCifraModeEnable = false
     private var isEditSequenceModeEnable = false
+    private var cifraId: Int = 0
     private var cifraName: String? = ""
     private var cifraSingerName: String? = ""
     private var cifraTone: String? = ""
@@ -80,7 +82,6 @@ class AddFragment : Fragment() {
         if (toneString == getString(R.string.tone_spinner_helper_string))
             binding.songToneButtonHelper.text = toneString
         else {
-            cifraTone = toneString
             binding.songToneButtonHelper.text = getString(
                 R.string.tone_chosen_text, sharedPref.getString(
                     getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
@@ -101,6 +102,10 @@ class AddFragment : Fragment() {
 
         if (isEditCifraModeEnable) {
             // if I clicked in one custom cifra
+            cifraId = sharedPref.getInt(
+                getString(R.string.shared_preference_edit_cifra_mode_id_int_key),
+                cifraId
+            )
             cifraName = sharedPref.getString(
                 getString(R.string.shared_preference_edit_cifra_mode_name_string_key),
                 cifraName
@@ -121,19 +126,23 @@ class AddFragment : Fragment() {
             binding.cifraNameEditText.setText(stringOfMutableListToEditTextString(cifraName ?: ""))
             binding.cifraSingerNameEditText.setText(cifraSingerName ?: "")
             binding.songToneButtonHelper.text = getString(R.string.tone_chosen_text, cifraTone)
-            sequenceChordsList =
-                cifraSequenceSetString ?: mutableSetOf()
+            binding.deleteCifraButton.visibility = View.VISIBLE
         } else {
             // if I clicked on add bottom navigation option
             cifraSequenceSetString = sharedPref.getStringSet(
                 getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
                 cifraSequenceSetString
             )
+            cifraTone = sharedPref.getString(
+                getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
+                cifraTone
+            )
             cifraSequenceString = mutableSetToString(cifraSequenceSetString ?: mutableSetOf())
             sequenceChordsList = sharedPref.getStringSet(
                 getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
                 mutableSetOf()
             )
+            binding.deleteCifraButton.visibility = View.GONE
         }
 
         if (sequenceChordsList?.size == 0)
@@ -173,61 +182,64 @@ class AddFragment : Fragment() {
         }
 
         val cifraNameEditText = binding.cifraNameEditText.text
-        var cifraToneString = cifraTone
         val cifraSingerNameEditText = binding.cifraSingerNameEditText.text
         val cifraSequenceSetString: MutableSet<String> = cifraSequenceSetString ?: mutableSetOf()
         cifraSequenceString = mutableSetToString(cifraSequenceSetString)
 
-        binding.saveCifraButton.setOnClickListener {
+        binding.deleteCifraButton.setOnClickListener {
             if (isEditCifraModeEnable) {
-                cifraToneString = sharedPref.getString(
-                    getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
-                    ""
-                )
-
-                val cifrasModel = Cifras(
-                    -1,
-                    cifraNameEditText.toString(),
-                    cifraToneString!!,
-                    cifraSingerNameEditText.toString(),
-                    cifraSequenceString
-                )
                 val databaseHelper = DatabaseHelper(mainActivityContext)
-                val updateStatus = databaseHelper.updateOneCifra(cifrasModel)
-                if (updateStatus >= 0) {
+                val deleteStatus =
+                    databaseHelper.deleteOneCifra(cifraId)
+                if (deleteStatus > 0) {
                     mainActivityContext.toastMessage(
-                        R.string.edit_cifra_successfully,
-                        binding.cifraNameEditText.text,
+                        R.string.delete_cifra_successfully,
+                        cifraName ?: "",
                         Toast.LENGTH_LONG
                     )
-                    mainActivityContext.replaceFragment(NotesFragment())
+                    mainActivityContext.replaceFragment(HomeFragment())
                 } else {
                     mainActivityContext.toastMessage(
-                        R.string.save_cifra_missing_data,
+                        R.string.delete_cifra_failed,
                         Toast.LENGTH_LONG
                     )
                 }
-            } else {
-                cifraToneString = sharedPref.getString(
-                    getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
-                    ""
-                )
+            }
+        }
 
-                if (!cifraNameEditText.isNullOrBlank() && !cifraToneString.isNullOrBlank() && !cifraSingerNameEditText.isNullOrBlank() && cifraSequenceString.isNotEmpty()) {
-                    val cifrasModel =
-                        Cifras(
-                            -1,
-                            cifraNameEditText.toString(),
-                            cifraToneString!!,
-                            cifraSingerNameEditText.toString(),
-                            cifraSequenceString
+        binding.saveCifraButton.setOnClickListener {
+            if (!cifraNameEditText.isNullOrBlank() && !cifraTone.isNullOrBlank() && !cifraSingerNameEditText.isNullOrBlank() && cifraSequenceString.isNotBlank()) {
+                val cifrasModel =
+                    Cifras(
+                        -1,
+                        cifraNameEditText.toString().trim(),
+                        cifraTone ?: "",
+                        cifraSingerNameEditText.toString().trim(),
+                        cifraSequenceString
+                    )
+                val databaseHelper = DatabaseHelper(mainActivityContext)
+                if (isEditCifraModeEnable) {
+                    cifrasModel.id = cifraId
+                    val updateStatus = databaseHelper.updateOneCifra(cifrasModel)
+                    if (updateStatus >= 0) {
+                        mainActivityContext.toastMessage(
+                            R.string.edit_cifra_successfully,
+                            cifraNameEditText.toString().trim(),
+                            Toast.LENGTH_LONG
                         )
-                    val databaseHelper = DatabaseHelper(mainActivityContext)
+                        mainActivityContext.replaceFragment(HomeFragment())
+                    } else {
+                        mainActivityContext.toastMessage(
+                            R.string.save_cifra_missing_data,
+                            Toast.LENGTH_LONG
+                        )
+                    }
+                } else {
                     val insertStatus = databaseHelper.addOneCifra(cifrasModel)
                     if (insertStatus) {
                         mainActivityContext.toastMessage(
                             R.string.add_cifra_successfully,
-                            binding.cifraNameEditText.text,
+                            cifraNameEditText.toString().trim(),
                             Toast.LENGTH_SHORT
                         )
                         mainActivityContext.replaceFragment(HomeFragment())
@@ -237,32 +249,42 @@ class AddFragment : Fragment() {
                             Toast.LENGTH_LONG
                         )
                     }
-                } else if (cifraNameEditText.isNullOrBlank()) {
-                    binding.cifraNameEditText.setHintTextColor(
-                        mainActivityContext.getColorFromAttr(
-                            com.google.android.material.R.attr.errorTextColor
-                        )
-                    )
-                    mainActivityContext.toastMessage(
-                        R.string.save_cifra_missing_data,
-                        Toast.LENGTH_LONG
-                    )
-                } else if (cifraSingerNameEditText.isNullOrBlank()) {
-                    binding.cifraNameEditText.setHintTextColor(
-                        mainActivityContext.getColorFromAttr(
-                            com.google.android.material.R.attr.errorTextColor
-                        )
-                    )
-                    mainActivityContext.toastMessage(
-                        R.string.save_cifra_missing_data,
-                        Toast.LENGTH_LONG
-                    )
-                } else {
-                    mainActivityContext.toastMessage(
-                        R.string.save_cifra_missing_data,
-                        Toast.LENGTH_LONG
-                    )
                 }
+            } else if (cifraNameEditText.isNullOrBlank()) {
+                binding.cifraNameEditText.setHintTextColor(
+                    mainActivityContext.getColorFromAttr(
+                        com.google.android.material.R.attr.errorTextColor
+                    )
+                )
+                mainActivityContext.toastMessage(
+                    R.string.save_cifra_missing_data,
+                    Toast.LENGTH_LONG
+                )
+            } else if (cifraSingerNameEditText.isNullOrBlank()) {
+                binding.cifraNameEditText.setHintTextColor(
+                    mainActivityContext.getColorFromAttr(
+                        com.google.android.material.R.attr.errorTextColor
+                    )
+                )
+                mainActivityContext.toastMessage(
+                    R.string.save_cifra_missing_data,
+                    Toast.LENGTH_LONG
+                )
+            } else if (cifraTone.isNullOrBlank()) {
+                mainActivityContext.toastMessage(
+                    R.string.save_cifra_missing_tone,
+                    Toast.LENGTH_LONG
+                )
+            } else if (cifraSequenceString.isBlank()) {
+                mainActivityContext.toastMessage(
+                    R.string.save_cifra_missing_sequence,
+                    Toast.LENGTH_LONG
+                )
+            } else {
+                mainActivityContext.toastMessage(
+                    R.string.save_cifra_missing_data,
+                    Toast.LENGTH_LONG
+                )
             }
         }
 

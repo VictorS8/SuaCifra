@@ -20,6 +20,7 @@ class AddNotesFragment : Fragment() {
     private lateinit var binding: AddNotesFragmentBinding
     private lateinit var mainActivityContext: MainActivity
     private var isEditNotesModeEnable = false
+    private var noteId: Int = 0
     private var noteTitle: String? = ""
     private var noteBody: String? = ""
 
@@ -43,6 +44,10 @@ class AddNotesFragment : Fragment() {
 
         if (isEditNotesModeEnable) {
             // if I clicked in one custom cifra
+            noteId = sharedPref.getInt(
+                getString(R.string.shared_preference_edit_notes_mode_id_int_key),
+                noteId
+            )
             noteTitle = sharedPref.getString(
                 getString(R.string.shared_preference_edit_notes_mode_title_string_key),
                 noteTitle
@@ -53,49 +58,63 @@ class AddNotesFragment : Fragment() {
             )
             binding.noteTitleEditText.setText(noteTitle ?: "")
             binding.noteBodyEditText.setText(noteBody ?: "")
+            binding.deleteNoteButton.visibility = View.VISIBLE
         } else {
             // if I clicked on add bottom navigation option
+            noteId = -1
             noteTitle = ""
             noteBody = ""
+            binding.deleteNoteButton.visibility = View.GONE
         }
 
-        binding.cancelNoteImageButton.setOnClickListener {
-            Toast.makeText(
-                mainActivityContext,
-                getString(R.string.add_note_cancelled),
-                Toast.LENGTH_LONG
-            )
-                .show()
-            mainActivityContext.replaceFragment(NotesFragment())
-        }
-
-        val noteTitleEditText = binding.noteTitleEditText.text
-        val noteBodyEditText = binding.noteBodyEditText.text
-
-        binding.addNoteImageButton.setOnClickListener {
+        binding.deleteNoteButton.setOnClickListener {
             if (isEditNotesModeEnable) {
-                val notesModel =
-                    Notes(-1, noteTitleEditText.toString(), noteBodyEditText.toString())
                 val databaseHelper = DatabaseHelper(mainActivityContext)
-                val updateStatus = databaseHelper.updateOneNote(notesModel)
-                if (updateStatus >= 0) {
+                val deleteStatus =
+                    databaseHelper.deleteOneNote(noteId)
+                if (deleteStatus > 0) {
                     mainActivityContext.toastMessage(
-                        R.string.edit_note_successfully,
-                        binding.noteTitleEditText.text,
+                        R.string.delete_note_successfully,
+                        noteTitle ?: "",
                         Toast.LENGTH_LONG
                     )
                     mainActivityContext.replaceFragment(NotesFragment())
                 } else {
                     mainActivityContext.toastMessage(
-                        R.string.save_note_missing_data,
+                        R.string.delete_note_failed,
                         Toast.LENGTH_LONG
                     )
                 }
-            } else {
-                if (!noteTitleEditText.isNullOrBlank() && !noteBodyEditText.isNullOrBlank()) {
-                    val notesModel =
-                        Notes(-1, noteTitleEditText.toString(), noteBodyEditText.toString())
-                    val databaseHelper = DatabaseHelper(mainActivityContext)
+            }
+        }
+
+        val noteTitleEditText = binding.noteTitleEditText.text
+        val noteBodyEditText = binding.noteBodyEditText.text
+
+        binding.saveNoteButton.setOnClickListener {
+            if (!noteTitleEditText.isNullOrBlank() && !noteBodyEditText.isNullOrBlank()) {
+                val notesModel =
+                    Notes(
+                        noteId,
+                        noteTitleEditText.toString().trim(),
+                        noteBodyEditText.toString().trim()
+                    )
+                val databaseHelper = DatabaseHelper(mainActivityContext)
+                if (isEditNotesModeEnable) {
+                    val updateStatus = databaseHelper.updateOneNote(notesModel)
+                    if (updateStatus > 0) {
+                        mainActivityContext.toastMessage(
+                            R.string.edit_note_successfully,
+                            binding.noteTitleEditText.text,
+                            Toast.LENGTH_LONG
+                        )
+                        mainActivityContext.replaceFragment(NotesFragment())
+                    } else {
+                        mainActivityContext.toastMessage(
+                            R.string.save_note_missing_data,
+                            Toast.LENGTH_LONG)
+                    }
+                } else {
                     val insertStatus = databaseHelper.addOneNote(notesModel)
                     if (insertStatus) {
                         mainActivityContext.toastMessage(
@@ -110,32 +129,32 @@ class AddNotesFragment : Fragment() {
                             Toast.LENGTH_LONG
                         )
                     }
-                } else if (noteTitleEditText.isNullOrBlank()) {
-                    binding.noteTitleEditText.setHintTextColor(
-                        mainActivityContext.getColorFromAttr(
-                            com.google.android.material.R.attr.errorTextColor
-                        )
-                    )
-                    mainActivityContext.toastMessage(
-                        R.string.save_note_title_missing_data,
-                        Toast.LENGTH_LONG
-                    )
-                } else if (noteBodyEditText.isNullOrBlank()) {
-                    binding.noteBodyEditText.setHintTextColor(
-                        mainActivityContext.getColorFromAttr(
-                            com.google.android.material.R.attr.errorTextColor
-                        )
-                    )
-                    mainActivityContext.toastMessage(
-                        R.string.save_note_body_missing_data,
-                        Toast.LENGTH_LONG
-                    )
-                } else {
-                    mainActivityContext.toastMessage(
-                        R.string.save_note_missing_data,
-                        Toast.LENGTH_LONG
-                    )
                 }
+            } else if (noteTitleEditText.isNullOrBlank()) {
+                binding.noteTitleEditText.setHintTextColor(
+                    mainActivityContext.getColorFromAttr(
+                        com.google.android.material.R.attr.errorTextColor
+                    )
+                )
+                mainActivityContext.toastMessage(
+                    R.string.save_note_title_missing_data,
+                    Toast.LENGTH_LONG
+                )
+            } else if (noteBodyEditText.isNullOrBlank()) {
+                binding.noteBodyEditText.setHintTextColor(
+                    mainActivityContext.getColorFromAttr(
+                        com.google.android.material.R.attr.errorTextColor
+                    )
+                )
+                mainActivityContext.toastMessage(
+                    R.string.save_note_body_missing_data,
+                    Toast.LENGTH_LONG
+                )
+            } else {
+                mainActivityContext.toastMessage(
+                    R.string.save_note_missing_data,
+                    Toast.LENGTH_LONG
+                )
             }
         }
 

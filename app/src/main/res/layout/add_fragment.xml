@@ -130,15 +130,27 @@
             app:tint="?attr/colorPrimary" />
 
         <Button
+            android:id="@+id/deleteCifraButton"
+            style="@style/defaultDeleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_margin="@dimen/medium_space"
+            android:text="@string/delete_cifra_button_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/saveCifraButton"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
             android:id="@+id/saveCifraButton"
             style="@style/defaultButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/minimal_space"
+            android:layout_margin="@dimen/medium_space"
             android:text="@string/save_cifra_button_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toEndOf="@id/deleteCifraButton" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/chooseToneCardView"

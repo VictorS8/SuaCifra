@@ -49,37 +49,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/minimal_space"
-            android:textAlignment="center"
             android:text="@string/sequence_helper_string"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sequenceEditText" />
 
-        <ImageButton
-            android:id="@+id/cancelSequenceImageButton"
+        <Button
+            android:id="@+id/deleteSequenceButton"
+            style="@style/defaultDeleteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/large_space"
+            android:layout_margin="@dimen/medium_space"
             android:background="@drawable/custom_icon_button"
-            android:contentDescription="@string/cancel_add_sequence_image_button_content_description_text"
-            android:elevation="@dimen/large_space"
-            android:src="@drawable/ic_baseline_close_24"
+            android:text="@string/delete_sequence_button_text"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/addSequenceImageButton"
-            app:tint="?attr/colorPrimary" />
+            app:layout_constraintEnd_toStartOf="@id/saveSequenceButton"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageButton
-            android:id="@+id/addSequenceImageButton"
+        <Button
+            android:id="@+id/saveSequenceButton"
+            style="@style/defaultButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/large_space"
+            android:layout_margin="@dimen/medium_space"
             android:background="@drawable/custom_icon_button"
-            android:contentDescription="@string/add_sequence_image_button_content_description_text"
-            android:elevation="@dimen/large_space"
-            android:src="@drawable/ic_baseline_add_24"
+            android:text="@string/save_sequence_button_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:tint="?attr/colorPrimary" />
+            app:layout_constraintStart_toEndOf="@id/deleteSequenceButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
