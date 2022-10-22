@@ -118,8 +118,8 @@ class MainActivity : AppCompatActivity() {
         googleAccount = null
     }
 
+    val fragmentManager = supportFragmentManager
     fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setCustomAnimations(
             R.anim.slide_in,
@@ -130,7 +130,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun addToBackStackFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setCustomAnimations(
             R.anim.slide_in,
@@ -142,7 +141,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addToBackStackFragmentOnBottomNavigation(fragment: Fragment, fragmentName: String) {
-        val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setCustomAnimations(
             R.anim.slide_in,
