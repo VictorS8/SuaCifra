@@ -1,3 +1,12 @@
 package br.com.suacifra.models
 
-data class Notes(val id: Int, var noteTitle: String, var noteBody: String)
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+data class Notes(
+    @PrimaryKey val id: Int,
+    @ColumnInfo val noteTitle: String,
+    @ColumnInfo val noteBody: String
+)

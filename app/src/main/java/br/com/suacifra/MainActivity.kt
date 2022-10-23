@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.room.Room
+import br.com.suacifra.database.RoomDatabaseBuilderSingleton
+import br.com.suacifra.database.SuaCifraRoomDatabase
 import br.com.suacifra.databinding.MainActivityBinding
 import br.com.suacifra.screens.add.AddFragment
 import br.com.suacifra.screens.home.HomeFragment
@@ -31,6 +34,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        RoomDatabaseBuilderSingleton.databaseBuild(this)
 
         val sharedPref = getSharedPreferences(
             Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
@@ -118,7 +123,7 @@ class MainActivity : AppCompatActivity() {
         googleAccount = null
     }
 
-    val fragmentManager = supportFragmentManager
+    private val fragmentManager = supportFragmentManager
     fun replaceFragment(fragment: Fragment) {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setCustomAnimations(
