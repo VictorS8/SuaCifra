@@ -30,6 +30,12 @@ fun stringToMutableSet(string: String): MutableSet<String> {
     return newMutableSet
 }
 
+// Regex [A-GmM79#b,]+
+// Validate List of Sequence Chords like: "C,G C,G,Am,F"
+
+// Regex [A-G#b]{1,2}
+// Validate tone of Song: "C" "G#" "Db"
+
 // Extensions
 fun MutableSet<String>?.addStringAt(editSequenceIndex: Int, value: String): MutableSet<String> {
     val auxMutableList: MutableList<String> = mutableListOf()
