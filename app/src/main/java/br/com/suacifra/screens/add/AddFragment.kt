@@ -203,6 +203,8 @@ class AddFragment : Fragment() {
 
         binding.saveCifraButton.setOnClickListener {
             if (!cifraNameEditText.isNullOrBlank() && !cifraTone.isNullOrBlank() && !cifraSingerNameEditText.isNullOrBlank() && cifraSequenceString.isNotBlank()) {
+                cifraTone =
+                    sharedPref.getString(Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY, "")
                 val cifrasModel =
                     Cifras(
                         -1,
