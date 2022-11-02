@@ -4,10 +4,16 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import br.com.suacifra.models.Cifras
 import br.com.suacifra.models.Notes
+import br.com.suacifra.models.Sequences
 import br.com.suacifra.utils.Config
 
-@Database(entities = [Cifras::class, Notes::class], version = Config.SUA_CIFRA_DATABASE_VERSION)
+@Database(
+    entities = [Cifras::class, Notes::class, Sequences::class],
+    version = Config.SUA_CIFRA_DATABASE_VERSION,
+    exportSchema = true
+)
 abstract class SuaCifraRoomDatabase : RoomDatabase() {
     abstract fun cifrasDao(): CifrasDao
     abstract fun notesDao(): NotesDao
+    abstract fun sequencesDao(): SequencesDao
 }

@@ -8,9 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.room.Room
-import br.com.suacifra.database.RoomDatabaseBuilderSingleton
-import br.com.suacifra.database.SuaCifraRoomDatabase
+import br.com.suacifra.database.*
 import br.com.suacifra.databinding.MainActivityBinding
 import br.com.suacifra.screens.add.AddFragment
 import br.com.suacifra.screens.home.HomeFragment
@@ -26,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: MainActivityBinding
     private val viewModel = MainActivityViewModel()
+    private lateinit var database: SuaCifraRoomDatabase
 
     private lateinit var auth: FirebaseAuth
     private var isGoogleSignInStatusOk: Boolean = false
@@ -35,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        RoomDatabaseBuilderSingleton.databaseBuild(this)
+        database = RoomDatabaseBuilderSingleton.databaseBuild(this)
 
         val sharedPref = getSharedPreferences(
             Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
@@ -63,34 +62,39 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.main_activity)
         replaceFragment(HomeFragment())
 
+        val emptyStringData = ""
+        val editMode = false
         binding.mainBottomNavigationView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.homeBottomNavigation -> {
                     addToBackStackFragmentOnBottomNavigation(HomeFragment(), HOME_FRAGMENT)
                 }
                 R.id.addBottomNavigation -> {
-                    val sharedPrefEditor = sharedPref.edit()
-                    sharedPrefEditor.putStringSet(
+                    SharedPreferencesSingleton.editor(
+                        this,
                         Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
-                        mutableSetOf()
+                        mutableSetOf<String>()
                     )
-                    sharedPrefEditor.putString(
+                    SharedPreferencesSingleton.editor(
+                        this,
                         Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
-                        null
+                        emptyStringData
                     )
-                    sharedPrefEditor.putString(
+                    SharedPreferencesSingleton.editor(
+                        this,
                         Config.SHARED_PREFERENCE_ADD_CIFRA_MODE_NAME_EDIT_TEXT_KEY,
-                        ""
+                        emptyStringData
                     )
-                    sharedPrefEditor.putString(
+                    SharedPreferencesSingleton.editor(
+                        this,
                         Config.SHARED_PREFERENCE_ADD_CIFRA_MODE_SINGER_NAME_EDIT_TEXT_KEY,
-                        ""
+                        emptyStringData
                     )
-                    sharedPrefEditor.putBoolean(
+                    SharedPreferencesSingleton.editor(
+                        this,
                         Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_BOOLEAN_KEY,
-                        false
+                        editMode
                     )
-                    sharedPrefEditor.apply()
                     addToBackStackFragmentOnBottomNavigation(AddFragment(), ADD_FRAGMENT)
                 }
                 R.id.settingsBottomNavigation -> {

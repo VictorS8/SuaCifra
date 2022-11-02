@@ -5,6 +5,7 @@ import androidx.room.Room
 import br.com.suacifra.utils.Config
 
 object RoomDatabaseBuilderSingleton {
+
     fun databaseBuild(applicationContext: Context):
             SuaCifraRoomDatabase {
         return Room.databaseBuilder(

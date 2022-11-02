@@ -1,6 +1,5 @@
 package br.com.suacifra.screens.notes
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.database.DatabaseHelper
+import br.com.suacifra.database.SharedPreferencesSingleton
 import br.com.suacifra.databinding.NotesFragmentBinding
 import br.com.suacifra.models.Notes
 import br.com.suacifra.screens.settings.SettingsFragment
@@ -36,10 +36,6 @@ class NotesFragment : Fragment() {
 
         mainActivityContext = (activity as MainActivity)
 
-        val sharedPref = mainActivityContext.getSharedPreferences(
-            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
-        )
-
         val databaseHelper = DatabaseHelper(mainActivityContext)
 
         notesList = databaseHelper.getAllNotes()
@@ -57,11 +53,11 @@ class NotesFragment : Fragment() {
         recyclerView.adapter = notesAdapter
 
         binding.addNotesImageButton.setOnClickListener {
-            val sharedPrefEditor = sharedPref.edit()
-            sharedPrefEditor.putBoolean(
-                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_BOOLEAN_KEY, false
+            SharedPreferencesSingleton.editor(
+                mainActivityContext,
+                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_BOOLEAN_KEY,
+                false
             )
-            sharedPrefEditor.apply()
             mainActivityContext.addToBackStackFragment(AddNotesFragment())
         }
 

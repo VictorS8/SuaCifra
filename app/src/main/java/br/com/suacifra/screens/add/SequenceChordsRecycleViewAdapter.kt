@@ -9,6 +9,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
+import br.com.suacifra.database.SharedPreferencesSingleton
 import br.com.suacifra.utils.Config
 import br.com.suacifra.utils.stringToTextViewString
 
@@ -90,25 +91,20 @@ class SequenceChordsRecyclerViewAdapter(
         holder.sequenceItemTitleTextView.text = sequenceTitleTextView
         holder.sequenceItemBodyTextView.text = sequenceBodyTextView
 
-        val sharedPref = mainActivityContext.getSharedPreferences(
-            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
-        )
-
         holder.sequenceItemCardView.setOnClickListener {
-            val sharedPrefEditor = sharedPref.edit()
-            sharedPrefEditor.putBoolean(
-                Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_BOOLEAN_KEY,
-                true
+            SharedPreferencesSingleton.editor(
+                mainActivityContext, Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_BOOLEAN_KEY, true
             )
-            sharedPrefEditor.putString(
+            SharedPreferencesSingleton.editor(
+                mainActivityContext,
                 Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_SEQUENCE_STRING_KEY,
                 sequenceToEdit
             )
-            sharedPrefEditor.putInt(
+            SharedPreferencesSingleton.editor(
+                mainActivityContext,
                 Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_SEQUENCE_INDEX_KEY,
                 position
             )
-            sharedPrefEditor.apply()
             mainActivityContext.addToBackStackFragment(AddSequenceFragment())
         }
     }
@@ -119,16 +115,15 @@ class SequenceChordsRecyclerViewAdapter(
      * @return The total number of items in this adapter.
      */
     override fun getItemCount(): Int {
-        val sharedPref = mainActivityContext.getSharedPreferences(
-            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
+        var deleteSequence: MutableSet<String> = mutableSetOf()
+        deleteSequence = SharedPreferencesSingleton.getMutableSetData(
+            mainActivityContext,
+            Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY, deleteSequence
         )
-        var deleteSequence: MutableSet<String>? = mutableSetOf()
-        deleteSequence = sharedPref.getStringSet(
-            Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
-            deleteSequence
-        )
-        if (deleteSequence != null) {
-            return deleteSequence.size
+        if (deleteSequence.size == sequenceChordsList.size) {
+            return sequenceChordsList.size
+        } else {
+            deleteSequence.size
         }
         return sequenceChordsList.size
     }

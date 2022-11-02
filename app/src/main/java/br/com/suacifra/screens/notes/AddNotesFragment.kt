@@ -1,6 +1,5 @@
 package br.com.suacifra.screens.notes
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +10,7 @@ import androidx.fragment.app.Fragment
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.database.DatabaseHelper
+import br.com.suacifra.database.SharedPreferencesSingleton
 import br.com.suacifra.databinding.AddNotesFragmentBinding
 import br.com.suacifra.models.Notes
 import br.com.suacifra.utils.Config
@@ -22,8 +22,8 @@ class AddNotesFragment : Fragment() {
     private lateinit var mainActivityContext: MainActivity
     private var isEditNotesModeEnable = false
     private var noteId: Int = 0
-    private var noteTitle: String? = ""
-    private var noteBody: String? = ""
+    private var noteTitle: String = ""
+    private var noteBody: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,31 +34,32 @@ class AddNotesFragment : Fragment() {
 
         mainActivityContext = (activity as MainActivity)
 
-        val sharedPref = mainActivityContext.getSharedPreferences(
-            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
-        )
-
-        isEditNotesModeEnable = sharedPref.getBoolean(
+        isEditNotesModeEnable = SharedPreferencesSingleton.getData(
+            mainActivityContext,
             Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_BOOLEAN_KEY,
             isEditNotesModeEnable
-        )
+        ) as Boolean
 
         if (isEditNotesModeEnable) {
             // if I clicked in one custom cifra
-            noteId = sharedPref.getInt(
+
+            noteId = SharedPreferencesSingleton.getData(
+                mainActivityContext,
                 Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_ID_INT_KEY,
                 noteId
-            )
-            noteTitle = sharedPref.getString(
+            ) as Int
+            noteTitle = SharedPreferencesSingleton.getData(
+                mainActivityContext,
                 Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_TITLE_STRING_KEY,
                 noteTitle
-            )
-            noteBody = sharedPref.getString(
+            ) as String
+            noteBody = SharedPreferencesSingleton.getData(
+                mainActivityContext,
                 Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_BODY_STRING_KEY,
                 noteBody
-            )
-            binding.noteTitleEditText.setText(noteTitle ?: "")
-            binding.noteBodyEditText.setText(noteBody ?: "")
+            ) as String
+            binding.noteTitleEditText.setText(noteTitle)
+            binding.noteBodyEditText.setText(noteBody)
             binding.deleteNoteButton.visibility = View.VISIBLE
         } else {
             // if I clicked on add bottom navigation option
@@ -76,7 +77,7 @@ class AddNotesFragment : Fragment() {
                 if (deleteStatus > 0) {
                     mainActivityContext.toastMessage(
                         R.string.delete_note_successfully,
-                        noteTitle ?: "",
+                        noteTitle,
                         Toast.LENGTH_LONG
                     )
                     mainActivityContext.replaceFragment(NotesFragment())
@@ -113,7 +114,8 @@ class AddNotesFragment : Fragment() {
                     } else {
                         mainActivityContext.toastMessage(
                             R.string.save_note_missing_data,
-                            Toast.LENGTH_LONG)
+                            Toast.LENGTH_LONG
+                        )
                     }
                 } else {
                     val insertStatus = databaseHelper.addOneNote(notesModel)

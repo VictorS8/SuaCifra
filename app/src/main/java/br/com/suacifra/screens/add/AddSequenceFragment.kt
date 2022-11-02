@@ -1,6 +1,7 @@
 package br.com.suacifra.screens.add
 
 import android.content.Context
+import android.graphics.drawable.shapes.Shape
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
+import br.com.suacifra.database.SharedPreferencesSingleton
 import br.com.suacifra.databinding.AddSequenceFragmentBinding
 import br.com.suacifra.utils.Config
 import br.com.suacifra.utils.addStringAt
@@ -22,7 +24,7 @@ class AddSequenceFragment : Fragment() {
     private lateinit var mainActivityContext: MainActivity
     private var isEditSequenceModeEnable = false
     private var cifraId: Int = 0
-    private var sequence: String? = ""
+    private var sequence: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,26 +36,25 @@ class AddSequenceFragment : Fragment() {
 
         mainActivityContext = (activity as MainActivity)
 
-        val sharedPref = mainActivityContext.getSharedPreferences(
-            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
-        )
-
-        isEditSequenceModeEnable = sharedPref.getBoolean(
+        isEditSequenceModeEnable = SharedPreferencesSingleton.getData(
+            mainActivityContext,
             Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_BOOLEAN_KEY,
             isEditSequenceModeEnable
-        )
+        ) as Boolean
 
         if (isEditSequenceModeEnable) {
             // if I clicked in one custom cifra
-            cifraId = sharedPref.getInt(
+            cifraId = SharedPreferencesSingleton.getData(
+                mainActivityContext,
                 Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_ID_INT_KEY,
                 cifraId
-            )
-            sequence = sharedPref.getString(
+            ) as Int
+            sequence = SharedPreferencesSingleton.getData(
+                mainActivityContext,
                 Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_SEQUENCE_STRING_KEY,
                 sequence
-            )
-            binding.sequenceEditText.setText(stringOfMutableListToEditTextString(sequence ?: ""))
+            ) as String
+            binding.sequenceEditText.setText(stringOfMutableListToEditTextString(sequence))
             binding.deleteSequenceButton.visibility = View.VISIBLE
         } else {
             // if I clicked on add bottom navigation option
@@ -63,22 +64,21 @@ class AddSequenceFragment : Fragment() {
         }
 
         binding.deleteSequenceButton.setOnClickListener {
-            var deleteSequence: MutableSet<String>? = mutableSetOf()
-            deleteSequence = sharedPref.getStringSet(
+            var deleteSequence: MutableSet<String> = mutableSetOf()
+            deleteSequence = SharedPreferencesSingleton.getMutableSetData(
+                mainActivityContext,
                 Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
                 deleteSequence
             )
 
             val sequenceToDelete = sequence
 
-            deleteSequence?.remove(sequenceToDelete)
+            deleteSequence.remove(sequenceToDelete)
 
-            val sharedPrefEditor = sharedPref.edit()
-            sharedPrefEditor.putStringSet(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
-                deleteSequence
+            SharedPreferencesSingleton.editor(
+                mainActivityContext,
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY, deleteSequence
             )
-            sharedPrefEditor.apply()
             Toast.makeText(
                 mainActivityContext,
                 getString(R.string.add_note_cancelled),
@@ -92,28 +92,29 @@ class AddSequenceFragment : Fragment() {
             val sequenceEditText = binding.sequenceEditText.text
             if (!sequenceEditText.isNullOrBlank()) {
                 if (isEditSequenceModeEnable) {
-                    var mutableSetOfString: MutableSet<String>? = mutableSetOf()
+                    var mutableSetOfString: MutableSet<String> = mutableSetOf()
                     var editSequenceIndex = 0
 
-                    mutableSetOfString = sharedPref.getStringSet(
+                    mutableSetOfString = SharedPreferencesSingleton.getMutableSetData(
+                        mainActivityContext,
                         Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
                         mutableSetOfString
                     )
-                    editSequenceIndex = sharedPref.getInt(
+                    editSequenceIndex = SharedPreferencesSingleton.getData(
+                        mainActivityContext,
                         Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_SEQUENCE_INDEX_KEY,
                         editSequenceIndex
-                    )
+                    ) as Int
 
-                    val newMutableSetOfString = mutableSetOfString?.addStringAt(
+                    val newMutableSetOfString = mutableSetOfString.addStringAt(
                         editSequenceIndex,
                         sequenceEditText.toString().trim()
                     )
-                    val sharedPrefEditor = sharedPref.edit()
-                    sharedPrefEditor.putStringSet(
+                    SharedPreferencesSingleton.mutableSetEditor(
+                        mainActivityContext,
                         Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
                         newMutableSetOfString
                     )
-                    sharedPrefEditor.apply()
                     Toast.makeText(
                         mainActivityContext,
                         getString(R.string.edit_sequence_successfully),
@@ -121,22 +122,22 @@ class AddSequenceFragment : Fragment() {
                     )
                         .show()
                 } else {
-                    var mutableSetOfString: MutableSet<String>? = mutableSetOf()
-                    mutableSetOfString = sharedPref.getStringSet(
+                    var mutableSetOfString: MutableSet<String> = mutableSetOf()
+                    mutableSetOfString = SharedPreferencesSingleton.getMutableSetData(
+                        mainActivityContext,
                         Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
                         mutableSetOfString
                     )
 
-                    val newMutableListOfString = mutableSetOfString?.toMutableList()
-                    newMutableListOfString?.add(sequenceEditText.toString().trim())
-                    newMutableListOfString?.toMutableSet()
-                    val newMutableSetOfString = newMutableListOfString?.toMutableSet()
-                    val sharedPrefEditor = sharedPref.edit()
-                    sharedPrefEditor.putStringSet(
+                    val newMutableListOfString = mutableSetOfString.toMutableList()
+                    newMutableListOfString.add(sequenceEditText.toString().trim())
+                    newMutableListOfString.toMutableSet()
+                    val newMutableSetOfString = newMutableListOfString.toMutableSet()
+                    SharedPreferencesSingleton.mutableSetEditor(
+                        mainActivityContext,
                         Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
                         newMutableSetOfString
                     )
-                    sharedPrefEditor.apply()
                     Toast.makeText(
                         mainActivityContext,
                         getString(R.string.add_sequence_successfully),

@@ -1,6 +1,5 @@
 package br.com.suacifra.screens.profile
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
+import br.com.suacifra.database.SharedPreferencesSingleton
 import br.com.suacifra.databinding.ProfileFragmentBinding
 import br.com.suacifra.screens.login.LoginFragment
 import br.com.suacifra.screens.settings.SettingsFragment
@@ -32,10 +32,6 @@ class ProfileFragment : Fragment() {
 
         mainActivityContext = (activity as MainActivity)
 
-        val sharedPref = mainActivityContext.getSharedPreferences(
-            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
-        )
-
         val googleAccount = mainActivityContext.getLastSignedInAccountOnActivity()
 
         if (googleAccount != null) {
@@ -52,21 +48,19 @@ class ProfileFragment : Fragment() {
                 )
             }
             binding.profileEmailTextView.text = googleAccount.email
-            val sharedPrefEditor = sharedPref.edit()
-            sharedPrefEditor.putBoolean(
+            SharedPreferencesSingleton.editor(
+                mainActivityContext,
                 Config.SHARED_PREFERENCE_SIGN_IN_BOOLEAN_KEY,
                 true
             )
-            sharedPrefEditor.apply()
         }
 
         binding.profileSignOutButton.setOnClickListener {
-            val sharedPrefEditor = sharedPref.edit()
-            sharedPrefEditor.putBoolean(
+            SharedPreferencesSingleton.editor(
+                mainActivityContext,
                 Config.SHARED_PREFERENCE_SIGN_IN_BOOLEAN_KEY,
                 false
             )
-            sharedPrefEditor.apply()
 
             mainActivityContext.signOutOnActivity()
             Toast.makeText(

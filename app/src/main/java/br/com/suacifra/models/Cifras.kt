@@ -10,5 +10,5 @@ data class Cifras(
     @ColumnInfo val name: String,
     @ColumnInfo val tone: String,
     @ColumnInfo val singerName: String,
-    @ColumnInfo val chordsSequence: String?
+    @ColumnInfo val chordsSequence: String
 )

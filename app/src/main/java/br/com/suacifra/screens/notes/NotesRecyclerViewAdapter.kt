@@ -1,6 +1,5 @@
 package br.com.suacifra.screens.notes
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.database.DatabaseHelper
+import br.com.suacifra.database.SharedPreferencesSingleton
 import br.com.suacifra.models.Notes
 import br.com.suacifra.utils.Config
 
@@ -81,32 +81,32 @@ class NotesRecyclerViewAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val noteTitleTextView = notesList[position].noteTitle
         val noteBodyTextView = notesList[position].noteBody
+        val editMode = true
 
         holder.noteItemTitleTextView.text = noteTitleTextView
         holder.noteItemBodyTextView.text = noteBodyTextView
 
-        val sharedPref = mainActivityContext.getSharedPreferences(
-            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
-        )
-
         holder.noteItemCardView.setOnClickListener {
-            val sharedPrefEditor = sharedPref.edit()
-            sharedPrefEditor.putInt(
-                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_ID_INT_KEY, notesList[position].id
+            SharedPreferencesSingleton.editor(
+                mainActivityContext,
+                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_ID_INT_KEY,
+                notesList[position].id!!
             )
-            sharedPrefEditor.putString(
+            SharedPreferencesSingleton.editor(
+                mainActivityContext,
                 Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_TITLE_STRING_KEY,
                 notesList[position].noteTitle
             )
-            sharedPrefEditor.putString(
+            SharedPreferencesSingleton.editor(
+                mainActivityContext,
                 Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_BODY_STRING_KEY,
                 notesList[position].noteBody
             )
-
-            sharedPrefEditor.putBoolean(
-                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_BOOLEAN_KEY, true
+            SharedPreferencesSingleton.editor(
+                mainActivityContext,
+                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_BOOLEAN_KEY,
+                editMode
             )
-            sharedPrefEditor.apply()
             mainActivityContext.addToBackStackFragment(AddNotesFragment())
         }
     }

@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Notes(
-    @PrimaryKey val id: Int,
+    @PrimaryKey val id: Int?,
     @ColumnInfo val noteTitle: String,
     @ColumnInfo val noteBody: String
 )
