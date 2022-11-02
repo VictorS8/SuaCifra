@@ -13,17 +13,17 @@
     <string name="add_content_description">Show screen to add your cifra</string>
     <string name="choose_tone_button_text">Choose Tone</string>
     <string name="a_tone" translatable="false">A</string>
-    <string name="bb_tone" translatable="false">Bb</string>
+    <string name="a_sharp_tone" translatable="false">A#</string>
     <string name="b_tone" translatable="false">B</string>
     <string name="c_tone" translatable="false">C</string>
-    <string name="db_tone" translatable="false">Db</string>
+    <string name="c_sharp_tone" translatable="false">C#</string>
     <string name="d_tone" translatable="false">D</string>
-    <string name="eb_tone" translatable="false">Eb</string>
+    <string name="d_sharp_tone" translatable="false">D#</string>
     <string name="e_tone" translatable="false">E</string>
     <string name="f_tone" translatable="false">F</string>
-    <string name="gb_tone" translatable="false">Gb</string>
+    <string name="f_sharp_tone" translatable="false">F#</string>
     <string name="g_tone" translatable="false">G</string>
-    <string name="ab_tone" translatable="false">Ab</string>
+    <string name="g_sharp_tone" translatable="false">G#</string>
     <string name="tones_card_view_text">Tones</string>
     <string name="tone_chosen_text">Tone %1$s was chosen!</string>
     <string name="profile_picture_content_description">Profile picture on Settings Screen, shows your profile image</string>
@@ -106,4 +106,5 @@
     <string name="save_sequence_button_text">Save sequence</string>
     <string name="delete_sequence_button_text">Delete Sequence</string>
     <string name="save_sequence_missing_data">Please, check your sequence</string>
+    <string name="cifra_first_sequence_null_item">First sequence: You should add one!</string>
 </resources>

@@ -94,4 +94,5 @@
     <string name="save_sequence_button_text">Salvar sequência</string>
     <string name="delete_sequence_button_text">Excluir sequência</string>
     <string name="save_sequence_missing_data">Por favor, cheque sua sequência</string>
+    <string name="cifra_first_sequence_null_item">Primeira sequência: Você deveria adicionar uma!</string>
 </resources>
