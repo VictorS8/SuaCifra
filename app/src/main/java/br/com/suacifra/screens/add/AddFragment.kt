@@ -20,10 +20,7 @@ import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.databinding.AddFragmentBinding
 import br.com.suacifra.models.Cifras
 import br.com.suacifra.screens.home.HomeFragment
-import br.com.suacifra.utils.Config
-import br.com.suacifra.utils.getColorFromAttr
-import br.com.suacifra.utils.mutableSetToString
-import br.com.suacifra.utils.stringOfMutableListToEditTextString
+import br.com.suacifra.utils.*
 
 class AddFragment : Fragment() {
 
@@ -35,10 +32,10 @@ class AddFragment : Fragment() {
     private var isEditCifraModeEnable = false
     private var isEditSequenceModeEnable = false
     private var cifraId: Int = 0
-    private var cifraName: String? = ""
-    private var cifraSingerName: String? = ""
-    private var cifraTone: String? = ""
-    private var cifraSequenceSetString: MutableSet<String>? = mutableSetOf()
+    private var cifraName: String = ""
+    private var cifraSingerName: String = ""
+    private var cifraTone: String = ""
+    private var cifraSequenceSetString: MutableSet<String> = mutableSetOf()
     private var cifraSequenceString: String = ""
 
     override fun onCreateView(
@@ -107,22 +104,22 @@ class AddFragment : Fragment() {
             cifraName = sharedPref.getString(
                 Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_NAME_STRING_KEY,
                 cifraName
-            )
+            ) ?: ""
             cifraSingerName = sharedPref.getString(
                 Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY,
                 cifraSingerName
-            )
+            ) ?: ""
             cifraTone = sharedPref.getString(
                 Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
                 cifraTone
-            )
+            ) ?: ""
             cifraSequenceSetString = sharedPref.getStringSet(
                 Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
                 cifraSequenceSetString
-            )
+            ) ?: mutableSetOf()
 
-            binding.cifraNameEditText.setText(stringOfMutableListToEditTextString(cifraName ?: ""))
-            binding.cifraSingerNameEditText.setText(cifraSingerName ?: "")
+            binding.cifraNameEditText.setText(stringOfMutableListToEditTextString(cifraName))
+            binding.cifraSingerNameEditText.setText(cifraSingerName)
             binding.songToneButtonHelper.text = getString(R.string.tone_chosen_text, cifraTone)
             binding.deleteCifraButton.visibility = View.VISIBLE
         } else {
@@ -130,20 +127,19 @@ class AddFragment : Fragment() {
             cifraSequenceSetString = sharedPref.getStringSet(
                 Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
                 cifraSequenceSetString
-            )
+            ) ?: mutableSetOf()
             cifraTone = sharedPref.getString(
                 Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
                 cifraTone
-            )
-            cifraSequenceString = mutableSetToString(cifraSequenceSetString ?: mutableSetOf())
+            ) ?: ""
+            cifraSequenceString = cifraSequenceSetString.dataMutableSetToString()
             binding.deleteCifraButton.visibility = View.GONE
         }
 
-        if (cifraSequenceSetString?.size == 0)
+        if (cifraSequenceSetString.size == 0)
             binding.noSequenceMessage.visibility = View.VISIBLE
         else
             binding.noSequenceMessage.visibility = View.INVISIBLE
-
 
         recyclerView = binding.sequenceRecyclerView
         recyclerView.hasFixedSize()
@@ -152,7 +148,7 @@ class AddFragment : Fragment() {
         recyclerView.layoutManager = sequenceLayoutManager
 
         sequenceAdapter = SequenceChordsRecyclerViewAdapter(
-            cifraSequenceSetString ?: mutableSetOf(),
+            cifraSequenceSetString,
             mainActivityContext
         )
         recyclerView.adapter = sequenceAdapter
@@ -177,8 +173,8 @@ class AddFragment : Fragment() {
 
         val cifraNameEditText = binding.cifraNameEditText.text
         val cifraSingerNameEditText = binding.cifraSingerNameEditText.text
-        val cifraSequenceSetString: MutableSet<String> = cifraSequenceSetString ?: mutableSetOf()
-        cifraSequenceString = mutableSetToString(cifraSequenceSetString)
+        val cifraSequenceSetString: MutableSet<String> = cifraSequenceSetString
+        cifraSequenceString = cifraSequenceSetString.dataMutableSetToString()
 
         binding.deleteCifraButton.setOnClickListener {
             if (isEditCifraModeEnable) {
@@ -188,7 +184,7 @@ class AddFragment : Fragment() {
                 if (deleteStatus > 0) {
                     mainActivityContext.toastMessage(
                         R.string.delete_cifra_successfully,
-                        cifraName ?: "",
+                        cifraName,
                         Toast.LENGTH_LONG
                     )
                     mainActivityContext.replaceFragment(HomeFragment())
@@ -202,14 +198,15 @@ class AddFragment : Fragment() {
         }
 
         binding.saveCifraButton.setOnClickListener {
-            if (!cifraNameEditText.isNullOrBlank() && !cifraTone.isNullOrBlank() && !cifraSingerNameEditText.isNullOrBlank() && cifraSequenceString.isNotBlank()) {
-                cifraTone =
-                    sharedPref.getString(Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY, "")
+            cifraTone =
+                sharedPref.getString(Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY, "")
+                    ?: ""
+            if (!cifraNameEditText.isNullOrBlank() && cifraTone.isNotBlank() && !cifraSingerNameEditText.isNullOrBlank()) {
                 val cifrasModel =
                     Cifras(
                         -1,
                         cifraNameEditText.toString().trim(),
-                        cifraTone ?: "",
+                        cifraTone,
                         cifraSingerNameEditText.toString().trim(),
                         cifraSequenceString
                     )
@@ -266,14 +263,9 @@ class AddFragment : Fragment() {
                     R.string.save_cifra_missing_data,
                     Toast.LENGTH_LONG
                 )
-            } else if (cifraTone.isNullOrBlank()) {
+            } else if (cifraTone.isBlank()) {
                 mainActivityContext.toastMessage(
                     R.string.save_cifra_missing_tone,
-                    Toast.LENGTH_LONG
-                )
-            } else if (cifraSequenceString.isBlank()) {
-                mainActivityContext.toastMessage(
-                    R.string.save_cifra_missing_sequence,
                     Toast.LENGTH_LONG
                 )
             } else {
@@ -315,20 +307,19 @@ class AddFragment : Fragment() {
     }
 
     private fun allToneClickEvent() {
-
         binding.apply {
             aToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
-            bbToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
+            aSharpToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
             bToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
             cToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
-            dbToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
+            cSharpToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
             dToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
-            ebToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
+            dSharpToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
             eToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
             fToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
-            gbToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
+            fSharpToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
             gToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
-            abToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
+            gSharpToneTextView.setOnClickListener { clickableTextAsTextViewEvent(it) }
         }
     }
 

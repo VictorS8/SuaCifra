@@ -118,7 +118,7 @@ class MainActivity : AppCompatActivity() {
         googleAccount = null
     }
 
-    val fragmentManager = supportFragmentManager
+    private val fragmentManager = supportFragmentManager
     fun replaceFragment(fragment: Fragment) {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setCustomAnimations(

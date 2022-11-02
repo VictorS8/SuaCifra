@@ -12,9 +12,7 @@ import br.com.suacifra.R
 import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.models.Cifras
 import br.com.suacifra.screens.add.AddFragment
-import br.com.suacifra.utils.Config
-import br.com.suacifra.utils.stringToMutableSet
-import br.com.suacifra.utils.stringToTextViewString
+import br.com.suacifra.utils.*
 
 class CifrasRecyclerViewAdapter(
     private val cifrasList: MutableList<Cifras>,
@@ -96,12 +94,15 @@ class CifrasRecyclerViewAdapter(
             R.string.cifra_singer_name_item,
             cifrasList[position].singerName
         )
-        val cifraChordsSequence = stringToMutableSet(cifrasList[position].chordsSequence)
-        val cifraFirstChordsSequenceTextView = mainActivityContext.getString(
-            R.string.cifra_first_sequence_item,
-            stringToTextViewString(cifraChordsSequence.toMutableList()[0]).removePrefix("[")
-                .removeSuffix("]")
-        )
+        val cifraChordsSequence = cifrasList[position].chordsSequence.dataStringToMutableSet()
+        val cifraFirstChordsSequenceTextView = if (cifraChordsSequence.size != 0)
+            mainActivityContext.getString(
+                R.string.cifra_first_sequence_item,
+                stringToTextViewString(cifraChordsSequence.toMutableList()[0])
+                    .removePrefix("[").removeSuffix("]")
+            )
+        else
+            mainActivityContext.getString(R.string.cifra_first_sequence_null_item)
 
         holder.cifraNameItemTextView.text = cifraNameTextView
         holder.cifraToneItemTextView.text =
@@ -133,7 +134,7 @@ class CifrasRecyclerViewAdapter(
             )
             sharedPrefEditor.putStringSet(
                 Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
-                stringToMutableSet(cifrasList[position].chordsSequence)
+                cifrasList[position].chordsSequence.dataStringToMutableSet()
             )
 
             sharedPrefEditor.putBoolean(

@@ -11,10 +11,7 @@ import androidx.fragment.app.Fragment
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.databinding.AddSequenceFragmentBinding
-import br.com.suacifra.utils.Config
-import br.com.suacifra.utils.addStringAt
-import br.com.suacifra.utils.getColorFromAttr
-import br.com.suacifra.utils.stringOfMutableListToEditTextString
+import br.com.suacifra.utils.*
 
 class AddSequenceFragment : Fragment() {
 
@@ -91,14 +88,14 @@ class AddSequenceFragment : Fragment() {
         binding.saveSequenceButton.setOnClickListener {
             val sequenceEditText = binding.sequenceEditText.text
             if (!sequenceEditText.isNullOrBlank()) {
+                var mutableSetOfString: MutableSet<String> = mutableSetOf()
                 if (isEditSequenceModeEnable) {
-                    var mutableSetOfString: MutableSet<String>? = mutableSetOf()
                     var editSequenceIndex = 0
 
                     mutableSetOfString = sharedPref.getStringSet(
                         Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
                         mutableSetOfString
-                    )
+                    ) ?: mutableSetOf()
                     editSequenceIndex = sharedPref.getInt(
                         Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_SEQUENCE_INDEX_KEY,
                         editSequenceIndex
@@ -121,16 +118,15 @@ class AddSequenceFragment : Fragment() {
                     )
                         .show()
                 } else {
-                    var mutableSetOfString: MutableSet<String>? = mutableSetOf()
                     mutableSetOfString = sharedPref.getStringSet(
                         Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
                         mutableSetOfString
-                    )
+                    ) ?: mutableSetOf()
 
-                    val newMutableListOfString = mutableSetOfString?.toMutableList()
-                    newMutableListOfString?.add(sequenceEditText.toString().trim())
-                    newMutableListOfString?.toMutableSet()
-                    val newMutableSetOfString = newMutableListOfString?.toMutableSet()
+                    val newMutableListOfString = mutableSetOfString.toMutableList()
+                    newMutableListOfString.add(sequenceEditText.toString().trim())
+                    newMutableListOfString.toMutableSet()
+                    val newMutableSetOfString = newMutableListOfString.toMutableSet()
                     val sharedPrefEditor = sharedPref.edit()
                     sharedPrefEditor.putStringSet(
                         Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
