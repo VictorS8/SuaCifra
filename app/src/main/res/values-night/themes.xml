@@ -22,6 +22,8 @@
         <item name="colorControlNormal">?attr/colorPrimarySurface</item>
         <item name="colorControlActivated">?attr/colorPrimarySurface</item>
         <item name="colorControlHighlight">?attr/colorPrimary</item>
+
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
     <style name="themeSplashScreen" parent="Theme.SplashScreen">

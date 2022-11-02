@@ -1,4 +1,6 @@
-<img src="/.github/suaCifraLogo1920.png" width="240" alt="Sua Cifra Logo"/>
+<img src="/.github/suaCifraLogo1920white.png" width="240" alt="Sua Cifra Logo"/>
+
+<img src="/.github/play_store_feature_graphic.png" width="1024" alt="Sua Cifra Logo"/>
 
 # Sua Cifra
 
