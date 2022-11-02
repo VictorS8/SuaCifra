@@ -2,6 +2,7 @@ package br.com.suacifra.utils
 
 object Config {
     const val SUA_CIFRA_DATABASE = "suaCifraDatabase.db"
+    const val SUA_CIFRA_ROOM_DATABASE = "SUA_CIFRA_DATABASE"
     const val SUA_CIFRA_DATABASE_VERSION = 2
 
     const val SHARED_PREFERENCE_FILE_KEY = "br.com.suacifra.PREFERENCE_FILE_KEY"
