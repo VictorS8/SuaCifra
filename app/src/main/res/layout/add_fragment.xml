@@ -110,7 +110,7 @@
             android:paddingStart="@dimen/big_space"
             android:paddingEnd="@dimen/big_space"
             android:text="@string/no_sequences_message"
-            android:visibility="invisible"
+            android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@id/saveCifraButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

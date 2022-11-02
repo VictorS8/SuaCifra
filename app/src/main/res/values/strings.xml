@@ -61,13 +61,13 @@
     <string name="note_body_text_view">Note body</string>
     <string name="cancel_add_note_image_button_content_description_text">Cancel add note</string>
     <string name="add_cifra_title_text">Add</string>
-    <string name="add_note_cancelled">Note cancelled</string>
+    <string name="add_note_deleted">Note deleted</string>
     <string name="cifra_name_text_view">Cifra\'s name</string>
     <string name="singer_name_text_view">Singer\'s name</string>
     <string name="add_sequence_content_description_text">Add sequence of chords</string>
     <string name="save_cifra_button_text">Save Cifra</string>
     <string name="delete_sequence_content_description">Delete sequence</string>
-    <string name="sequence_item_title">Sequence #%1$d</string>
+    <string name="sequence_item_title">Sequence</string>
     <string name="delete_sequence_successfully">You deleted sequence #%1$d</string>
     <string name="add_cifra_successfully">You added cifra %1$s successfully</string>
     <string name="add_cifra_missing_data">Please, check your cifra</string>
@@ -79,7 +79,7 @@
     <string name="add_sequence_title_text">Add a sequence</string>
     <string name="add_sequence_successfully">Sequence added successfully</string>
     <string name="add_sequence_failed">Add a sequence above</string>
-    <string name="add_sequence_cancelled">Sequence cancelled</string>
+    <string name="add_sequence_deleted">Sequence deleted</string>
     <string name="no_notes_message">Tap on button bellow to add a note</string>
     <string name="cifra_singer_name_item">Singer: %1$s</string>
     <string name="cifra_tone_item">Tone: %1$s</string>
@@ -107,4 +107,5 @@
     <string name="delete_sequence_button_text">Delete Sequence</string>
     <string name="save_sequence_missing_data">Please, check your sequence</string>
     <string name="cifra_first_sequence_null_item">First sequence: You should add one!</string>
+    <string name="settings_title_text">Your Options</string>
 </resources>

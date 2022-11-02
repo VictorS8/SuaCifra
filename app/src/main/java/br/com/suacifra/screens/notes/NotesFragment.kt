@@ -45,7 +45,7 @@ class NotesFragment : Fragment() {
         notesList = databaseHelper.getAllNotes()
 
         if (notesList.size == 0) binding.noNotesMessage.visibility = View.VISIBLE
-        else binding.noNotesMessage.visibility = View.INVISIBLE
+        else binding.noNotesMessage.visibility = View.GONE
 
         recyclerView = binding.notesRecyclerView
         recyclerView.hasFixedSize()

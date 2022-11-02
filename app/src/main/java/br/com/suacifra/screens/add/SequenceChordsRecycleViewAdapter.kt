@@ -81,7 +81,7 @@ class SequenceChordsRecyclerViewAdapter(
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val sequenceTitleTextView =
-            mainActivityContext.getString(R.string.sequence_item_title, (position + 1))
+            mainActivityContext.getString(R.string.sequence_item_title)
         val sequenceBodyTextView =
             stringToTextViewString(sequenceChordsList.toMutableList()[position]).removePrefix("[")
                 .removeSuffix("]")

@@ -53,8 +53,8 @@
     <string name="add_sequence_content_description_text">Adicione uma sequência de acordes</string>
     <string name="save_cifra_button_text">Salvar Cifra</string>
     <string name="delete_sequence_content_description">Deletar sequência</string>
-    <string name="sequence_item_title">Sequência #%1$d</string>
-    <string name="add_note_cancelled">Anotação cancelada</string>
+    <string name="sequence_item_title">Sequência</string>
+    <string name="add_note_deleted">Anotação excluida</string>
     <string name="delete_sequence_successfully">Você deletou a sequência #%1$d</string>
     <string name="add_cifra_successfully">Você salvou a cifra %1$s</string>
     <string name="no_sequences_message">Toque no botão + abaixo à direita para adicionar uma sequencia</string>
@@ -64,7 +64,7 @@
     <string name="add_sequence_image_button_content_description_text">Adiciona uma sequência</string>
     <string name="add_sequence_title_text">Adiciona uma sequência</string>
     <string name="add_sequence_successfully">Sequência adicionada com sucesso</string>
-    <string name="add_sequence_cancelled">Sequência cancelada!</string>
+    <string name="add_sequence_deleted">Sequência excluida</string>
     <string name="no_notes_message">Toque no botão abaixo para adicionar uma anotação</string>
     <string name="cifra_singer_name_item">Cantor: %1$s</string>
     <string name="cifra_tone_item">Tom: %1$s</string>
@@ -95,4 +95,5 @@
     <string name="delete_sequence_button_text">Excluir sequência</string>
     <string name="save_sequence_missing_data">Por favor, cheque sua sequência</string>
     <string name="cifra_first_sequence_null_item">Primeira sequência: Você deveria adicionar uma!</string>
+    <string name="settings_title_text">Suas opções</string>
 </resources>

@@ -78,7 +78,7 @@ class AddSequenceFragment : Fragment() {
             sharedPrefEditor.apply()
             Toast.makeText(
                 mainActivityContext,
-                getString(R.string.add_note_cancelled),
+                getString(R.string.add_sequence_deleted),
                 Toast.LENGTH_LONG
             )
                 .show()

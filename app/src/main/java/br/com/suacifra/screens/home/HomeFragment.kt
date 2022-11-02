@@ -12,9 +12,7 @@ import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.databinding.HomeFragmentBinding
-import br.com.suacifra.models.Chords
 import br.com.suacifra.models.Cifras
-import br.com.suacifra.models.Tones
 
 class HomeFragment : Fragment() {
 
@@ -38,10 +36,13 @@ class HomeFragment : Fragment() {
 
         cifrasList = databaseHelper.getAllCifras()
 
-        if (cifrasList.size == 0)
+        if (cifrasList.size == 0) {
             binding.noCifrasMessage.visibility = View.VISIBLE
-        else
-            binding.noCifrasMessage.visibility = View.INVISIBLE
+            binding.appTitle.visibility = View.VISIBLE
+        } else {
+            binding.noCifrasMessage.visibility = View.GONE
+            binding.appTitle.visibility = View.GONE
+        }
 
         recyclerView = binding.cifrasRecyclerView
         recyclerView.hasFixedSize()

@@ -139,7 +139,7 @@ class AddFragment : Fragment() {
         if (cifraSequenceSetString.size == 0)
             binding.noSequenceMessage.visibility = View.VISIBLE
         else
-            binding.noSequenceMessage.visibility = View.INVISIBLE
+            binding.noSequenceMessage.visibility = View.GONE
 
         recyclerView = binding.sequenceRecyclerView
         recyclerView.hasFixedSize()

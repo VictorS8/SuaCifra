@@ -21,6 +21,15 @@
 
         </FrameLayout>
 
+        <TextView
+            android:id="@+id/settingsTitleTextView"
+            style="@style/appTitleStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/settings_title_text" />
+
+
         <Button
             android:id="@+id/notesButton"
             style="@style/buttonOnSettingsStyle"
@@ -63,11 +72,8 @@
             style="@style/warningMessageStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="@string/pro_subscription_in_production_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:layout_margin="16dp"
+            android:text="@string/pro_subscription_in_production_text" />
 
     </LinearLayout>
 </layout>
