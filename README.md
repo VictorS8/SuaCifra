@@ -1,9 +1,6 @@
-<div style="text-align: center;">
-    <img src="/.github/play_store_512_light_mode.png" width="240" alt="Sua Cifra Logo"/>
-    <img src="/.github/play_store_feature_graphic_light_mode.png" width="1024" alt="Sua Cifra Logo"/>
-</div>
+<img src="/.github/play_store_feature_graphic_light_mode.png" width="1024" alt="Sua Cifra Logo"/>
 
-# Sua Cifra
+# <img src="/.github/play_store_512_light_mode.png" width="240" alt="Sua Cifra Logo"/> Sua Cifra 
 
 Um aplicativo para suas cifras customizadas, com fácil acesso para ver, editar e excluir, da sua própria forma e como desejar
 
