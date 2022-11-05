@@ -101,7 +101,7 @@ class AddSequenceFragment : Fragment() {
                         editSequenceIndex
                     )
 
-                    val newMutableSetOfString = mutableSetOfString?.addStringAt(
+                    val newMutableSetOfString = mutableSetOfString.addStringAt(
                         editSequenceIndex,
                         sequenceEditText.toString().trim()
                     )
@@ -144,7 +144,7 @@ class AddSequenceFragment : Fragment() {
             } else {
                 binding.sequenceEditText.setHintTextColor(
                     mainActivityContext.getColorFromAttr(
-                        com.google.android.material.R.attr.errorTextColor
+                        com.google.android.material.R.attr.colorError
                     )
                 )
                 mainActivityContext.toastMessage(

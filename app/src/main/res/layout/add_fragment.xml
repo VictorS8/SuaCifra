@@ -26,19 +26,20 @@
             android:layout_margin="@dimen/medium_space"
             android:text="@string/cifra_name_text_view"
             app:layout_constraintBottom_toTopOf="@id/cifraNameEditText"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cifraNameEditText"
             app:layout_constraintTop_toBottomOf="@id/addCifraTitleTextView" />
 
         <EditText
             android:id="@+id/cifraNameEditText"
             style="@style/editTextStyle"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:hint="@string/cifra_name_hint_string"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
             android:inputType="textPersonName|textCapSentences"
+            android:maxWidth="488dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cifraNameTextView" />
@@ -51,19 +52,20 @@
             android:layout_margin="@dimen/medium_space"
             android:text="@string/singer_name_text_view"
             app:layout_constraintBottom_toTopOf="@id/cifraSingerNameEditText"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/cifraSingerNameEditText"
             app:layout_constraintTop_toBottomOf="@id/cifraNameEditText" />
 
         <EditText
             android:id="@+id/cifraSingerNameEditText"
             style="@style/editTextStyle"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:hint="@string/singer_name_hint_string"
             android:imeOptions="actionDone"
             android:importantForAutofill="no"
             android:inputType="textPersonName|textCapWords"
+            android:maxWidth="488dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/singerNameTextView" />
@@ -134,9 +136,9 @@
             style="@style/defaultDeleteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             android:layout_margin="@dimen/medium_space"
             android:text="@string/delete_cifra_button_text"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/saveCifraButton"
             app:layout_constraintStart_toStartOf="parent" />

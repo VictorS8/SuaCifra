@@ -17,7 +17,7 @@
         <item name="backgroundColor">?attr/colorOnPrimary</item>
         <item name="colorOnBackground">@color/dark_blue_with_more_transparency</item>
 
-        <item name="errorTextColor">@color/dark_red</item>
+        <item name="colorError">@color/error_dark_red</item>
 
         <item name="colorControlNormal">?attr/colorPrimarySurface</item>
         <item name="colorControlActivated">?attr/colorPrimarySurface</item>
@@ -155,13 +155,15 @@
 
     <style name="defaultDeleteButton">
         <item name="android:elevation">@dimen/large_space</item>
-        <item name="android:textColor">?attr/errorTextColor</item>
+        <item name="android:textColor">?attr/colorError</item>
     </style>
 
     <style name="profilePictureStyle">
         <item name="android:minWidth">@dimen/profile_picture_size</item>
+        <item name="android:maxWidth">@dimen/profile_picture_size</item>
         <item name="android:elevation">@dimen/large_space</item>
         <item name="android:minHeight">@dimen/profile_picture_size</item>
+        <item name="android:maxHeight">@dimen/profile_picture_size</item>
         <item name="android:background">@drawable/custom_profile_picture</item>
     </style>
 

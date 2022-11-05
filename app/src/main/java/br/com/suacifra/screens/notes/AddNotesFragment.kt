@@ -134,7 +134,7 @@ class AddNotesFragment : Fragment() {
             } else if (noteTitleEditText.isNullOrBlank()) {
                 binding.noteTitleEditText.setHintTextColor(
                     mainActivityContext.getColorFromAttr(
-                        com.google.android.material.R.attr.errorTextColor
+                        com.google.android.material.R.attr.colorError
                     )
                 )
                 mainActivityContext.toastMessage(
@@ -144,7 +144,7 @@ class AddNotesFragment : Fragment() {
             } else if (noteBodyEditText.isNullOrBlank()) {
                 binding.noteBodyEditText.setHintTextColor(
                     mainActivityContext.getColorFromAttr(
-                        com.google.android.material.R.attr.errorTextColor
+                        com.google.android.material.R.attr.colorError
                     )
                 )
                 mainActivityContext.toastMessage(

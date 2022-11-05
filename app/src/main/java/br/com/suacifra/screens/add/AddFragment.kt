@@ -246,7 +246,7 @@ class AddFragment : Fragment() {
             } else if (cifraNameEditText.isNullOrBlank()) {
                 binding.cifraNameEditText.setHintTextColor(
                     mainActivityContext.getColorFromAttr(
-                        com.google.android.material.R.attr.errorTextColor
+                        com.google.android.material.R.attr.colorError
                     )
                 )
                 mainActivityContext.toastMessage(
@@ -256,7 +256,7 @@ class AddFragment : Fragment() {
             } else if (cifraSingerNameEditText.isNullOrBlank()) {
                 binding.cifraNameEditText.setHintTextColor(
                     mainActivityContext.getColorFromAttr(
-                        com.google.android.material.R.attr.errorTextColor
+                        com.google.android.material.R.attr.colorError
                     )
                 )
                 mainActivityContext.toastMessage(
