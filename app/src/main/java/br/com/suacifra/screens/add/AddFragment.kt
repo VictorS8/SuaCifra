@@ -53,14 +53,14 @@ class AddFragment : Fragment() {
 
         binding.cifraNameEditText.setText(
             sharedPref.getString(
-                Config.SHARED_PREFERENCE_ADD_CIFRA_MODE_NAME_EDIT_TEXT_KEY,
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_NAME_STRING_KEY,
                 ""
             )
         )
 
         binding.cifraSingerNameEditText.setText(
             sharedPref.getString(
-                Config.SHARED_PREFERENCE_ADD_CIFRA_MODE_SINGER_NAME_EDIT_TEXT_KEY,
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY,
                 ""
             )
         )
@@ -156,11 +156,11 @@ class AddFragment : Fragment() {
         binding.addSequencesImageButton.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_ADD_CIFRA_MODE_NAME_EDIT_TEXT_KEY,
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_NAME_STRING_KEY,
                 binding.cifraNameEditText.text.toString()
             )
             sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_ADD_CIFRA_MODE_SINGER_NAME_EDIT_TEXT_KEY,
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY,
                 binding.cifraSingerNameEditText.text.toString()
             )
             sharedPrefEditor.putBoolean(

@@ -9,7 +9,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import br.com.suacifra.databinding.MainActivityBinding
-import br.com.suacifra.screens.add.AddFragment
+import br.com.suacifra.screens.add.AddCifraNameFragment
 import br.com.suacifra.screens.home.HomeFragment
 import br.com.suacifra.screens.settings.SettingsFragment
 import br.com.suacifra.utils.Config
@@ -74,11 +74,11 @@ class MainActivity : AppCompatActivity() {
                         null
                     )
                     sharedPrefEditor.putString(
-                        Config.SHARED_PREFERENCE_ADD_CIFRA_MODE_NAME_EDIT_TEXT_KEY,
+                        Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_NAME_STRING_KEY,
                         ""
                     )
                     sharedPrefEditor.putString(
-                        Config.SHARED_PREFERENCE_ADD_CIFRA_MODE_SINGER_NAME_EDIT_TEXT_KEY,
+                        Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY,
                         ""
                     )
                     sharedPrefEditor.putBoolean(
@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
                         false
                     )
                     sharedPrefEditor.apply()
-                    addToBackStackFragmentOnBottomNavigation(AddFragment(), ADD_FRAGMENT)
+                    addToBackStackFragmentOnBottomNavigation(AddCifraNameFragment(), ADD_FRAGMENT)
                 }
                 R.id.settingsBottomNavigation -> {
                     addToBackStackFragmentOnBottomNavigation(SettingsFragment(), SETTINGS_FRAGMENT)
@@ -137,6 +137,16 @@ class MainActivity : AppCompatActivity() {
         )
         fragmentTransaction.replace(binding.mainFrameLayout.id, fragment)
         fragmentTransaction.addToBackStack("Add to back stack")
+        fragmentTransaction.commit()
+    }
+
+    fun popBackStackFragment() {
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.setCustomAnimations(
+            R.anim.slide_in,
+            R.anim.slide_out
+        )
+        fragmentManager.popBackStack()
         fragmentTransaction.commit()
     }
 

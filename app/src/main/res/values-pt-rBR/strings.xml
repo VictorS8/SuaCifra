@@ -48,8 +48,8 @@
     <string name="note_body_text_view">Corpo da anotação</string>
     <string name="cancel_add_note_image_button_content_description_text">Cancela a adição de anotação</string>
     <string name="add_cifra_title_text">Adicionar</string>
-    <string name="cifra_name_text_view">Nome da cifra</string>
-    <string name="singer_name_text_view">Nome do cantor</string>
+    <string name="cifra_name_text_view">Nome</string>
+    <string name="singer_name_text_view">Nome</string>
     <string name="add_sequence_content_description_text">Adicione uma sequência de acordes</string>
     <string name="save_cifra_button_text">Salvar Cifra</string>
     <string name="delete_sequence_content_description">Deletar sequência</string>
@@ -96,4 +96,12 @@
     <string name="save_sequence_missing_data">Por favor, cheque sua sequência</string>
     <string name="cifra_first_sequence_null_item">Primeira sequência: Você deveria adicionar uma!</string>
     <string name="settings_title_text">Suas opções</string>
+    <string name="add_cifra_name_title_text">Cifra</string>
+    <string name="save_cifra_name_content_description_text">Salvar nome da cifra</string>
+    <string name="cifra_name_helper_text_view">Você deveria nomear sua cifra sobre algo que você irá lembrar</string>
+    <string name="add_cifra_singer_name_title_text">Cantor</string>
+    <string name="save_cifra_singer_name_content_description_text">Salvar nome do cantor</string>
+    <string name="cifra_singer_name_helper_text_view">Você deveria nomear sobre quem realmente está cantando\ne.g. Roberta (Grupo da igreja)</string>
+    <string name="save_cifra_name_missing_data">Tente preencher o nome da sua cifra</string>
+    <string name="save_cifra_singer_name_missing_data">Tente preencher o nome do cantor da sua cifra</string>
 </resources>

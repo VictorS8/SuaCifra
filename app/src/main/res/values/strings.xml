@@ -62,8 +62,8 @@
     <string name="cancel_add_note_image_button_content_description_text">Cancel add note</string>
     <string name="add_cifra_title_text">Add</string>
     <string name="add_note_deleted">Note deleted</string>
-    <string name="cifra_name_text_view">Cifra\'s name</string>
-    <string name="singer_name_text_view">Singer\'s name</string>
+    <string name="cifra_name_text_view">Name</string>
+    <string name="singer_name_text_view">Name</string>
     <string name="add_sequence_content_description_text">Add sequence of chords</string>
     <string name="save_cifra_button_text">Save Cifra</string>
     <string name="delete_sequence_content_description">Delete sequence</string>
@@ -108,4 +108,12 @@
     <string name="save_sequence_missing_data">Please, check your sequence</string>
     <string name="cifra_first_sequence_null_item">First sequence: You should add one!</string>
     <string name="settings_title_text">Your Options</string>
+    <string name="add_cifra_name_title_text">Cifra</string>
+    <string name="save_cifra_name_content_description_text">Save cifra name</string>
+    <string name="cifra_name_helper_text_view">You should name it your cifra after something will be remembered later\ne.g. Sua Cifra Importantly (Cover)</string>
+    <string name="add_cifra_singer_name_title_text">Singer</string>
+    <string name="save_cifra_singer_name_content_description_text">Save singer name</string>
+    <string name="cifra_singer_name_helper_text_view">You should name it after who is really singing it\ne.g. Roberta (Church group)</string>
+    <string name="save_cifra_name_missing_data">Try to fill in a name for your cifra</string>
+    <string name="save_cifra_singer_name_missing_data">Try to fill in a singer name of your cifra</string>
 </resources>
