@@ -14,7 +14,7 @@ import br.com.suacifra.databinding.ProfileFragmentBinding
 import br.com.suacifra.screens.login.LoginFragment
 import br.com.suacifra.screens.settings.SettingsFragment
 import br.com.suacifra.utils.Config
-import coil.api.load
+import coil.load
 import coil.transform.RoundedCornersTransformation
 
 
@@ -42,6 +42,9 @@ class ProfileFragment : Fragment() {
             binding.profilePictureImageView.load(
                 googleAccount.photoUrl.toString().replace("s96-c", "s768-c")
             ) {
+                crossfade(true)
+                crossfade(1000)
+                placeholder(R.drawable.ic_baseline_person_24)
                 transformations(
                     RoundedCornersTransformation(
                         topLeft = 12.0f,
