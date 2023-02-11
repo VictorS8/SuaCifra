@@ -66,7 +66,7 @@ class AddCifraSingerNameFragment : Fragment() {
                     cifraNameEditText.toString()
                 )
                 sharedPrefEditor.apply()
-//                mainActivityContext.addToBackStackFragment(AddCifraToneFragment())
+                mainActivityContext.addToBackStackFragment(AddCifraToneFragment())
             } else if (cifraNameEditText.isNullOrBlank()) {
                 binding.cifraSingerNameEditText.setHintTextColor(
                     mainActivityContext.getColorFromAttr(
