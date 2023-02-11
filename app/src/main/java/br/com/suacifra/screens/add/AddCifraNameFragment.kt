@@ -47,10 +47,6 @@ class AddCifraNameFragment : Fragment() {
             cifraName
         )
 
-        binding.addCifraNameBackImageButton.setOnClickListener {
-            mainActivityContext.popBackStackFragment()
-        }
-
         binding.addCifraNameNextImageButton.setOnClickListener {
             val cifraNameEditText = binding.cifraNameEditText.text
             if (!cifraNameEditText.isNullOrBlank()) {
