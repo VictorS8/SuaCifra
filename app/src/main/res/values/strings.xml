@@ -116,4 +116,7 @@
     <string name="cifra_singer_name_helper_text_view">You should name it after who is really singing it\ne.g. Roberta (Church group)</string>
     <string name="save_cifra_name_missing_data">Try to fill in a name for your cifra</string>
     <string name="save_cifra_singer_name_missing_data">Try to fill in a singer name of your cifra</string>
+    <string name="add_cifra_tone_title_text">Tone</string>
+    <string name="save_cifra_tone_missing_data">Try to choose a tone to your cifra</string>
+    <string name="add_cifra_tone_hint_text">Here will appear your chosen tone below</string>
 </resources>

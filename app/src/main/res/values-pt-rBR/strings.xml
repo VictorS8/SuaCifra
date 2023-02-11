@@ -104,4 +104,7 @@
     <string name="cifra_singer_name_helper_text_view">Você deveria nomear sobre quem realmente está cantando\ne.g. Roberta (Grupo da igreja)</string>
     <string name="save_cifra_name_missing_data">Tente preencher o nome da sua cifra</string>
     <string name="save_cifra_singer_name_missing_data">Tente preencher o nome do cantor da sua cifra</string>
+    <string name="add_cifra_tone_title_text">Tom</string>
+    <string name="save_cifra_tone_missing_data">Tente escolher um tom para sua cifra</string>
+    <string name="add_cifra_tone_hint_text">Aqui irá aparecer o tom escolhido abaixo</string>
 </resources>
