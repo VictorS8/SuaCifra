@@ -38,6 +38,10 @@ class AddNotesFragment : Fragment() {
             Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
 
+        binding.addNoteBackImageButton.setOnClickListener {
+            mainActivityContext.popBackStackFragment()
+        }
+
         isEditNotesModeEnable = sharedPref.getBoolean(
             Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_BOOLEAN_KEY,
             isEditNotesModeEnable

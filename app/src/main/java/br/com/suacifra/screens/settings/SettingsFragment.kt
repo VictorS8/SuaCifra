@@ -37,14 +37,16 @@ class SettingsFragment : Fragment() {
             // TODO - Implement it
         }
 
-        binding.loginButton.setOnClickListener {
-            val oldAccount = mainActivityContext.getLastSignedInAccountOnActivity()
-            if (oldAccount != null) {
-                mainActivityContext.addToBackStackFragment(ProfileFragment())
-            } else {
-                mainActivityContext.addToBackStackFragment(LoginFragment())
-            }
-        }
+//        TODO - For now will not have google login, because do not have use for it
+//        binding.loginButton.setOnClickListener {
+//            val oldAccount = mainActivityContext.getLastSignedInAccountOnActivity()
+//            if (oldAccount != null) {
+//                mainActivityContext.addToBackStackFragment(ProfileFragment())
+//            } else {
+//                mainActivityContext.addToBackStackFragment(LoginFragment())
+//            }
+//        }
+        binding.loginButton.visibility = View.GONE
 
         binding.aboutButton.setOnClickListener {
             mainActivityContext.addToBackStackFragment(AboutFragment())
