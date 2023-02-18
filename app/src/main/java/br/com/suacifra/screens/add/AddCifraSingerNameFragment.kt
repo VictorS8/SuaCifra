@@ -38,7 +38,7 @@ class AddCifraSingerNameFragment : Fragment() {
         )
 
         cifraSingerName = sharedPref.getString(
-            Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY,
+            Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
             cifraSingerName
         ) ?: ""
 
@@ -50,7 +50,7 @@ class AddCifraSingerNameFragment : Fragment() {
             val cifraNameEditText = binding.cifraSingerNameEditText.text
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
                 cifraNameEditText.toString()
             )
             sharedPrefEditor.apply()
@@ -62,7 +62,7 @@ class AddCifraSingerNameFragment : Fragment() {
             if (!cifraNameEditText.isNullOrBlank()) {
                 val sharedPrefEditor = sharedPref.edit()
                 sharedPrefEditor.putString(
-                    Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY,
+                    Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
                     cifraNameEditText.toString()
                 )
                 sharedPrefEditor.apply()

@@ -121,19 +121,19 @@ class CifrasRecyclerViewAdapter(
                 cifrasList[position].id
             )
             sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_NAME_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_NAME_STRING_KEY,
                 cifrasList[position].name
             )
             sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
                 cifrasList[position].singerName
             )
             sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
                 cifrasList[position].tone
             )
             sharedPrefEditor.putStringSet(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_SEQUENCE_STRING_KEY,
                 cifrasList[position].chordsSequence.dataStringToMutableSet()
             )
 

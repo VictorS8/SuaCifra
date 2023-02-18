@@ -54,11 +54,11 @@ class AddNotesFragment : Fragment() {
                 noteId
             )
             noteTitle = sharedPref.getString(
-                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_TITLE_STRING_KEY,
+                Config.SHARED_PREFERENCE_NOTES_TITLE_STRING_KEY,
                 noteTitle
             )
             noteBody = sharedPref.getString(
-                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_BODY_STRING_KEY,
+                Config.SHARED_PREFERENCE_NOTES_BODY_STRING_KEY,
                 noteBody
             )
             binding.noteTitleEditText.setText(noteTitle ?: "")

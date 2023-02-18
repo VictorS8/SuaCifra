@@ -39,7 +39,7 @@ class AddCifraNameFragment : Fragment() {
         )
 
         cifraName = sharedPref.getString(
-            Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_NAME_STRING_KEY,
+            Config.SHARED_PREFERENCE_CIFRA_NAME_STRING_KEY,
             cifraName
         ) ?: ""
 
@@ -52,7 +52,7 @@ class AddCifraNameFragment : Fragment() {
             if (!cifraNameEditText.isNullOrBlank()) {
                 val sharedPrefEditor = sharedPref.edit()
                 sharedPrefEditor.putString(
-                    Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_NAME_STRING_KEY,
+                    Config.SHARED_PREFERENCE_CIFRA_NAME_STRING_KEY,
                     cifraNameEditText.toString()
                 )
                 sharedPrefEditor.apply()

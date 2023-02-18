@@ -95,11 +95,11 @@ class NotesRecyclerViewAdapter(
                 Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_ID_INT_KEY, notesList[position].id
             )
             sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_TITLE_STRING_KEY,
+                Config.SHARED_PREFERENCE_NOTES_TITLE_STRING_KEY,
                 notesList[position].noteTitle
             )
             sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_BODY_STRING_KEY,
+                Config.SHARED_PREFERENCE_NOTES_BODY_STRING_KEY,
                 notesList[position].noteBody
             )
 

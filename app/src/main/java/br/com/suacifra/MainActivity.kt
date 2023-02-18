@@ -66,19 +66,19 @@ class MainActivity : AppCompatActivity() {
                 R.id.addBottomNavigation -> {
                     val sharedPrefEditor = sharedPref.edit()
                     sharedPrefEditor.putStringSet(
-                        Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
+                        Config.SHARED_PREFERENCE_CIFRA_SEQUENCE_STRING_KEY,
                         mutableSetOf()
                     )
                     sharedPrefEditor.putString(
-                        Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
+                        Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
                         null
                     )
                     sharedPrefEditor.putString(
-                        Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_NAME_STRING_KEY,
+                        Config.SHARED_PREFERENCE_CIFRA_NAME_STRING_KEY,
                         ""
                     )
                     sharedPrefEditor.putString(
-                        Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY,
+                        Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
                         ""
                     )
                     sharedPrefEditor.putBoolean(

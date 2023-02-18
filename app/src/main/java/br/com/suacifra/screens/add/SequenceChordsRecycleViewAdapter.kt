@@ -97,15 +97,15 @@ class SequenceChordsRecyclerViewAdapter(
         holder.sequenceItemCardView.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putBoolean(
-                Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_BOOLEAN_KEY,
+                Config.SHARED_PREFERENCE_SEQUENCE_BOOLEAN_KEY,
                 true
             )
             sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_SEQUENCE_STRING_KEY,
+                Config.SHARED_PREFERENCE_SEQUENCE_STRING_KEY,
                 sequenceToEdit
             )
             sharedPrefEditor.putInt(
-                Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_SEQUENCE_INDEX_KEY,
+                Config.SHARED_PREFERENCE_SEQUENCE_INDEX_KEY,
                 position
             )
             sharedPrefEditor.apply()
@@ -124,7 +124,7 @@ class SequenceChordsRecyclerViewAdapter(
         )
         var deleteSequence: MutableSet<String>? = mutableSetOf()
         deleteSequence = sharedPref.getStringSet(
-            Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
+            Config.SHARED_PREFERENCE_CIFRA_SEQUENCE_STRING_KEY,
             deleteSequence
         )
         if (deleteSequence != null) {

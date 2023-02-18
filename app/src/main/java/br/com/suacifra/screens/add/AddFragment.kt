@@ -53,14 +53,14 @@ class AddFragment : Fragment() {
 
         binding.cifraNameEditText.setText(
             sharedPref.getString(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_NAME_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_NAME_STRING_KEY,
                 ""
             )
         )
 
         binding.cifraSingerNameEditText.setText(
             sharedPref.getString(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
                 ""
             )
         )
@@ -70,7 +70,7 @@ class AddFragment : Fragment() {
         }
 
         val toneString = sharedPref.getString(
-            Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
+            Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
             getString(R.string.tone_spinner_helper_string)
         )
 
@@ -79,7 +79,7 @@ class AddFragment : Fragment() {
         else {
             binding.songToneButtonHelper.text = getString(
                 R.string.tone_chosen_text, sharedPref.getString(
-                    Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
+                    Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
                     getString(R.string.tone_spinner_helper_string)
                 )
             )
@@ -91,7 +91,7 @@ class AddFragment : Fragment() {
         )
 
         isEditSequenceModeEnable = sharedPref.getBoolean(
-            Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_BOOLEAN_KEY,
+            Config.SHARED_PREFERENCE_SEQUENCE_BOOLEAN_KEY,
             isEditSequenceModeEnable
         )
 
@@ -102,19 +102,19 @@ class AddFragment : Fragment() {
                 cifraId
             )
             cifraName = sharedPref.getString(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_NAME_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_NAME_STRING_KEY,
                 cifraName
             ) ?: ""
             cifraSingerName = sharedPref.getString(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
                 cifraSingerName
             ) ?: ""
             cifraTone = sharedPref.getString(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
                 cifraTone
             ) ?: ""
             cifraSequenceSetString = sharedPref.getStringSet(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_SEQUENCE_STRING_KEY,
                 cifraSequenceSetString
             ) ?: mutableSetOf()
 
@@ -125,11 +125,11 @@ class AddFragment : Fragment() {
         } else {
             // if I clicked on add bottom navigation option
             cifraSequenceSetString = sharedPref.getStringSet(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_SEQUENCE_STRING_KEY,
                 cifraSequenceSetString
             ) ?: mutableSetOf()
             cifraTone = sharedPref.getString(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
                 cifraTone
             ) ?: ""
             cifraSequenceString = cifraSequenceSetString.dataMutableSetToString()
@@ -156,15 +156,15 @@ class AddFragment : Fragment() {
         binding.addSequencesImageButton.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_NAME_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_NAME_STRING_KEY,
                 binding.cifraNameEditText.text.toString()
             )
             sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
                 binding.cifraSingerNameEditText.text.toString()
             )
             sharedPrefEditor.putBoolean(
-                Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_BOOLEAN_KEY,
+                Config.SHARED_PREFERENCE_SEQUENCE_BOOLEAN_KEY,
                 false
             )
             sharedPrefEditor.apply()
@@ -199,7 +199,7 @@ class AddFragment : Fragment() {
 
         binding.saveCifraButton.setOnClickListener {
             cifraTone =
-                sharedPref.getString(Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY, "")
+                sharedPref.getString(Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY, "")
                     ?: ""
             if (!cifraNameEditText.isNullOrBlank() && cifraTone.isNotBlank() && !cifraSingerNameEditText.isNullOrBlank()) {
                 val cifrasModel =
@@ -295,7 +295,7 @@ class AddFragment : Fragment() {
         )
         val sharedPrefEditor = sharedPref.edit()
         sharedPrefEditor.putString(
-            Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
+            Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
             textViewString.text.toString()
         )
         sharedPrefEditor.apply()

@@ -36,7 +36,7 @@ class AddSequenceFragment : Fragment() {
         )
 
         isEditSequenceModeEnable = sharedPref.getBoolean(
-            Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_BOOLEAN_KEY,
+            Config.SHARED_PREFERENCE_SEQUENCE_BOOLEAN_KEY,
             isEditSequenceModeEnable
         )
 
@@ -47,7 +47,7 @@ class AddSequenceFragment : Fragment() {
                 cifraId
             )
             sequence = sharedPref.getString(
-                Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_SEQUENCE_STRING_KEY,
+                Config.SHARED_PREFERENCE_SEQUENCE_STRING_KEY,
                 sequence
             )
             binding.sequenceEditText.setText(stringOfMutableListToEditTextString(sequence ?: ""))
@@ -62,7 +62,7 @@ class AddSequenceFragment : Fragment() {
         binding.deleteSequenceButton.setOnClickListener {
             var deleteSequence: MutableSet<String>? = mutableSetOf()
             deleteSequence = sharedPref.getStringSet(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_SEQUENCE_STRING_KEY,
                 deleteSequence
             )
 
@@ -72,7 +72,7 @@ class AddSequenceFragment : Fragment() {
 
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putStringSet(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_SEQUENCE_STRING_KEY,
                 deleteSequence
             )
             sharedPrefEditor.apply()
@@ -93,11 +93,11 @@ class AddSequenceFragment : Fragment() {
                     var editSequenceIndex = 0
 
                     mutableSetOfString = sharedPref.getStringSet(
-                        Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
+                        Config.SHARED_PREFERENCE_CIFRA_SEQUENCE_STRING_KEY,
                         mutableSetOfString
                     ) ?: mutableSetOf()
                     editSequenceIndex = sharedPref.getInt(
-                        Config.SHARED_PREFERENCE_EDIT_SEQUENCE_MODE_SEQUENCE_INDEX_KEY,
+                        Config.SHARED_PREFERENCE_SEQUENCE_INDEX_KEY,
                         editSequenceIndex
                     )
 
@@ -107,7 +107,7 @@ class AddSequenceFragment : Fragment() {
                     )
                     val sharedPrefEditor = sharedPref.edit()
                     sharedPrefEditor.putStringSet(
-                        Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
+                        Config.SHARED_PREFERENCE_CIFRA_SEQUENCE_STRING_KEY,
                         newMutableSetOfString
                     )
                     sharedPrefEditor.apply()
@@ -119,7 +119,7 @@ class AddSequenceFragment : Fragment() {
                         .show()
                 } else {
                     mutableSetOfString = sharedPref.getStringSet(
-                        Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
+                        Config.SHARED_PREFERENCE_CIFRA_SEQUENCE_STRING_KEY,
                         mutableSetOfString
                     ) ?: mutableSetOf()
 
@@ -129,7 +129,7 @@ class AddSequenceFragment : Fragment() {
                     val newMutableSetOfString = newMutableListOfString.toMutableSet()
                     val sharedPrefEditor = sharedPref.edit()
                     sharedPrefEditor.putStringSet(
-                        Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY,
+                        Config.SHARED_PREFERENCE_CIFRA_SEQUENCE_STRING_KEY,
                         newMutableSetOfString
                     )
                     sharedPrefEditor.apply()

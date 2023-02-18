@@ -40,7 +40,7 @@ class AddCifraToneFragment : Fragment() {
         )
 
         cifraTone = sharedPref.getString(
-            Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY,
+            Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
             cifraTone
         ) ?: ""
 
@@ -48,7 +48,7 @@ class AddCifraToneFragment : Fragment() {
             val cifraNameEditText = binding.addCifraToneStringTextView.text
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
                 cifraNameEditText.toString()
             )
             sharedPrefEditor.apply()
@@ -60,7 +60,7 @@ class AddCifraToneFragment : Fragment() {
             if (!cifraNameEditText.isNullOrBlank()) {
                 val sharedPrefEditor = sharedPref.edit()
                 sharedPrefEditor.putString(
-                    Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY,
+                    Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
                     cifraNameEditText.toString()
                 )
                 sharedPrefEditor.apply()
