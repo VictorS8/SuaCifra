@@ -107,4 +107,5 @@
     <string name="add_cifra_tone_title_text">Tom</string>
     <string name="save_cifra_tone_missing_data">Tente escolher um tom para sua cifra</string>
     <string name="add_cifra_tone_hint_text">Aqui irá aparecer o tom escolhido abaixo</string>
+    <string name="tone_hint_string">Insira o tom da sua cifra</string>
 </resources>

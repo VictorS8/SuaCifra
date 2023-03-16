@@ -119,4 +119,5 @@
     <string name="add_cifra_tone_title_text">Tone</string>
     <string name="save_cifra_tone_missing_data">Try to choose a tone to your cifra</string>
     <string name="add_cifra_tone_hint_text">Here will appear your chosen tone below</string>
+    <string name="tone_hint_string">Insert the tone of your cifra</string>
 </resources>

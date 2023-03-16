@@ -135,17 +135,6 @@
         <item name="itemIconSize">@dimen/bottom_navigation_icon_size</item>
     </style>
 
-    <style name="chooseToneButton">
-        <item name="android:elevation">@dimen/large_space</item>
-        <item name="android:layout_margin">@dimen/minimal_space</item>
-        <item name="android:padding">@dimen/minimal_space</item>
-        <item name="android:background">@drawable/custom_tone_button</item>
-        <item name="android:clickable">true</item>
-        <item name="android:textAlignment">center</item>
-        <item name="android:textColor">@color/light_blue</item>
-        <item name="android:textSize">@dimen/choose_tone_text_size</item>
-    </style>
-
     <style name="defaultButton">
         <item name="android:elevation">@dimen/large_space</item>
     </style>

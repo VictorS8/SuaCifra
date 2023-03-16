@@ -48,7 +48,7 @@ class AddCifraToneFragment : Fragment() {
             val cifraNameEditText = binding.addCifraToneStringTextView.text
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
+                Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
                 cifraNameEditText.toString()
             )
             sharedPrefEditor.apply()
@@ -57,10 +57,11 @@ class AddCifraToneFragment : Fragment() {
 
         binding.addCifraToneNextImageButton.setOnClickListener {
             val cifraNameEditText = binding.addCifraToneStringTextView.text
-            if (!cifraNameEditText.isNullOrBlank()) {
+            val toneRegex = "[A-GmM#bsu]{1,5}'\'d".toRegex()
+            if (!cifraNameEditText.isNullOrBlank() && toneRegex.matches(cifraNameEditText.toString())) {
                 val sharedPrefEditor = sharedPref.edit()
                 sharedPrefEditor.putString(
-                    Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
+                    Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
                     cifraNameEditText.toString()
                 )
                 sharedPrefEditor.apply()
