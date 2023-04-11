@@ -61,8 +61,7 @@
     <string name="sequence_title_text_view">Sequência de acordes</string>
     <string name="sequence_title_hint_string">Insira seus acordes</string>
     <string name="cancel_add_sequence_image_button_content_description_text">Cancela a adição de anotação</string>
-    <string name="add_sequence_image_button_content_description_text">Adiciona uma sequência</string>
-    <string name="add_sequence_title_text">Adiciona uma sequência</string>
+    <string name="add_sequence_title_text">Salve uma sequência</string>
     <string name="add_sequence_successfully">Sequência adicionada com sucesso</string>
     <string name="add_sequence_deleted">Sequência excluida</string>
     <string name="no_notes_message">Toque no botão abaixo para adicionar uma anotação</string>
@@ -108,4 +107,9 @@
     <string name="save_cifra_tone_missing_data">Tente escolher um tom para sua cifra</string>
     <string name="add_cifra_tone_hint_text">Aqui irá aparecer o tom escolhido abaixo</string>
     <string name="tone_hint_string">Insira o tom da sua cifra</string>
+    <string name="add_cifra_sequence_title_text">Sequências</string>
+    <string name="add_cifra_sequence_add_sequence_content_description_text">Adicione uma sequência</string>
+    <string name="tone_helper_string">Coloque um tom específico \ne.g. C#m7</string>
+    <string name="save_cifra_sequence_content_description_text">Salve uma sequência dessa cifra</string>
+    <string name="delete_cifra_sequence_content_description_text">Delete uma sequência</string>
 </resources>

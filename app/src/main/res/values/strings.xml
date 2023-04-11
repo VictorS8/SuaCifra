@@ -75,8 +75,7 @@
     <string name="sequence_title_hint_string">Insert your chords</string>
     <string name="sequence_helper_string">Put chords between comma \",\" and without spaces\ne.g. C,G,Am,F</string>
     <string name="cancel_add_sequence_image_button_content_description_text">Cancel add sequence</string>
-    <string name="add_sequence_image_button_content_description_text">Add a sequence</string>
-    <string name="add_sequence_title_text">Add a sequence</string>
+    <string name="add_sequence_title_text">Save a sequence</string>
     <string name="add_sequence_successfully">Sequence added successfully</string>
     <string name="add_sequence_failed">Add a sequence above</string>
     <string name="add_sequence_deleted">Sequence deleted</string>
@@ -120,4 +119,10 @@
     <string name="save_cifra_tone_missing_data">Try to choose a tone to your cifra</string>
     <string name="add_cifra_tone_hint_text">Here will appear your chosen tone below</string>
     <string name="tone_hint_string">Insert the tone of your cifra</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="add_cifra_sequence_title_text">Sequences</string>
+    <string name="save_cifra_sequence_content_description_text">Save sequence of this cifra</string>
+    <string name="delete_cifra_sequence_content_description_text">Delete a sequence</string>
+    <string name="add_cifra_sequence_add_sequence_content_description_text">Add a sequence</string>
+    <string name="tone_helper_string">Put a specific tone \ne.g. C#m7</string>
 </resources>

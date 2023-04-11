@@ -33,8 +33,6 @@ class AddCifraToneFragment : Fragment() {
 
         mainActivityContext = (activity as MainActivity)
 
-        binding.addCifraToneStringTextView.text = getString(R.string.add_cifra_tone_hint_text)
-
         val sharedPref = mainActivityContext.getSharedPreferences(
             Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
@@ -44,30 +42,34 @@ class AddCifraToneFragment : Fragment() {
             cifraTone
         ) ?: ""
 
+        binding.addCifraToneEditText.setText(
+            cifraTone
+        )
+
         binding.addCifraToneBackImageButton.setOnClickListener {
-            val cifraNameEditText = binding.addCifraToneStringTextView.text
+            val cifraEditText = binding.addCifraToneEditText.text
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putString(
                 Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
-                cifraNameEditText.toString()
+                cifraEditText.toString()
             )
             sharedPrefEditor.apply()
             mainActivityContext.popBackStackFragment()
         }
 
         binding.addCifraToneNextImageButton.setOnClickListener {
-            val cifraNameEditText = binding.addCifraToneStringTextView.text
-            val toneRegex = "[A-GmM#bsu]{1,5}'\'d".toRegex()
-            if (!cifraNameEditText.isNullOrBlank() && toneRegex.matches(cifraNameEditText.toString())) {
+            val cifraEditText = binding.addCifraToneEditText.text
+            val toneRegex = "[A-GmM#bsu/()1-9]+".toRegex()
+            if (!cifraEditText.isNullOrBlank() && toneRegex.matches(cifraEditText.toString())) {
                 val sharedPrefEditor = sharedPref.edit()
                 sharedPrefEditor.putString(
                     Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
-                    cifraNameEditText.toString()
+                    cifraEditText.toString()
                 )
                 sharedPrefEditor.apply()
-                mainActivityContext.addToBackStackFragment(AddCifraToneFragment())
-            } else if (cifraNameEditText.isNullOrBlank()) {
-                binding.addCifraToneStringTextView.setHintTextColor(
+                mainActivityContext.addToBackStackFragment(AddCifraSequenceFragment())
+            } else {
+                binding.addCifraToneEditText.setHintTextColor(
                     mainActivityContext.getColorFromAttr(
                         com.google.android.material.R.attr.colorError
                     )
