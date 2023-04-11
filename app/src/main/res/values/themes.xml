@@ -28,7 +28,7 @@
     <style name="themeSplashScreen" parent="Theme.SplashScreen.IconBackground">
         <item name="windowSplashScreenBackground">@color/white</item>
         <item name="windowSplashScreenIconBackgroundColor">@color/dark_grey</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_foreground_light_mode</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_logo_light</item>
         <item name="postSplashScreenTheme">@style/themeSuaCifra</item>
     </style>
 
