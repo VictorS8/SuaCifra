@@ -28,7 +28,7 @@
             android:contentDescription="@string/go_back_button_text"
             android:minWidth="@dimen/big_space"
             android:minHeight="@dimen/big_space"
-            android:src="@drawable/baseline_arrow_back_24"
+            android:src="@drawable/ic_baseline_close_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="?attr/colorPrimary" />
@@ -42,7 +42,7 @@
             android:contentDescription="@string/save_cifra_singer_name_content_description_text"
             android:minWidth="@dimen/big_space"
             android:minHeight="@dimen/big_space"
-            android:src="@drawable/baseline_arrow_forward_24"
+            android:src="@drawable/baseline_check_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="?attr/colorPrimary" />

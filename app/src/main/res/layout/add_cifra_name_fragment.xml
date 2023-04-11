@@ -27,7 +27,7 @@
             android:minHeight="@dimen/big_space"
             android:minWidth="@dimen/big_space"
             android:contentDescription="@string/save_cifra_name_content_description_text"
-            android:src="@drawable/baseline_arrow_forward_24"
+            android:src="@drawable/baseline_check_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:backgroundTint="?attr/backgroundColor"
