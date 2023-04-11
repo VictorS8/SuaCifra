@@ -90,8 +90,7 @@ class AddCifraSequenceFragment : Fragment() {
                 cifraSequenceSetString
             )
             sharedPrefEditor.apply()
-            TODO("Tenho que adicionar o fragmento de Add Cifra Overview")
-//            mainActivityContext.addToBackStackFragment(AddCifraFragment())
+            mainActivityContext.addToBackStackFragment(AddCifraOverviewFragment())
         }
 
         return binding.root
