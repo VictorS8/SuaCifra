@@ -11,7 +11,10 @@ import androidx.fragment.app.Fragment
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.databinding.AddSequenceFragmentBinding
-import br.com.suacifra.utils.*
+import br.com.suacifra.utils.Config
+import br.com.suacifra.utils.addStringAt
+import br.com.suacifra.utils.getColorFromAttr
+import br.com.suacifra.utils.stringOfMutableListToEditTextString
 
 class AddSequenceFragment : Fragment() {
 
@@ -51,15 +54,15 @@ class AddSequenceFragment : Fragment() {
                 sequence
             )
             binding.sequenceEditText.setText(stringOfMutableListToEditTextString(sequence ?: ""))
-            binding.deleteSequenceButton.visibility = View.VISIBLE
+            binding.addCifraDeleteSequenceImageButton.visibility = View.VISIBLE
         } else {
             // if I clicked on add bottom navigation option
             cifraId = -1
             sequence = ""
-            binding.deleteSequenceButton.visibility = View.GONE
+            binding.addCifraDeleteSequenceImageButton.visibility = View.GONE
         }
 
-        binding.deleteSequenceButton.setOnClickListener {
+        binding.addCifraDeleteSequenceImageButton.setOnClickListener {
             var deleteSequence: MutableSet<String>? = mutableSetOf()
             deleteSequence = sharedPref.getStringSet(
                 Config.SHARED_PREFERENCE_CIFRA_SEQUENCE_STRING_KEY,
@@ -82,12 +85,17 @@ class AddSequenceFragment : Fragment() {
                 Toast.LENGTH_LONG
             )
                 .show()
-            mainActivityContext.replaceFragment(AddFragment())
+            mainActivityContext.popBackStackFragment()
         }
 
-        binding.saveSequenceButton.setOnClickListener {
+        binding.addCifraAddSequenceBackImageButton.setOnClickListener {
+            mainActivityContext.popBackStackFragment()
+        }
+
+        binding.addCifraSaveSequenceNextImageButton.setOnClickListener {
             val sequenceEditText = binding.sequenceEditText.text
-            if (!sequenceEditText.isNullOrBlank()) {
+            val sequenceRegex = "[A-GmM#bsu/()1-9,]+".toRegex()
+            if (!sequenceEditText.isNullOrBlank() && sequenceRegex.matches(sequenceEditText.toString())) {
                 var mutableSetOfString: MutableSet<String> = mutableSetOf()
                 if (isEditSequenceModeEnable) {
                     var editSequenceIndex = 0
@@ -140,7 +148,7 @@ class AddSequenceFragment : Fragment() {
                     )
                         .show()
                 }
-                mainActivityContext.replaceFragment(AddFragment())
+                mainActivityContext.addToBackStackFragment(AddCifraSequenceFragment())
             } else {
                 binding.sequenceEditText.setHintTextColor(
                     mainActivityContext.getColorFromAttr(

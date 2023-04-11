@@ -12,22 +12,39 @@
             style="@style/settingsTextViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/large_space"
+            android:layout_marginTop="@dimen/medium_space"
             android:text="@string/add_sequence_title_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/sequenceTextView"
-            style="@style/textViewStyle"
+        <ImageButton
+            android:id="@+id/addCifraAddSequenceBackImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/medium_space"
-            android:text="@string/sequence_title_text_view"
-            app:layout_constraintBottom_toTopOf="@id/sequenceEditText"
+            android:backgroundTint="?attr/backgroundColor"
+            android:contentDescription="@string/go_back_button_text"
+            android:minWidth="@dimen/big_space"
+            android:minHeight="@dimen/big_space"
+            android:src="@drawable/ic_baseline_close_24"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addSequenceTitleTextView" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/addCifraSaveSequenceNextImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:backgroundTint="?attr/backgroundColor"
+            android:contentDescription="@string/save_cifra_sequence_content_description_text"
+            android:minWidth="@dimen/big_space"
+            android:minHeight="@dimen/big_space"
+            android:src="@drawable/ic_baseline_post_add_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary" />
 
         <EditText
             android:id="@+id/sequenceEditText"
@@ -39,9 +56,25 @@
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
             android:inputType="textPersonName|textCapWords"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/addCifraDeleteSequenceImageButton"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sequenceTextView" />
+            app:layout_constraintTop_toBottomOf="@id/addSequenceTitleTextView" />
+
+        <ImageButton
+            android:id="@+id/addCifraDeleteSequenceImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:backgroundTint="?attr/backgroundColor"
+            android:contentDescription="@string/delete_cifra_sequence_content_description_text"
+            android:minWidth="@dimen/big_space"
+            android:minHeight="@dimen/big_space"
+            android:visibility="gone"
+            android:src="@drawable/ic_outline_delete_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/sequenceEditText"
+            app:layout_constraintTop_toBottomOf="@id/addSequenceTitleTextView"
+            app:tint="?attr/colorPrimary" />
 
         <TextView
             android:id="@+id/sequenceHelperTextView"
@@ -54,31 +87,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sequenceEditText" />
-
-        <Button
-            android:id="@+id/deleteSequenceButton"
-            style="@style/defaultDeleteButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/medium_space"
-            android:background="@drawable/custom_icon_button"
-            android:text="@string/delete_sequence_button_text"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/saveSequenceButton"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/saveSequenceButton"
-            style="@style/defaultButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/medium_space"
-            android:background="@drawable/custom_icon_button"
-            android:text="@string/save_sequence_button_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/deleteSequenceButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
