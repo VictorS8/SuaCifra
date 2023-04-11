@@ -67,7 +67,7 @@ class AddCifraSingerNameFragment : Fragment() {
                 )
                 sharedPrefEditor.apply()
                 mainActivityContext.addToBackStackFragment(AddCifraToneFragment())
-            } else if (cifraNameEditText.isNullOrBlank()) {
+            } else {
                 binding.cifraSingerNameEditText.setHintTextColor(
                     mainActivityContext.getColorFromAttr(
                         com.google.android.material.R.attr.colorError
