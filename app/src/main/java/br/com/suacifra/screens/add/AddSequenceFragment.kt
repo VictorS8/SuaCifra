@@ -148,7 +148,7 @@ class AddSequenceFragment : Fragment() {
                     )
                         .show()
                 }
-                mainActivityContext.addToBackStackFragment(AddCifraSequenceFragment())
+                mainActivityContext.popBackStackFragment()
             } else {
                 binding.sequenceEditText.setHintTextColor(
                     mainActivityContext.getColorFromAttr(

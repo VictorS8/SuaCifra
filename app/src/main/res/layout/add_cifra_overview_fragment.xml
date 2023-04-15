@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screens.add.AddFragment">
+
+        <TextView
+            android:id="@+id/addCifraTitleTextView"
+            style="@style/settingsTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:text="@string/add_cifra_title_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/addCifraBackImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:backgroundTint="?attr/backgroundColor"
+            android:contentDescription="@string/go_back_button_text"
+            android:minWidth="@dimen/big_space"
+            android:minHeight="@dimen/big_space"
+            android:src="@drawable/ic_baseline_close_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/deleteCifraButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:backgroundTint="?attr/backgroundColor"
+            android:contentDescription="@string/delete_cifra_content_description_text"
+            android:minWidth="@dimen/big_space"
+            android:minHeight="@dimen/big_space"
+            android:src="@drawable/ic_outline_delete_24"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/addCifraBackImageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/addSequencesImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:background="@drawable/custom_icon_button"
+            android:contentDescription="@string/save_cifra_content_description_text"
+            android:minWidth="@dimen/big_space"
+            android:minHeight="@dimen/big_space"
+            android:src="@drawable/ic_baseline_add_24"
+            app:layout_constraintEnd_toStartOf="@id/saveCifraNextImageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/saveCifraNextImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:backgroundTint="?attr/backgroundColor"
+            android:contentDescription="@string/save_cifra_content_description_text"
+            android:minWidth="@dimen/big_space"
+            android:minHeight="@dimen/big_space"
+            android:src="@drawable/baseline_check_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary" />
+
+        <TextView
+            android:id="@+id/cifraNameTitleTextView"
+            style="@style/textViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/medium_space"
+            android:text="@string/cifra_name_text_view"
+            app:layout_constraintBottom_toTopOf="@id/cifraNameTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/addCifraTitleTextView" />
+
+        <TextView
+            android:id="@+id/cifraNameTextView"
+            style="@style/settingsTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cifraNameTitleTextView" />
+
+        <TextView
+            android:id="@+id/singerNameTitleTextView"
+            style="@style/textViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/medium_space"
+            android:text="@string/singer_name_text_view"
+            app:layout_constraintBottom_toTopOf="@id/singerNameTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cifraNameTextView" />
+
+        <TextView
+            android:id="@+id/singerNameTextView"
+            style="@style/settingsTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/singerNameTitleTextView" />
+
+        <TextView
+            android:id="@+id/songToneTitleTextView"
+            style="@style/textViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/medium_space"
+            android:text="@string/song_tone_text_view"
+            app:layout_constraintTop_toBottomOf="@id/singerNameTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/songToneTextView"/>
+
+        <TextView
+            android:id="@+id/songToneTextView"
+            style="@style/settingsTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/songToneTitleTextView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sequenceRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/big_space"
+            android:layout_marginTop="@dimen/minimal_space"
+            android:layout_marginEnd="@dimen/big_space"
+            android:layout_marginBottom="@dimen/minimal_space"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/songToneTextView" />
+
+        <TextView
+            android:id="@+id/noSequenceMessage"
+            style="@style/noSequenceWarningMessageStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:paddingStart="@dimen/big_space"
+            android:paddingEnd="@dimen/big_space"
+            android:text="@string/no_sequences_message_overview"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/songToneTextView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

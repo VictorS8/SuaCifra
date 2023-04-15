@@ -6,7 +6,7 @@
     <string name="home_bottom_navigation_string">Ínicio</string>
     <string name="cifra_name_hint_string">Insira o nome da sua cifra</string>
     <string name="singer_name_hint_string">Insira o cantor da sua cifra</string>
-    <string name="tone_spinner_helper_string">Selecione o tom inicial acima</string>
+    <string name="song_tone_overview_string">Tom: %1$s</string>
     <string name="home_content_description">Mostra listas e a tela ínicial</string>
     <string name="settings_content_description">Mostra funções e configurações</string>
     <string name="add_content_description">Mostra tela para adicionar sua cifra</string>
@@ -47,9 +47,9 @@
     <string name="note_title_text_view">Título da anotação</string>
     <string name="note_body_text_view">Corpo da anotação</string>
     <string name="cancel_add_note_image_button_content_description_text">Cancela a adição de anotação</string>
-    <string name="add_cifra_title_text">Adicionar</string>
-    <string name="cifra_name_text_view">Nome</string>
-    <string name="singer_name_text_view">Nome</string>
+    <string name="add_cifra_title_text">Visão Geral</string>
+    <string name="cifra_name_text_view">Nome da Cifra</string>
+    <string name="singer_name_text_view">Nome do Cantor</string>
     <string name="add_sequence_content_description_text">Adicione uma sequência de acordes</string>
     <string name="save_cifra_button_text">Salvar Cifra</string>
     <string name="delete_sequence_content_description">Deletar sequência</string>
@@ -112,4 +112,8 @@
     <string name="tone_helper_string">Coloque um tom específico \ne.g. C#m7</string>
     <string name="save_cifra_sequence_content_description_text">Salve uma sequência dessa cifra</string>
     <string name="delete_cifra_sequence_content_description_text">Delete uma sequência</string>
+    <string name="no_sequences_message_overview">Toque no botão + no topo da tela para adicionar uma sequência</string>
+    <string name="save_cifra_content_description_text">Salve uma cifra</string>
+    <string name="delete_cifra_content_description_text">Delete uma cifra</string>
+    <string name="main_app_name">Suas Cifras</string>
 </resources>

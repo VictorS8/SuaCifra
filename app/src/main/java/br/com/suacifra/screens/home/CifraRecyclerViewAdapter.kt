@@ -11,8 +11,10 @@ import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.models.Cifras
-import br.com.suacifra.screens.add.AddFragment
-import br.com.suacifra.utils.*
+import br.com.suacifra.screens.add.AddCifraOverviewFragment
+import br.com.suacifra.utils.Config
+import br.com.suacifra.utils.dataStringToMutableSet
+import br.com.suacifra.utils.stringToTextViewString
 
 class CifrasRecyclerViewAdapter(
     private val cifrasList: MutableList<Cifras>,
@@ -142,7 +144,7 @@ class CifrasRecyclerViewAdapter(
                 true
             )
             sharedPrefEditor.apply()
-            mainActivityContext.addToBackStackFragment(AddFragment())
+            mainActivityContext.addToBackStackFragment(AddCifraOverviewFragment())
         }
     }
 
