@@ -116,4 +116,7 @@
     <string name="save_cifra_content_description_text">Salve uma cifra</string>
     <string name="delete_cifra_content_description_text">Delete uma cifra</string>
     <string name="main_app_name">Suas Cifras</string>
+    <string name="song_tone_text_view">Tom</string>
+    <string name="delete_note_content_description_text">Deletar uma anotação</string>
+    <string name="save_note_name_content_description_text">Salvar uma anotação</string>
 </resources>

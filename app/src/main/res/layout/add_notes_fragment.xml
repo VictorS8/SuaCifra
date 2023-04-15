@@ -12,23 +12,51 @@
             style="@style/settingsTextViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/large_space"
+            android:layout_margin="@dimen/medium_space"
             android:text="@string/add_note_title_text"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/addNoteBackImageButton"
+            android:id="@+id/saveNoteBackImageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/large_space"
-            android:layout_marginStart="@dimen/medium_space"
+            android:layout_margin="@dimen/medium_space"
             android:minHeight="@dimen/big_space"
             android:minWidth="@dimen/big_space"
             android:contentDescription="@string/go_back_button_text"
-            android:src="@drawable/baseline_arrow_back_24"
+            android:src="@drawable/ic_baseline_close_24"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:backgroundTint="?attr/backgroundColor"
+            app:tint="?attr/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/deleteNoteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:backgroundTint="?attr/backgroundColor"
+            android:contentDescription="@string/delete_note_content_description_text"
+            android:minWidth="@dimen/big_space"
+            android:minHeight="@dimen/big_space"
+            android:src="@drawable/ic_outline_delete_24"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/saveNoteBackImageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/saveNoteNextImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:minHeight="@dimen/big_space"
+            android:minWidth="@dimen/big_space"
+            android:contentDescription="@string/save_note_name_content_description_text"
+            android:src="@drawable/baseline_check_24"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:backgroundTint="?attr/backgroundColor"
             app:tint="?attr/colorPrimary" />
@@ -82,30 +110,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/noteBodyTextView" />
-
-        <Button
-            android:id="@+id/deleteNoteButton"
-            style="@style/defaultDeleteButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_margin="@dimen/medium_space"
-            android:text="@string/delete_note_button_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/saveNoteButton" />
-
-        <Button
-            android:id="@+id/saveNoteButton"
-            style="@style/defaultButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/medium_space"
-            android:contentDescription="@string/add_note_image_button_content_description_text"
-            android:text="@string/save_note_button_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/deleteNoteButton" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -38,7 +38,7 @@ class AddNotesFragment : Fragment() {
             Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
 
-        binding.addNoteBackImageButton.setOnClickListener {
+        binding.saveNoteBackImageButton.setOnClickListener {
             mainActivityContext.popBackStackFragment()
         }
 
@@ -96,7 +96,7 @@ class AddNotesFragment : Fragment() {
         val noteTitleEditText = binding.noteTitleEditText.text
         val noteBodyEditText = binding.noteBodyEditText.text
 
-        binding.saveNoteButton.setOnClickListener {
+        binding.saveNoteNextImageButton.setOnClickListener {
             if (!noteTitleEditText.isNullOrBlank() && !noteBodyEditText.isNullOrBlank()) {
                 val notesModel =
                     Notes(

@@ -130,4 +130,6 @@
     <string name="delete_cifra_content_description_text">Delete cifra</string>
     <string name="main_app_name">Your Cifras</string>
     <string name="song_tone_text_view">Tone</string>
+    <string name="delete_note_content_description_text">Delete note</string>
+    <string name="save_note_name_content_description_text">Save note</string>
 </resources>
