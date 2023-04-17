@@ -56,7 +56,7 @@ class NotesFragment : Fragment() {
         notesAdapter = NotesRecyclerViewAdapter(notesList, mainActivityContext)
         recyclerView.adapter = notesAdapter
 
-        binding.addNotesImageButton.setOnClickListener {
+        binding.addNoteImageButton.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putBoolean(
                 Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_BOOLEAN_KEY, false
@@ -65,7 +65,7 @@ class NotesFragment : Fragment() {
             mainActivityContext.addToBackStackFragment(AddNotesFragment())
         }
 
-        binding.notesGoBackButton.setOnClickListener {
+        binding.addCifraBackImageButton.setOnClickListener {
             mainActivityContext.addToBackStackFragment(SettingsFragment())
         }
 
