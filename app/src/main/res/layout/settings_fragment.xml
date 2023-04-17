@@ -30,42 +30,48 @@
             android:text="@string/settings_title_text" />
 
 
-        <Button
-            android:id="@+id/notesButton"
-            style="@style/buttonOnSettingsStyle"
-            android:layout_width="wrap_content"
+        <ScrollView
+            android:id="@+id/settingsScrollView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/minimal_space"
-            android:elevation="@dimen/very_large_space"
-            android:text="@string/notes_button_text" />
+            android:fadeScrollbars="true"
+            android:scrollbars="vertical">
 
-        <Button
-            android:id="@+id/tunerButton"
-            style="@style/buttonOnSettingsStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/minimal_space"
-            android:elevation="@dimen/very_large_space"
-            android:text="@string/tuner_button_text" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                tools:context=".screens.settings.SettingsFragment">
 
+                <Button
+                    android:id="@+id/notesButton"
+                    style="@style/buttonOnSettingsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/minimal_space"
+                    android:elevation="@dimen/very_large_space"
+                    android:text="@string/notes_button_text" />
 
-        <Button
-            android:id="@+id/loginButton"
-            style="@style/buttonOnSettingsStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/minimal_space"
-            android:elevation="@dimen/very_large_space"
-            android:text="@string/login_button_text" />
+                <Button
+                    android:id="@+id/tunerButton"
+                    style="@style/buttonOnSettingsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/minimal_space"
+                    android:elevation="@dimen/very_large_space"
+                    android:text="@string/tuner_button_text" />
 
-        <Button
-            android:id="@+id/aboutButton"
-            style="@style/buttonOnSettingsStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/minimal_space"
-            android:elevation="@dimen/very_large_space"
-            android:text="@string/about_button_text" />
+                <Button
+                    android:id="@+id/aboutButton"
+                    style="@style/buttonOnSettingsStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/minimal_space"
+                    android:elevation="@dimen/very_large_space"
+                    android:text="@string/about_button_text" />
+            </LinearLayout>
+        </ScrollView>
 
         <TextView
             android:id="@+id/warningProTextView"

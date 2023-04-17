@@ -10,9 +10,7 @@ import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.databinding.SettingsFragmentBinding
 import br.com.suacifra.screens.about.AboutFragment
-import br.com.suacifra.screens.login.LoginFragment
 import br.com.suacifra.screens.notes.NotesFragment
-import br.com.suacifra.screens.profile.ProfileFragment
 
 
 class SettingsFragment : Fragment() {
@@ -36,17 +34,6 @@ class SettingsFragment : Fragment() {
         binding.tunerButton.setOnClickListener {
             // TODO - Implement it
         }
-
-//        TODO - For now will not have google login, because do not have use for it
-//        binding.loginButton.setOnClickListener {
-//            val oldAccount = mainActivityContext.getLastSignedInAccountOnActivity()
-//            if (oldAccount != null) {
-//                mainActivityContext.addToBackStackFragment(ProfileFragment())
-//            } else {
-//                mainActivityContext.addToBackStackFragment(LoginFragment())
-//            }
-//        }
-        binding.loginButton.visibility = View.GONE
 
         binding.aboutButton.setOnClickListener {
             mainActivityContext.addToBackStackFragment(AboutFragment())

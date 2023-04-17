@@ -97,7 +97,8 @@
     <string name="settings_title_text">Suas opções</string>
     <string name="add_cifra_name_title_text">Cifra</string>
     <string name="save_cifra_name_content_description_text">Salvar nome da cifra</string>
-    <string name="cifra_name_helper_text_view">Você deveria nomear sua cifra sobre algo que você irá lembrar</string>
+    <string name="cifra_name_helper_text_view">Você deveria nomear sua cifra sobre algo que você irá lembrar\ne.g. Sua Cifra Imporatante (Cover)</string>
+    You should name it your cifra after something will be remembered later\ne.g. Sua Cifra Importantly (Cover)
     <string name="add_cifra_singer_name_title_text">Cantor</string>
     <string name="save_cifra_singer_name_content_description_text">Salvar nome do cantor</string>
     <string name="cifra_singer_name_helper_text_view">Você deveria nomear sobre quem realmente está cantando\ne.g. Roberta (Grupo da igreja)</string>
