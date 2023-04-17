@@ -35,20 +35,20 @@ class MainActivity : AppCompatActivity() {
         val sharedPref = getSharedPreferences(
             Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
-        isGoogleSignInStatusOk = sharedPref.getBoolean(
-            Config.SHARED_PREFERENCE_SIGN_IN_BOOLEAN_KEY,
-            isGoogleSignInStatusOk
-        )
-
-        auth = FirebaseAuth.getInstance()
-        googleAccount = if (isGoogleSignInStatusOk) {
-            GoogleSignIn.getLastSignedInAccount(this)
-        } else {
-            null
-        }
-        googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail().requestProfile().build()
+//        isGoogleSignInStatusOk = sharedPref.getBoolean(
+//            Config.SHARED_PREFERENCE_SIGN_IN_BOOLEAN_KEY,
+//            isGoogleSignInStatusOk
+//        )
+//
+//        auth = FirebaseAuth.getInstance()
+//        googleAccount = if (isGoogleSignInStatusOk) {
+//            GoogleSignIn.getLastSignedInAccount(this)
+//        } else {
+//            null
+//        }
+//        googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//            .requestIdToken(getString(R.string.default_web_client_id))
+//            .requestEmail().requestProfile().build()
 
         installSplashScreen().apply {
             setKeepOnScreenCondition {
@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.homeBottomNavigation -> {
                     addToBackStackFragmentOnBottomNavigation(HomeFragment(), HOME_FRAGMENT)
                 }
+
                 R.id.addBottomNavigation -> {
                     val sharedPrefEditor = sharedPref.edit()
                     sharedPrefEditor.putStringSet(
@@ -85,12 +86,26 @@ class MainActivity : AppCompatActivity() {
                         Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_BOOLEAN_KEY,
                         false
                     )
+                    sharedPrefEditor.putBoolean(
+                        Config.SHARED_PREFERENCE_EDIT_CIFRA_NAME_MODE_BOOLEAN_KEY,
+                        false
+                    )
+                    sharedPrefEditor.putBoolean(
+                        Config.SHARED_PREFERENCE_EDIT_CIFRA_SINGER_NAME_MODE_BOOLEAN_KEY,
+                        false
+                    )
+                    sharedPrefEditor.putBoolean(
+                        Config.SHARED_PREFERENCE_EDIT_CIFRA_TONE_MODE_BOOLEAN_KEY,
+                        false
+                    )
                     sharedPrefEditor.apply()
                     addToBackStackFragmentOnBottomNavigation(AddCifraNameFragment(), ADD_FRAGMENT)
                 }
+
                 R.id.settingsBottomNavigation -> {
                     addToBackStackFragmentOnBottomNavigation(SettingsFragment(), SETTINGS_FRAGMENT)
                 }
+
                 else -> {}
             }
             true

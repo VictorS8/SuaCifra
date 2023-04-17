@@ -19,6 +19,7 @@ class AddCifraToneFragment : Fragment() {
     private lateinit var binding: AddCifraToneFragmentBinding
     private lateinit var mainActivityContext: MainActivity
     private var cifraTone: String = ""
+    private var isEditCifraToneModeEnable = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +38,11 @@ class AddCifraToneFragment : Fragment() {
             Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
 
+        isEditCifraToneModeEnable = sharedPref.getBoolean(
+            Config.SHARED_PREFERENCE_EDIT_CIFRA_TONE_MODE_BOOLEAN_KEY,
+            isEditCifraToneModeEnable
+        )
+
         cifraTone = sharedPref.getString(
             Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
             cifraTone
@@ -48,13 +54,17 @@ class AddCifraToneFragment : Fragment() {
 
         binding.addCifraToneBackImageButton.setOnClickListener {
             val cifraEditText = binding.addCifraToneEditText.text
-            val sharedPrefEditor = sharedPref.edit()
-            sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
-                cifraEditText.toString()
-            )
-            sharedPrefEditor.apply()
-            mainActivityContext.popBackStackFragment()
+            if (isEditCifraToneModeEnable)
+                mainActivityContext.popBackStackFragment()
+            else {
+                val sharedPrefEditor = sharedPref.edit()
+                sharedPrefEditor.putString(
+                    Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
+                    cifraEditText.toString()
+                )
+                sharedPrefEditor.apply()
+                mainActivityContext.popBackStackFragment()
+            }
         }
 
         binding.addCifraToneNextImageButton.setOnClickListener {
@@ -67,7 +77,10 @@ class AddCifraToneFragment : Fragment() {
                     cifraEditText.toString()
                 )
                 sharedPrefEditor.apply()
-                mainActivityContext.addToBackStackFragment(AddCifraSequenceFragment())
+                if (isEditCifraToneModeEnable)
+                    mainActivityContext.popBackStackFragment()
+                else
+                    mainActivityContext.addToBackStackFragment(AddCifraSequenceFragment())
             } else {
                 binding.addCifraToneEditText.setHintTextColor(
                     mainActivityContext.getColorFromAttr(

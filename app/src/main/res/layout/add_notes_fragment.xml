@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -13,8 +13,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/medium_space"
             android:text="@string/add_note_title_text"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
@@ -22,13 +22,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/medium_space"
-            android:minHeight="@dimen/big_space"
-            android:minWidth="@dimen/big_space"
+            android:backgroundTint="?attr/backgroundColor"
             android:contentDescription="@string/go_back_button_text"
+            android:minWidth="@dimen/big_space"
+            android:minHeight="@dimen/big_space"
             android:src="@drawable/ic_baseline_close_24"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:backgroundTint="?attr/backgroundColor"
             app:tint="?attr/colorPrimary" />
 
         <ImageButton
@@ -51,13 +51,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/medium_space"
-            android:minHeight="@dimen/big_space"
-            android:minWidth="@dimen/big_space"
+            android:backgroundTint="?attr/backgroundColor"
             android:contentDescription="@string/save_note_name_content_description_text"
+            android:minWidth="@dimen/big_space"
+            android:minHeight="@dimen/big_space"
             android:src="@drawable/baseline_check_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:backgroundTint="?attr/backgroundColor"
             app:tint="?attr/colorPrimary" />
 
         <TextView

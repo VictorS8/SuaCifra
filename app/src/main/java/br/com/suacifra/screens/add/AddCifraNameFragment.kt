@@ -19,6 +19,7 @@ class AddCifraNameFragment : Fragment() {
     private lateinit var binding: AddCifraNameFragmentBinding
     private lateinit var mainActivityContext: MainActivity
     private var cifraName: String = ""
+    private var isEditCifraNameModeEnable = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +37,11 @@ class AddCifraNameFragment : Fragment() {
 
         val sharedPref = mainActivityContext.getSharedPreferences(
             Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
+        )
+
+        isEditCifraNameModeEnable = sharedPref.getBoolean(
+            Config.SHARED_PREFERENCE_EDIT_CIFRA_NAME_MODE_BOOLEAN_KEY,
+            isEditCifraNameModeEnable
         )
 
         cifraName = sharedPref.getString(
@@ -56,7 +62,10 @@ class AddCifraNameFragment : Fragment() {
                     cifraNameEditText.toString()
                 )
                 sharedPrefEditor.apply()
-                mainActivityContext.addToBackStackFragment(AddCifraSingerNameFragment())
+                if (isEditCifraNameModeEnable)
+                    mainActivityContext.popBackStackFragment()
+                else
+                    mainActivityContext.addToBackStackFragment(AddCifraSingerNameFragment())
             } else {
                 binding.cifraNameEditText.setHintTextColor(
                     mainActivityContext.getColorFromAttr(

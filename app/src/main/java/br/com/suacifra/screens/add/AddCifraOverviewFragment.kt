@@ -21,7 +21,6 @@ import br.com.suacifra.screens.home.HomeFragment
 import br.com.suacifra.utils.Config
 import br.com.suacifra.utils.dataMutableSetToString
 import br.com.suacifra.utils.getColorFromAttr
-import br.com.suacifra.utils.stringOfMutableListToEditTextString
 
 class AddCifraOverviewFragment : Fragment() {
 
@@ -79,7 +78,7 @@ class AddCifraOverviewFragment : Fragment() {
             binding.songToneTextView.text = toneString
         else {
             binding.songToneTextView.text = getString(
-                R.string.tone_chosen_text, sharedPref.getString(
+                R.string.song_tone_overview_string, sharedPref.getString(
                     Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
                     getString(R.string.song_tone_overview_string)
                 )
@@ -119,7 +118,7 @@ class AddCifraOverviewFragment : Fragment() {
                 cifraSequenceSetString
             ) ?: mutableSetOf()
 
-            binding.cifraNameTextView.text = stringOfMutableListToEditTextString(cifraName)
+            binding.cifraNameTextView.text = cifraName
             binding.singerNameTextView.text = cifraSingerName
             binding.songToneTextView.text = cifraTone
             binding.deleteCifraButton.visibility = View.VISIBLE
@@ -154,21 +153,37 @@ class AddCifraOverviewFragment : Fragment() {
         )
         recyclerView.adapter = sequenceAdapter
 
-        binding.addSequencesImageButton.setOnClickListener {
+        binding.cifraNameTextView.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
-            sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_CIFRA_NAME_STRING_KEY,
-                binding.cifraNameTextView.text.toString()
-            )
-            sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
-                binding.singerNameTextView.text.toString()
-            )
             sharedPrefEditor.putBoolean(
-                Config.SHARED_PREFERENCE_SEQUENCE_BOOLEAN_KEY,
-                false
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_NAME_MODE_BOOLEAN_KEY,
+                true
             )
             sharedPrefEditor.apply()
+            mainActivityContext.addToBackStackFragment(AddCifraNameFragment())
+        }
+
+        binding.singerNameTextView.setOnClickListener {
+            val sharedPrefEditor = sharedPref.edit()
+            sharedPrefEditor.putBoolean(
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_SINGER_NAME_MODE_BOOLEAN_KEY,
+                true
+            )
+            sharedPrefEditor.apply()
+            mainActivityContext.addToBackStackFragment(AddCifraSingerNameFragment())
+        }
+
+        binding.songToneTextView.setOnClickListener {
+            val sharedPrefEditor = sharedPref.edit()
+            sharedPrefEditor.putBoolean(
+                Config.SHARED_PREFERENCE_EDIT_CIFRA_TONE_MODE_BOOLEAN_KEY,
+                true
+            )
+            sharedPrefEditor.apply()
+            mainActivityContext.addToBackStackFragment(AddCifraToneFragment())
+        }
+
+        binding.addSequencesImageButton.setOnClickListener {
             mainActivityContext.addToBackStackFragment(AddSequenceFragment())
         }
 
@@ -196,6 +211,10 @@ class AddCifraOverviewFragment : Fragment() {
                     )
                 }
             }
+        }
+
+        binding.addCifraBackImageButton.setOnClickListener {
+            mainActivityContext.popBackStackFragment()
         }
 
         binding.saveCifraNextImageButton.setOnClickListener {

@@ -19,16 +19,17 @@ class AddCifraSingerNameFragment : Fragment() {
     private lateinit var binding: AddCifraSingerNameFragmentBinding
     private lateinit var mainActivityContext: MainActivity
     private var cifraSingerName: String = ""
+    private var isEditCifraSingerNameModeEnable = false
+
+//    override fun onSaveInstanceState(outState: Bundle) {
+//        super.onSaveInstanceState(outState)
+//    }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(
-            inflater,
-            R.layout.add_cifra_singer_name_fragment,
-            container,
-            false
+            inflater, R.layout.add_cifra_singer_name_fragment, container, false
         )
 
         mainActivityContext = (activity as MainActivity)
@@ -37,9 +38,13 @@ class AddCifraSingerNameFragment : Fragment() {
             Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
 
+        isEditCifraSingerNameModeEnable = sharedPref.getBoolean(
+            Config.SHARED_PREFERENCE_EDIT_CIFRA_SINGER_NAME_MODE_BOOLEAN_KEY,
+            isEditCifraSingerNameModeEnable
+        )
+
         cifraSingerName = sharedPref.getString(
-            Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
-            cifraSingerName
+            Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY, cifraSingerName
         ) ?: ""
 
         binding.cifraSingerNameEditText.setText(
@@ -48,13 +53,16 @@ class AddCifraSingerNameFragment : Fragment() {
 
         binding.addCifraSingerNameBackImageButton.setOnClickListener {
             val cifraNameEditText = binding.cifraSingerNameEditText.text
-            val sharedPrefEditor = sharedPref.edit()
-            sharedPrefEditor.putString(
-                Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
-                cifraNameEditText.toString()
-            )
-            sharedPrefEditor.apply()
-            mainActivityContext.popBackStackFragment()
+            if (isEditCifraSingerNameModeEnable) mainActivityContext.popBackStackFragment()
+            else {
+                val sharedPrefEditor = sharedPref.edit()
+                sharedPrefEditor.putString(
+                    Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
+                    cifraNameEditText.toString()
+                )
+                sharedPrefEditor.apply()
+                mainActivityContext.popBackStackFragment()
+            }
         }
 
         binding.addCifraSingerNameNextImageButton.setOnClickListener {
@@ -66,7 +74,8 @@ class AddCifraSingerNameFragment : Fragment() {
                     cifraNameEditText.toString()
                 )
                 sharedPrefEditor.apply()
-                mainActivityContext.addToBackStackFragment(AddCifraToneFragment())
+                if (isEditCifraSingerNameModeEnable) mainActivityContext.popBackStackFragment()
+                else mainActivityContext.addToBackStackFragment(AddCifraToneFragment())
             } else {
                 binding.cifraSingerNameEditText.setHintTextColor(
                     mainActivityContext.getColorFromAttr(
@@ -74,8 +83,7 @@ class AddCifraSingerNameFragment : Fragment() {
                     )
                 )
                 mainActivityContext.toastMessage(
-                    R.string.save_cifra_singer_name_missing_data,
-                    Toast.LENGTH_LONG
+                    R.string.save_cifra_singer_name_missing_data, Toast.LENGTH_LONG
                 )
             }
         }
