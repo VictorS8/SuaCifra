@@ -71,13 +71,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/medium_space"
-            android:backgroundTint="?attr/backgroundColor"
+            android:background="@drawable/custom_icon_button"
             android:contentDescription="@string/add_cifra_sequence_add_sequence_content_description_text"
             android:minWidth="@dimen/big_space"
             android:minHeight="@dimen/big_space"
             android:src="@drawable/ic_baseline_add_24"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/addCifraSequenceTitleTextView"
+            app:layout_constraintTop_toBottomOf="@id/sequenceRecyclerView"
             app:tint="?attr/colorPrimary" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

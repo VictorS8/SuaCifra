@@ -61,7 +61,7 @@
     <string name="sequence_title_text_view">Sequência de acordes</string>
     <string name="sequence_title_hint_string">Insira seus acordes</string>
     <string name="cancel_add_sequence_image_button_content_description_text">Cancela a adição de anotação</string>
-    <string name="add_sequence_title_text">Salve uma sequência</string>
+    <string name="add_sequence_title_text">Salve a sequência</string>
     <string name="add_sequence_successfully">Sequência adicionada com sucesso</string>
     <string name="add_sequence_deleted">Sequência excluida</string>
     <string name="no_notes_message">Toque no botão acima + para adicionar uma anotação</string>

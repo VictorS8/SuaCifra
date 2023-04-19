@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/medium_space"
-            android:backgroundTint="?attr/backgroundColor"
+            android:background="@drawable/custom_icon_button"
             android:contentDescription="@string/delete_cifra_sequence_content_description_text"
             android:minWidth="@dimen/big_space"
             android:minHeight="@dimen/big_space"
