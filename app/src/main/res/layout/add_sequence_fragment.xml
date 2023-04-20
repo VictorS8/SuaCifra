@@ -48,11 +48,12 @@
         <EditText
             android:id="@+id/sequenceEditText"
             style="@style/editTextStyle"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/medium_space"
             android:hint="@string/sequence_title_hint_string"
             android:imeOptions="actionNext"
+            android:maxWidth="488dp"
             android:importantForAutofill="no"
             android:inputType="textPersonName|textCapWords"
             app:layout_constraintEnd_toStartOf="@id/addCifraDeleteSequenceImageButton"

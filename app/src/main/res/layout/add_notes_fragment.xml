@@ -68,19 +68,20 @@
             android:layout_margin="@dimen/medium_space"
             android:text="@string/note_title_text_view"
             app:layout_constraintBottom_toTopOf="@id/noteTitleEditText"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/noteTitleEditText"
             app:layout_constraintTop_toBottomOf="@id/addNoteTitleTextView" />
 
         <EditText
             android:id="@+id/noteTitleEditText"
             style="@style/editTextStyle"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/medium_space"
             android:hint="@string/note_title_hint_string"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
             android:inputType="textPersonName|textCapWords"
+            android:maxWidth="488dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/noteTitleTextView" />
@@ -93,19 +94,20 @@
             android:layout_margin="@dimen/medium_space"
             android:text="@string/note_body_text_view"
             app:layout_constraintBottom_toTopOf="@id/noteBodyEditText"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/noteBodyEditText"
             app:layout_constraintTop_toBottomOf="@id/noteTitleEditText" />
 
         <EditText
             android:id="@+id/noteBodyEditText"
             style="@style/editTextStyle"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/medium_space"
             android:hint="@string/note_body_hint_string"
             android:imeOptions="actionDone"
             android:importantForAutofill="no"
             android:inputType="textMultiLine|textCapSentences"
+            android:maxWidth="488dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/noteBodyTextView" />
