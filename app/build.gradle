@@ -45,7 +45,7 @@ android {
 }
 
 dependencies {
-    implementation 'io.coil-kt:coil:2.2.2'
+    implementation 'io.coil-kt:coil:2.3.0'
     implementation 'com.google.android.gms:play-services-oss-licenses:17.0.1'
     implementation 'com.google.android.gms:play-services-auth:20.5.0'
     implementation 'androidx.core:core-splashscreen:1.0.1'
