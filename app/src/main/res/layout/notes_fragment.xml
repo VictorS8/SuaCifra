@@ -11,11 +11,39 @@
             style="@style/settingsTextViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/large_space"
+            android:layout_margin="@dimen/medium_space"
             android:text="@string/notes_title_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/addCifraBackImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:backgroundTint="?attr/backgroundColor"
+            android:contentDescription="@string/go_back_button_text"
+            android:minWidth="@dimen/big_space"
+            android:minHeight="@dimen/big_space"
+            android:src="@drawable/ic_baseline_close_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/addNoteImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:background="@drawable/custom_icon_button"
+            android:contentDescription="@string/add_notes_content_description_text"
+            android:minWidth="@dimen/big_space"
+            android:minHeight="@dimen/big_space"
+            android:src="@drawable/ic_baseline_post_add_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/notesRecyclerView"
@@ -25,7 +53,7 @@
             android:layout_marginTop="@dimen/minimal_space"
             android:layout_marginEnd="@dimen/big_space"
             android:layout_marginBottom="@dimen/minimal_space"
-            app:layout_constraintBottom_toTopOf="@id/notesGoBackButton"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/notesTitleTextView" />
@@ -40,35 +68,11 @@
             android:layout_marginEnd="@dimen/big_space"
             android:layout_marginBottom="@dimen/minimal_space"
             android:text="@string/no_notes_message"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toTopOf="@id/notesGoBackButton"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/notesTitleTextView" />
-
-        <ImageButton
-            android:id="@+id/addNotesImageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/minimal_space"
-            android:layout_marginBottom="@dimen/minimal_space"
-            android:background="@drawable/custom_icon_button"
-            android:contentDescription="@string/add_notes_content_description_text"
-            android:src="@drawable/ic_baseline_post_add_24"
-            app:layout_constraintBottom_toTopOf="@id/notesGoBackButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:tint="?attr/colorPrimary" />
-
-        <Button
-            android:id="@+id/notesGoBackButton"
-            style="@style/defaultButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/minimal_space"
-            android:text="@string/go_back_button_text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

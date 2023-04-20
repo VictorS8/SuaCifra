@@ -4,12 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
+import br.com.suacifra.utils.Config
 import br.com.suacifra.utils.stringToTextViewString
 
 class SequenceChordsRecyclerViewAdapter(
@@ -20,13 +20,11 @@ class SequenceChordsRecyclerViewAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var sequenceItemTitleTextView: TextView
         var sequenceItemBodyTextView: TextView
-        var deleteSequenceImageButton: ImageButton
         var sequenceItemCardView: CardView
 
         init {
             sequenceItemTitleTextView = view.findViewById(R.id.sequenceItemTitleTextView)
             sequenceItemBodyTextView = view.findViewById(R.id.sequenceItemBodyTextView)
-            deleteSequenceImageButton = view.findViewById(R.id.deleteSequenceImageButton)
             sequenceItemCardView = view.findViewById(R.id.sequenceItemCardView)
         }
     }
@@ -83,50 +81,31 @@ class SequenceChordsRecyclerViewAdapter(
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val sequenceTitleTextView =
-            mainActivityContext.getString(R.string.sequence_item_title, (position + 1))
+            mainActivityContext.getString(R.string.sequence_item_title)
         val sequenceBodyTextView =
             stringToTextViewString(sequenceChordsList.toMutableList()[position]).removePrefix("[")
                 .removeSuffix("]")
         val sequenceToEdit = sequenceChordsList.toMutableList()[position]
-        val sequenceToDelete = sequenceChordsList.toMutableList()[position]
 
         holder.sequenceItemTitleTextView.text = sequenceTitleTextView
         holder.sequenceItemBodyTextView.text = sequenceBodyTextView
 
         val sharedPref = mainActivityContext.getSharedPreferences(
-            mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
-
-        holder.deleteSequenceImageButton.setOnClickListener {
-            var deleteSequence: MutableSet<String>? = mutableSetOf()
-            deleteSequence = sharedPref.getStringSet(
-                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
-                deleteSequence
-            )
-
-            deleteSequence?.remove(sequenceToDelete)
-            notifyItemRemoved(position)
-            val sharedPrefEditor = sharedPref.edit()
-            sharedPrefEditor.putStringSet(
-                mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
-                deleteSequence
-            )
-            sharedPrefEditor.apply()
-            notifyItemChanged(position)
-        }
 
         holder.sequenceItemCardView.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putBoolean(
-                mainActivityContext.getString(R.string.shared_preference_edit_sequence_mode_boolean_key),
+                Config.SHARED_PREFERENCE_SEQUENCE_BOOLEAN_KEY,
                 true
             )
             sharedPrefEditor.putString(
-                mainActivityContext.getString(R.string.shared_preference_edit_sequence_mode_sequence_string_key),
+                Config.SHARED_PREFERENCE_SEQUENCE_STRING_KEY,
                 sequenceToEdit
             )
             sharedPrefEditor.putInt(
-                mainActivityContext.getString(R.string.shared_preference_edit_sequence_mode_sequence_index_key),
+                Config.SHARED_PREFERENCE_SEQUENCE_INDEX_KEY,
                 position
             )
             sharedPrefEditor.apply()
@@ -141,11 +120,11 @@ class SequenceChordsRecyclerViewAdapter(
      */
     override fun getItemCount(): Int {
         val sharedPref = mainActivityContext.getSharedPreferences(
-            mainActivityContext.getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
         var deleteSequence: MutableSet<String>? = mutableSetOf()
         deleteSequence = sharedPref.getStringSet(
-            mainActivityContext.getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
+            Config.SHARED_PREFERENCE_CIFRA_SEQUENCE_STRING_KEY,
             deleteSequence
         )
         if (deleteSequence != null) {

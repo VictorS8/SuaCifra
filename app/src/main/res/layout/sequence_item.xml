@@ -29,22 +29,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/minimal_space"
                 android:textAlignment="textStart"
-                app:layout_constraintBottom_toBottomOf="@id/deleteSequenceImageButton"
-                app:layout_constraintEnd_toStartOf="@id/deleteSequenceImageButton"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/deleteSequenceImageButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/minimal_space"
-                android:background="@drawable/custom_icon_button"
-                android:contentDescription="@string/delete_sequence_content_description"
-                android:src="@drawable/ic_outline_delete_24"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:tint="?attr/colorPrimary" />
 
             <TextView
                 android:id="@+id/sequenceItemBodyTextView"
@@ -56,7 +43,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/deleteSequenceImageButton" />
+                app:layout_constraintTop_toBottomOf="@id/sequenceItemTitleTextView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -13,22 +13,12 @@ fun stringOfMutableListToEditTextString(sequenceStringOfMutableList: String): St
     return sequenceStringOfMutableList.removeAffixOfStringOfList()
 }
 
-fun mutableSetToString(mutableSet: MutableSet<String>): String {
-    val newMutableSet = mutableSetOf<String>()
-    for (eachSet in mutableSet) {
-        newMutableSet.add(eachSet.replace(",", ";").removeAffixOfStringOfList())
-    }
-    return newMutableSet.toString().removeAffixOfStringOfList()
-}
+// TODO - Add Regex to validate sequence
+// Regex [A-GmM79#b,]+
+// Validate List of Sequence Chords like: "C,G C,G,Am,F" or like sequence "C,G,Am,F"
 
-fun stringToMutableSet(string: String): MutableSet<String> {
-    val mutableSet: MutableSet<String> = string.split(",").toMutableSet()
-    val newMutableSet = mutableSetOf<String>()
-    for (eachSet in mutableSet) {
-        newMutableSet.add(eachSet.replace(";", ","))
-    }
-    return newMutableSet
-}
+// Regex [A-G#b]{1,2}
+// Validate tone of Song: "C" "G#" "Db"
 
 // Extensions
 fun MutableSet<String>?.addStringAt(editSequenceIndex: Int, value: String): MutableSet<String> {
@@ -59,4 +49,31 @@ fun Context.getColorFromAttr(
 ): Int {
     theme.resolveAttribute(attrColor, typedValue, resolveRefs)
     return typedValue.data
+}
+
+fun String.dataStringToMutableSet(): MutableSet<String> {
+    return if (this.isNotBlank()) {
+        val listOfString = this.split(" ")
+        listOfString.toMutableSet()
+    } else {
+        mutableSetOf()
+    }
+}
+
+fun MutableSet<String>.dataMutableSetToString(): String {
+    val newMutableList = mutableListOf<String>()
+    return if (this.size != 0) {
+        for (each in this) {
+            newMutableList.add(each.replace(",", ";"))
+        }
+        newMutableList.toString().mutableListStringToString()
+    } else {
+        ""
+    }
+}
+
+private fun String.mutableListStringToString(): String {
+    return this.replace(" ", "")
+        .removePrefix("[").removeSuffix("]")
+        .replace(",", " ").replace(";", ",")
 }

@@ -17,6 +17,7 @@ import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.databinding.NotesFragmentBinding
 import br.com.suacifra.models.Notes
 import br.com.suacifra.screens.settings.SettingsFragment
+import br.com.suacifra.utils.Config
 
 class NotesFragment : Fragment() {
 
@@ -28,8 +29,7 @@ class NotesFragment : Fragment() {
     private lateinit var notesLayoutManager: LayoutManager
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.notes_fragment, container, false)
@@ -37,17 +37,15 @@ class NotesFragment : Fragment() {
         mainActivityContext = (activity as MainActivity)
 
         val sharedPref = mainActivityContext.getSharedPreferences(
-            getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
 
         val databaseHelper = DatabaseHelper(mainActivityContext)
 
         notesList = databaseHelper.getAllNotes()
 
-        if (notesList.size == 0)
-            binding.noNotesMessage.visibility = View.VISIBLE
-        else
-            binding.noNotesMessage.visibility = View.INVISIBLE
+        if (notesList.size == 0) binding.noNotesMessage.visibility = View.VISIBLE
+        else binding.noNotesMessage.visibility = View.GONE
 
         recyclerView = binding.notesRecyclerView
         recyclerView.hasFixedSize()
@@ -58,17 +56,16 @@ class NotesFragment : Fragment() {
         notesAdapter = NotesRecyclerViewAdapter(notesList, mainActivityContext)
         recyclerView.adapter = notesAdapter
 
-        binding.addNotesImageButton.setOnClickListener {
+        binding.addNoteImageButton.setOnClickListener {
             val sharedPrefEditor = sharedPref.edit()
             sharedPrefEditor.putBoolean(
-                getString(R.string.shared_preference_edit_notes_mode_boolean_key),
-                false
+                Config.SHARED_PREFERENCE_EDIT_NOTES_MODE_BOOLEAN_KEY, false
             )
             sharedPrefEditor.apply()
             mainActivityContext.addToBackStackFragment(AddNotesFragment())
         }
 
-        binding.notesGoBackButton.setOnClickListener {
+        binding.addCifraBackImageButton.setOnClickListener {
             mainActivityContext.addToBackStackFragment(SettingsFragment())
         }
 

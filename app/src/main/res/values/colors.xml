@@ -29,4 +29,7 @@
     <!--    Green-->
     <color name="dark_red">#CC4439</color>
     <color name="light_red">#CC4450</color>
+
+    <color name="error_dark_red">#880c0c</color>
+    <color name="error_light_red">#ff9999</color>
 </resources>

@@ -7,10 +7,11 @@ import android.database.sqlite.SQLiteOpenHelper
 import br.com.suacifra.R
 import br.com.suacifra.models.Cifras
 import br.com.suacifra.models.Notes
+import br.com.suacifra.utils.Config
 
 class DatabaseHelper(
     context: Context
-) : SQLiteOpenHelper(context, context.getString(R.string.sqlite_database_name), null, 1) {
+) : SQLiteOpenHelper(context, Config.SUA_CIFRA_DATABASE, null, Config.SUA_CIFRA_DATABASE_VERSION) {
 
     companion object {
         const val NOTES_TABLE = "NOTES_TABLE"
@@ -37,7 +38,15 @@ class DatabaseHelper(
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        TODO("Not yet implemented")
+        if (oldVersion < newVersion) {
+            val dropNotesTableStatement = "DROP TABLE IF EXISTS $NOTES_TABLE"
+            val dropCifrasTableStatement = "DROP TABLE IF EXISTS $CIFRAS_TABLE"
+
+            db?.execSQL(dropNotesTableStatement)
+            db?.execSQL(dropCifrasTableStatement)
+
+            onCreate(db)
+        }
     }
 
     fun addOneNote(noteModel: Notes): Boolean {
@@ -106,7 +115,8 @@ class DatabaseHelper(
                 val cifraSingerName = cursor.getString(3)
                 val cifraChordsSequence = cursor.getString(4)
 
-                val newCifra = Cifras(cifraId, cifraName, cifraTone, cifraSingerName, cifraChordsSequence)
+                val newCifra =
+                    Cifras(cifraId, cifraName, cifraTone, cifraSingerName, cifraChordsSequence)
                 returnMutableList.add(newCifra)
             } while (cursor.moveToNext())
         } else {
@@ -118,36 +128,14 @@ class DatabaseHelper(
         return returnMutableList
     }
 
-    fun deleteOneNote(noteModel: Notes): Boolean {
+    fun deleteOneNote(noteId: Int): Int {
         val database = this.writableDatabase
-        val queryString = "DELETE FROM $NOTES_TABLE WHERE $NOTE_ID_COLUMN = ${noteModel.id}"
-
-        val cursor = database.rawQuery(queryString, null)
-        return if (!cursor.moveToFirst()) {
-            cursor.close()
-            database.close()
-            true
-        } else {
-            cursor.close()
-            database.close()
-            false
-        }
+        return database.delete(NOTES_TABLE, "$NOTE_ID_COLUMN=?", arrayOf("$noteId"))
     }
 
-    fun deleteOneCifra(cifraModel: Cifras): Boolean {
+    fun deleteOneCifra(cifraId: Int): Int {
         val database = this.writableDatabase
-        val queryString = "DELETE FROM $CIFRAS_TABLE WHERE $CIFRA_ID_COLUMN = ${cifraModel.id}"
-
-        val cursor = database.rawQuery(queryString, null)
-        return if (!cursor.moveToFirst()) {
-            cursor.close()
-            database.close()
-            true
-        } else {
-            cursor.close()
-            database.close()
-            false
-        }
+        return database.delete(CIFRAS_TABLE, "$CIFRA_ID_COLUMN=?", arrayOf("$cifraId"))
     }
 
     fun updateOneNote(noteModel: Notes): Int {
@@ -157,7 +145,12 @@ class DatabaseHelper(
         contentValues.put(NOTE_TITLE_COLUMN, noteModel.noteTitle)
         contentValues.put(NOTE_BODY_COLUMN, noteModel.noteBody)
 
-        return database.update(NOTES_TABLE, contentValues, "${noteModel.id}", null)
+        return database.update(
+            NOTES_TABLE,
+            contentValues,
+            "$NOTE_ID_COLUMN=?",
+            arrayOf("${noteModel.id}")
+        )
     }
 
     fun updateOneCifra(cifraModel: Cifras): Int {
@@ -169,7 +162,12 @@ class DatabaseHelper(
         contentValues.put(CIFRA_SINGER_NAME_COLUMN, cifraModel.singerName)
         contentValues.put(CIFRA_CHORDS_SEQUENCE_COLUMN, cifraModel.chordsSequence)
 
-        return database.update(CIFRAS_TABLE, contentValues, "${cifraModel.id}", null)
+        return database.update(
+            CIFRAS_TABLE,
+            contentValues,
+            "$CIFRA_ID_COLUMN=?",
+            arrayOf("${cifraModel.id}")
+        )
     }
 
 }

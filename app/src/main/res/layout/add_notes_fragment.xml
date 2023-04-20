@@ -2,21 +2,63 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".screens.add.AddFragment">
+        android:layout_height="match_parent">
 
         <TextView
             android:id="@+id/addNoteTitleTextView"
             style="@style/settingsTextViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/large_space"
+            android:layout_margin="@dimen/medium_space"
             android:text="@string/add_note_title_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/saveNoteBackImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:backgroundTint="?attr/backgroundColor"
+            android:contentDescription="@string/go_back_button_text"
+            android:minWidth="@dimen/big_space"
+            android:minHeight="@dimen/big_space"
+            android:src="@drawable/ic_baseline_close_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/deleteNoteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:backgroundTint="?attr/backgroundColor"
+            android:contentDescription="@string/delete_note_content_description_text"
+            android:minWidth="@dimen/big_space"
+            android:minHeight="@dimen/big_space"
+            android:src="@drawable/ic_outline_delete_24"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/saveNoteBackImageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/saveNoteNextImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/medium_space"
+            android:backgroundTint="?attr/backgroundColor"
+            android:contentDescription="@string/save_note_name_content_description_text"
+            android:minWidth="@dimen/big_space"
+            android:minHeight="@dimen/big_space"
+            android:src="@drawable/baseline_check_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary" />
 
         <TextView
             android:id="@+id/noteTitleTextView"
@@ -26,19 +68,20 @@
             android:layout_margin="@dimen/medium_space"
             android:text="@string/note_title_text_view"
             app:layout_constraintBottom_toTopOf="@id/noteTitleEditText"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/noteTitleEditText"
             app:layout_constraintTop_toBottomOf="@id/addNoteTitleTextView" />
 
         <EditText
             android:id="@+id/noteTitleEditText"
             style="@style/editTextStyle"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/medium_space"
             android:hint="@string/note_title_hint_string"
             android:imeOptions="actionNext"
             android:importantForAutofill="no"
             android:inputType="textPersonName|textCapWords"
+            android:maxWidth="488dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/noteTitleTextView" />
@@ -51,48 +94,23 @@
             android:layout_margin="@dimen/medium_space"
             android:text="@string/note_body_text_view"
             app:layout_constraintBottom_toTopOf="@id/noteBodyEditText"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/noteBodyEditText"
             app:layout_constraintTop_toBottomOf="@id/noteTitleEditText" />
 
         <EditText
             android:id="@+id/noteBodyEditText"
             style="@style/editTextStyle"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/medium_space"
             android:hint="@string/note_body_hint_string"
             android:imeOptions="actionDone"
             android:importantForAutofill="no"
             android:inputType="textMultiLine|textCapSentences"
+            android:maxWidth="488dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/noteBodyTextView" />
-
-        <ImageButton
-            android:id="@+id/cancelNoteImageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/large_space"
-            android:background="@drawable/custom_icon_button"
-            android:contentDescription="@string/cancel_add_note_image_button_content_description_text"
-            android:elevation="@dimen/large_space"
-            android:src="@drawable/ic_baseline_close_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/addNoteImageButton"
-            app:tint="?attr/colorPrimary" />
-
-        <ImageButton
-            android:id="@+id/addNoteImageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/large_space"
-            android:background="@drawable/custom_icon_button"
-            android:contentDescription="@string/add_note_image_button_content_description_text"
-            android:elevation="@dimen/large_space"
-            android:src="@drawable/ic_baseline_add_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:tint="?attr/colorPrimary" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

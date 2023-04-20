@@ -9,9 +9,10 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import br.com.suacifra.databinding.MainActivityBinding
-import br.com.suacifra.screens.add.AddFragment
+import br.com.suacifra.screens.add.AddCifraNameFragment
 import br.com.suacifra.screens.home.HomeFragment
 import br.com.suacifra.screens.settings.SettingsFragment
+import br.com.suacifra.utils.Config
 import br.com.suacifra.viewModels.MainActivityViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -32,22 +33,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         val sharedPref = getSharedPreferences(
-            getString(R.string.shared_preference_file_key), Context.MODE_PRIVATE
+            Config.SHARED_PREFERENCE_FILE_KEY, Context.MODE_PRIVATE
         )
-        isGoogleSignInStatusOk = sharedPref.getBoolean(
-            getString(R.string.shared_preference_sign_in_boolean_key),
-            isGoogleSignInStatusOk
-        )
-
-        auth = FirebaseAuth.getInstance()
-        googleAccount = if (isGoogleSignInStatusOk) {
-            GoogleSignIn.getLastSignedInAccount(this)
-        } else {
-            null
-        }
-        googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail().requestProfile().build()
+//        isGoogleSignInStatusOk = sharedPref.getBoolean(
+//            Config.SHARED_PREFERENCE_SIGN_IN_BOOLEAN_KEY,
+//            isGoogleSignInStatusOk
+//        )
+//
+//        auth = FirebaseAuth.getInstance()
+//        googleAccount = if (isGoogleSignInStatusOk) {
+//            GoogleSignIn.getLastSignedInAccount(this)
+//        } else {
+//            null
+//        }
+//        googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+//            .requestIdToken(getString(R.string.default_web_client_id))
+//            .requestEmail().requestProfile().build()
 
         installSplashScreen().apply {
             setKeepOnScreenCondition {
@@ -62,34 +63,49 @@ class MainActivity : AppCompatActivity() {
                 R.id.homeBottomNavigation -> {
                     addToBackStackFragmentOnBottomNavigation(HomeFragment(), HOME_FRAGMENT)
                 }
+
                 R.id.addBottomNavigation -> {
                     val sharedPrefEditor = sharedPref.edit()
                     sharedPrefEditor.putStringSet(
-                        getString(R.string.shared_preference_edit_cifra_mode_sequence_set_string_key),
+                        Config.SHARED_PREFERENCE_CIFRA_SEQUENCE_STRING_KEY,
                         mutableSetOf()
                     )
                     sharedPrefEditor.putString(
-                        getString(R.string.shared_preference_edit_cifra_mode_tone_string_key),
+                        Config.SHARED_PREFERENCE_CIFRA_TONE_STRING_KEY,
                         null
                     )
                     sharedPrefEditor.putString(
-                        getString(R.string.shared_preference_add_cifra_mode_name_edit_text_key),
+                        Config.SHARED_PREFERENCE_CIFRA_NAME_STRING_KEY,
                         ""
                     )
                     sharedPrefEditor.putString(
-                        getString(R.string.shared_preference_add_cifra_mode_singer_name_edit_text_key),
+                        Config.SHARED_PREFERENCE_CIFRA_SINGER_NAME_STRING_KEY,
                         ""
                     )
                     sharedPrefEditor.putBoolean(
-                        getString(R.string.shared_preference_edit_cifra_mode_boolean_key),
+                        Config.SHARED_PREFERENCE_EDIT_CIFRA_MODE_BOOLEAN_KEY,
+                        false
+                    )
+                    sharedPrefEditor.putBoolean(
+                        Config.SHARED_PREFERENCE_EDIT_CIFRA_NAME_MODE_BOOLEAN_KEY,
+                        false
+                    )
+                    sharedPrefEditor.putBoolean(
+                        Config.SHARED_PREFERENCE_EDIT_CIFRA_SINGER_NAME_MODE_BOOLEAN_KEY,
+                        false
+                    )
+                    sharedPrefEditor.putBoolean(
+                        Config.SHARED_PREFERENCE_EDIT_CIFRA_TONE_MODE_BOOLEAN_KEY,
                         false
                     )
                     sharedPrefEditor.apply()
-                    addToBackStackFragmentOnBottomNavigation(AddFragment(), ADD_FRAGMENT)
+                    addToBackStackFragmentOnBottomNavigation(AddCifraNameFragment(), ADD_FRAGMENT)
                 }
+
                 R.id.settingsBottomNavigation -> {
                     addToBackStackFragmentOnBottomNavigation(SettingsFragment(), SETTINGS_FRAGMENT)
                 }
+
                 else -> {}
             }
             true
@@ -117,8 +133,8 @@ class MainActivity : AppCompatActivity() {
         googleAccount = null
     }
 
+    private val fragmentManager = supportFragmentManager
     fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setCustomAnimations(
             R.anim.slide_in,
@@ -129,7 +145,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun addToBackStackFragment(fragment: Fragment) {
-        val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setCustomAnimations(
             R.anim.slide_in,
@@ -140,8 +155,17 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
     }
 
+    fun popBackStackFragment() {
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.setCustomAnimations(
+            R.anim.slide_in,
+            R.anim.slide_out
+        )
+        fragmentManager.popBackStack()
+        fragmentTransaction.commit()
+    }
+
     private fun addToBackStackFragmentOnBottomNavigation(fragment: Fragment, fragmentName: String) {
-        val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.setCustomAnimations(
             R.anim.slide_in,
@@ -156,6 +180,15 @@ class MainActivity : AppCompatActivity() {
         const val HOME_FRAGMENT = "Home"
         const val ADD_FRAGMENT = "Add"
         const val SETTINGS_FRAGMENT = "Settings"
+    }
+
+    fun toastMessage(message: String, duration: Int) {
+        Toast.makeText(
+            this,
+            message,
+            duration
+        )
+            .show()
     }
 
     fun toastMessage(@StringRes resId: Int, duration: Int) {

@@ -1,29 +1,29 @@
 <resources>
     <string name="app_name" translatable="false">Sua Cifra</string>
     <string name="no_cifras_message">Welcome to your app to save your Cifras</string>
-    <string name="no_sequences_message">Tap on button + bellow right to add a sequence</string>
+    <string name="no_sequences_message">Tap on button + to add a sequence</string>
     <string name="settings_bottom_navigation_string">Options</string>
     <string name="add_bottom_navigation_string">Add</string>
     <string name="home_bottom_navigation_string">Home</string>
     <string name="cifra_name_hint_string">Insert the name of your cifra</string>
     <string name="singer_name_hint_string">Insert the singer of your cifra</string>
-    <string name="tone_spinner_helper_string">Select a initial tone above</string>
+    <string name="song_tone_overview_string">Tone: %1$s</string>
     <string name="home_content_description">Show lists and home screen</string>
     <string name="settings_content_description">Show features and settings</string>
     <string name="add_content_description">Show screen to add your cifra</string>
     <string name="choose_tone_button_text">Choose Tone</string>
     <string name="a_tone" translatable="false">A</string>
-    <string name="bb_tone" translatable="false">Bb</string>
+    <string name="a_sharp_tone" translatable="false">A#</string>
     <string name="b_tone" translatable="false">B</string>
     <string name="c_tone" translatable="false">C</string>
-    <string name="db_tone" translatable="false">Db</string>
+    <string name="c_sharp_tone" translatable="false">C#</string>
     <string name="d_tone" translatable="false">D</string>
-    <string name="eb_tone" translatable="false">Eb</string>
+    <string name="d_sharp_tone" translatable="false">D#</string>
     <string name="e_tone" translatable="false">E</string>
     <string name="f_tone" translatable="false">F</string>
-    <string name="gb_tone" translatable="false">Gb</string>
+    <string name="f_sharp_tone" translatable="false">F#</string>
     <string name="g_tone" translatable="false">G</string>
-    <string name="ab_tone" translatable="false">Ab</string>
+    <string name="g_sharp_tone" translatable="false">G#</string>
     <string name="tones_card_view_text">Tones</string>
     <string name="tone_chosen_text">Tone %1$s was chosen!</string>
     <string name="profile_picture_content_description">Profile picture on Settings Screen, shows your profile image</string>
@@ -50,8 +50,6 @@
     <string name="sign_in_with_google_message_fail">It not worked ;-;\nMaybe try again later</string>
     <string name="sign_out_with_google">Sign out from your account</string>
     <string name="user_not_logged_in_warning_text">In case you want to change your google account, for now I would recommend uninstalling and install the app or wipe data from app and try again</string>
-    <string name="shared_preference_file_key" translatable="false">br.com.suacifra.PREFERENCE_FILE_KEY</string>
-    <string name="shared_preference_sign_in_boolean_key" translatable="false">br.com.suacifra.PREFERENCE_SIGN_IN_BOOLEAN_KEY</string>
     <string name="notes_button_text">Notes</string>
     <string name="notes_title_text">Notes</string>
     <string name="add_notes_content_description_text">Add notes</string>
@@ -62,14 +60,14 @@
     <string name="note_title_text_view">Note title</string>
     <string name="note_body_text_view">Note body</string>
     <string name="cancel_add_note_image_button_content_description_text">Cancel add note</string>
-    <string name="add_cifra_title_text">Add</string>
-    <string name="add_note_cancelled">Note cancelled</string>
-    <string name="cifra_name_text_view">Cifra\'s name</string>
-    <string name="singer_name_text_view">Singer\'s name</string>
+    <string name="add_cifra_title_text">Overview</string>
+    <string name="add_note_deleted">Note deleted</string>
+    <string name="cifra_name_text_view">Cifra Name</string>
+    <string name="singer_name_text_view">Singer Name</string>
     <string name="add_sequence_content_description_text">Add sequence of chords</string>
     <string name="save_cifra_button_text">Save Cifra</string>
     <string name="delete_sequence_content_description">Delete sequence</string>
-    <string name="sequence_item_title">Sequence #%1$d</string>
+    <string name="sequence_item_title">Sequence</string>
     <string name="delete_sequence_successfully">You deleted sequence #%1$d</string>
     <string name="add_cifra_successfully">You added cifra %1$s successfully</string>
     <string name="add_cifra_missing_data">Please, check your cifra</string>
@@ -77,41 +75,61 @@
     <string name="sequence_title_hint_string">Insert your chords</string>
     <string name="sequence_helper_string">Put chords between comma \",\" and without spaces\ne.g. C,G,Am,F</string>
     <string name="cancel_add_sequence_image_button_content_description_text">Cancel add sequence</string>
-    <string name="add_sequence_image_button_content_description_text">Add a sequence</string>
-    <string name="add_sequence_title_text">Add a sequence</string>
+    <string name="add_sequence_title_text">Save a sequence</string>
     <string name="add_sequence_successfully">Sequence added successfully</string>
     <string name="add_sequence_failed">Add a sequence above</string>
-    <string name="add_sequence_cancelled">Sequence cancelled</string>
-    <string name="no_notes_message">Tap on button bellow to add a note</string>
+    <string name="add_sequence_deleted">Sequence deleted</string>
+    <string name="no_notes_message">Tap on button above + to add a note</string>
     <string name="cifra_singer_name_item">Singer: %1$s</string>
     <string name="cifra_tone_item">Tone: %1$s</string>
     <string name="cifra_first_sequence_item">First sequence: %1$s</string>
     <string name="add_note_successfully">Note %1$s added successfully</string>
     <string name="save_note_missing_data">Please, check your note</string>
-    <string name="shared_preference_edit_sequence_mode_boolean_key" translatable="false">br.com.suacifra.PREFERENCE_EDIT_SEQUENCE_MODE_BOOLEAN_KEY</string>
-    <string name="shared_preference_edit_sequence_mode_sequence_string_key" translatable="false">br.com.suacifra.PREFERENCE_EDIT_SEQUENCE_MODE_SEQUENCE_STRING_KEY</string>
-    <string name="shared_preference_edit_cifra_mode_boolean_key" translatable="false">br.com.suacifra.PREFERENCE_EDIT_CIFRA_MODE_BOOLEAN_KEY</string>
-    <string name="shared_preference_edit_cifra_mode_name_string_key" translatable="false">br.com.suacifra.PREFERENCE_EDIT_CIFRA_MODE_NAME_STRING_KEY</string>
-    <string name="shared_preference_edit_cifra_mode_singer_name_string_key" translatable="false">br.com.suacifra.PREFERENCE_EDIT_CIFRA_MODE_SINGER_NAME_STRING_KEY</string>
-    <string name="shared_preference_edit_cifra_mode_tone_string_key" translatable="false">br.com.suacifra.PREFERENCE_EDIT_CIFRA_MODE_TONE_STRING_KEY</string>
-    <string name="shared_preference_edit_cifra_mode_sequence_set_string_key" translatable="false">br.com.suacifra.PREFERENCE_EDIT_CIFRA_MODE_SEQUENCE_SET_STRING_KEY</string>
-    <string name="shared_preference_edit_notes_mode_boolean_key" translatable="false">br.com.suacifra.PREFERENCE_EDIT_NOTES_MODE_BOOLEAN_KEY</string>
-    <string name="shared_preference_edit_notes_mode_title_string_key" translatable="false">br.com.suacifra.PREFERENCE_EDIT_NOTES_MODE_TITLE_STRING_KEY</string>
-    <string name="shared_preference_edit_notes_mode_body_string_key" translatable="false">br.com.suacifra.PREFERENCE_EDIT_NOTES_MODE_BODY_STRING_KEY</string>
     <string name="edit_note_successfully">Note %1$s edited successfully</string>
     <string name="edit_cifra_successfully">You edited cifra %1$s successfully</string>
     <string name="edit_sequence_successfully">Sequence edited successfully</string>
-    <string name="shared_preference_edit_sequence_mode_sequence_index_key" translatable="false">br.com.suacifra.PREFERENCE_EDIT_SEQUENCE_MODE_SEQUENCE_INDEX_KEY</string>
     <string name="delete_cifra_content_description">Delete cifra</string>
     <string name="delete_note_content_description">Delete note</string>
     <string name="save_note_title_missing_data">Please, check your note title</string>
     <string name="save_note_body_missing_data">Please, check your note body</string>
-    <string name="sqlite_database_name" translatable="false">suaCifraDatabase.db</string>
     <string name="delete_note_successfully">Note %1$s was deleted</string>
     <string name="delete_note_failed">Delete note failed</string>
     <string name="save_cifra_missing_data">" Please, check your cifra"</string>
-    <string name="shared_preference_add_cifra_mode_name_edit_text_key">br.com.suacifra.PREFERENCE_ADD_CIFRA_MODE_NAME_EDIT_TEXT_KEY</string>
-    <string name="shared_preference_add_cifra_mode_singer_name_edit_text_key">br.com.suacifra.PREFERENCE_ADD_CIFRA_MODE_SINGER_NAME_EDIT_TEXT_KEY</string>
     <string name="delete_cifra_successfully">Cifra %1$s was deleted</string>
     <string name="delete_cifra_failed">Delete cifra failed</string>
+    <string name="delete_note_button_text">Delete note</string>
+    <string name="save_note_button_text">Save note</string>
+    <string name="delete_cifra_button_text">Delete cifra</string>
+    <string name="save_cifra_missing_tone">Please, check your tone</string>
+    <string name="save_cifra_missing_sequence">Please, check your sequence</string>
+    <string name="save_sequence_button_text">Save sequence</string>
+    <string name="delete_sequence_button_text">Delete Sequence</string>
+    <string name="save_sequence_missing_data">Please, check your sequence</string>
+    <string name="cifra_first_sequence_null_item">First sequence: You should add one!</string>
+    <string name="settings_title_text">Your Options</string>
+    <string name="add_cifra_name_title_text">Cifra</string>
+    <string name="save_cifra_name_content_description_text">Save cifra name</string>
+    <string name="cifra_name_helper_text_view">You should name it your cifra after something will be remembered later\ne.g. Sua Cifra Importantly (Cover)</string>
+    <string name="add_cifra_singer_name_title_text">Singer</string>
+    <string name="save_cifra_singer_name_content_description_text">Save singer name</string>
+    <string name="cifra_singer_name_helper_text_view">You should name it after who is really singing it\ne.g. Roberta (Church group)</string>
+    <string name="save_cifra_name_missing_data">Try to fill in a name for your cifra</string>
+    <string name="save_cifra_singer_name_missing_data">Try to fill in a singer name of your cifra</string>
+    <string name="add_cifra_tone_title_text">Tone</string>
+    <string name="save_cifra_tone_missing_data">Try to choose a tone to your cifra</string>
+    <string name="add_cifra_tone_hint_text">Here will appear your chosen tone below</string>
+    <string name="tone_hint_string">Insert the tone of your cifra</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="add_cifra_sequence_title_text">Sequences</string>
+    <string name="save_cifra_sequence_content_description_text">Save sequence of this cifra</string>
+    <string name="delete_cifra_sequence_content_description_text">Delete a sequence</string>
+    <string name="add_cifra_sequence_add_sequence_content_description_text">Add a sequence</string>
+    <string name="tone_helper_string">Put a specific tone \ne.g. C#m7</string>
+    <string name="no_sequences_message_overview">Tap on button + on top screen to add a sequence</string>
+    <string name="save_cifra_content_description_text">Save cifra</string>
+    <string name="delete_cifra_content_description_text">Delete cifra</string>
+    <string name="main_app_name">Your Cifras</string>
+    <string name="song_tone_text_view">Tone</string>
+    <string name="delete_note_content_description_text">Delete note</string>
+    <string name="save_note_name_content_description_text">Save note</string>
 </resources>
