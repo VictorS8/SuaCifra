@@ -19,7 +19,7 @@ import androidx.room.PrimaryKey
         onUpdate = ForeignKey.CASCADE
     )]
 )
-data class CifraAndNote(
+data class CifraAndNoteRoom(
     val cifraId: Int,
     val noteId: Int,
     @PrimaryKey(autoGenerate = true)
