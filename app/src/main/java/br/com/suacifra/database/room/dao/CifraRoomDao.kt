@@ -25,7 +25,11 @@ interface CifraRoomDao {
     fun getAllCifras(): Flow<List<CifraRoom>>
 
     @Transaction
+    @Query("SELECT * FROM CifraRoom WHERE id=:cifraId")
+    fun getCifraWithSequenceById(cifraId: Int): CifraWithSequenceRoom
+
+    @Transaction
     @Query("SELECT * FROM CifraRoom")
-    fun getCifraWithSequence(): List<CifraWithSequenceRoom>
+    fun getAllCifraWithSequence(): Flow<List<CifraWithSequenceRoom>>
 
 }
