@@ -1,11 +1,12 @@
 package br.com.suacifra.utils
 
 object Config {
+    // Database Consts
     const val SUA_CIFRA_DATABASE = "suaCifraDatabase.db"
     const val SUA_CIFRA_DATABASE_VERSION = 2
 
+    // Shared Preferences Consts
     const val SHARED_PREFERENCE_FILE_KEY = "br.com.suacifra.PREFERENCE_FILE_KEY"
-    const val SHARED_PREFERENCE_SIGN_IN_BOOLEAN_KEY = "br.com.suacifra.PREFERENCE_SIGN_IN_BOOLEAN_KEY"
 
     const val SHARED_PREFERENCE_SEQUENCE_BOOLEAN_KEY = "br.com.suacifra.PREFERENCE_SEQUENCE_BOOLEAN_KEY"
     const val SHARED_PREFERENCE_SEQUENCE_STRING_KEY = "br.com.suacifra.PREFERENCE_SEQUENCE_STRING_KEY"
