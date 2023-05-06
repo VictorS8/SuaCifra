@@ -5,5 +5,5 @@ data class Cifras(
     var name: String,
     var tone: String,
     var singerName: String,
-    var chordsSequence: String
+    var sequenceList: MutableList<String>
 )
