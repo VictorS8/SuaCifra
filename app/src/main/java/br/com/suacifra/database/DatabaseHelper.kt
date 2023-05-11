@@ -4,7 +4,6 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import br.com.suacifra.R
 import br.com.suacifra.database.models.Cifras
 import br.com.suacifra.database.models.Notes
 import br.com.suacifra.utils.Config
@@ -68,7 +67,7 @@ class DatabaseHelper(
         contentValues.put(CIFRA_NAME_COLUMN, cifraModel.name)
         contentValues.put(CIFRA_TONE_COLUMN, cifraModel.tone)
         contentValues.put(CIFRA_SINGER_NAME_COLUMN, cifraModel.singerName)
-        contentValues.put(CIFRA_CHORDS_SEQUENCE_COLUMN, cifraModel.chordsSequence)
+        contentValues.put(CIFRA_CHORDS_SEQUENCE_COLUMN, cifraModel.sequenceList)
 
         val insert = database.insert(CIFRAS_TABLE, null, contentValues)
         val insertErrorNumber: Long = -1
@@ -160,7 +159,7 @@ class DatabaseHelper(
         contentValues.put(CIFRA_NAME_COLUMN, cifraModel.name)
         contentValues.put(CIFRA_TONE_COLUMN, cifraModel.tone)
         contentValues.put(CIFRA_SINGER_NAME_COLUMN, cifraModel.singerName)
-        contentValues.put(CIFRA_CHORDS_SEQUENCE_COLUMN, cifraModel.chordsSequence)
+        contentValues.put(CIFRA_CHORDS_SEQUENCE_COLUMN, cifraModel.sequenceList)
 
         return database.update(
             CIFRAS_TABLE,
