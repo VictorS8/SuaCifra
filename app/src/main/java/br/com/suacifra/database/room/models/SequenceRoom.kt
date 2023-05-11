@@ -15,7 +15,7 @@ import androidx.room.PrimaryKey
 )
 data class SequenceRoom(
     val chords: String,
-    val cifraId: Int,
+    val cifraId: Int?,
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0
 )

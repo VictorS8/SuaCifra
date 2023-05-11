@@ -11,5 +11,5 @@ data class CifraWithSequenceRoom(
         parentColumn = "id",
         entityColumn = "cifraId"
     )
-    val sequenceList: Flow<List<SequenceRoom>>
+    val sequenceList: List<SequenceRoom>?
 )
