@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.database.DatabaseHelper
-import br.com.suacifra.models.Cifras
+import br.com.suacifra.database.models.Cifras
 import br.com.suacifra.screens.add.AddCifraOverviewFragment
 import br.com.suacifra.utils.Config
 import br.com.suacifra.utils.dataStringToMutableSet

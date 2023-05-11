@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.database.DatabaseHelper
-import br.com.suacifra.models.Notes
+import br.com.suacifra.database.models.Notes
 import br.com.suacifra.utils.Config
 
 class NotesRecyclerViewAdapter(

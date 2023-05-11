@@ -5,8 +5,8 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import br.com.suacifra.R
-import br.com.suacifra.models.Cifras
-import br.com.suacifra.models.Notes
+import br.com.suacifra.database.models.Cifras
+import br.com.suacifra.database.models.Notes
 import br.com.suacifra.utils.Config
 
 class DatabaseHelper(

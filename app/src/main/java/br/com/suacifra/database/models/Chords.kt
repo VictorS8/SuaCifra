@@ -1,4 +1,4 @@
-package br.com.suacifra.models
+package br.com.suacifra.database.models
 
 object Chords {
     const val minor = "m"

@@ -12,7 +12,7 @@ import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.databinding.HomeFragmentBinding
-import br.com.suacifra.models.Cifras
+import br.com.suacifra.database.models.Cifras
 
 class HomeFragment : Fragment() {
 

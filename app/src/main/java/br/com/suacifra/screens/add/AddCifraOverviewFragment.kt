@@ -16,7 +16,7 @@ import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.databinding.AddCifraOverviewFragmentBinding
-import br.com.suacifra.models.Cifras
+import br.com.suacifra.database.models.Cifras
 import br.com.suacifra.screens.home.HomeFragment
 import br.com.suacifra.utils.Config
 import br.com.suacifra.utils.dataMutableSetToString

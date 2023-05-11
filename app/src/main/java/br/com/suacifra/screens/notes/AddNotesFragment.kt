@@ -12,7 +12,7 @@ import br.com.suacifra.MainActivity
 import br.com.suacifra.R
 import br.com.suacifra.database.DatabaseHelper
 import br.com.suacifra.databinding.AddNotesFragmentBinding
-import br.com.suacifra.models.Notes
+import br.com.suacifra.database.models.Notes
 import br.com.suacifra.utils.Config
 import br.com.suacifra.utils.getColorFromAttr
 

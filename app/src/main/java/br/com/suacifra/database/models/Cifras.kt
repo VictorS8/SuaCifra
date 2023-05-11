@@ -1,4 +1,4 @@
-package br.com.suacifra.models
+package br.com.suacifra.database.models
 
 data class Cifras(
     var id: Int,
