@@ -89,10 +89,13 @@
         <TextView
             android:id="@+id/cifraNameTextView"
             style="@style/settingsTextViewStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginHorizontal="@dimen/medium_space"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@id/singerNameTitleTextView"
+            app:layout_constraintEnd_toStartOf="@id/saveCifraNextImageButton"
+            app:layout_constraintStart_toEndOf="@id/addCifraBackImageButton"
             app:layout_constraintTop_toBottomOf="@id/cifraNameTitleTextView" />
 
         <TextView
