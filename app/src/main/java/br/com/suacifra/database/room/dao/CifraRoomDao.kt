@@ -15,6 +15,9 @@ interface CifraRoomDao {
     @Upsert
     suspend fun upsertCifra(cifra: CifraRoom)
 
+    @Upsert
+    suspend fun upsertCifra(cifra: CifraWithSequenceRoom)
+
     @Delete
     suspend fun deleteCifra(cifra: CifraRoom)
 
