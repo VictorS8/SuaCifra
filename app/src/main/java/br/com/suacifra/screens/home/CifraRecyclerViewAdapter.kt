@@ -96,7 +96,7 @@ class CifrasRecyclerViewAdapter(
             R.string.cifra_singer_name_item,
             cifrasList[position].singerName
         )
-        val cifraChordsSequence = cifrasList[position].chordsSequence.dataStringToMutableSet()
+        val cifraChordsSequence = cifrasList[position].sequenceList.dataStringToMutableSet()
         val cifraFirstChordsSequenceTextView = if (cifraChordsSequence.size != 0)
             mainActivityContext.getString(
                 R.string.cifra_first_sequence_item,
@@ -136,7 +136,7 @@ class CifrasRecyclerViewAdapter(
             )
             sharedPrefEditor.putStringSet(
                 Config.SHARED_PREFERENCE_CIFRA_SEQUENCE_STRING_KEY,
-                cifrasList[position].chordsSequence.dataStringToMutableSet()
+                cifrasList[position].sequenceList.dataStringToMutableSet()
             )
 
             sharedPrefEditor.putBoolean(
