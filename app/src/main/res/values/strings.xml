@@ -132,4 +132,8 @@
     <string name="song_tone_text_view">Tone</string>
     <string name="delete_note_content_description_text">Delete note</string>
     <string name="save_note_name_content_description_text">Save note</string>
+    <string name="home_route" translatable="false">home_route</string>
+    <string name="add_route" translatable="false">add_route</string>
+    <string name="settings_route" translatable="false">settings_route</string>
+    <string name="title_activity_main" translatable="false">activity_main</string>
 </resources>

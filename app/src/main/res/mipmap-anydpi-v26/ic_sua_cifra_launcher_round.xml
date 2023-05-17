@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/ic_sua_cifra_launcher_background"/>
+    <foreground android:drawable="@drawable/ic_sua_cifra_launcher_foreground"/>
+    <monochrome android:drawable="@drawable/splash_logo_monochrome_2"/>
+</adaptive-icon>
