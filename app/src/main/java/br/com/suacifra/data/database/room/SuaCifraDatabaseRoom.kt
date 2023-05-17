@@ -1,13 +1,13 @@
-package br.com.suacifra.database.room
+package br.com.suacifra.data.database.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import br.com.suacifra.database.room.dao.CifraAndNoteDao
-import br.com.suacifra.database.room.dao.CifraRoomDao
-import br.com.suacifra.database.room.dao.NoteRoomDao
-import br.com.suacifra.database.room.models.CifraAndNoteRoom
-import br.com.suacifra.database.room.models.CifraRoom
-import br.com.suacifra.database.room.models.NoteRoom
+import br.com.suacifra.data.database.room.dao.CifraAndNoteDao
+import br.com.suacifra.data.database.room.dao.CifraRoomDao
+import br.com.suacifra.data.database.room.dao.NoteRoomDao
+import br.com.suacifra.data.database.room.models.CifraAndNoteRoom
+import br.com.suacifra.data.database.room.models.CifraRoom
+import br.com.suacifra.data.database.room.models.NoteRoom
 import br.com.suacifra.utils.Config
 
 @Database(

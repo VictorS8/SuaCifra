@@ -1,4 +1,4 @@
-package br.com.suacifra.database.models
+package br.com.suacifra.data.models
 
 object Tones {
     const val A = "A"

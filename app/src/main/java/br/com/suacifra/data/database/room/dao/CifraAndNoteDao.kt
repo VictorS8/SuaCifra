@@ -1,8 +1,8 @@
-package br.com.suacifra.database.room.dao
+package br.com.suacifra.data.database.room.dao
 
 import androidx.room.Dao
 import androidx.room.Query
-import br.com.suacifra.database.room.models.CifraAndNoteRoom
+import br.com.suacifra.data.database.room.models.CifraAndNoteRoom
 import kotlinx.coroutines.flow.Flow
 
 @Dao

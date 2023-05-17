@@ -1,4 +1,4 @@
-package br.com.suacifra.database.room.models
+package br.com.suacifra.data.database.room.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

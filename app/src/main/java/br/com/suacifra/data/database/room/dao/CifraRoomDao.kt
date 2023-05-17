@@ -1,12 +1,12 @@
-package br.com.suacifra.database.room.dao
+package br.com.suacifra.data.database.room.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Upsert
-import br.com.suacifra.database.room.models.CifraRoom
-import br.com.suacifra.database.room.models.CifraWithSequenceRoom
+import br.com.suacifra.data.database.room.models.CifraRoom
+import br.com.suacifra.data.database.room.models.CifraWithSequenceRoom
 import kotlinx.coroutines.flow.Flow
 
 @Dao
