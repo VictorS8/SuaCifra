@@ -1,6 +1,6 @@
 package br.com.suacifra.data.models
 
-object Chords {
+object Chord {
     const val minor = "m"
     const val major = "M"
     const val fifth = "5"

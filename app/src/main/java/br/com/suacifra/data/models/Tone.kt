@@ -1,6 +1,6 @@
 package br.com.suacifra.data.models
 
-object Tones {
+object Tone {
     const val A = "A"
     const val ASharp = "A#"
     const val B = "B"
