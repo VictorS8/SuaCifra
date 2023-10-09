@@ -1,0 +1,2021 @@
+{
+    "sn": 0,
+    "rowners": {
+        "l": "caring_mind_app",
+        "p": "caring_mind_app",
+        "r": "caring_mind_app",
+        "t": "caring_mind_app",
+        "c": "caring_mind_app",
+        "q": "caring_mind_app",
+        "s": "caring_mind"
+    },
+    "burls": {
+        "covers": "http://pbmp-remoteassets.pepblast.com/APP_ROOT/008-CM/media/images/covers",
+        "images": "http://pbmp-remoteassets.pepblast.com/APP_ROOT/008-CM/media/images",
+        "videos": "http://pbmp-remoteassets.pepblast.com/APP_ROOT/008-CM/media/videos/learn-360p",
+        "relax": {
+            "bgvburl": "http://pbmp-remoteassets.pepblast.com/APP_ROOT/008-CM/media/videos/background-video",
+            "aburl": "http://pbmp-remoteassets.pepblast.com/APP_ROOT/008-CM/media/audios",
+            "bgaburl": "http://pbmp-remoteassets.pepblast.com/APP_ROOT/008-CM/media/songs/background-mp3",
+            "bgciburl": "http://pbmp-remoteassets.pepblast.com/APP_ROOT/008-CM/media/images/background-thumb"
+        }
+    },
+    "res": {
+        "ti": "Resources",
+        "de": "Get Prepared for your Journey",
+        "its": [
+            {
+                "id": 0,
+                "cid": 16,
+                "na": "Begin your Day",
+                "cl": "img00.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+            },
+            {
+                "id": 1,
+                "cid": 17,
+                "na": "Think ahead",
+                "cl": "img01.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+                "pro": 1
+            },
+            {
+                "id": 2,
+                "cid": 18,
+                "na": "Have a word",
+                "cl": "img02.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+                "pro": 1
+            },
+            {
+                "id": 3,
+                "cid": 19,
+                "na": "Bathing",
+                "cl": "img03.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+                "pro": 1
+            },
+            {
+                "id": 4,
+                "cid": 20,
+                "na": "Dressing",
+                "cl": "img04.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+                "pro": 1
+            },
+            {
+                "id": 5,
+                "cid": 21,
+                "na": "Eating",
+                "cl": "img05.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+                "pro": 1
+            },
+            {
+                "id": 6,
+                "cid": 22,
+                "na": "Activities",
+                "cl": "img06.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+                "pro": 1
+            },
+            {
+                "id": 7,
+                "cid": 23,
+                "na": "Exercise",
+                "cl": "img07.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+                "pro": 1
+            },
+            {
+                "id": 8,
+                "cid": 24,
+                "na": "Incontinence",
+                "cl": "img08.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+                "pro": 1
+            },
+            {
+                "id": 9,
+                "cid": 25,
+                "na": "Sleep Problems",
+                "cl": "img00.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+                "pro": 1
+            },
+            {
+                "id": 10,
+                "cid": 26,
+                "na": "Hallucinations",
+                "cl": "img01.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+                "pro": 1
+            },
+            {
+                "id": 11,
+                "cid": 27,
+                "na": "Agitation",
+                "cl": "img02.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+                "pro": 1
+            },
+            {
+                "id": 12,
+                "cid": 28,
+                "na": "Repetition",
+                "cl": "img03.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+                "pro": 1
+            },
+            {
+                "id": 13,
+                "cid": 29,
+                "na": "Suspicion",
+                "cl": "img04.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+                "pro": 1
+            },
+            {
+                "id": 14,
+                "cid": 30,
+                "na": "Confusion",
+                "cl": "img05.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+                "pro": 1
+            },
+            {
+                "id": 15,
+                "cid": 31,
+                "na": "Not recognizing Family and Friends",
+                "cl": "img06.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+                "pro": 1
+            },
+            {
+                "id": 16,
+                "cid": 32,
+                "na": "Other Resources",
+                "cl": "img07.png",
+                "rid": "p4yjk000149cnclk0s6ifb",
+                "pro": 1
+            }
+        ]
+    },
+    "ll": {
+        "ti": "Caring Mind",
+        "de": "Watch at least one lesson per week and practice your skills daily.",
+        "its": [
+            {
+                "id": 0,
+                "cid": 0,
+                "na": "Welcome!",
+                "cl": "img00.png",
+                "rid": "pxwjn000149cncin0ce6vi",
+                "pro": 1
+            },
+            {
+                "id": 1,
+                "cid": 1,
+                "na": "The Road",
+                "cl": "img01.png",
+                "rid": "pxwjn000149cncin0ce6vi",
+                "pro": 1
+            },
+            {
+                "id": 2,
+                "cid": 2,
+                "na": "Turn off the Autopilot",
+                "cl": "img02.png",
+                "rid": "pxwjn000149cncin0ce6vi",
+                "pro": 1
+            },
+            {
+                "id": 3,
+                "cid": 3,
+                "na": "Just Breathe",
+                "cl": "img03.png",
+                "rid": "pxwjn000149cncin0ce6vi",
+                "pro": 1
+            },
+            {
+                "id": 4,
+                "cid": 4,
+                "na": "Continue the Journey",
+                "cl": "img04.png",
+                "rid": "pxwjn000149cncin0ce6vi",
+                "pro": 1
+            },
+            {
+                "id": 5,
+                "cid": 5,
+                "na": "Practical Tips",
+                "cl": "img05.png",
+                "rid": "pxwjn000149cncin0ce6vi",
+                "pro": 1
+            },
+            {
+                "id": 6,
+                "cid": 6,
+                "na": "Next Steps",
+                "cl": "img00.png",
+                "rid": "pxwjn000149cncin0ce6vi",
+                "pro": 1
+            }
+        ]
+    },
+    "shr": {
+        "rid": "wekka000149cndra0otwoh",
+        "ti": "Share",
+        "de": ""
+    },
+    "pl": {
+        "ti": "Mindfulness Practices",
+        "de": "Final a comfortable place, listen and follow practices daily.",
+        "its": [
+            {
+                "id": 0,
+                "cid": 7,
+                "na": "About Mindfulness",
+                "cl": "ex_img00.png",
+                "rid": "jixj5000149cnck50ze6hf",
+                "pro": 1
+            },
+            {
+                "id": 1,
+                "cid": 8,
+                "na": "The Art of Stopping",
+                "cl": "ex_img01.png",
+                "rid": "jixj5000149cnck50ze6hf",
+                "pro": 1
+            },
+            {
+                "id": 2,
+                "cid": 9,
+                "na": "Short Stop Pause",
+                "cl": "ex_img02.png",
+                "rid": "jixj5000149cnck50ze6hf",
+                "pro": 1
+            },
+            {
+                "id": 3,
+                "cid": 10,
+                "na": "Silent Stop",
+                "cl": "ex_img03.png",
+                "rid": "jixj5000149cnck50ze6hf",
+                "pro": 1
+            },
+            {
+                "id": 4,
+                "cid": 11,
+                "na": "Mini Break",
+                "cl": "ex_img04.png",
+                "rid": "jixj5000149cnck50ze6hf",
+                "pro": 1
+            },
+            {
+                "id": 5,
+                "cid": 12,
+                "na": "Awareness of Breathing",
+                "cl": "ex_img05.png",
+                "rid": "jixj5000149cnck50ze6hf",
+                "pro": 1
+            },
+            {
+                "id": 6,
+                "cid": 13,
+                "na": "Breathing Practices",
+                "cl": "ex_img00.png",
+                "rid": "jixj5000149cnck50ze6hf",
+                "pro": 1
+            },
+            {
+                "id": 7,
+                "cid": 14,
+                "na": "Self-Compassion",
+                "cl": "ex_img01.png",
+                "rid": "jixj5000149cnck50ze6hf",
+                "pro": 1
+            },
+            {
+                "id": 8,
+                "cid": 15,
+                "na": "Brief Body Scan",
+                "cl": "ex_img02.png",
+                "rid": "jixj5000149cnck50ze6hf",
+                "pro": 1
+            }
+        ]
+    },
+    "con": {
+        "its": [
+            {
+                "id": 0,
+                "ty": 2,
+                "oend": 10,
+                "vl": "CM01.mp4",
+                "cl": "CM01.jpg",
+                "ti": "Welcome!",
+                "de": "Welcome to the Caring Program for caregivers of people with dementia, based on past research conducted by Photozig, Inc., in collaboration with Stanford University and the Alzheimerâ€™s Association, in addition to other studies. It is funded by the National Institutes on Aging, part of the US National Institutes of Health.\n\nThis program provides educational content and suggestions to improve your mindset when providing care. Getting prepared can help you as a caregiver reduce your stress and anxiety.\n\nRelaxation or mindfulness exercises are also included. Try to you find a comfortable, quiet place for each exercise. As they are completed, new ones will be unlocked. Please consider repeating the exercises that you like.\n\nWe recommend that you watch one lesson per week, which should take about 10 minutes, and practice one to three relax exercises per day, about 5 minutes each.\n\nThis program is for information only. It does not provide any medical advice, diagnosis, treatment, legal, financial, or other professional services advice. Please consult with your doctor before following any exercises of this program.\n\nWe hope that you will learn new skills, calm your mind, and enhance your caregiving experience!",
+                "qid": 0,
+                "ncid": 1,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "rf4kl000149cncpl0myoag"
+            },
+            {
+                "id": 1,
+                "ty": 2,
+                "oend": 10,
+                "vl": "CM02.mp4",
+                "cl": "CM02.jpg",
+                "ti": "The Road",
+                "de": "This training program teaches new skills to cultivate helpful thinking, direct attention, and nurture a better experience. These skills may help to alleviate stress, bring you to the moment, reduce the tendency to worry, and increase your appreciation for current achievements.\n\nThe Lessons contain coping skills on how to deal with difficult caregiving situations, including useful tools, valuable information, and practical tips.\n\nThe Exercises may help you tune your mind to the present, observe your body, and bring awareness to the moment. By standing back, you may relax, pause your mind and body, have a clearer view of the situation, and enhance your well-being.\n\nYou may learn how to turn off the thinking autopilot, reduce rumination, focus on being in the present to achieve our goals, calm the mind with breathing and relaxation exercises, and improve your overall mood, when nurturing your mind and body.\n\nThe caregiver journey can be very isolated. We recommend you get support from family and friends, participate in support groups, and access resources from the Alzheimerâ€™s Association, National Institutes of Health, and other organizations.\n\nThere might be some bumps on the road ahead, but remember, you are not alone.",
+                "qid": 0,
+                "ncid": 2,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "eu5kk000149cncrk07zx8d"
+            },
+            {
+                "id": 2,
+                "ty": 2,
+                "oend": 10,
+                "vl": "CM03.mp4",
+                "cl": "CM03.jpg",
+                "ti": "Turn off the Autopilot",
+                "de": "The mind is always working, sometimes in an autopilot mode, driving us around and making us do things without deliberation. Such autopilot can also play a video of things that worry us and cause rumination, anxiety, and stress.\n\nLetting the autopilot control our mind is not helpful since negative thoughts are usually more sticky than positive ones, and that may drive us into a declining spiral of unhappiness, leading to the perception that the world is against us, and life is not so good.\n\nIn such cases, we recommend turning the autopilot off, looking at the bright side, and cherishing good moments. A good strategy is to bring your attention to here and now, by practicing mindfulness exercises such as Stopping.\n\nPlease follow the Stopping and other exercises three times per day in the next seven days.",
+                "qid": 0,
+                "ncid": 3,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "ws6kw000149cncsw04xw4p"
+            },
+            {
+                "id": 3,
+                "ty": 2,
+                "oend": 10,
+                "vl": "CM04.mp4",
+                "cl": "CM04.jpg",
+                "ti": "Just Breathe",
+                "de": "When we try to calm our minds, we may get lost with thoughts about past events, present activities, or upcoming plans. They may cause worries, rumination, and unhelpful interpretations.\n\nTo avoid this â€œthinking aboutâ€ state, we want to switch to focusing on body sensations during mindfulness exercises, releasing ourselves from these concerning thoughts and connecting to another inner voice that describes our experience, sensations, and feelings.\n\nThis quiet voice may enable us to look at unpleasant situations from a different perspective, as an experience to be recognized and acknowledged, rather than a hard idea of a bad feeling.\n\nThe direct sensing of the body can also help us to cultivate a calming, clear-sighted, and solid state of mind.\n\nIn this program, you will learn different mindfulness exercises that bring awareness to body sensations, such as the Awareness of Breathing. Please follow this practice at least once per day during the next seven days.",
+                "qid": 0,
+                "ncid": 4,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "sz7kx000149cncvx05xl8o"
+            },
+            {
+                "id": 4,
+                "ty": 2,
+                "oend": 10,
+                "vl": "CM05.mp4",
+                "cl": "CM05.jpg",
+                "ti": "Continue the Journey",
+                "de": "We tend to avoid and hide from difficult situations and uncomfortable feelings. Our mind may react to them with resistance, escaping, self-criticism, worry, or anxiety. This automatic defense mechanism of the mind can also empower negative thoughts that may rise and aggravate the problem.\n\nIt is not easy, but we recommend that you try to identify these unpleasant feelings and negative thoughts, hold those roadblocks in awareness and consider them for what they are, roadblocks in your journey.\n\nA caring approach is to have a helicopter view of what is happening, avoid taking issues personally, and then look for more helpful ways to improve the situation.\n\nUnpleasant situations always appear in life, bringing unkind impressions to our minds, but we should try to see our negative feelings and thoughts for what they are â€“ our automatic defensive response to the unpleasant moment. Then, after acknowledging and accepting it, we should try to let this state of mind pass, focus on what is good for us, and move beyond the roadblocks to continue our journey.",
+                "qid": 0,
+                "ncid": 5,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "mk8kw000149cncxw06px7x"
+            },
+            {
+                "id": 5,
+                "ty": 2,
+                "oend": 10,
+                "vl": "CM06.mp4",
+                "cl": "CM06.jpg",
+                "ti": "Practical Tips",
+                "de": "It is important consider issues that may be distressing the person with dementia, such as:\n\n* Physical discomfort due to illnesses, medication, dehydration, or fatigue\n* Delayed reaction to real or imagined trauma\n* Frustration due to the failure to communicate effectively\n* Complicated tasks, demanding activities, or new chores\n* Lack of meaningful and pleasant activities\n* Discomfort with the presence of perceived strangers or unfamiliar faces\n* Unfamiliar surroundings, such as new places, or the inability to recognize home\n* Overstimulation from loud noises or a busy environment, for example, confusion, crowds or clutter\n* Other environment factors, such as temperature, brightness, humidity, etc.\n\nIf you detect any of these signs, you may want to consult with a doctor, modify the environment, or adapt activities to suit the needs of the person with dementia.\n\nIn this context, practical tips to consider include:\n\n* Check glasses and hearing aids to make sure that they are working properly and being used correctly.\n* Provide fluids and healthy snacks throughout the day, as the doctor suggests, for proper hydration and nutrition.\n* Use weekly pill organizers to help you keep track of medications.\n* Provide regular prompts and assistance for bathroom breaks (every 2 hours prevents most accidents)\n* Take daily walks and engage in other gentle physical activities to avoid restlessness.\n* Make sure the person with dementia stays involved in meaningful activities each day to prevent the occurrence of behavioral problems or the onset of depression.\n\nYou also need to take care of yourself, both physically and mentally, so that you prepared for the journey ahead. These are some general strategies that may help you: \n* Exercise, eat healthy foods and see your doctor regularly\n* Get outside help as needed\n* Take breaks during the day\n* Be active socially and spend time with friends\n* Engage in pleasant activities, hobbies, and interests\n* Maintain your health, legal, and financial information up-to-date\n\nOther practical tips for coping with caregiving include:\n* Gain knowledge about dementia\n* Join a support group\n* Set priorities. Save energy for the â€œmust doâ€ tasks, and delegate tasks to others.\n* Get accurate information about your loved oneâ€™s level of functioning and plan accordingly.\n* Donâ€™t argue or try to rationalize through a problematic situation with a person with dementia.\n* Accept that bad days do happen. It is not your fault when your efforts donâ€™t always pay off. \n* â€œGood enough for nowâ€ results are really good enough. There is much about this disease that canâ€™t be changed or fixed.\n\nWe hope that these practical tips may help you to enhance your coping skills.",
+                "qid": 0,
+                "ncid": 6,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "ht9kg000149cnczg09ww5s"
+            },
+            {
+                "id": 6,
+                "ty": 2,
+                "oend": 1,
+                "vl": "CM07.mp4",
+                "cl": "CM07.jpg",
+                "ti": "Next Steps",
+                "de": "We recommend that you pay attention to the state of your mind when stressful situations arise. Please try to apply the learning from this program to treat thoughts and emotions with care and respect, but, remember that thoughts are just thoughts that can appear and disappear. Although they can influence your mood and feelings, they do not represent your persona, and you have choices on how to deal with your mind swings.\nAlso, continue with daily mindfulness exercises. Their periodic practice may help you center yourself, ground your balance, and calm your mind. It can be very beneficial to improve your well-being.\nWe hope that this Caring program has inspired you to focus on being here and now, enjoy the moment, and let go of too many worries of the mind.\nMake sure to include some simple practices in your daily routine and always remember to stop, breath, and continue.\nWe wish you all the best in your journey ahead.",
+                "qid": 0,
+                "ncid": 7,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "toakd000149cnd5d08ql5p"
+            },
+            {
+                "id": 7,
+                "ty": 6,
+                "oend": 11,
+                "ti": "About Mindfulness",
+                "de": "Introduction to Mindfulness Practices",
+                "vurl": "ME01.mp3",
+                "bgvurl": "m_01-Eu_sou_instrumental.mp3",
+                "bgvdurl": "FlowerBreath.mp4",
+                "ciurl": "FlowerBreath-360p.jpg",
+                "qid": 0,
+                "ncid": 1,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "4sckg000149cndcg08xh6t"
+            },
+            {
+                "id": 8,
+                "ty": 6,
+                "oend": 11,
+                "ti": "The Art of Stopping",
+                "de": "With stopping, we can calm things down within and around us, becoming calm, clear sighted and solid, which can help us to confront our problems.\nThe objective of stopping is learning to live deeply starts with the art of stopping and looking inside.",
+                "vurl": "ME02.mp3",
+                "bgvurl": "beach_01.mp3",
+                "bgvdurl": "BeachWaves.mp4",
+                "ciurl": "BeachWaves-360p.jpg",
+                "qid": 0,
+                "ncid": 2,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "7udkm000149cnddm07yhqd"
+            },
+            {
+                "id": 9,
+                "ty": 6,
+                "oend": 11,
+                "ti": "Short Stop Pause",
+                "de": "Take a breath with awareness, observe, and proceed. This practice takes less than a minute, and it is a refreshing pause that you can build in your day at any time.",
+                "vurl": "ME03.mp3",
+                "bgvurl": "p_01-ArcPad.mp3",
+                "bgvdurl": "BlueMoonNight.mp4",
+                "ciurl": "BlueMoonNight-360p.jpg",
+                "qid": 0,
+                "ncid": 3,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "slekw000149cndew04ph4o"
+            },
+            {
+                "id": 10,
+                "ty": 6,
+                "oend": 11,
+                "ti": "Silent Stop",
+                "de": "Taking just 20 seconds, say to yourself: stop. Notice sensations on the body, sounds, emotions, thoughts, images, and words in your mind. Stop, take a breath, observe, and proceed.",
+                "vurl": "ME04.mp3",
+                "bgvurl": "Creek_01.mp3",
+                "bgvdurl": "CreekRackFocus.mp4",
+                "ciurl": "CreekRackFocus-360p.jpg",
+                "qid": 0,
+                "ncid": 4,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "yofk8000149cndg80bpc49"
+            },
+            {
+                "id": 11,
+                "ty": 6,
+                "oend": 11,
+                "ti": "Mini Break",
+                "de": "Find the feeling of breathing. Feel the sensations. Scan what you are seeing, listening, smelling, sensing, etc. Without thinking, practice the art of stopping and sensing the world within and around you.",
+                "vurl": "ME05.mp3",
+                "bgvurl": "p_04-PianoMajors.mp3",
+                "bgvdurl": "FallingLeaves.mp4",
+                "ciurl": "FallingLeaves-360p.jpg",
+                "qid": 0,
+                "ncid": 5,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "rzgkk000149cndhk06ycbg"
+            },
+            {
+                "id": 12,
+                "ty": 6,
+                "oend": 11,
+                "ti": "Awareness of Breathing",
+                "de": "Notice the way the breathing feels to you. Breathe naturally and bring awareness to the breathing in your body. Get to know your own breathing.",
+                "vurl": "ME06.mp3",
+                "bgvurl": "m_08-Equilibrando_trocas_afetivas_instrumental.mp3",
+                "bgvdurl": "FlowerOpen.mp4",
+                "ciurl": "FlowerOpen-360p.jpg",
+                "qid": 0,
+                "ncid": 6,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "6thkv000149cndiv07z9ns"
+            },
+            {
+                "id": 13,
+                "ty": 6,
+                "oend": 11,
+                "ti": "Breathing Practices",
+                "de": "This exercise covers five breathing practices. Please choose the ones that you like most and keep practicing every day.",
+                "vurl": "ME07.mp3",
+                "bgvurl": "p_06-BellField.mp3",
+                "bgvdurl": "GlassStars.mp4",
+                "ciurl": "GlassStars-360p.jpg",
+                "qid": 0,
+                "ncid": 7,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "nhikf000149cndkf0qy5no"
+            },
+            {
+                "id": 14,
+                "ty": 6,
+                "oend": 11,
+                "ti": "Self-Compassion",
+                "de": "This is practice than can offer comfort and release in the presence of challenging feelings and emotions.",
+                "vurl": "ME08.mp3",
+                "bgvurl": "p_08-QuietLight.mp3",
+                "bgvdurl": "GreenRain.mp4",
+                "ciurl": "GreenRain-360p.jpg",
+                "qid": 0,
+                "ncid": 8,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "ftjkn000149cndln07y9l4"
+            },
+            {
+                "id": 15,
+                "ty": 6,
+                "oend": 1,
+                "ti": "Brief Body Scan",
+                "de": "Find a comfortable location, rest, and follow this practice to release tension and stress.",
+                "vurl": "ME09.mp3",
+                "bgvurl": "p_09-SignsErode_with_Water.mp3",
+                "bgvdurl": "PondWater.mp4",
+                "ciurl": "PondWater-360p.jpg",
+                "qid": 0,
+                "ncid": 16,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "4tlkc000149cnedc09vx6s"
+            },
+            {
+                "id": 16,
+                "ty": 5,
+                "oend": 12,
+                "ti": "Begin your Day",
+                "de": "Have a plan for the journey.",
+                "bo": "<!DOCTYPE html><html><head><title>1 - Tips for Caregivers</title><!-- <link href='http://www.icarefamily.com/css/icarefamily_main.css' media='all' rel='stylesheet' /> <link href='http://www.icarefamily.com/css/text_n_colors.css' media='all' rel='stylesheet' /> <link href='http://www.icarefamily.com/css/multi_drop_menus_class.css' rel='stylesheet'> --> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body> <img src='http://www.icarefamily.com/image/Article-Tips.jpg' alt='Having a plan for getting through the day' width='127' height='100' align='left' /> <h2 align='center'>Initial Ideas</h2> <p>Caring for a person with dementia Alzheimerâ€™s disease or dementia (Alzheimerâ€™s disease or dementia) at home is a difficult task and can become overwhelming at times.</p> <p>Each day brings new challenges as the caregiver copes with changing levels of ability and new patterns of behavior. Research has shown that caregivers themselves often are at increased risk for depression and illness, especially if they do not receive adequate support from family, friends, and the community.</p> <p>One of the biggest struggles caregivers face is dealing with the difficult behaviors, such as agitation, repetition, suspicion, confusion, and not recognizing family. Basic activities of daily living, such as dressing, bathing, and eating, also become difficult to manage for both the person with Alzheimerâ€™s disease or dementia and the caregiver.</p> <p>Having a plan for getting through the day can help caregivers cope. Many caregivers have found it helpful to use strategies for dealing with difficult behaviors and stressful situations. Through trial and error you will find that some of the following tips work, while others do not. Each person with Alzheimerâ€™s disease or dementia is unique and will respond differently, and each person changes over the course of the disease. Do the best you can, and remind yourself to take breaks.</p> </body> </html>",
+                "qid": 0,
+                "ncid": 1,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            },
+            {
+                "id": 17,
+                "ty": 5,
+                "oend": 12,
+                "ti": "Think ahead",
+                "de": "Helpful suggestions",
+                "bo": "<!DOCTYPE html><html><head> <title>2 - Dealing with the Diagnosis</title> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body><img src='http://www.icarefamily.com/image/Article-Diagnosis.jpg' alt='Dealing with the Diagnosis' align='left' /><h2 align='center'>Get Prepared</h2><p>Finding out that a loved one has Alzheimerâ€™s disease or dementia can be stressful, frightening, and overwhelming. As you begin to take stock of the situation, here are some tips that may help:</p><ul type='disc'><li><span class='highlight_bullet'>Ask the doctor</span> any questions you have about Alzheimer&rsquo;s disease or dementia. Find out what treatments might work best to alleviate symptoms or address behavior problems. </li> <li><span class='highlight_bullet'>Contact organizations such as the Alzheimer&rsquo;s Association</span> and the Alzheimer&rsquo;s Disease Education and Referral (ADEAR) Center for more information about the disease, treatment options, and caregiving resources. Some community groups may offer classes to teach caregiving, problem-solving, and management skills. Find a support group where you can share your feelings and concerns. Members of support groups often have helpful ideas or know of useful resources based on their own experiences. Online support groups make it possible for caregivers to receive support without having to leave home. </li><li><span class='highlight_bullet'>Study your day</span> to see if you can develop a routine that makes things go more smoothly. If there are times of day when the person with Alzheimer&rsquo;s disease or dementia is less confused or more cooperative, plan your routine to make the most of those moments. Keep in mind that the way the person functions may change from day to day, so try to be flexible and adapt your routine as needed. </li><li><span class='highlight_bullet'>Consider using adult day care or respite services</span> to ease the day-to-day demands of caregiving. These services allow you to have a break while knowing that the person with Alzheimer&rsquo;s disease or dementia is being well cared for. </li><li><span class='highlight_bullet'>Begin to plan for the future</span>. This may include getting financial and legal documents in order, investigating long-term care options, and determining what services are covered by health insurance and Medicare.</li></ul><p>&nbsp;</p></body> </html>",
+                "qid": 0,
+                "ncid": 2,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            },
+            {
+                "id": 18,
+                "ty": 5,
+                "oend": 12,
+                "ti": "Have a word",
+                "de": "Communicating with a person who has Alzheimerâ€™s disease or dementia",
+                "bo": "<!DOCTYPE html><html><head> <title>3 - Communication</title> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body><img src='http://www.icarefamily.com/image/Video-Communication.jpg' alt='Communication' align='left' /><h2 align='center'>Communication</h2><p>Trying to communicate with a person who has Alzheimerâ€™s disease or dementia can be a challenge. </p><p>In the early stage of Alzheimer's, your loved one may start having difficulties to recall names of family/friends<!-- (<a href='#' id='show_example_1' class='example_high'>see example</a>)-->. Your patience may help the situation.</p><p>As the disease progresses, it may become more difficult to identify and recognize sounds, when an approach of accepting their perception may contribute to improve and even to foster a better outcome<!-- (<a href='#' id='show_example_2' class='example_high'>see example of alternative approach</a>)-->.</p><p>As both understanding and being understood may be difficult, you may want to try these strategies:</p><ul type='disc'><li><span class='highlight_bullet'>Choose simple words and short sentences</span> and use a gentle, calm tone of voice. </li><li><span class='highlight_bullet'>Avoid talking to the person with Alzheimer&rsquo;s disease or dementia like a baby</span> or talking about the person as if he or she weren&rsquo;t there. </li><li><span class='highlight_bullet'>Minimize distractions and noise</span>&mdash;such as the television or radio&mdash;to help the person focus on what you are saying. </li><li><span class='highlight_bullet'>Call the person by name</span>, making sure you have his or her attention before speaking. </li><li><span class='highlight_bullet'>Allow enough time for a response</span>. Be careful not to interrupt. </li><li>If the person with Alzheimer&rsquo;s disease or dementia is struggling to find a word or communicate a thought, <span class='highlight_bullet'>gently try to provide the word he or she is looking for</span>. </li><li><span class='highlight_bullet'>Try to frame questions and instructions in a positive way</span>.</li></ul><p align='center'>&nbsp;</p></body> </html>",
+                "qid": 0,
+                "ncid": 3,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            },
+            {
+                "id": 19,
+                "ty": 5,
+                "oend": 4,
+                "ti": "Bathing",
+                "de": "While some people with Alzheimerâ€™s disease or dementia donâ€™t mind bathing, for others it is a frightening, confusing experience.",
+                "bo": "<!DOCTYPE html><html><head> <title>4 - Bathing</title> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body><img src='http://www.icarefamily.com/image/Article-Bathing.jpg' alt='Bathing' align='left' /><h2 align='center'>Bathing</h2><p>While some people with Alzheimerâ€™s disease or dementia donâ€™t mind bathing, for others it is a frightening, confusing experience. Advance planning can help make bath time better for both of you.</p><ul type='disc'><li><span class='highlight_bullet'>Plan the bath or shower</span> for the time of day when the person is most calm and agreeable. Be consistent. Try to develop a routine. </li><li><span class='highlight_bullet'>Respect the fact that bathing is scary and uncomfortable</span> for some people with Alzheimer&rsquo;s disease or dementia. Be gentle and respectful. Be patient and calm. </li><li><span class='highlight_bullet'>Tell the person what you are going to do</span>, step by step, and allow him or her to do as much as possible. </li><li><span class='highlight_bullet'>Prepare in advance</span>. Make sure you have everything you need ready and in the bathroom before beginning. Draw the bath ahead of time. </li><li><span class='highlight_bullet'>Be sensitive to the temperature</span>. Warm up the room beforehand if necessary and keep extra towels and a robe nearby. Test the water temperature before beginning the bath or shower. </li><li><span class='highlight_bullet'>Minimize safety risks</span> by using a handheld showerhead, shower bench, grab bars, and nonskid bath mats. Never leave the person alone in the bath or shower. </li><li><span class='highlight_bullet'>Try a sponge bath</span>. Bathing may not be necessary every day. A sponge bath can be effective between showers or baths.</li></ul><p>&nbsp;</p></body> </html>",
+                "qid": 0,
+                "ncid": 5,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            },
+            {
+                "id": 20,
+                "ty": 5,
+                "oend": 12,
+                "ti": "Dressing",
+                "de": "For someone who has Alzheimerâ€™s disease or dementia, getting dressed presents a series of challenges.",
+                "bo": "<!DOCTYPE html><html><head> <title>5 - Dressing</title> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body><img src='http://www.icarefamily.com/image/Article-Dressing.jpg' alt='Dressing' align='left' /><h2 align='center'>Dressing</h2><p>For someone who has Alzheimerâ€™s disease or dementia, getting dressed presents a series of challenges: choosing what to wear, getting some clothes off and other clothes on, and struggling with buttons and zippers. Minimizing the challenges may make a difference.</p><ul type='disc'><li><span class='highlight_bullet'>Try to have the person get dressed at the same time</span> each day so he or she will come to expect it as part of the daily routine. </li><li><span class='highlight_bullet'>Encourage the person to dress himself or herself</span> to whatever degree possible. Plan to allow extra time so there is no pressure or rush. </li><li><span class='highlight_bullet'>Allow the person to choose from a limited selection</span> of outfits. If he or she has a favorite outfit, consider buying several identical sets. </li><li><span class='highlight_bullet'>Arrange the clothes in the order</span> they are to be put on to help the person move through the process. </li><li><span class='highlight_bullet'>Provide clear, step-by-step instructions</span> if the person needs prompting. </li><li><span class='highlight_bullet'>Choose clothing that is comfortable</span>, easy to get on and off, and easy to care for. Elastic waists and Velcro enclosures minimize struggles with buttons and zippers.</li></ul><p>&nbsp;</p></body> </html>",
+                "qid": 0,
+                "ncid": 6,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            },
+            {
+                "id": 21,
+                "ty": 5,
+                "oend": 12,
+                "ti": "Eating",
+                "de": "Some people with Alzheimerâ€™s disease or dementia want to eat all the time, while others have to be encouraged to maintain a good diet.",
+                "bo": "<!DOCTYPE html><html><head> <title>6 - Eating</title> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body><img src='http://www.icarefamily.com/image/Article-Eating.jpg' alt='Eating' align='left' /><h2 align='center'>Eating</h2><p>Eating can be a challenge. Some people with Alzheimerâ€™s disease or dementia want to eat all the time, while others have to be encouraged to maintain a good diet.</p><ul type='disc'><li><span class='highlight_bullet'>View mealtimes as opportunities for social interaction</span> and success for the person with Alzheimer&rsquo;s disease or dementia. Try to be patient and avoid rushing, and be sensitive to confusion and anxiety. </li><li><span class='highlight_bullet'>Aim for a quiet, calm, reassuring mealtime atmosphere</span> by limiting noise and other distractions. </li><li><span class='highlight_bullet'>Maintain familiar mealtime routines</span>, but adapt to the person&rsquo;s changing needs. </li><li><span class='highlight_bullet'>Give the person food choices, but limit the number</span> of choices. Try to offer appealing foods that have familiar flavors, varied textures, and different colors. </li><li><span class='highlight_bullet'>Serve small portions or several small meals</span> throughout the day. Make healthy snacks, finger foods, and shakes available. In the earlier stages of dementia, be aware of the possibility of overeating. </li><li><span class='highlight_bullet'>Choose dishes and eating tools that promote independence</span>. If the person has trouble using utensils, use a bowl instead of a plate, or offer utensils with large or built-up handles. Use straws or cups with lids to make drinking easier. </li><li><span class='highlight_bullet'>Encourage the person to drink plenty of fluids</span> throughout the day to avoid dehydration. </li><li>As the disease progresses, <span class='highlight_bullet'>be aware of the increased risk of choking</span> because of chewing and swallowing problems.</li><li><span class='highlight_bullet'>Maintain routine dental  checkups</span> and daily oral health care to keep the mouth and teeth healthy. </li></ul><p>&nbsp;</p></body> </html>",
+                "qid": 0,
+                "ncid": 7,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            },
+            {
+                "id": 22,
+                "ty": 5,
+                "oend": 12,
+                "ti": "Activities",
+                "de": "Finding activities for a person with dementia can be difficult.",
+                "bo": "<!DOCTYPE html><html><head> <title>7 - Activities</title> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body><img src='http://www.icarefamily.com/image/Article-Activities.jpg' alt='Activities' align='left' /><h2 align='center'>Activities</h2><p>What to do all day?  Finding activities that the person with Alzheimer&rsquo;s disease or dementia can do and is interested in can be a challenge. Building on current skills generally  works better than trying to teach something new.</p><ul type='disc'><li><span class='highlight_bullet'>Don&rsquo;t expect too much</span>. Simple activities often are best, especially when they use current abilities.</li><li><span class='highlight_bullet'>Help the person get started on an activity</span>. Break the activity down into small steps and praise the person for each step he or she completes.</li><li><span class='info_container'>Watch for signs of agitation or frustration</span> with an activity. Gently help or distract the person to something else.</li><li><span class='highlight_bullet'>Incorporate activities the person seems to enjoy</span> into your daily routine and try to do them at a similar time each day. </li><li><span class='highlight_bullet'>Try to include the person with Alzheimer&rsquo;s disease or dementia in the entire activity process</span>. For instance, at mealtimes, encourage the person to help prepare the food, set the table, pull out the chairs, or put away the dishes. This can help maintain functional skills, enhance feelings of personal control, and make good use of time.</li><li><span class='highlight_bullet'>Take advantage of adult day services</span>, which provide various activities for the person with Alzheimer&rsquo;s disease or dementia, as well as an opportunity for caregivers to gain temporary relief from tasks associated with caregiving. Transportation and meals often are provided.</li></ul><p>&nbsp;</p></body> </html>",
+                "qid": 0,
+                "ncid": 8,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            },
+            {
+                "id": 23,
+                "ty": 5,
+                "oend": 12,
+                "ti": "Exercise",
+                "de": "Incorporating exercise into the daily routine has benefits for both the person with Alzheimerâ€™s disease or dementia and the caregiver.",
+                "bo": "<!DOCTYPE html><html><head> <title>8 - Exercise</title> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body><img src='http://www.icarefamily.com/image/Article-Excersice.jpg' alt='Exercise' align='left' /><h2 align='center'>Exercise</h2><p>Incorporating exercise into the daily routine has benefits for both the person with Alzheimerâ€™s disease or dementia and the caregiver. Not only can it improve health, but it also can provide a meaningful activity for both of you to share.</p><ul type='disc'><li><span class='highlight_bullet'>Think about what kind of physical activities you both enjoy</span>, perhaps walking, swimming, tennis, dancing, or gardening. Determine the time of day and place where this type of activity would work best. </li><li><span class='highlight_bullet'>Be realistic in your expectations</span>. Build slowly, perhaps just starting with a short walk around the yard, for example, before progressing to a walk around the block. </li><li><span class='highlight_bullet'>Be aware of any discomfort or signs of overexertion</span>. Talk to the person&rsquo;s doctor if this happens. </li><li><span class='highlight_bullet'>Allow as much independence as possible</span>, even if it means a less-than-perfect garden or a scoreless tennis match. </li><li><span class='highlight_bullet'>See what kinds of exercise programs are available</span> in your area. Senior centers may have group programs for people who enjoy exercising with others. Local malls often have walking clubs and provide a place to exercise when the weather is bad. </li><li><span class='highlight_bullet'>Encourage physical activities</span>. Spend time outside when the weather permits. Exercise often helps everyone sleep better.</li></ul><p>&nbsp;</p></body> </html>",
+                "qid": 0,
+                "ncid": 9,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            },
+            {
+                "id": 24,
+                "ty": 5,
+                "oend": 12,
+                "ti": "Incontinence",
+                "de": "As the disease progresses, many people with Alzheimerâ€™s disease or dementia begin to experience incontinence.",
+                "bo": "<!DOCTYPE html><html><head> <title>9 - Incontinence</title> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body><img src='http://www.icarefamily.com/image/Article-Incontinence.jpg' alt='Incontinence' align='left' /><h2 align='center'>Incontinence</h2><p>As the disease progresses, many people with Alzheimerâ€™s disease or dementia begin to experience incontinence, or the inability to control their bladder and/or bowels. Incontinence can be upsetting to the person and difficult for the caregiver. Sometimes incontinence is due to physical illness, so be sure to discuss it with the personâ€™s doctor</p><ul type='disc'><li>Have a routine for taking the person to the bathroom and stick to it as closely as possible. For example, take the person to the bathroom every 3 hours or so during the day. Don&rsquo;t wait for the person to ask. </li><li>Watch for signs that the person may have to go to the bathroom, such as restlessness or pulling at clothes. Respond quickly. </li><li>Be understanding when accidents occur. Stay calm and reassure the person if he or she is upset. Try to keep track of when accidents happen to help plan ways to avoid them. </li><li>To help prevent nighttime accidents, limit certain types of fluids&mdash;such as those with caffeine&mdash;in the evening. </li><li>If you are going to be out with the person, plan ahead. Know where restrooms are located, and have the person wear simple, easy-to-remove clothing. Take an extra set of clothing along in case of an accident.</li></ul><p>&nbsp;</p></body> </html>",
+                "qid": 0,
+                "ncid": 10,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            },
+            {
+                "id": 25,
+                "ty": 5,
+                "oend": 12,
+                "ti": "Sleep Problems",
+                "de": "For the exhausted caregiver, sleep canâ€™t come too soon.",
+                "bo": "<!DOCTYPE html><html><head> <title>10 - Sleep Problems</title> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body><img src='http://www.icarefamily.com/image/Article-Sleep.jpg' alt='Sleep Problems' align='left' /><h2 align='center'>Sleep Problems</h2><p>For the exhausted caregiver, sleep canâ€™t come too soon. For many people with Alzheimerâ€™s disease or dementia, however, the approach of nighttime may be a difficult time. Many people with Alzheimerâ€™s disease or dementia become restless, agitated, and irritable around dinnertime, often referred to as â€œsundowningâ€ syndrome. Getting the person to go to bed and stay there may require some advance planning.</p><ul type='disc'><li>Encourage exercise during the day and limit daytime napping, but make sure that the person gets adequate rest during the day because fatigue can increase the likelihood of late afternoon restlessness. </li><li>Try to schedule more physically demanding activities earlier in the day. For example, bathing could be earlier in the morning, or large family meals could be at midday. </li><li>Set a quiet, peaceful tone in the evening to encourage sleep. Keep the lights dim, eliminate loud noises, even play soothing music if the person seems to enjoy it. </li><li>Try to keep bedtime at a similar time each evening. Developing a bedtime routine may help. </li><li>Restrict access to caffeine late in the day. </li><li>Use night-lights in the bedroom, hall, and bathroom if the darkness is frightening or disorienting. </li></ul><p>&nbsp;</p></body> </html>",
+                "qid": 0,
+                "ncid": 11,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            },
+            {
+                "id": 26,
+                "ty": 5,
+                "oend": 12,
+                "ti": "Hallucinations",
+                "de": "As the disease progresses, a person with Alzheimerâ€™s disease or dementia may experience hallucinations",
+                "bo": "<!DOCTYPE html><html><head> <title>11 - Hallucinations</title> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body><img src='http://www.icarefamily.com/image/Article-Hallucination.jpg' alt='Hallucinations' align='left' /><h2 align='center'>Hallucinations</h2><p>As the disease progresses, a person with Alzheimerâ€™s disease or dementia may experience hallucinations and/or delusions. Hallucinations are when the person sees, hears, smells, tastes, or feels something that is not there. Delusions are false beliefs from which the person cannot be dissuaded.</p><ul type='disc'><li>Sometimes hallucinations and delusions are signs of physical illness. Keep track of what the person is experiencing and discuss it with the doctor. </li><li>Avoid arguing with the person about what he or she sees or hears. Try to respond to the feelings he or she is expressing, and provide reassurance and comfort. </li><li>Try to distract the person to another topic or activity. Sometimes moving to another room or going outside for a walk may help. </li><li>Turn off the television set when violent or disturbing programs are on. The person with Alzheimer&rsquo;s disease or dementia may not be able to distinguish television programming from reality. </li><li>Make sure the person is safe and does not have access to anything he or she could use to harm anyone.</li></ul><p>&nbsp;</p></body> </html>",
+                "qid": 0,
+                "ncid": 12,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            },
+            {
+                "id": 27,
+                "ty": 5,
+                "oend": 12,
+                "ti": "Agitation",
+                "de": "A person with dementia may feel agitated at times. He or she may be restless and move or pace around. ",
+                "bo": "<!DOCTYPE html><html><head><meta charset='utf-8'> <title>12 - Agitation</title> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body><img src='http://www.icarefamily.com/image/Video-Problem.jpg' alt='Communication' align='left' /><h2 align='center'>Agitation</h2><p>A person with dementia may feel anxious or agitated at times. He or she may be restless and move or pace around. The person may become upset in certain places or fixated on specific details, or become very dependent on a certain caregiver for attention.</p><p>Some ideas for dealing with this situation:</p><ul type='disc'><li><span class='highlight_bullet'>Try to find out what may be causing the anxiety.</span> You can learn to look for early signs of agitation or anxiety and deal with the trigger before the behavior starts.</li><li> Sometimes this behavior is related to the <span class='highlight_bullet'>personâ€™s diet</span>. Limit caffeine and sugar intake and junk foods.</li><li><span class='highlight_bullet'>Use calming tone and words.</span> Let the individual know that you can help. For example, you can say, 'May I help you?' 'Youâ€™re safe here.' 'I amm sorry that you are upset.'</li><li><span class='highlight_bullet'>Engage the person in activities.</span> Try using art, music or other activities to help the person relax. </li><li><span class='highlight_bullet'>Modify or leave the current environment.</span>. You may need to close the windows or adjust the lighting, or move to a different location.</li><li><span class='highlight_bullet'>The person may be feeling bored.</span> He or she may be looking for something to do. Take a walk, or go for a car ride. Find a pleasant activity for the person.</li><li>Be mindful if <span class='highlight_bullet'>your own stress</span> and worries may be affecting the person you care for.</li></ul><p align='center'>&nbsp;</p></body> </html>",
+                "qid": 0,
+                "ncid": 13,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            },
+            {
+                "id": 28,
+                "ty": 5,
+                "oend": 12,
+                "ti": "Repetition",
+                "de": "A person with dementia may do or say something over and over again",
+                "bo": "<!DOCTYPE html><html><head><meta charset='utf-8'> <title>13 - Repetition</title> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body><img src='http://www.icarefamily.com/image/lm_repetition.jpg' alt='Communication' align='left' /><h2 align='center'>Repetition</h2><p>A person with dementia may do or say something over and over again â€“ like repeating a word, question or activity. In most cases, he or she is probably seeking security and familiarity.</p><p>The person may also undo what has just been finished. These actions are rarely harmful to the person with dementia but can be stressful for the caregiver.</p><p>These are some practical tips:</p><ul type='disc'><li>Try to find out <span class='highlight_bullet'>if there is a specific cause or trigger</span> for this repeating behavior.</li><li><span class='highlight_bullet'>Try to stay calm and patient</span>. Reassure the person calmly, and sometimes he or she will respond positively to a gentle touch. <br></li><li><span class='highlight_bullet'>Focus on the emotion behind the behavior</span>.Instead of reacting to what the person is doing, try think about how he or she is feeling.</li><li><span class='highlight_bullet'>Engage him or her in an activity</span>, or turn the action or behavior into one. For example, if the person keeps rubbing his or her hand across the table, hand them a cloth and ask for help with wiping. Once the person has something to do, they will less likely to be bored.<br></li><li>If the person asks the same questions over and over again, use <span class='highlight_bullet'>memory aids</span>, such as<span class='highlight_bullet'> leaving notes, using clocks, calendars or photographs</span>, if these items are still meaningful to the individual.</li><li><span class='highlight_bullet'>Find ways to work with the behavior</span>. Let it be if it doesnâ€™t harm him or herself or others. </li></ul><p align='center'>&nbsp;</p></body> </html>",
+                "qid": 0,
+                "ncid": 14,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            },
+            {
+                "id": 29,
+                "ty": 5,
+                "oend": 12,
+                "ti": "Suspicion",
+                "de": "Memory loss and confusion may cause the person with dementia to become suspicious of those around them.",
+                "bo": "<!DOCTYPE html><html><head><meta charset='utf-8'> <title>14 - Suspicion</title> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body><img src='http://www.icarefamily.com/image/lm_suspicion2.jpg' alt='Communication' align='left' /><h2 align='center'>Suspicion</h2><p>Memory loss and confusion may cause the person with dementia to perceive things in new, unusual ways. </p><p>Individuals may become suspicious of those around them. They may accuse others of theft or other improper behavior. Misinterpreting things that he or she sees and hears may also happen. </p><p>You may want to try these strategies:</p><ul><li><strong>Arguing or trying to  convince</strong> the person typically won&rsquo;t help and will likely make  things worse. Most importantly, don&rsquo;t take offense. Listen to what is troubling  the person, and try to understand their reality and ensure that he or she is safe. </li><li><strong>Share your thoughts</strong> with them and offer a simple answer. Lengthy reasoning will only overwhelm  the person.</li><li><strong>Try to distract</strong> the person to another topic or activity. For example, moving to another  room or doing some chores.</li><li><strong>Gently touch</strong> or hug to comfort the person.</li><li>Search for missing things to <strong>distract  the person</strong>; then talk about what you found. For example, talk about a  photograph or keepsake.</li><li><strong>I</strong>f  the person is often looking for a specific item, you can try <strong>having several of these items available</strong>. </li><li>You can help the person search for the missing item, but while doing so,  you can still try to <strong>distract the person by talking about what you found. </strong>For example, show them the photograph that  you found and have a conversation with them about it.</li></ul><p>&nbsp;</p><p align='center'>&nbsp;</p></body> </html>",
+                "qid": 0,
+                "ncid": 15,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            },
+            {
+                "id": 30,
+                "ty": 5,
+                "oend": 12,
+                "ti": "Confusion",
+                "de": "Confusion is a very common  problem for people with dementia.",
+                "bo": "<!DOCTYPE html><html><head><meta charset='utf-8'> <title>15 - Confusion</title> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body><img src='http://www.icarefamily.com/image/lm_confusion.jpg' alt='Communication' align='left' /><h2 align='center'>Confusion</h2><p>Confusion is a very common  problem for people with dementia. For example, a person with  Alzheimer&rsquo;s Disease may not recognize familiar places, utensils, or simple objects. </p><p>The main underlying cause of confusion is the progressive decline of the brain cells. As the disease progresses, the person with dementia may start having more difficulties to understand where they are and what they are supposed to do.</p><p>Thes are some suggestions on how to respond:</p><ul type='disc'><li><strong>Choose a simple explanation</strong>. Don't argue and don't try to convince. Your patience may help the situation.</li><li><strong>Look for a reason behind the behavior</strong>. Sometimes insecurity may be compensated with understanding and reassurance.</li>  <li><strong>A gentle approach</strong> is recommended. People with dementia live in a different world. Look for a reason behind the behavior. </li><li><strong>Redirecting the person to a different actitivy</strong> may also help in some situations.</li><li><strong>By taking a deep breath</strong> and re-analyzing the situation, you may be able to deal a difficult behavior with less stress. </li><li><strong>Look from a different perspective</strong>. Try to re-evaluate the situation from a more positive perspective, and from there, you may be better prepared to move forward with caregiving.</li>  </ul><p>&nbsp;</p><p align='center'>&nbsp;</p></body> </html>",
+                "qid": 0,
+                "ncid": 16,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            },
+            {
+                "id": 31,
+                "ty": 5,
+                "oend": 12,
+                "ti": "Not recognizing Family and Friends",
+                "de": "People with dementia  may not recognize familiar people, friends or even close family members. ",
+                "bo": "<!DOCTYPE html><html><head><meta charset='utf-8'> <title>16 - Not Recognizing Family And Friends</title> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body><img src='http://www.icarefamily.com/image/lm_not_recognizing.jpg' alt='Communication' align='left' /><h2 align='center'>Not Recognizing Family And Friends</h2><p>People with dementia  may not recognize familiar people, friends or even close family members. They may forget  relationships, call family members by other names or be unable to recognize their  own home.</p><p>These situations can be  extremely difficult for caregivers and require much patience and understanding.</p><p>As reponding to this behavior may be difficult, you may want to try these strategies:</p><ul><li>Being called by a different name or not being recognized is painful, but  please try to <strong>remain calm</strong>.</li></ul><ul><li>Don&rsquo;t overwhelm the person with lengthy statements and reasons. Sometimes,  explanations may sound like scolding. So, try to <strong>clarify with a firm and simple suggestion</strong>, such as, &ldquo;I think she&rsquo;s  your daughter Nancy.&rdquo;</li><li><strong>Photographs, photo albums</strong> and other  items can help remind the person of important relationships and places.</li><li>Sometimes, the person with dementia is unsecure. <strong>Being kind and reassuring</strong> the person may provide comfort and improve the mood.</li><li><strong>A positive approach</strong> with eye contact and gentle touch (if possible) may help to alleviate the situation. </li></ul><ul><li>Most importantly, try <strong>not to take it  personally</strong>. Remember, dementia causes your loved one to forget, but your  love, support and understanding for them will not cease.</li></ul><p>&nbsp;</p><p align='center'>&nbsp;</p></body> </html>",
+                "qid": 0,
+                "ncid": 17,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            },
+            {
+                "id": 32,
+                "ty": 5,
+                "oend": 1,
+                "ti": "Other Resources",
+                "de": "Other resources to learn more about dementia and caregiving",
+                "bo": "<!DOCTYPE html><html><head><meta charset='utf-8'> <title>17 - Other Resources</title> <style> body { font: 1em Verdana,Arial,Helvetica,sans-serif; } * { padding: 0; } img { border: 0 none; margin-right: 15px; text-align: left; } h1, h2, h3, h4, h5, h6, ul, ol, dl { font-family: 'Trebuchet MS',Verdana,serif; } h2 { font-size: 1.375em; line-height: 1.25; color: #375ca6; margin: 0; padding: 10px 0; text-align: left; } p { font-size: 1em; line-height: 1.25; margin-bottom: 0.75em; color: #000000; text-align: left; } ul, dl, ol { font-size: 1em; line-height: 1.6; color: #375ca6; margin: 0; padding-left: 15px; text-align: left; } li { color: #000000; line-height: normal; margin: 0 0 5px; padding: 0; } .highlight_bullet { text-decoration: underline; } </style> </head> <body><img src='http://www.icarefamily.com/image/lm_other_resources.jpg' alt='Communication' align='left' /><h2 align='center'>Other Resources</h2><p>You may want to look at these resources to learn more about Alzheimer's Disease, related dementia, and caregiving:</p><p>&nbsp;</p><p><strong>Alzheimer's Association</strong>: <a href='https://www.alz.org/'>www.alz.org</a></p><p>&nbsp;</p><p><strong>Alzheimers.gov</strong>: <a href='https://www.alzheimers.gov/'>www.alzheimers.gov</a></p><p>&nbsp;</p><p><strong>NIH ADEAR</strong>: <a href='https://www.nia.nih.gov/health/alzheimers'>www.nia.nih.gov/health/alzheimers</a></p><p>&nbsp;</p><p><strong>Family Caregiver Alliance</strong>:<a href='https://www.caregiver.org/'> www.caregiver.org</a></p><p>&nbsp;</p><p align='center'>&nbsp;</p></body> </html>",
+                "qid": 0,
+                "ncid": 0,
+                "ncfa": {
+                    "0": {
+                        "cid": 1,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "1": {
+                        "cid": 2,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "2": {
+                        "cid": 3,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    },
+                    "3": {
+                        "cid": 4,
+                        "rid": "6ux9e000147vtode0jvjrv"
+                    }
+                },
+                "rid": "9kbkl000149cnd8l05qo75"
+            }
+        ]
+    },
+    "que": [
+        {
+            "id": 0,
+            "qu": "What do you say when person with dementia wants to home and he/she is at home",
+            "ans": [
+                "You live here.",
+                "You question the person.",
+                "You don't leave somewhere else.",
+                "You start saying that 'I understand that you don't feel well...'"
+            ],
+            "rid": "6ux9e000147vtode0jvjrv"
+        },
+        {
+            "id": 1,
+            "qu": "What is correct about relaxation exercises?",
+            "ans": [
+                "Deep breathing cannot be done when standing or lying down.",
+                "Visualization can be done at anytime and anywhere.",
+                "In general, caregivers don't need relaxation exercises.",
+                "Caregivers may benefit from relaxation exercises"
+            ],
+            "rid": "6ux9e000147vtode0jvjrv"
+        },
+        {
+            "id": 2,
+            "qu": "What statement is NOT correct?",
+            "ans": [
+                "Dementia is associated with more than 50 different disorders.",
+                "There is no known cure for dementia.",
+                "Dementia is a normal part of aging.",
+                "Dementia may affect several areas of a person's life, such as concentration, thinking, judgment, memory, behavior, and language"
+            ],
+            "rid": "6ux9e000147vtode0jvjrv"
+        },
+        {
+            "id": 3,
+            "qu": "What is a good strategy for dealing with stress?",
+            "ans": [
+                "Forget about watching what you eat, and don't worry about exercising.",
+                "Take more caffeine intake.",
+                "Don't maintain a sense of humor.",
+                "Try to be more organized and manage your time better."
+            ],
+            "rid": "6ux9e000147vtode0jvjrv"
+        },
+        {
+            "id": 4,
+            "qu": "What do you think about stress?",
+            "ans": [
+                "When something negative happens, an unhelpful or negative thought can come to the mind, making a person feel worse and worse, which may lead to stressful situations.",
+                "Stress is not related the way you think, but only to difficult situations.",
+                "Once a person reaches a stage of frustration due to stress, it becomes easy to slow down these reactions and return to a calmer state of being.",
+                "In general, our body doesn't have warning signs about stress"
+            ],
+            "rid": "6ux9e000147vtode0jvjrv"
+        },
+        {
+            "id": 5,
+            "qu": "What you can do to help your loved one in communicating his/her needs?",
+            "ans": [
+                "\"Correct\" your loved one if you can understand the gist of what he/she is saying.",
+                "Don't use \"yes\" or \"no\" questions.",
+                "Respond in a comforting way to the feelings rather than the words.",
+                "Don't turn his or her attention to something else."
+            ],
+            "rid": "6ux9e000147vtode0jvjrv"
+        },
+        {
+            "id": 6,
+            "qu": "If you need to get help from family members to help take care of your loved one with dementia, what would you consider when communicating with them?",
+            "ans": [
+                "Consider what you want or need and what your feelings about the situation are.",
+                "Don't use \"I statements\".",
+                "Avoid detailed information, as they may be annoying.",
+                "Make few attempts."
+            ],
+            "rid": "6ux9e000147vtode0jvjrv"
+        },
+        {
+            "id": 7,
+            "qu": "In the middle stage of dementia, a person with dementia may:",
+            "ans": [
+                "Wander or pace.",
+                "Have difficulty recognizing friends and family.",
+                "Become suspicious of others or see and hear things that are not there.",
+                "All of the above (wander, not recognize family, and become suspicious)."
+            ],
+            "rid": "6ux9e000147vtode0jvjrv"
+        }
+    ],
+    "tips": {
+        "its": [
+            {
+                "id": 0,
+                "nid": 0,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 1,
+                "nid": 1,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 2,
+                "nid": 2,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 3,
+                "nid": 3,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 4,
+                "nid": 4,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 5,
+                "nid": 5,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 6,
+                "nid": 6,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 7,
+                "nid": 7,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 8,
+                "nid": 8,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 9,
+                "nid": 9,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 10,
+                "nid": 10,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 11,
+                "nid": 11,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 12,
+                "nid": 12,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 13,
+                "nid": 13,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 14,
+                "nid": 14,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 15,
+                "nid": 15,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 16,
+                "nid": 16,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 17,
+                "nid": 17,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 18,
+                "nid": 18,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 19,
+                "nid": 19,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 20,
+                "nid": 20,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 21,
+                "nid": 21,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 22,
+                "nid": 22,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 23,
+                "nid": 23,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 24,
+                "nid": 24,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 25,
+                "nid": 25,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 26,
+                "nid": 26,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 27,
+                "nid": 27,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 28,
+                "nid": 28,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 29,
+                "nid": 29,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 30,
+                "nid": 30,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 31,
+                "nid": 31,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 32,
+                "nid": 32,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 33,
+                "nid": 33,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 34,
+                "nid": 34,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 35,
+                "nid": 35,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 36,
+                "nid": 36,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 37,
+                "nid": 37,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 38,
+                "nid": 38,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 39,
+                "nid": 39,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 40,
+                "nid": 40,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 41,
+                "nid": 41,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 42,
+                "nid": 42,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 43,
+                "nid": 43,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 44,
+                "nid": 44,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 45,
+                "nid": 45,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 46,
+                "nid": 46,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 47,
+                "nid": 47,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 48,
+                "nid": 48,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 49,
+                "nid": 49,
+                "rid": "r8zj5000149cncn50z66fb"
+            },
+            {
+                "id": 50,
+                "nid": 50,
+                "rid": "r8zj5000149cncn50z66fb"
+            }
+        ]
+    },
+    "not": {
+        "its": [
+            {
+                "id": 0,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Take a look at Caring Mind.",
+                "de": "Learn how to improve your mindset, especially for caregivers of people with dementia."
+            },
+            {
+                "id": 1,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Stop Practice.",
+                "de": "Taking just 20 seconds, say to yourself: stop. Take a breath, observe, and proceed."
+            },
+            {
+                "id": 2,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Caring Mind suggestion.",
+                "de": "Tune your mind to the present."
+            },
+            {
+                "id": 3,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Stopping is important.",
+                "de": "Pause, take your time, and breathe. You're doing great!"
+            },
+            {
+                "id": 4,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Time for yourself.",
+                "de": "Let's do your Daily Relaxation Exercise."
+            },
+            {
+                "id": 5,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Caring Mind tip.",
+                "de": "Try to cultivate helpful thinking."
+            },
+            {
+                "id": 6,
+                "tar": 1,
+                "tid": 0,
+                "ti": "Get Prepared.",
+                "de": "If you learn and get prepared, you have a higher chance to reduce your stress during dementia caregiving."
+            },
+            {
+                "id": 7,
+                "tar": 2,
+                "tid": 0,
+                "ti": "A gentle pause.",
+                "de": "Stop for 15 seconds and notice your own breathing. Check other exercises."
+            },
+            {
+                "id": 8,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Enjoy the moment!",
+                "de": "Take time for yourself; to feel, notice, smell, and absorb."
+            },
+            {
+                "id": 9,
+                "tar": 1,
+                "tid": 0,
+                "ti": "Learn and practice new skills.",
+                "de": "Keep up your learning to improve your mood!"
+            },
+            {
+                "id": 10,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Caring Mind Positive Thinking.",
+                "de": "Look from a different perspective and consider partial success."
+            },
+            {
+                "id": 11,
+                "tar": 2,
+                "tid": 0,
+                "ti": "A kind break.",
+                "de": "A short break may nurish you. Enjoy it!"
+            },
+            {
+                "id": 12,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Turn off the Autopilot.",
+                "de": "Look at the bright side and cherish the good moments with awareness."
+            },
+            {
+                "id": 13,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Your Caring Mind.",
+                "de": "We invite you to practice your favorite Caring Mind exercise :)"
+            },
+            {
+                "id": 14,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Take good care of yourself.",
+                "de": "Taking care of yourself is one of the most important things you can do to improve your well-being and be prepared for dementia caregiving."
+            },
+            {
+                "id": 15,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Take a Breath!",
+                "de": "A refreshing pause to breathe, observe, and proceed!"
+            },
+            {
+                "id": 16,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Continue to Calm your Mind.",
+                "de": "It is time for a Caring Mind break."
+            },
+            {
+                "id": 17,
+                "tar": 2,
+                "tid": 0,
+                "ti": "A Moment for you.",
+                "de": "Practice the art of stopping, look inside and take a breath :)"
+            },
+            {
+                "id": 18,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Caring Mind idea.",
+                "de": "Planning tools and memory aids might help."
+            },
+            {
+                "id": 19,
+                "tar": 2,
+                "tid": 0,
+                "ti": "A Mini Break :)",
+                "de": "Time for a Caring Mind exercise!"
+            },
+            {
+                "id": 20,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Tip: Think in a Positive Constructive Way.",
+                "de": "Look at a different point of view, take action and ask others, give yourself a pep-talk, accept and be open to changing circumstances, and enter in a problem-solving mode."
+            },
+            {
+                "id": 21,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Follow the Breath.",
+                "de": "Let's do a gentle breath practice, at any time, and see what happens."
+            },
+            {
+                "id": 22,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Caring for those who once cared for us",
+                "de": "Caregiving can be a very rewarding experience, although it can be challenging and demanding at times. "
+            },
+            {
+                "id": 23,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Breathe and learn to cope",
+                "de": "Show self-affection and hug yourself with a Caring Mind practice!"
+            },
+            {
+                "id": 24,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Time for your daily practice.",
+                "de": "Take a moment to notice feelings, emotions, and surroundings. Absorb and then proceed."
+            },
+            {
+                "id": 25,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Caring Mind question",
+                "de": "What can you do the improve your mood?"
+            },
+            {
+                "id": 26,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Tip: Understand What Is Happening",
+                "de": "Consider issues that may be distressing for the person with dementia."
+            },
+            {
+                "id": 27,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Your own caring moment",
+                "de": "Practice conscious breathing, find your own pace, and your own peace of mind."
+            },
+            {
+                "id": 28,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Caring Mind Self Talk",
+                "de": "\"I am trying my best and working to provide the best care I can\""
+            },
+            {
+                "id": 29,
+                "tar": 1,
+                "tid": 0,
+                "ti": "Tip: Reduce Stressful Moments",
+                "de": "Gain knowledge about dementia, accept good and bad days, set priorities, avoid arguing, follow relaxation exercises, get support, ask help from family, and considering your own needs."
+            },
+            {
+                "id": 30,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Caring Mind idea",
+                "de": "Consider unpleasant feelings as roodblocks, move beyond them, and continue your journey."
+            },
+            {
+                "id": 31,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Caring Mind Time",
+                "de": "Practice one of your favorite relaxation exercises"
+            },
+            {
+                "id": 32,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Brief Explanation, Stay Calm, and Partial Success",
+                "de": "Try not to take it personally, stay calm, think about how to adjust to the moment, and remind yourself that you are doing the best that you can."
+            },
+            {
+                "id": 33,
+                "tar": 0,
+                "tid": 0,
+                "ti": "The Light of Kindness",
+                "de": "Kindness can transform a dark night into a moment of light. Be kind to yourself as well and may sunshine show up in your path."
+            },
+            {
+                "id": 34,
+                "tar": 1,
+                "tid": 0,
+                "ti": "Time for Caring Mind!",
+                "de": "Learn more about how to cope with difficult situations."
+            },
+            {
+                "id": 35,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Caring Mind idea",
+                "de": "Try not to take it personally."
+            },
+            {
+                "id": 36,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Stop and look deep inside",
+                "de": "Take care of yourself and smile again."
+            },
+            {
+                "id": 37,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Simple Answers, Redirection, and Don't Take It Personally",
+                "de": "Try to provide simple answers, redirect attention, and be patient. Don't take things personally. Remember that it is the disease (dementia) causing difficult situations."
+            },
+            {
+                "id": 38,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Nice job! Keep going!",
+                "de": "Hug yourself. You are doing an amazing job providing care for your loved one. It may not be easy at times, but you are doing the best that you can!"
+            },
+            {
+                "id": 39,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Reduce stress with Caring Mind!",
+                "de": "Learn coping skills on how to alleviate stress."
+            },
+            {
+                "id": 40,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Set your mind in a constructive way",
+                "de": "Use your thoughts in constructive ways to alleviate stress and improve the quality of life."
+            },
+            {
+                "id": 41,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Caring Mind tip",
+                "de": "Calm things down around us and get a clear mind."
+            },
+            {
+                "id": 42,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Our compassion and love in Caregiving",
+                "de": "A smile, a kind word, a gentle touch, a warm hug, or a simple act may bring comfort and hope to those who depend on us."
+            },
+            {
+                "id": 43,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Time for a new Caring Mind skill and practice. ",
+                "de": "Center yourself to here and now to touch the wonders of life."
+            },
+            {
+                "id": 44,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Awareness and sensations",
+                "de": "Let's do some breathing exercises with gentle movements."
+            },
+            {
+                "id": 45,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Caring Mind suggestion",
+                "de": "Stay calm and patient to solve a situation."
+            },
+            {
+                "id": 46,
+                "tar": 0,
+                "tid": 0,
+                "ti": "Take in the Good",
+                "de": "What made that moment pleasant? Let's take in the good."
+            },
+            {
+                "id": 47,
+                "tar": 2,
+                "tid": 0,
+                "ti": "Reduce your stress",
+                "de": "Follow your favorite Relax practices daily to alleviate your stress and maintain a healthy mind and body."
+            }
+        ]
+    },
+    "faq": {
+        "qts": [
+            {
+                "q": "Welcome to Caring Mind!",
+                "a": "Caring Mind has been designed to help caregivers of someone with dementia to enhance their mindset, learn helpful skills, practice relaxation exercises, and get prepared to deal with difficult situations.\n\nOur goal is to develop a new tool to help families to deal with challenging situations, reduce stress, and improve quality of life.\n\nThe educational curriculum of Caring Reponse is based on research by Photozig, Inc. and Stanford University, namely iCare for family caregivers and Coping with Caregiving, which was developed by Dr. Gallagher-Thompson, Dr. Thompson and associates.\n\nThere are also practices developed by RenÃ©e Burgard, LCSW, Mindfulness & Health.\n\nWe hope that our program will teach skills and help families struggling with dementia caregiving, as it has helped many caregivers in our past research projects."
+            },
+            {
+                "q": "Program Instructions",
+                "a": "1) Watch one Lesson per week.\n\n2) Do a \"Relax\" or \"Breathe\" Exercise at least once a day.\n\n3) Read the Learn More articles to get prepared.\n\nYou may practice exercises daily, so that you could apply them during difficult situations to alleviate stress.\n\nIMPORTANT: please consult with your doctor before doing any exercise of this app."
+            },
+            {
+                "q": "Contact us",
+                "a": "If you need help, please contact the Caring Project team:\n\nSend an email to info@photozig.com\nor\nCall +1 (650) 694-7496 x5.\n\nPlease allow 2-3 business days to respond to your request."
+            },
+            {
+                "q": "Is there a login or sign-up?",
+                "a": "The Login or Sign-up is optional, and it allowes the app to save your Favorite/Liked Exercises in the user account."
+            },
+            {
+                "q": "Is there a subscription? What can I do with the subscription?",
+                "a": "During field tests, there is no subscription. All content, educational modules and practices are available without subscription.\n\nIn the future, the paid subscription will allow you to watch exclusive \"Behavior\" videos, and have access to all practices. "
+            },
+            {
+                "q": "App Notifications",
+                "a": "We recommend allowing notifications for this app, as we will remind you when it is time to practice your Caring Mind skills, to learn about dementia, and follow your next Relaxation exercise. "
+            }
+        ]
+    }
+}
